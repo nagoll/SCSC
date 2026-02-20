@@ -442,12 +442,19 @@ These are features not in your original brief that would meaningfully improve th
 
 ---
 
-## 13. Open Questions
+## 13. Decisions Log
 
-1. **Data sourcing priority:** Should v1 focus on breadth (all levels, fewer sports) or depth (all sports, pro + college only)?
-2. **Content cadence:** How often will editorial content ("Games of the Week") be published? Weekly?
-3. **Angels inclusion:** Include Anaheim Angels despite being in Orange County? They have a large LA County fanbase.
-4. **High school scope:** Launch with all CIF-SS/CIF-LA or start with a curated "Top 50" programs?
-5. **Domain/brand:** Is "SoCal Sports Calendar" (SCSC) the working name, or is there a brand in mind?
-6. **beehiiv publication:** Is the beehiiv account already set up, or will that be configured later?
-7. **Budget for data APIs:** Some sports data APIs (SportsData.io, etc.) have costs. Is there a budget for v1?
+1. **Data sourcing priority:** v1 is broad — all levels except high school (Pro + College + JuCo), all sports.
+2. **Content cadence:** TBD — to be determined when editorial workflow is established.
+3. **Angels inclusion:** No. Anaheim Angels are in Orange County and excluded from v1 scope.
+4. **High school scope:** Excluded from v1. Infrastructure and data model will support high school from day one. Future: all schools + a "Top 50" section highlighting top teams and prospects per sport.
+5. **Domain/brand:** "Southern California Sports Calendar" (SCSC) is the working brand name. Open to change.
+6. **beehiiv publication:** To be configured later. Placeholder embed in v1.
+7. **Budget for data APIs:** TBD. v1 uses free sources and static JSON data.
+
+## 14. Open Questions (Remaining)
+
+- Content cadence for editorial sections
+- Final brand name decision
+- beehiiv publication setup
+- Data API budget for v2+
