@@ -1,0 +1,83 @@
+[
+  {
+    "id": "gotw-lakers-clippers",
+    "type": "game-of-week",
+    "title": "Battle of LA: Lakers vs. Clippers",
+    "description": "The Hallway Series returns to Crypto.com Arena. With both teams fighting for playoff positioning, this crosstown rivalry has real stakes heading into the stretch run.",
+    "eventId": "lakers-20260222",
+    "imageUrl": null,
+    "publishDate": "2026-02-18T00:00:00Z"
+  },
+  {
+    "id": "gotw-usc-ucla-mbb",
+    "type": "game-of-week",
+    "title": "USC vs. UCLA: Big Ten Basketball Showdown",
+    "description": "The crosstown rivalry moves to the Galen Center for what could be a season-defining Big Ten matchup. Bragging rights and conference seeding on the line.",
+    "eventId": "usc-mbb-20260221",
+    "imageUrl": null,
+    "publishDate": "2026-02-18T00:00:00Z"
+  },
+  {
+    "id": "gotw-lakers-celtics",
+    "type": "game-of-week",
+    "title": "Lakers-Celtics: The NBA's Greatest Rivalry",
+    "description": "Some rivalries never get old. Boston comes to LA for a Wednesday night primetime showdown that carries decades of history.",
+    "eventId": "lakers-20260225",
+    "imageUrl": null,
+    "publishDate": "2026-02-18T00:00:00Z"
+  },
+  {
+    "id": "gotw-el-trafico",
+    "type": "game-of-week",
+    "title": "El Tr\u00e1fico: Galaxy vs. LAFC",
+    "description": "MLS's fiercest rivalry comes to Dignity Health Sports Park. The atmosphere at El Tr\u00e1fico matches are electric — get there early.",
+    "eventId": "galaxy-20260314",
+    "imageUrl": null,
+    "publishDate": "2026-03-10T00:00:00Z"
+  },
+  {
+    "id": "gotw-dodgers-opener",
+    "type": "game-of-week",
+    "title": "Dodgers Opening Weekend at Chavez Ravine",
+    "description": "Baseball is back in LA. The Dodgers host the Cubs for opening weekend at Dodger Stadium — nothing beats the energy of the first pitch of the season.",
+    "eventId": "dodgers-20260328",
+    "imageUrl": null,
+    "publishDate": "2026-03-22T00:00:00Z"
+  },
+  {
+    "id": "gem-elac-cerritos",
+    "type": "hidden-gem",
+    "title": "ELAC vs. Cerritos — JuCo Basketball Rivalry",
+    "description": "South Coast Conference basketball at its best. East LA College hosts Cerritos in a heated rivalry game that's completely free to attend. Loud gyms, real passion, zero ticket cost.",
+    "eventId": "elac-mbb-20260220",
+    "imageUrl": null,
+    "publishDate": "2026-02-18T00:00:00Z"
+  },
+  {
+    "id": "gem-mtsac-invitational",
+    "type": "hidden-gem",
+    "title": "Mt. SAC Early Season Track Invitational",
+    "description": "Mt. SAC's Hilmer Lodge Stadium is legendary in the track world. This early-season invitational features community college athletes from across SoCal — and it's free.",
+    "eventId": "mtsac-track-20260307",
+    "imageUrl": null,
+    "publishDate": "2026-03-01T00:00:00Z"
+  },
+  {
+    "id": "gem-angelcity-opener",
+    "type": "hidden-gem",
+    "title": "Angel City FC Season Opener",
+    "description": "The NWSL season kicks off at BMO Stadium. Angel City has built one of the most passionate fan bases in women's soccer — great atmosphere, accessible prices.",
+    "eventId": "angelcity-20260307",
+    "imageUrl": null,
+    "publishDate": "2026-03-01T00:00:00Z"
+  },
+  {
+    "id": "gem-pepperdine-malibu",
+    "type": "hidden-gem",
+    "title": "Basketball in Malibu: Pepperdine vs. LMU",
+    "description": "Watch WCC basketball at Firestone Fieldhouse perched above the Pacific Ocean. Pepperdine vs. LMU is a solid local rivalry, and the ocean-view campus setting can't be beat.",
+    "eventId": "pep-mbb-20260220",
+    "imageUrl": null,
+    "publishDate": "2026-02-18T00:00:00Z"
+  }
+]

@@ -1,21 +1,7 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk, Bebas_Neue } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import './globals.css';
-
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-const bebasNeue = Bebas_Neue({
-  variable: '--font-bebas-neue',
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'SCSC — Southern California Sports Calendar',
@@ -47,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${bebasNeue.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
