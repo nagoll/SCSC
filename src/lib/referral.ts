@@ -1,6 +1,11 @@
 const REFERRAL_SOURCE = 'scsc';
 
 /**
+ * Set to true when ticket URLs and referral partnerships are ready to go live.
+ */
+export const TICKETS_ENABLED = false;
+
+/**
  * Appends UTM referral parameters to any outbound ticket URL.
  * When referral/affiliate codes are established with athletic departments,
  * update this function to include the appropriate partner code.
