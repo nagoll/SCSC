@@ -21,16 +21,16 @@ export default function DayView({ date, events, teams, venues, onEventClick }: D
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-3">
-        <h2 className="font-display text-2xl tracking-wide text-navy uppercase">
+      <div className="mb-4 flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+        <h2 className="min-w-0 truncate font-display text-xl tracking-wide text-navy uppercase sm:text-2xl">
           {formatDateLong(date.toISOString())}
         </h2>
         {isToday && (
-          <span className="rounded-full bg-burnt-orange px-3 py-0.5 text-xs font-semibold text-white">
+          <span className="shrink-0 rounded-full bg-burnt-orange px-3 py-0.5 text-xs font-semibold text-white">
             Today
           </span>
         )}
-        <span className="text-sm text-ink-muted">
+        <span className="shrink-0 text-sm text-ink-muted">
           {dayEvents.length} event{dayEvents.length !== 1 ? 's' : ''}
         </span>
       </div>

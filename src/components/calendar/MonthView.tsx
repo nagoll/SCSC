@@ -31,7 +31,8 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
             key={day}
             className="bg-navy py-2 text-center text-xs font-semibold uppercase tracking-wider text-white"
           >
-            {day}
+            <span className="sm:hidden">{day.slice(0, 1)}</span>
+            <span className="hidden sm:inline">{day}</span>
           </div>
         ))}
       </div>
@@ -49,12 +50,12 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
             <button
               key={i}
               onClick={() => onDayClick(day)}
-              className={`min-h-[80px] bg-white p-2 text-left transition-colors hover:bg-cream-dark sm:min-h-[100px] ${
+              className={`min-h-[52px] bg-white p-1 text-left transition-colors hover:bg-cream-dark sm:min-h-[80px] sm:p-2 md:min-h-[100px] ${
                 !isCurrentMonth ? 'opacity-40' : ''
               } ${isToday ? 'bg-burnt-orange/5 ring-2 ring-inset ring-burnt-orange/20' : ''}`}
             >
               <div
-                className={`text-sm font-semibold ${
+                className={`text-xs font-semibold sm:text-sm ${
                   isToday ? 'text-burnt-orange' : 'text-ink'
                 }`}
               >
@@ -62,16 +63,24 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
               </div>
 
               {dayEvents.length > 0 && (
-                <div className="mt-1">
+                <div className="mt-0.5 sm:mt-1">
                   {/* Sport dots */}
                   <div className="flex flex-wrap gap-0.5">
-                    {uniqueSports.slice(0, 5).map((sport) => (
-                      <span key={sport} className="text-xs" title={sport}>
+                    {uniqueSports.slice(0, 3).map((sport) => (
+                      <span key={sport} className="text-[10px] sm:text-xs" title={sport}>
+                        {SPORT_ICONS[sport]}
+                      </span>
+                    ))}
+                    {uniqueSports.length > 3 && (
+                      <span className="text-[10px] text-ink-muted sm:hidden">+{uniqueSports.length - 3}</span>
+                    )}
+                    {uniqueSports.slice(3, 5).map((sport) => (
+                      <span key={`${sport}-extra`} className="hidden text-xs sm:inline" title={sport}>
                         {SPORT_ICONS[sport]}
                       </span>
                     ))}
                   </div>
-                  <div className="mt-0.5 text-[10px] font-medium text-ink-muted">
+                  <div className="mt-0.5 hidden text-[10px] font-medium text-ink-muted sm:block">
                     {dayEvents.length} event{dayEvents.length !== 1 ? 's' : ''}
                   </div>
                 </div>

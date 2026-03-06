@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { SportEvent, Team, Venue, CalendarViewMode } from '@/lib/types';
 import { MONTHS } from '@/lib/constants';
 import MonthView from './MonthView';
@@ -24,6 +24,10 @@ export default function CalendarView({
 }: CalendarViewProps) {
   const [viewMode, setViewMode] = useState<CalendarViewMode>('week');
   const [currentDate, setCurrentDate] = useState(initialDate || new Date());
+
+  useEffect(() => {
+    if (window.innerWidth < 640) setViewMode('day');
+  }, []);
 
   const handlePrev = useCallback(() => {
     setCurrentDate((d) => {
@@ -80,22 +84,22 @@ export default function CalendarView({
     <div>
       {/* Calendar Header */}
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <button
             onClick={handlePrev}
-            className="rounded-md border border-border p-1.5 text-ink-light transition-colors hover:bg-cream-dark"
+            className="shrink-0 rounded-md border border-border p-1.5 text-ink-light transition-colors hover:bg-cream-dark"
             aria-label="Previous"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </button>
-          <h2 className="font-display text-xl tracking-wide text-navy uppercase sm:text-2xl">
+          <h2 className="min-w-0 truncate font-display text-lg tracking-wide text-navy uppercase sm:text-2xl">
             {getTitle()}
           </h2>
           <button
             onClick={handleNext}
-            className="rounded-md border border-border p-1.5 text-ink-light transition-colors hover:bg-cream-dark"
+            className="shrink-0 rounded-md border border-border p-1.5 text-ink-light transition-colors hover:bg-cream-dark"
             aria-label="Next"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -104,25 +108,26 @@ export default function CalendarView({
           </button>
           <button
             onClick={handleToday}
-            className="rounded-md border border-border px-3 py-1 text-xs font-medium text-ink-light transition-colors hover:bg-cream-dark"
+            className="shrink-0 rounded-md border border-border px-3 py-1 text-xs font-medium text-ink-light transition-colors hover:bg-cream-dark"
           >
             Today
           </button>
         </div>
 
         {/* View Toggle */}
-        <div className="inline-flex rounded-md border border-border bg-white">
+        <div className="inline-flex shrink-0 rounded-md border border-border bg-white">
           {(['month', 'week', 'day'] as CalendarViewMode[]).map((mode) => (
             <button
               key={mode}
               onClick={() => setViewMode(mode)}
-              className={`px-4 py-1.5 text-xs font-medium capitalize transition-colors ${
+              className={`px-3 py-1.5 text-xs font-medium capitalize transition-colors sm:px-4 ${
                 viewMode === mode
                   ? 'bg-navy text-white'
                   : 'text-ink-light hover:bg-cream-dark'
               } ${mode === 'month' ? 'rounded-l-md' : ''} ${mode === 'day' ? 'rounded-r-md' : ''}`}
             >
-              {mode}
+              <span className="sm:hidden">{mode.slice(0, 1).toUpperCase()}</span>
+              <span className="hidden sm:inline capitalize">{mode}</span>
             </button>
           ))}
         </div>

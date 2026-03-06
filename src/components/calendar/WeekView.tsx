@@ -38,7 +38,8 @@ export default function WeekView({
   }
 
   return (
-    <div className="grid grid-cols-7 gap-px overflow-hidden rounded-lg border border-border bg-border">
+    <div className="overflow-x-auto rounded-lg border border-border">
+    <div className="grid min-w-[560px] grid-cols-7 gap-px overflow-hidden bg-border">
       {/* Day Headers */}
       {weekDays.map((day, i) => {
         const isToday = isSameDay(day, today);
@@ -97,6 +98,7 @@ export default function WeekView({
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
