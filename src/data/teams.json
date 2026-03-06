@@ -442,5 +442,29 @@
     "logoUrl": null,
     "primaryColor": "#1B2A4A",
     "secondaryColor": "#C9A84C"
+  },
+  {
+    "id": "csudh-toros",
+    "name": "Cal State Dominguez Hills Toros",
+    "shortName": "CSUDH",
+    "level": "college",
+    "school": "California State University, Dominguez Hills",
+    "conference": "CCAA",
+    "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
+    "logoUrl": null,
+    "primaryColor": "#002D62",
+    "secondaryColor": "#C8AA6E"
+  },
+  {
+    "id": "lasw-cougars",
+    "name": "LA Southwest College Cougars",
+    "shortName": "SW College",
+    "level": "juco",
+    "school": "Los Angeles Southwest College",
+    "conference": "Western State Conference",
+    "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
+    "logoUrl": null,
+    "primaryColor": "#003087",
+    "secondaryColor": "#FFD700"
   }
 ]
