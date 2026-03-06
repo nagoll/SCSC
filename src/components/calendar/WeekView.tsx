@@ -47,7 +47,7 @@ export default function WeekView({
           <button
             key={i}
             onClick={() => onDayClick(day)}
-            className={`bg-white px-2 py-3 text-center transition-colors hover:bg-cream-dark ${
+            className={`bg-surface px-2 py-3 text-center transition-colors hover:bg-cream-dark ${
               isToday ? 'bg-burnt-orange/5' : ''
             }`}
           >
@@ -72,7 +72,7 @@ export default function WeekView({
         return (
           <div
             key={`events-${i}`}
-            className={`min-h-[200px] bg-white p-1.5 ${isToday ? 'bg-burnt-orange/5' : ''}`}
+            className={`min-h-[200px] bg-surface p-1.5 ${isToday ? 'bg-burnt-orange/5' : ''}`}
           >
             <div className="space-y-1.5">
               {dayEvents.slice(0, 4).map((event) => (

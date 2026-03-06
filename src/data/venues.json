@@ -251,5 +251,126 @@
     "capacity": 5000,
     "parkingInfo": "Campus parking $5-$10; Lot F closest to athletics complex.",
     "transitInfo": "Foothill Transit 194/291 to campus; Metrolink to Pomona station, then Foothill Transit."
+  },
+  {
+    "id": "csuf-athletics",
+    "name": "CSUF Titan Athletics Complex",
+    "address": "800 N State College Blvd, Fullerton, CA 92831",
+    "neighborhood": "san-gabriel-valley",
+    "lat": 33.8817,
+    "lng": -117.8854,
+    "capacity": 4000,
+    "parkingInfo": "Campus parking structures $5-$10; Lot A near Anderson Field; Lot G near Titan Gym.",
+    "transitInfo": "OCTA Bus 43 or 47 to State College Blvd; Metrolink to Fullerton station, then OCTA 43."
+  },
+  {
+    "id": "pomona-pitzer-athletics",
+    "name": "Pomona-Pitzer Athletics Complex",
+    "address": "610 N College Ave, Claremont, CA 91711",
+    "neighborhood": "san-gabriel-valley",
+    "lat": 34.0967,
+    "lng": -117.7110,
+    "capacity": 2500,
+    "parkingInfo": "Free parking in Claremont Colleges lots on weekends; metered street parking on College Ave.",
+    "transitInfo": "Metrolink San Bernardino Line to Claremont station, then walk or campus shuttle north."
+  },
+  {
+    "id": "calstate-la-athletics",
+    "name": "Cal State LA Golden Eagle Arena",
+    "address": "5151 State University Dr, Los Angeles, CA 90032",
+    "neighborhood": "east-la",
+    "lat": 34.0673,
+    "lng": -118.1685,
+    "capacity": 2500,
+    "parkingInfo": "Campus Lot 2 and Lot 5 ($5-$8); street parking on State University Dr after 6 PM.",
+    "transitInfo": "Metro B Line to Cal State LA station (on campus); Metro Bus 70 on Valley Blvd."
+  },
+  {
+    "id": "occidental-athletics",
+    "name": "Occidental College Athletic Fields",
+    "address": "1600 Campus Rd, Los Angeles, CA 90041",
+    "neighborhood": "east-la",
+    "lat": 34.1239,
+    "lng": -118.2073,
+    "capacity": 2000,
+    "parkingInfo": "Free campus parking on weekends in Lot 1 and Lot 5; street parking on Campus Rd.",
+    "transitInfo": "Metro Bus 81 along York Blvd; Metro B/D Line to Highland Park station, then bus north."
+  },
+  {
+    "id": "rio-hondo-athletics",
+    "name": "Rio Hondo College Athletic Complex",
+    "address": "3600 Workman Mill Rd, Whittier, CA 90601",
+    "neighborhood": "san-gabriel-valley",
+    "lat": 33.9744,
+    "lng": -117.9817,
+    "capacity": 3000,
+    "parkingInfo": "Free campus parking in Lots 1-4 off Workman Mill Rd.",
+    "transitInfo": "Metro Bus 484 along Workman Mill Rd; limited transit access, driving recommended."
+  },
+  {
+    "id": "citrus-athletics",
+    "name": "Citrus College Athletic Complex",
+    "address": "1000 W Foothill Blvd, Glendora, CA 91741",
+    "neighborhood": "san-gabriel-valley",
+    "lat": 34.1044,
+    "lng": -117.8652,
+    "capacity": 3500,
+    "parkingInfo": "Free parking in campus lots off Foothill Blvd; Lot 1 is closest to the stadium.",
+    "transitInfo": "Foothill Transit Line 187 along Foothill Blvd; driving recommended for evening events."
+  },
+  {
+    "id": "west-la-athletics",
+    "name": "West LA College Athletic Complex",
+    "address": "9000 Overland Ave, Culver City, CA 90230",
+    "neighborhood": "westside",
+    "lat": 34.0268,
+    "lng": -118.4012,
+    "capacity": 1500,
+    "parkingInfo": "Free campus parking in main lot off Overland Ave.",
+    "transitInfo": "Metro Bus 12 or Culver City Bus 6 along Overland Ave; Metro E Line to Culver City station, then bus north."
+  },
+  {
+    "id": "compton-athletics",
+    "name": "Compton College Athletic Complex",
+    "address": "1111 E Artesia Blvd, Compton, CA 90221",
+    "neighborhood": "south-la",
+    "lat": 33.8894,
+    "lng": -118.2194,
+    "capacity": 2000,
+    "parkingInfo": "Free campus parking in lots off Artesia Blvd.",
+    "transitInfo": "Metro Bus 51 along Artesia Blvd; Metro A Line to Compton station, then bus east."
+  },
+  {
+    "id": "harbor-athletics",
+    "name": "Harbor College Athletic Complex",
+    "address": "1111 Figueroa Place, Wilmington, CA 90744",
+    "neighborhood": "south-bay",
+    "lat": 33.7879,
+    "lng": -118.2867,
+    "capacity": 2000,
+    "parkingInfo": "Free campus parking in main lot off Figueroa Place.",
+    "transitInfo": "Metro Bus 205 along Pacific Coast Hwy; limited transit, driving recommended."
+  },
+  {
+    "id": "lapc-athletics",
+    "name": "LA Pierce College Athletic Complex",
+    "address": "6201 Winnetka Ave, Woodland Hills, CA 91371",
+    "neighborhood": "san-fernando-valley",
+    "lat": 34.1924,
+    "lng": -118.5752,
+    "capacity": 5000,
+    "parkingInfo": "Free campus parking in Lots 9 and 11 off Winnetka Ave.",
+    "transitInfo": "Metro Bus 164 or 161 along Winnetka Ave; limited transit access."
+  },
+  {
+    "id": "glendale-cc-athletics",
+    "name": "Glendale Community College Athletic Complex",
+    "address": "1500 N Verdugo Rd, Glendale, CA 91208",
+    "neighborhood": "san-fernando-valley",
+    "lat": 34.1731,
+    "lng": -118.2548,
+    "capacity": 3000,
+    "parkingInfo": "Campus parking Lot 1 and Lot 3 ($3-$5); free street parking on Verdugo Rd evenings.",
+    "transitInfo": "Metro Bus 90 or Glendale Beeline Bus 1 along Verdugo Rd."
   }
 ]

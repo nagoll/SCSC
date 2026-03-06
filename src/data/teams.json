@@ -334,5 +334,113 @@
     "logoUrl": null,
     "primaryColor": "#003594",
     "secondaryColor": "#C8102E"
+  },
+  {
+    "id": "csuf-titans",
+    "name": "Cal State Fullerton Titans",
+    "shortName": "CSUF",
+    "level": "college",
+    "school": "California State University, Fullerton",
+    "conference": "Big West",
+    "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
+    "logoUrl": null,
+    "primaryColor": "#00274C",
+    "secondaryColor": "#FF6600"
+  },
+  {
+    "id": "pomona-pitzer-sagehens",
+    "name": "Pomona-Pitzer Sagehens",
+    "shortName": "Pomona-Pitzer",
+    "level": "college",
+    "school": "Pomona College / Pitzer College",
+    "conference": "SCIAC",
+    "sport": ["football", "basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo"],
+    "logoUrl": null,
+    "primaryColor": "#00356B",
+    "secondaryColor": "#C9A100"
+  },
+  {
+    "id": "calstate-la-eagles",
+    "name": "Cal State LA Golden Eagles",
+    "shortName": "Cal State LA",
+    "level": "college",
+    "school": "California State University, Los Angeles",
+    "conference": "CCAA",
+    "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
+    "logoUrl": null,
+    "primaryColor": "#000000",
+    "secondaryColor": "#C9A600"
+  },
+  {
+    "id": "occidental-tigers",
+    "name": "Occidental College Tigers",
+    "shortName": "Occidental",
+    "level": "college",
+    "school": "Occidental College",
+    "conference": "SCIAC",
+    "sport": ["football", "basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo", "lacrosse"],
+    "logoUrl": null,
+    "primaryColor": "#EF7D00",
+    "secondaryColor": "#1A1A1A"
+  },
+  {
+    "id": "rio-hondo-roadrunners",
+    "name": "Rio Hondo College Roadrunners",
+    "shortName": "Rio Hondo",
+    "level": "juco",
+    "school": "Rio Hondo College",
+    "conference": "South Coast Conference",
+    "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
+    "logoUrl": null,
+    "primaryColor": "#003F87",
+    "secondaryColor": "#F5A800"
+  },
+  {
+    "id": "citrus-owls",
+    "name": "Citrus College Owls",
+    "shortName": "Citrus",
+    "level": "juco",
+    "school": "Citrus College",
+    "conference": "South Coast Conference",
+    "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis", "swimming"],
+    "logoUrl": null,
+    "primaryColor": "#003087",
+    "secondaryColor": "#FFCD00"
+  },
+  {
+    "id": "west-la-wildcats",
+    "name": "West LA College Wildcats",
+    "shortName": "West LA",
+    "level": "juco",
+    "school": "West Los Angeles College",
+    "conference": "Western State Conference",
+    "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
+    "logoUrl": null,
+    "primaryColor": "#003399",
+    "secondaryColor": "#FFD700"
+  },
+  {
+    "id": "compton-tartars",
+    "name": "Compton College Tartars",
+    "shortName": "Compton",
+    "level": "juco",
+    "school": "Compton College",
+    "conference": "South Coast Conference",
+    "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
+    "logoUrl": null,
+    "primaryColor": "#003087",
+    "secondaryColor": "#FFD700"
+  },
+  {
+    "id": "harbor-seahawks",
+    "name": "Harbor College Seahawks",
+    "shortName": "Harbor",
+    "level": "juco",
+    "school": "Los Angeles Harbor College",
+    "conference": "South Coast Conference",
+    "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
+    "logoUrl": null,
+    "primaryColor": "#1B2A4A",
+    "secondaryColor": "#C9A84C"
   }
 ]

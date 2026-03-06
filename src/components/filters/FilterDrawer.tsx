@@ -1,6 +1,6 @@
 'use client';
 
-import type { Filters, Team, Venue } from '@/lib/types';
+import type { Filters, Team, Venue, NearMeState } from '@/lib/types';
 import { getActiveFilterCount } from '@/lib/filters';
 import FilterSidebar from './FilterSidebar';
 
@@ -11,6 +11,8 @@ interface FilterDrawerProps {
   onFiltersChange: (filters: Filters) => void;
   teams: Record<string, Team>;
   venues: Record<string, Venue>;
+  nearMe: NearMeState;
+  onNearMeChange: (state: NearMeState) => void;
 }
 
 export default function FilterDrawer({
@@ -20,6 +22,8 @@ export default function FilterDrawer({
   onFiltersChange,
   teams,
   venues,
+  nearMe,
+  onNearMeChange,
 }: FilterDrawerProps) {
   const activeCount = getActiveFilterCount(filters);
 
@@ -68,6 +72,8 @@ export default function FilterDrawer({
               onFiltersChange={onFiltersChange}
               teams={teams}
               venues={venues}
+              nearMe={nearMe}
+              onNearMeChange={onNearMeChange}
             />
           </div>
 

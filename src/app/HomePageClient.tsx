@@ -4,7 +4,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import type { SportEvent, Team, Venue, Filters, FeaturedContent } from '@/lib/types';
 import { DEFAULT_FILTERS } from '@/lib/constants';
-import { applyFilters, searchParamsToFilters, filtersToSearchParams, getActiveFilterCount } from '@/lib/filters';
+import { applyFilters, searchParamsToFilters, filtersToSearchParams, getActiveFilterCount, getVenuesWithinRadius } from '@/lib/filters';
+import type { NearMeState } from '@/lib/types';
 import { isSameDay } from '@/lib/calendar';
 import CalendarView from '@/components/calendar/CalendarView';
 import FilterSidebar from '@/components/filters/FilterSidebar';
@@ -44,6 +45,13 @@ export default function HomePage() {
   });
   const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
+  const [nearMe, setNearMe] = useState<NearMeState>({
+    active: false,
+    status: 'idle',
+    lat: null,
+    lng: null,
+    radiusMiles: 10,
+  });
 
   // Sync filters to URL
   useEffect(() => {
@@ -57,10 +65,14 @@ export default function HomePage() {
 
   const allEvents = eventsData as SportEvent[];
 
-  const filteredEvents = useMemo(
-    () => applyFilters(allEvents, filters, teamsMap, venuesMap),
-    [allEvents, filters]
-  );
+  const filteredEvents = useMemo(() => {
+    let events = applyFilters(allEvents, filters, teamsMap, venuesMap);
+    if (nearMe.active && nearMe.lat !== null && nearMe.lng !== null) {
+      const nearbyVenues = getVenuesWithinRadius(venuesMap, nearMe.lat, nearMe.lng, nearMe.radiusMiles);
+      events = events.filter((e) => nearbyVenues.has(e.venue));
+    }
+    return events;
+  }, [allEvents, filters, nearMe]);
 
   // Today's events
   const today = new Date();
@@ -73,7 +85,7 @@ export default function HomePage() {
   );
 
   const selectedEvent = selectedEventId ? eventsMap[selectedEventId] : null;
-  const activeFilterCount = getActiveFilterCount(filters);
+  const activeFilterCount = getActiveFilterCount(filters) + (nearMe.active ? 1 : 0);
 
   return (
     <div className="pb-16">
@@ -90,15 +102,15 @@ export default function HomePage() {
 
           {/* Quick Stats */}
           <div className="mt-6 flex flex-wrap gap-4">
-            <div className="rounded-lg border border-border bg-white px-4 py-2">
+            <div className="rounded-lg border border-border bg-surface px-4 py-2">
               <span className="text-2xl font-bold text-burnt-orange">{todayEvents.length}</span>
               <span className="ml-2 text-sm text-ink-muted">events today</span>
             </div>
-            <div className="rounded-lg border border-border bg-white px-4 py-2">
+            <div className="rounded-lg border border-border bg-surface px-4 py-2">
               <span className="text-2xl font-bold text-navy">{allEvents.length}</span>
               <span className="ml-2 text-sm text-ink-muted">total events</span>
             </div>
-            <div className="rounded-lg border border-border bg-white px-4 py-2">
+            <div className="rounded-lg border border-border bg-surface px-4 py-2">
               <span className="text-2xl font-bold text-live-green">{Object.keys(teamsMap).length}</span>
               <span className="ml-2 text-sm text-ink-muted">teams</span>
             </div>
@@ -131,7 +143,7 @@ export default function HomePage() {
                   <button
                     key={event.id}
                     onClick={() => setSelectedEventId(event.id)}
-                    className="flex min-w-[200px] flex-shrink-0 flex-col rounded-lg border border-border bg-white p-3 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
+                    className="flex min-w-[200px] flex-shrink-0 flex-col rounded-lg border border-border bg-surface p-3 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
                   >
                     <div className="flex items-center gap-1.5">
                       <SportIcon sport={event.sport} size="sm" />
@@ -166,6 +178,8 @@ export default function HomePage() {
                   onFiltersChange={setFilters}
                   teams={teamsMap}
                   venues={venuesMap}
+                  nearMe={nearMe}
+                  onNearMeChange={setNearMe}
                 />
               </div>
             </aside>
@@ -176,7 +190,7 @@ export default function HomePage() {
               <div className="mb-4 lg:hidden">
                 <button
                   onClick={() => setFilterDrawerOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
+                  className="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-4 py-2 text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
@@ -244,6 +258,8 @@ export default function HomePage() {
         onFiltersChange={setFilters}
         teams={teamsMap}
         venues={venuesMap}
+        nearMe={nearMe}
+        onNearMeChange={setNearMe}
       />
 
       {/* Event Detail Panel */}

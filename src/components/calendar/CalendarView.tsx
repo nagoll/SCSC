@@ -94,7 +94,7 @@ export default function CalendarView({
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </button>
-          <h2 className="min-w-0 truncate font-display text-lg tracking-wide text-navy uppercase sm:text-2xl">
+          <h2 className="min-w-0 truncate font-display text-lg tracking-wide text-navy dark:text-gold uppercase sm:text-2xl">
             {getTitle()}
           </h2>
           <button
@@ -115,7 +115,7 @@ export default function CalendarView({
         </div>
 
         {/* View Toggle */}
-        <div className="inline-flex shrink-0 rounded-md border border-border bg-white">
+        <div className="inline-flex shrink-0 rounded-md border border-border bg-surface">
           {(['month', 'week', 'day'] as CalendarViewMode[]).map((mode) => (
             <button
               key={mode}

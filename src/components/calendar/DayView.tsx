@@ -22,7 +22,7 @@ export default function DayView({ date, events, teams, venues, onEventClick }: D
   return (
     <div>
       <div className="mb-4 flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
-        <h2 className="min-w-0 truncate font-display text-xl tracking-wide text-navy uppercase sm:text-2xl">
+        <h2 className="min-w-0 truncate font-display text-xl tracking-wide text-navy dark:text-gold uppercase sm:text-2xl">
           {formatDateLong(date.toISOString())}
         </h2>
         {isToday && (

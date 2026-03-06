@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { Filters, Team, Venue } from '@/lib/types';
+import type { Filters, Team, Venue, NearMeState } from '@/lib/types';
 import {
   SPORT_LABELS,
   LEVEL_LABELS,
@@ -14,11 +14,15 @@ import {
 } from '@/lib/constants';
 import { getActiveFilterCount, isFiltersEmpty } from '@/lib/filters';
 
+const RADIUS_OPTIONS = [5, 10, 25, 50] as const;
+
 interface FilterSidebarProps {
   filters: Filters;
   onFiltersChange: (filters: Filters) => void;
   teams: Record<string, Team>;
   venues: Record<string, Venue>;
+  nearMe: NearMeState;
+  onNearMeChange: (state: NearMeState) => void;
 }
 
 function FilterSection({
@@ -81,8 +85,28 @@ export default function FilterSidebar({
   onFiltersChange,
   teams,
   venues,
+  nearMe,
+  onNearMeChange,
 }: FilterSidebarProps) {
   const activeCount = getActiveFilterCount(filters);
+
+  function requestNearMe() {
+    onNearMeChange({ ...nearMe, status: 'loading', active: false });
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        onNearMeChange({
+          active: true,
+          status: 'granted',
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          radiusMiles: nearMe.radiusMiles,
+        });
+      },
+      () => {
+        onNearMeChange({ ...nearMe, status: 'denied', active: false });
+      }
+    );
+  }
 
   function toggleArrayFilter<K extends keyof Filters>(key: K, value: string) {
     const arr = filters[key] as string[];
@@ -109,6 +133,54 @@ export default function FilterSidebar({
         )}
       </div>
 
+      {/* Near Me */}
+      <div className="border-b border-border pb-3">
+        <div className="py-2 text-sm font-semibold text-ink">Near Me</div>
+        {nearMe.status === 'idle' && (
+          <button
+            onClick={requestNearMe}
+            className="flex w-full items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-ink-light transition-colors hover:bg-cream-dark hover:text-burnt-orange"
+          >
+            <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+            Use My Location
+          </button>
+        )}
+        {nearMe.status === 'loading' && (
+          <p className="px-1 py-1 text-xs text-ink-muted">Getting location...</p>
+        )}
+        {nearMe.status === 'denied' && (
+          <p className="px-1 py-1 text-xs text-burnt-orange">Location denied. Enable in browser settings.</p>
+        )}
+        {nearMe.status === 'granted' && (
+          <div className="space-y-2">
+            <div className="flex gap-1">
+              {RADIUS_OPTIONS.map((miles) => (
+                <button
+                  key={miles}
+                  onClick={() => onNearMeChange({ ...nearMe, radiusMiles: miles })}
+                  className={`flex-1 rounded py-1 text-xs font-medium transition-colors ${
+                    nearMe.radiusMiles === miles
+                      ? 'bg-navy text-white'
+                      : 'border border-border text-ink-muted hover:bg-cream-dark'
+                  }`}
+                >
+                  {miles}mi
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => onNearMeChange({ active: false, status: 'idle', lat: null, lng: null, radiusMiles: nearMe.radiusMiles })}
+              className="text-xs text-ink-muted hover:text-burnt-orange"
+            >
+              Clear location
+            </button>
+          </div>
+        )}
+      </div>
+
       {/* Search */}
       <div className="pb-3">
         <input
@@ -116,7 +188,7 @@ export default function FilterSidebar({
           placeholder="Search teams, venues..."
           value={filters.search}
           onChange={(e) => onFiltersChange({ ...filters, search: e.target.value })}
-          className="w-full rounded-md border border-border bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-burnt-orange focus:outline-none focus:ring-1 focus:ring-burnt-orange"
+          className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-burnt-orange focus:outline-none focus:ring-1 focus:ring-burnt-orange"
         />
       </div>
 

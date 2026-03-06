@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
  * Font CSS variables. In production with Google Fonts access, replace these
  * with next/font/google imports for Space_Grotesk and Bebas_Neue.
@@ -27,8 +30,23 @@
   --color-border-dark: #D0C9C0;
   --color-background: #FAF8F5;
   --color-foreground: #1A1A1A;
+  --color-surface: #FFFFFF;
   --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-bebas-neue), var(--font-space-grotesk), ui-sans-serif, sans-serif;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-cream: #111820;
+  --color-cream-dark: #1A2535;
+  --color-ink: #F0EBE3;
+  --color-ink-light: #C2BAB0;
+  --color-ink-muted: #8A8278;
+  --color-border: #273448;
+  --color-border-dark: #344863;
+  --color-background: #111820;
+  --color-foreground: #F0EBE3;
+  --color-surface: #1C2B40;
 }
 
 body {

@@ -28,7 +28,7 @@ export default function EventCard({
     return (
       <button
         onClick={onClick}
-        className="group w-full rounded border border-border bg-white p-2 text-left transition-all hover:border-burnt-orange/30 hover:shadow-sm"
+        className="group w-full rounded border border-border bg-surface p-2 text-left transition-all hover:border-burnt-orange/30 hover:shadow-sm"
       >
         <div className="flex items-center gap-1.5">
           <SportIcon sport={event.sport} size="sm" />
@@ -49,7 +49,7 @@ export default function EventCard({
   return (
     <button
       onClick={onClick}
-      className="group w-full rounded-lg border border-border bg-white p-4 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
+      className="group w-full rounded-lg border border-border bg-surface p-4 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">

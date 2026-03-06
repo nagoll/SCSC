@@ -112,3 +112,11 @@ export interface SavedFilter {
   name: string;
   filters: Filters;
 }
+
+export interface NearMeState {
+  active: boolean;
+  status: 'idle' | 'loading' | 'granted' | 'denied';
+  lat: number | null;
+  lng: number | null;
+  radiusMiles: number;
+}

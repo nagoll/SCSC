@@ -50,7 +50,7 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
             <button
               key={i}
               onClick={() => onDayClick(day)}
-              className={`min-h-[52px] bg-white p-1 text-left transition-colors hover:bg-cream-dark sm:min-h-[80px] sm:p-2 md:min-h-[100px] ${
+              className={`min-h-[52px] bg-surface p-1 text-left transition-colors hover:bg-cream-dark sm:min-h-[80px] sm:p-2 md:min-h-[100px] ${
                 !isCurrentMonth ? 'opacity-40' : ''
               } ${isToday ? 'bg-burnt-orange/5 ring-2 ring-inset ring-burnt-orange/20' : ''}`}
             >

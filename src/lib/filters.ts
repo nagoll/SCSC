@@ -150,6 +150,34 @@ export function isFiltersEmpty(filters: Filters): boolean {
   );
 }
 
+function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 3959; // Earth radius in miles
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLng = (lng2 - lng1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLng / 2) *
+      Math.sin(dLng / 2);
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+export function getVenuesWithinRadius(
+  venues: Record<string, Venue>,
+  userLat: number,
+  userLng: number,
+  radiusMiles: number
+): Set<string> {
+  const result = new Set<string>();
+  for (const [id, venue] of Object.entries(venues)) {
+    if (haversineDistance(userLat, userLng, venue.lat, venue.lng) <= radiusMiles) {
+      result.add(id);
+    }
+  }
+  return result;
+}
+
 export function getActiveFilterCount(filters: Filters): number {
   let count = 0;
   for (const [key, value] of Object.entries(filters)) {
