@@ -49,6 +49,7 @@ export interface Team {
   logoUrl: string | null;
   primaryColor: string;
   secondaryColor: string;
+  ticketUrl?: string | null; // athletic department ticket page for referral links
 }
 
 export interface Venue {

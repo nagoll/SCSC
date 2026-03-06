@@ -7,6 +7,7 @@ import SportIcon from '@/components/shared/SportIcon';
 import LevelBadge from '@/components/shared/LevelBadge';
 import TimeBadge from '@/components/shared/TimeBadge';
 import AddToCalendar from './AddToCalendar';
+import { buildTicketUrl } from '@/lib/referral';
 
 interface EventDetailProps {
   event: SportEvent;
@@ -26,6 +27,10 @@ export default function EventDetail({
   const title = awayTeam
     ? `${awayTeam.name} at ${homeTeam.name}`
     : event.eventName || homeTeam.name;
+
+  const resolvedTicketUrl = (event.ticketUrl ?? homeTeam.ticketUrl)
+    ? buildTicketUrl((event.ticketUrl ?? homeTeam.ticketUrl)!)
+    : null;
 
   return (
     <>
@@ -154,9 +159,9 @@ export default function EventDetail({
                     {event.price === 'tbd' && 'TBD'}
                   </div>
                 </div>
-                {event.ticketUrl && (
+                {resolvedTicketUrl && (
                   <a
-                    href={event.ticketUrl}
+                    href={resolvedTicketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-md bg-burnt-orange px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-burnt-orange-dark"
