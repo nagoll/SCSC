@@ -8,7 +8,7 @@
  * Only D1 teams with ESPN coverage: USC, UCLA, CSUN, Long Beach State
  */
 
-const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
+const { normalizeEvent } = require('../../normalize');
 
 const ESPN_COLLEGE_TEAMS = [
   {
@@ -110,7 +110,6 @@ async function fetchESPNCollegeTeam(config, startDate, endDate) {
         awayTeamId: null,
         sport: sportRaw,
         level: 'college',
-        gender: inferGender(sportRaw, null),
         dateTime: event.date,
         endTime: null,
         venueId: competition.venue?.id ? `espn-venue-${competition.venue.id}` : config.defaultVenueId,

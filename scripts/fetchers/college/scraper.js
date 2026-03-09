@@ -329,18 +329,9 @@ async function parseGeneric(html, school, startDate, endDate) {
   const start = new Date(startDate);
   const end = new Date(endDate);
 
-  // Look for ISO dates in the HTML
-  const datePattern = /(\d{4}-\d{2}-\d{2}T\d{2}:\d{2})/g;
-  const foundDates = [...html.matchAll(datePattern)].map(m => m[1]);
-
-  for (const rawDate of foundDates) {
-    const gameDate = new Date(rawDate);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
-
-    // Can't reliably parse sport/opponent from generic HTML without more context
-    // Log these for manual review
-    console.log(`[generic] Found date ${rawDate} for ${school.id} — manual review may be needed`);
-  }
+  // Generic platform is not yet implemented — no events will be produced.
+  // Schools using platform: 'generic' require a custom parser.
+  console.warn(`[${school.id}] platform 'generic' has no parser — 0 events returned. Add a custom parser for ${school.compositeUrl}`);
 
   return events;
 }
@@ -354,8 +345,11 @@ function slugify(str) {
  * Fetch and parse a school's composite schedule page.
  */
 async function scrapeComposite(school, startDate, endDate) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15_000);
   try {
     const res = await fetch(school.compositeUrl, {
+      signal: controller.signal,
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; SCSC-Bot/1.0; +https://github.com/SCSC)',
         'Accept': 'text/html,application/xhtml+xml',
@@ -375,8 +369,11 @@ async function scrapeComposite(school, startDate, endDate) {
       default:        return parseGeneric(html, school, startDate, endDate);
     }
   } catch (err) {
-    console.warn(`[${school.id}] Scrape failed: ${err.message}`);
+    const msg = err.name === 'AbortError' ? 'timed out after 15s' : err.message;
+    console.warn(`[${school.id}] Scrape failed: ${msg}`);
     return [];
+  } finally {
+    clearTimeout(timer);
   }
 }
 
