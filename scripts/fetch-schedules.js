@@ -113,22 +113,13 @@ async function main() {
   console.log(`Level filter: ${LEVEL_FILTER}`);
   console.log(`Dry run: ${DRY_RUN}`);
 
-  const allEvents = [];
+  const fetchers = [];
+  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'pro')     fetchers.push(fetchPro(startDate, endDate));
+  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'college') fetchers.push(fetchCollege(startDate, endDate));
+  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'juco')    fetchers.push(fetchJuco(startDate, endDate));
 
-  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'pro') {
-    const proEvents = await fetchPro(startDate, endDate);
-    allEvents.push(...proEvents);
-  }
-
-  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'college') {
-    const collegeEvents = await fetchCollege(startDate, endDate);
-    allEvents.push(...collegeEvents);
-  }
-
-  if (LEVEL_FILTER === 'all' || LEVEL_FILTER === 'juco') {
-    const jucoEvents = await fetchJuco(startDate, endDate);
-    allEvents.push(...jucoEvents);
-  }
+  const levelResults = await Promise.all(fetchers);
+  const allEvents = levelResults.flat();
 
   console.log(`\nTotal fetched: ${allEvents.length} events`);
 
