@@ -47,7 +47,7 @@ const COLLEGE_SCHOOLS = [
     name: 'Pepperdine Waves',
     scscTeamId: 'pepperdine-waves',
     compositeUrl: 'https://pepperdinewaves.com/composite-schedule',
-    espnTeamId: '2overwrite',
+    espnTeamId: null, // Pepperdine not tracked via ESPN college API
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pepperdine-campus',
