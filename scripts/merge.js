@@ -27,14 +27,15 @@ const SOURCE_PRECEDENCE = {
 };
 
 function getPrecedence(source) {
-  // Match prefix: e.g. 'mlb-api' → 'pro-api', 'ucla-scraper' → 'university-scraper'
-  if (!source) return 0;
-  if (source === 'manual') return 0;
-  if (source.endsWith('-api') && !source.startsWith('espn')) return 1;
-  if (source === 'espn-api' || source.startsWith('espn-')) return 2;
-  if (source.endsWith('-juco-scraper') || source === 'juco-scraper') return 3;
-  if (source.endsWith('-scraper') || source.endsWith('-composite')) return 4;
-  return 1;
+  // Exact match first (e.g. 'manual', 'espn-api', 'juco-scraper')
+  if (!source || source === 'manual') return SOURCE_PRECEDENCE['manual'];
+  if (source in SOURCE_PRECEDENCE) return SOURCE_PRECEDENCE[source];
+  // Pattern match for derived names (e.g. 'mlb-api' → pro-api tier, 'ucla-composite' → university-scraper tier)
+  if (source.endsWith('-api') && !source.startsWith('espn')) return SOURCE_PRECEDENCE['pro-api'];
+  if (source.startsWith('espn-')) return SOURCE_PRECEDENCE['espn-api'];
+  if (source.endsWith('-juco-scraper')) return SOURCE_PRECEDENCE['juco-scraper'];
+  if (source.endsWith('-scraper') || source.endsWith('-composite')) return SOURCE_PRECEDENCE['university-scraper'];
+  return SOURCE_PRECEDENCE['pro-api']; // unknown → treat as pro-api tier
 }
 
 /**
@@ -131,8 +132,8 @@ function mergeEvents(newEvents) {
   syncLog.lastRun = new Date().toISOString();
   syncLog.discrepancies = [
     ...discrepancies,
-    ...(syncLog.discrepancies || []).slice(0, 200), // keep last 200
-  ];
+    ...(syncLog.discrepancies || []),
+  ].slice(0, 200); // keep newest 200 total
   fs.writeFileSync(SYNC_LOG_PATH, JSON.stringify(syncLog, null, 2));
 
   return { added, updated, skipped, discrepancies: discrepancies.length };

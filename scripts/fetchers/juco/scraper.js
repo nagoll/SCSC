@@ -309,8 +309,11 @@ async function parseGenericJuco(html, school, start, end) {
 }
 
 async function scrapeJucoSchool(school, startDate, endDate) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15_000);
   try {
     const res = await fetch(school.scheduleUrl, {
+      signal: controller.signal,
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; SCSC-Bot/1.0; +https://github.com/SCSC)',
         'Accept': 'text/html,application/xhtml+xml',
@@ -331,8 +334,11 @@ async function scrapeJucoSchool(school, startDate, endDate) {
     }
     return parseGenericJuco(html, school, start, end);
   } catch (err) {
-    console.warn(`[${school.id}] Scrape error: ${err.message}`);
+    const msg = err.name === 'AbortError' ? 'timed out after 15s' : err.message;
+    console.warn(`[${school.id}] Scrape error: ${msg}`);
     return [];
+  } finally {
+    clearTimeout(timer);
   }
 }
 
