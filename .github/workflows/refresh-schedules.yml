@@ -1,0 +1,72 @@
+name: Refresh Schedules
+
+on:
+  # Run every 5 days at 6am PT (14:00 UTC)
+  schedule:
+    - cron: '0 14 */5 * *'
+
+  # Allow manual trigger from GitHub Actions UI
+  # Optionally pass level: 'pro' | 'college' | 'juco' | 'all'
+  # and days: number (default 90)
+  workflow_dispatch:
+    inputs:
+      level:
+        description: 'Which level to fetch'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - pro
+          - college
+          - juco
+      days:
+        description: 'Days ahead to fetch (default: 90)'
+        required: false
+        default: '90'
+        type: string
+      dry_run:
+        description: 'Dry run (fetch but do not commit)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit updated events.json back to repo
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch schedules
+        run: |
+          node scripts/fetch-schedules.js \
+            --level "${{ github.event.inputs.level || 'all' }}" \
+            --days "${{ github.event.inputs.days || '90' }}" \
+            ${{ (github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet src/data/events.json scripts/sync-log.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated data
+        if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name  "scsc-bot"
+          git config user.email "bot@scsc.com"
+          git add src/data/events.json scripts/sync-log.json
+          git commit -m "chore: refresh schedules $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: No changes detected
+        if: steps.changes.outputs.changed != 'true'
+        run: echo "No schedule changes found — events.json unchanged."
