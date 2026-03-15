@@ -37,16 +37,23 @@
 
 /* Dark mode overrides */
 .dark {
-  --color-cream: #111820;
-  --color-cream-dark: #1A2535;
-  --color-ink: #F0EBE3;
-  --color-ink-light: #C2BAB0;
-  --color-ink-muted: #8A8278;
-  --color-border: #273448;
-  --color-border-dark: #344863;
-  --color-background: #111820;
-  --color-foreground: #F0EBE3;
-  --color-surface: #1C2B40;
+  --color-cream: #0F1419;
+  --color-cream-dark: #1A2332;
+  --color-ink: #F5F0E8;
+  --color-ink-light: #D4CCC0;
+  --color-ink-muted: #9A9288;
+  --color-burnt-orange: #E8844F;
+  --color-burnt-orange-light: #F0A070;
+  --color-burnt-orange-dark: #D4622B;
+  --color-navy: #2D4470;
+  --color-navy-light: #3A5590;
+  --color-gold: #D4BA6E;
+  --color-gold-light: #E0CC8A;
+  --color-border: #253040;
+  --color-border-dark: #354A65;
+  --color-background: #0F1419;
+  --color-foreground: #F5F0E8;
+  --color-surface: #182230;
 }
 
 body {

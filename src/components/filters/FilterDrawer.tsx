@@ -46,7 +46,7 @@ export default function FilterDrawer({
         <div className="flex h-full flex-col">
           {/* Drawer Header */}
           <div className="flex items-center justify-between border-b border-border px-4 py-3">
-            <span className="font-display text-lg tracking-wide text-navy uppercase">
+            <span className="font-display text-lg tracking-wide text-navy dark:text-gold uppercase">
               Filters
               {activeCount > 0 && (
                 <span className="ml-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-burnt-orange text-[10px] font-bold text-white">

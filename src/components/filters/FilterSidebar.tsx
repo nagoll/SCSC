@@ -120,7 +120,7 @@ export default function FilterSidebar({
     <div className="space-y-1">
       {/* Header */}
       <div className="flex items-center justify-between pb-2">
-        <h3 className="font-display text-lg tracking-wide text-navy uppercase">
+        <h3 className="font-display text-lg tracking-wide text-navy dark:text-gold uppercase">
           Filters
         </h3>
         {!isFiltersEmpty(filters) && (

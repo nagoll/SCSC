@@ -38,11 +38,11 @@ export default function EventDetail({
       <div className="fixed inset-0 z-40 bg-ink/30 backdrop-blur-sm" onClick={onClose} />
 
       {/* Panel */}
-      <div className="fixed inset-y-0 right-0 z-50 w-full max-w-lg overflow-y-auto bg-cream shadow-xl sm:w-[480px]">
+      <div className="fixed inset-y-0 right-0 z-50 w-full max-w-lg overflow-y-auto bg-cream shadow-xl dark:shadow-2xl dark:shadow-black/30 sm:w-[480px]">
         <div className="flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-border px-6 py-4">
-            <h2 className="font-display text-xl tracking-wide text-navy uppercase">
+            <h2 className="font-display text-xl tracking-wide text-navy dark:text-gold uppercase">
               Event Details
             </h2>
             <button
@@ -63,7 +63,7 @@ export default function EventDetail({
               <span className="text-sm font-medium text-ink-muted">{SPORT_LABELS[event.sport]}</span>
               <LevelBadge level={event.level} />
               {event.gender === 'womens' && (
-                <span className="rounded bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700">
+                <span className="rounded bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
                   Women&apos;s
                 </span>
               )}
@@ -98,7 +98,7 @@ export default function EventDetail({
             </div>
 
             {/* Date + Time */}
-            <div className="mt-6 rounded-lg border border-border bg-white p-4">
+            <div className="mt-6 rounded-lg border border-border bg-surface p-4">
               <div className="flex items-center gap-3">
                 <svg className="h-5 w-5 text-ink-muted" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -114,7 +114,7 @@ export default function EventDetail({
             </div>
 
             {/* Venue */}
-            <div className="mt-3 rounded-lg border border-border bg-white p-4">
+            <div className="mt-3 rounded-lg border border-border bg-surface p-4">
               <div className="flex items-start gap-3">
                 <svg className="mt-0.5 h-5 w-5 text-ink-muted" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -132,7 +132,7 @@ export default function EventDetail({
                       </span>
                     )}
                     {event.venueConfidence === 'unverified' && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">
                         <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                         </svg>
@@ -146,7 +146,7 @@ export default function EventDetail({
                     {venue.capacity && ` · Capacity: ${venue.capacity.toLocaleString()}`}
                   </div>
                   {event.isNeutralSite && (
-                    <div className="mt-1 text-xs font-medium text-navy">
+                    <div className="mt-1 text-xs font-medium text-navy dark:text-gold">
                       Neutral Site Event
                     </div>
                   )}
@@ -170,7 +170,7 @@ export default function EventDetail({
             </div>
 
             {/* Price + Tickets */}
-            <div className="mt-3 rounded-lg border border-border bg-white p-4">
+            <div className="mt-3 rounded-lg border border-border bg-surface p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-sm text-ink-muted">Admission</span>

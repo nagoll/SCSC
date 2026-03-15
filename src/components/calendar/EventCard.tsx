@@ -61,7 +61,7 @@ export default function EventCard({
             </span>
             <LevelBadge level={event.level} size="sm" />
             {event.gender === 'womens' && (
-              <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[10px] font-medium text-pink-700">
+              <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[10px] font-medium text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
                 Women&apos;s
               </span>
             )}
@@ -94,7 +94,7 @@ export default function EventCard({
               </span>
             )}
             {event.venueConfidence === 'unverified' && (
-              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700" title="Venue not independently confirmed">
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 dark:bg-amber-900/40 dark:text-amber-300" title="Venue not independently confirmed">
                 Unverified
               </span>
             )}
