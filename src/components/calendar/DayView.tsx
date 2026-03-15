@@ -36,7 +36,7 @@ export default function DayView({ date, events, teams, venues, onEventClick }: D
       </div>
 
       {dayEvents.length === 0 ? (
-        <div className="rounded-lg border border-border bg-white p-12 text-center">
+        <div className="rounded-lg border border-border bg-surface p-12 text-center">
           <p className="text-ink-muted">No events scheduled for this day.</p>
           <p className="mt-1 text-sm text-ink-muted">
             Try adjusting your filters or selecting a different date.

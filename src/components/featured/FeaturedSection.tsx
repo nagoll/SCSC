@@ -29,7 +29,7 @@ export default function FeaturedSection({
       {/* Games of the Week */}
       {gamesOfWeek.length > 0 && (
         <div>
-          <h3 className="font-display text-xl tracking-wide text-navy uppercase">
+          <h3 className="font-display text-xl tracking-wide text-navy dark:text-gold uppercase">
             Games of the Week
           </h3>
           <p className="mt-1 text-sm text-ink-muted">
@@ -46,7 +46,7 @@ export default function FeaturedSection({
                 <button
                   key={item.id}
                   onClick={() => item.eventId && onEventClick(item.eventId)}
-                  className="group rounded-lg border border-border bg-white p-5 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
+                  className="group rounded-lg border border-border bg-surface p-5 text-left transition-all hover:border-burnt-orange/30 hover:shadow-md"
                 >
                   {event && (
                     <div className="mb-3 flex items-center gap-2">
@@ -71,7 +71,7 @@ export default function FeaturedSection({
                     </div>
                   )}
                   {away && home && (
-                    <div className="mt-2 text-xs font-medium text-navy">
+                    <div className="mt-2 text-xs font-medium text-navy dark:text-gold">
                       {away.shortName} @ {home.shortName}
                     </div>
                   )}
@@ -85,7 +85,7 @@ export default function FeaturedSection({
       {/* Hidden Gems */}
       {hiddenGems.length > 0 && (
         <div>
-          <h3 className="font-display text-xl tracking-wide text-navy uppercase">
+          <h3 className="font-display text-xl tracking-wide text-navy dark:text-gold uppercase">
             Hidden Gems
           </h3>
           <p className="mt-1 text-sm text-ink-muted">
@@ -100,7 +100,7 @@ export default function FeaturedSection({
                 <button
                   key={item.id}
                   onClick={() => item.eventId && onEventClick(item.eventId)}
-                  className="group rounded-lg border-2 border-dashed border-border bg-white p-5 text-left transition-all hover:border-live-green/40 hover:shadow-md"
+                  className="group rounded-lg border-2 border-dashed border-border bg-surface p-5 text-left transition-all hover:border-live-green/40 hover:shadow-md"
                 >
                   <div className="flex items-center gap-2">
                     <span className="rounded bg-live-green/10 px-2 py-0.5 text-[10px] font-semibold text-live-green uppercase tracking-wider">

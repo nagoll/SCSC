@@ -11,6 +11,7 @@
  */
 
 const { normalizeEvent, inferGender } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 const JUCO_SCHOOLS = [
   {
@@ -203,6 +204,18 @@ async function parseSidearmJuco(html, school, start, end) {
         const sportRaw = item.sport?.name || item.sportName || 'other';
         const opponent = item.opponent?.name || item.opponentName || 'Opponent';
 
+        // Extract venue from source data
+        const scrapedVenueName = item.venue?.name || item.venueName || item.location?.name || null;
+        const verification = verifyVenue({
+          scrapedVenueName,
+          defaultVenueId: school.defaultVenueId,
+        });
+
+        if (verification.excluded) {
+          console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+          continue;
+        }
+
         events.push(normalizeEvent({
           homeTeamId: school.scscTeamId,
           awayTeamId: null,
@@ -211,7 +224,10 @@ async function parseSidearmJuco(html, school, start, end) {
           gender: inferGender(sportRaw, item.gender),
           dateTime: gameDate.toISOString(),
           endTime: null,
-          venueId: school.defaultVenueId,
+          venueId: verification.venueId,
+          venueSourceName: verification.venueSourceName,
+          venueConfidence: verification.venueConfidence,
+          isNeutralSite: verification.isNeutralSite,
           eventName: `${opponent} at ${school.name}`,
           ticketUrl: null,
           price: school.price,
@@ -239,6 +255,20 @@ async function parseSidearmJuco(html, school, start, end) {
     const sportMatch = block.match(/data-sport="([^"]+)"/);
     const sportRaw = sportMatch ? sportMatch[1] : 'other';
 
+    // Try to extract venue from HTML
+    const venueMatch = block.match(/class="[^"]*(?:venue|location|facility)[^"]*"[^>]*>([^<]+)/);
+    const scrapedVenueName = venueMatch ? venueMatch[1].trim() : null;
+
+    const verification = verifyVenue({
+      scrapedVenueName,
+      defaultVenueId: school.defaultVenueId,
+    });
+
+    if (verification.excluded) {
+      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+      continue;
+    }
+
     events.push(normalizeEvent({
       homeTeamId: school.scscTeamId,
       awayTeamId: null,
@@ -247,7 +277,10 @@ async function parseSidearmJuco(html, school, start, end) {
       gender: inferGender(sportRaw, null),
       dateTime: gameDate.toISOString(),
       endTime: null,
-      venueId: school.defaultVenueId,
+      venueId: verification.venueId,
+      venueSourceName: verification.venueSourceName,
+      venueConfidence: verification.venueConfidence,
+      isNeutralSite: verification.isNeutralSite,
       eventName: `${opponent} at ${school.name}`,
       ticketUrl: null,
       price: school.price,
@@ -281,6 +314,22 @@ async function parseGenericJuco(html, school, start, end) {
         const awayOrg = item.awayTeam?.name || item.competitor?.name || 'Opponent';
         const sportRaw = item.sport || 'other';
 
+        // Extract venue from JSON-LD structured data
+        const scrapedVenueName = item.location?.name || null;
+        const venueCity = item.location?.address?.addressLocality || null;
+        const venueState = item.location?.address?.addressRegion || null;
+        const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
+
+        const verification = verifyVenue({
+          scrapedVenueName: fullVenueName || scrapedVenueName,
+          defaultVenueId: school.defaultVenueId,
+        });
+
+        if (verification.excluded) {
+          console.log(`[${school.id}] Excluding event: ${awayOrg} — ${verification.excludeReason}`);
+          continue;
+        }
+
         events.push(normalizeEvent({
           homeTeamId: school.scscTeamId,
           awayTeamId: null,
@@ -289,7 +338,10 @@ async function parseGenericJuco(html, school, start, end) {
           gender: inferGender(sportRaw, null),
           dateTime: gameDate.toISOString(),
           endTime: null,
-          venueId: school.defaultVenueId,
+          venueId: verification.venueId,
+          venueSourceName: verification.venueSourceName,
+          venueConfidence: verification.venueConfidence,
+          isNeutralSite: verification.isNeutralSite,
           eventName: `${awayOrg} at ${school.name}`,
           ticketUrl: null,
           price: school.price,

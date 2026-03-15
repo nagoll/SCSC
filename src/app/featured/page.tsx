@@ -28,7 +28,7 @@ export default function FeaturedPage() {
     <div className="pb-16">
       <section className="border-b border-border px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <h1 className="font-display text-3xl tracking-wide text-navy uppercase sm:text-4xl">
+          <h1 className="font-display text-3xl tracking-wide text-navy dark:text-gold uppercase sm:text-4xl">
             Featured Events
           </h1>
           <p className="mt-2 text-ink-light">

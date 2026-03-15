@@ -106,6 +106,9 @@ function buildEventId(teamId, dateStr, suffix = '') {
  * @param {string} raw.dateTime     - ISO 8601 or parseable date string
  * @param {string|null} [raw.endTime]
  * @param {string} raw.venueId      - canonical venue ID from venues.json
+ * @param {string|null} [raw.venueSourceName] - raw venue name from source data
+ * @param {string} [raw.venueConfidence] - 'verified' | 'likely' | 'unverified'
+ * @param {boolean} [raw.isNeutralSite] - whether this is a neutral site event
  * @param {string|null} [raw.eventName]
  * @param {string|null} [raw.ticketUrl]
  * @param {number|string|null} [raw.price]
@@ -132,6 +135,9 @@ function normalizeEvent(raw) {
     dateTime,
     endTime,
     venue: raw.venueId,
+    venueSourceName: raw.venueSourceName || null,
+    venueConfidence: raw.venueConfidence || 'unverified',
+    isNeutralSite: raw.isNeutralSite || false,
     ticketUrl: raw.ticketUrl || null,
     price: normalizePrice(raw.price),
     conference: raw.conference || null,

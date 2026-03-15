@@ -61,7 +61,7 @@ export default function EventCard({
             </span>
             <LevelBadge level={event.level} size="sm" />
             {event.gender === 'womens' && (
-              <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[10px] font-medium text-pink-700">
+              <span className="rounded bg-pink-100 px-1.5 py-0.5 text-[10px] font-medium text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
                 Women&apos;s
               </span>
             )}
@@ -88,6 +88,16 @@ export default function EventCard({
             <TimeBadge timeOfDay={getTimeOfDay(event.dateTime)} />
             <span className="text-ink-muted">·</span>
             <span className="text-ink-muted">{venue.name}</span>
+            {event.venueConfidence === 'verified' && (
+              <span className="rounded bg-live-green/10 px-1.5 py-0.5 text-[10px] font-medium text-live-green" title="Venue confirmed by multiple sources">
+                Verified
+              </span>
+            )}
+            {event.venueConfidence === 'unverified' && (
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700 dark:bg-amber-900/40 dark:text-amber-300" title="Venue not independently confirmed">
+                Unverified
+              </span>
+            )}
           </div>
         </div>
 

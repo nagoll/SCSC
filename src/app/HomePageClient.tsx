@@ -92,7 +92,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="border-b border-border bg-cream px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <h1 className="font-display text-3xl tracking-wide text-navy uppercase sm:text-4xl lg:text-5xl">
+          <h1 className="font-display text-3xl tracking-wide text-navy dark:text-gold uppercase sm:text-4xl lg:text-5xl">
             Southern California Sports Calendar
           </h1>
           <p className="mt-2 max-w-2xl text-ink-light">
@@ -107,7 +107,7 @@ export default function HomePage() {
               <span className="ml-2 text-sm text-ink-muted">events today</span>
             </div>
             <div className="rounded-lg border border-border bg-surface px-4 py-2">
-              <span className="text-2xl font-bold text-navy">{allEvents.length}</span>
+              <span className="text-2xl font-bold text-navy dark:text-gold">{allEvents.length}</span>
               <span className="ml-2 text-sm text-ink-muted">total events</span>
             </div>
             <div className="rounded-lg border border-border bg-surface px-4 py-2">
@@ -127,7 +127,7 @@ export default function HomePage() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-live-green opacity-75" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-live-green" />
               </span>
-              <h2 className="font-display text-xl tracking-wide text-navy uppercase">
+              <h2 className="font-display text-xl tracking-wide text-navy dark:text-gold uppercase">
                 Today in LA Sports
               </h2>
               <span className="text-sm text-ink-muted">

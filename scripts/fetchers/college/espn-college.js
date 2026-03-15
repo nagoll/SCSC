@@ -9,6 +9,7 @@
  */
 
 const { normalizeEvent } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 const ESPN_COLLEGE_TEAMS = [
   {
@@ -104,6 +105,28 @@ async function fetchESPNCollegeTeam(config, startDate, endDate) {
 
     const sportRaw = config.espnLeague.includes('women') ? `womens-${config.espnSport}` : `mens-${config.espnSport}`;
 
+    // Extract actual venue data from ESPN API (instead of ignoring it)
+    const espnVenue = competition.venue;
+    const espnVenueName = espnVenue?.fullName || espnVenue?.shortName || null;
+    const espnVenueCity = espnVenue?.address?.city || null;
+    const espnVenueState = espnVenue?.address?.state || null;
+    const isNeutralSiteFlag = competition.neutralSite === true;
+
+    // Run venue verification against ESPN data
+    const verification = verifyVenue({
+      espnVenueName,
+      espnVenueCity,
+      espnVenueState,
+      defaultVenueId: config.defaultVenueId,
+      isNeutralSiteFlag,
+    });
+
+    // Skip events confirmed to be outside LA County
+    if (verification.excluded) {
+      console.log(`[espn-college] Excluding ${config.name} event: ${awayName} — ${verification.excludeReason}`);
+      continue;
+    }
+
     events.push(
       normalizeEvent({
         homeTeamId: config.scscTeamId,
@@ -112,7 +135,10 @@ async function fetchESPNCollegeTeam(config, startDate, endDate) {
         level: 'college',
         dateTime: event.date,
         endTime: null,
-        venueId: competition.venue?.id ? `espn-venue-${competition.venue.id}` : config.defaultVenueId,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at ${config.name}`,
         ticketUrl: event.links?.[0]?.href || null,
         price: config.price,

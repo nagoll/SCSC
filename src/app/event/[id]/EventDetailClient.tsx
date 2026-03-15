@@ -45,20 +45,20 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
           <span className="font-medium text-ink-muted">{SPORT_LABELS[event.sport]}</span>
           <LevelBadge level={event.level} />
           {event.gender === 'womens' && (
-            <span className="rounded bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700">
+            <span className="rounded bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700 dark:bg-pink-900/40 dark:text-pink-300">
               Women&apos;s
             </span>
           )}
         </div>
 
         {/* Title */}
-        <h1 className="mt-4 font-display text-3xl tracking-wide text-navy uppercase sm:text-4xl">
+        <h1 className="mt-4 font-display text-3xl tracking-wide text-navy dark:text-gold uppercase sm:text-4xl">
           {title}
         </h1>
 
         {/* Matchup */}
         {awayTeam && (
-          <div className="mt-6 flex items-center gap-4 rounded-lg border border-border bg-white p-6">
+          <div className="mt-6 flex items-center gap-4 rounded-lg border border-border bg-surface p-6">
             <div className="flex-1 text-right">
               <div className="text-2xl font-bold text-ink">{awayTeam.name}</div>
               <div className="text-sm text-ink-muted">{awayTeam.conference}</div>
@@ -74,7 +74,7 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
         )}
 
         {/* Date + Time */}
-        <div className="mt-6 rounded-lg border border-border bg-white p-5">
+        <div className="mt-6 rounded-lg border border-border bg-surface p-5">
           <div className="flex items-center gap-3">
             <svg className="h-6 w-6 text-ink-muted" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -90,7 +90,7 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
         </div>
 
         {/* Venue */}
-        <div className="mt-3 rounded-lg border border-border bg-white p-5">
+        <div className="mt-3 rounded-lg border border-border bg-surface p-5">
           <div className="flex items-start gap-3">
             <svg className="mt-0.5 h-6 w-6 text-ink-muted" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -122,7 +122,7 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
         </div>
 
         {/* Price + Tickets */}
-        <div className="mt-3 rounded-lg border border-border bg-white p-5">
+        <div className="mt-3 rounded-lg border border-border bg-surface p-5">
           <div className="flex items-center justify-between">
             <div>
               <span className="text-sm text-ink-muted">Admission</span>

@@ -54,7 +54,7 @@ export default function AddToCalendar({
       </button>
 
       {showOptions && (
-        <div className="absolute left-0 right-0 z-10 mt-1 overflow-hidden rounded-md border border-border bg-white shadow-lg">
+        <div className="absolute left-0 right-0 z-10 mt-1 overflow-hidden rounded-md border border-border bg-surface shadow-lg">
           <button
             onClick={handleGoogleCalendar}
             className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-ink hover:bg-cream-dark"

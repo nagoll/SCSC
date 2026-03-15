@@ -4,6 +4,7 @@
  */
 
 const { normalizeEvent } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 const TEAM_ABBREV = 'LAK';
 const VENUE_ID = 'crypto-arena';
@@ -29,6 +30,19 @@ async function fetchNHL(startDate, endDate) {
     const awayName = game.awayTeam?.commonName?.default || awayAbbrev;
     const gameTime = game.startTimeUTC;
 
+    // Extract venue data from NHL API
+    const nhlVenueName = game.venue?.default || null;
+
+    const verification = verifyVenue({
+      espnVenueName: nhlVenueName,
+      defaultVenueId: VENUE_ID,
+    });
+
+    if (verification.excluded) {
+      console.log(`[nhl] Excluding Kings event: ${awayName} — ${verification.excludeReason}`);
+      continue;
+    }
+
     events.push(
       normalizeEvent({
         homeTeamId: TEAM_SCSC_ID,
@@ -38,7 +52,10 @@ async function fetchNHL(startDate, endDate) {
         gender: 'mens',
         dateTime: gameTime,
         endTime: null,
-        venueId: VENUE_ID,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at Kings`,
         ticketUrl: 'https://www.nhl.com/kings/tickets',
         price: 'under_50',

@@ -5,7 +5,7 @@ export default function NewsletterPage() {
     <div className="pb-16">
       <section className="border-b border-border px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <h1 className="font-display text-3xl tracking-wide text-navy uppercase sm:text-4xl">
+          <h1 className="font-display text-3xl tracking-wide text-navy dark:text-gold uppercase sm:text-4xl">
             Newsletter
           </h1>
           <p className="mt-2 text-ink-light">
@@ -19,7 +19,7 @@ export default function NewsletterPage() {
           <SignupBanner />
 
           <div className="mt-12 space-y-6">
-            <div className="rounded-lg border border-border bg-white p-6">
+            <div className="rounded-lg border border-border bg-surface p-6">
               <h3 className="font-semibold text-ink">What you&apos;ll get</h3>
               <ul className="mt-3 space-y-2 text-sm text-ink-light">
                 <li className="flex items-start gap-2">
@@ -41,7 +41,7 @@ export default function NewsletterPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-border bg-white p-6">
+            <div className="rounded-lg border border-border bg-surface p-6">
               <h3 className="font-semibold text-ink">Our promise</h3>
               <p className="mt-2 text-sm text-ink-light">
                 One email per week. No spam. Just sports. Unsubscribe anytime with one click.

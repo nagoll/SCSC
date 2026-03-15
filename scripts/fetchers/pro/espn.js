@@ -7,6 +7,7 @@
  */
 
 const { normalizeEvent } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 // ESPN team configs: [espnSport, espnLeague, espnTeamId, scscTeamId, venueId, league, sport, gender, price, ticketUrl]
 const ESPN_TEAMS = [
@@ -138,6 +139,26 @@ async function fetchESPNTeam(teamConfig, startDate, endDate) {
     const awayComp = competition.competitors?.find(c => c.homeAway === 'away');
     const awayName = awayComp?.team?.displayName || 'Visitor';
 
+    // Extract actual venue data from ESPN API
+    const espnVenue = competition.venue;
+    const espnVenueName = espnVenue?.fullName || espnVenue?.shortName || null;
+    const espnVenueCity = espnVenue?.address?.city || null;
+    const espnVenueState = espnVenue?.address?.state || null;
+    const isNeutralSiteFlag = competition.neutralSite === true;
+
+    const verification = verifyVenue({
+      espnVenueName,
+      espnVenueCity,
+      espnVenueState,
+      defaultVenueId: venueId,
+      isNeutralSiteFlag,
+    });
+
+    if (verification.excluded) {
+      console.log(`[espn-pro] Excluding ${scscTeamId} event: ${awayName} — ${verification.excludeReason}`);
+      continue;
+    }
+
     events.push(
       normalizeEvent({
         homeTeamId: scscTeamId,
@@ -147,7 +168,10 @@ async function fetchESPNTeam(teamConfig, startDate, endDate) {
         gender,
         dateTime: event.date,
         endTime: null,
-        venueId,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at ${data.team?.displayName || scscTeamId}`,
         ticketUrl,
         price,

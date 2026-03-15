@@ -64,6 +64,8 @@ export interface Venue {
   transitInfo: string | null;
 }
 
+export type VenueConfidence = 'verified' | 'likely' | 'unverified';
+
 export interface SportEvent {
   id: string;
   sport: Sport;
@@ -75,6 +77,9 @@ export interface SportEvent {
   dateTime: string; // ISO 8601
   endTime: string | null;
   venue: string; // venue ID
+  venueSourceName: string | null; // raw venue name from source (for verification)
+  venueConfidence: VenueConfidence; // how confident we are in the venue assignment
+  isNeutralSite: boolean; // true if event is at a neutral location (not home venue)
   ticketUrl: string | null;
   price: PriceRange;
   conference: string | null;

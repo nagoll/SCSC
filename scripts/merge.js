@@ -50,6 +50,11 @@ function detectDiscrepancies(existing, incoming) {
       diffs.push(`${field}: "${existing[field]}" → "${incoming[field]}"`);
     }
   }
+  // Flag venue confidence disagreements
+  if (existing.venueConfidence && incoming.venueConfidence &&
+      existing.venueConfidence !== incoming.venueConfidence) {
+    diffs.push(`venueConfidence: "${existing.venueConfidence}" → "${incoming.venueConfidence}"`);
+  }
   return diffs;
 }
 
@@ -112,12 +117,42 @@ function mergeEvents(newEvents) {
 
     if (incomingPrecedence >= currentPrecedence) {
       // Preserve isFeatured flag from existing entry
-      existingMap.set(incoming.id, {
+      // When merging, pick the best venue confidence between the two sources
+      const confidenceRank = { verified: 3, likely: 2, unverified: 1 };
+      const currentConfRank = confidenceRank[current.venueConfidence] || 0;
+      const incomingConfRank = confidenceRank[incoming.venueConfidence] || 0;
+
+      const mergedEvent = {
         ...incoming,
         isFeatured: current.isFeatured,
-      });
+      };
+
+      // If the existing entry had higher venue confidence, preserve that venue data
+      if (currentConfRank > incomingConfRank && current.venue === incoming.venue) {
+        mergedEvent.venueConfidence = current.venueConfidence;
+        mergedEvent.venueSourceName = current.venueSourceName || incoming.venueSourceName;
+      }
+
+      // If both sources provide venue data and agree → upgrade to verified
+      if (current.venue === incoming.venue &&
+          current.source !== incoming.source &&
+          current.venueSourceName && incoming.venueSourceName) {
+        mergedEvent.venueConfidence = 'verified';
+      }
+
+      existingMap.set(incoming.id, mergedEvent);
       updated++;
     } else {
+      // Even if we skip the update, we can still upgrade venue confidence
+      // if the incoming source confirms the same venue
+      if (incoming.venue === current.venue &&
+          incoming.source !== current.source &&
+          incoming.venueSourceName && current.venueSourceName) {
+        existingMap.set(current.id, {
+          ...current,
+          venueConfidence: 'verified',
+        });
+      }
       skipped++;
     }
   }

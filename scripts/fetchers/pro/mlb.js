@@ -4,6 +4,7 @@
  */
 
 const { normalizeEvent } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 const TEAM_ID = 119; // Dodgers
 const VENUE_ID = 'dodger-stadium';
@@ -32,6 +33,24 @@ async function fetchMLB(startDate, endDate) {
       const awayTeamName = game.teams?.away?.team?.name || 'Visiting Team';
       const gameTime = game.gameDate; // ISO 8601
 
+      // Extract actual venue data from MLB API (hydrated via &hydrate=venue)
+      const mlbVenue = game.venue;
+      const mlbVenueName = mlbVenue?.name || null;
+      const mlbVenueCity = mlbVenue?.location?.city || null;
+      const mlbVenueState = mlbVenue?.location?.stateAbbrev || null;
+
+      const verification = verifyVenue({
+        espnVenueName: mlbVenueName,
+        espnVenueCity: mlbVenueCity,
+        espnVenueState: mlbVenueState,
+        defaultVenueId: VENUE_ID,
+      });
+
+      if (verification.excluded) {
+        console.log(`[mlb] Excluding Dodgers event: ${awayTeamName} — ${verification.excludeReason}`);
+        continue;
+      }
+
       events.push(
         normalizeEvent({
           homeTeamId: TEAM_SCSC_ID,
@@ -41,7 +60,10 @@ async function fetchMLB(startDate, endDate) {
           gender: 'mens',
           dateTime: gameTime,
           endTime: null,
-          venueId: VENUE_ID,
+          venueId: verification.venueId,
+          venueSourceName: verification.venueSourceName,
+          venueConfidence: verification.venueConfidence,
+          isNeutralSite: verification.isNeutralSite,
           eventName: `${awayTeamName} at Dodgers`,
           ticketUrl: 'https://www.mlb.com/dodgers/tickets',
           price: 'under_50',
