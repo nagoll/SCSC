@@ -120,13 +120,36 @@ export default function EventDetail({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
-                <div>
-                  <div className="font-semibold text-ink">{venue.name}</div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-ink">{venue.name}</span>
+                    {event.venueConfidence === 'verified' && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-live-green/10 px-2 py-0.5 text-[11px] font-medium text-live-green">
+                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Verified
+                      </span>
+                    )}
+                    {event.venueConfidence === 'unverified' && (
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700">
+                        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                        </svg>
+                        Unverified
+                      </span>
+                    )}
+                  </div>
                   <div className="text-sm text-ink-light">{venue.address}</div>
                   <div className="mt-1 text-xs text-ink-muted">
                     {AREA_LABELS[venue.neighborhood]}
                     {venue.capacity && ` · Capacity: ${venue.capacity.toLocaleString()}`}
                   </div>
+                  {event.isNeutralSite && (
+                    <div className="mt-1 text-xs font-medium text-navy">
+                      Neutral Site Event
+                    </div>
+                  )}
                 </div>
               </div>
 

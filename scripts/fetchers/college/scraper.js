@@ -10,6 +10,7 @@
  */
 
 const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
+const { verifyVenue } = require('../../venue-verify');
 
 /**
  * School configs — composite schedule URLs and metadata.
@@ -205,8 +206,27 @@ function parseSidearmItem(item, school, start, end) {
     const isHome = item.homeAway === 'home' || item.location === 'home' || !item.isAway;
     if (!isHome) return null;
 
-    const venue = item.venue?.name || item.venueName || school.defaultVenueId;
-    const venueId = slugify(venue) || school.defaultVenueId;
+    // Extract the actual venue name from source data (don't just default)
+    const scrapedVenueName = item.venue?.name || item.venueName || item.location?.name || null;
+    const isNeutralSiteFlag = item.neutralSite === true || item.isNeutral === true;
+
+    // Extract location details if available
+    const venueCity = item.venue?.city || item.location?.city || null;
+    const venueState = item.venue?.state || item.location?.state || null;
+    const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
+
+    // Run venue verification
+    const verification = verifyVenue({
+      scrapedVenueName: fullVenueName || scrapedVenueName,
+      defaultVenueId: school.defaultVenueId,
+      isNeutralSiteFlag,
+    });
+
+    // Skip events that are confirmed out of LA County
+    if (verification.excluded) {
+      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+      return null;
+    }
 
     return normalizeEvent({
       homeTeamId: school.scscTeamId,
@@ -216,7 +236,10 @@ function parseSidearmItem(item, school, start, end) {
       gender: inferGender(sportRaw, item.gender),
       dateTime: gameDate.toISOString(),
       endTime: null,
-      venueId,
+      venueId: verification.venueId,
+      venueSourceName: verification.venueSourceName,
+      venueConfidence: verification.venueConfidence,
+      isNeutralSite: verification.isNeutralSite,
       eventName: `${opponent} at ${school.name}`,
       ticketUrl: item.ticketUrl || school.ticketUrl || null,
       price: school.price,
@@ -249,6 +272,21 @@ function parseSidearmBlock(block, school, start, end) {
     const sportMatch = block.match(/data-sport="([^"]+)"/);
     const sportRaw = sportMatch ? sportMatch[1] : 'other';
 
+    // Try to extract venue from HTML block
+    const venueMatch = block.match(/class="[^"]*(?:venue|location|facility)[^"]*"[^>]*>([^<]+)/);
+    const scrapedVenueName = venueMatch ? venueMatch[1].trim() : null;
+
+    // Run venue verification
+    const verification = verifyVenue({
+      scrapedVenueName,
+      defaultVenueId: school.defaultVenueId,
+    });
+
+    if (verification.excluded) {
+      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+      return null;
+    }
+
     return normalizeEvent({
       homeTeamId: school.scscTeamId,
       awayTeamId: null,
@@ -257,7 +295,10 @@ function parseSidearmBlock(block, school, start, end) {
       gender: inferGender(sportRaw, null),
       dateTime: gameDate.toISOString(),
       endTime: null,
-      venueId: school.defaultVenueId,
+      venueId: verification.venueId,
+      venueSourceName: verification.venueSourceName,
+      venueConfidence: verification.venueConfidence,
+      isNeutralSite: verification.isNeutralSite,
       eventName: `${opponent} at ${school.name}`,
       ticketUrl: school.ticketUrl || null,
       price: school.price,
@@ -291,9 +332,24 @@ async function parsePresto(html, school, startDate, endDate) {
         const gameDate = new Date(item.startDate);
         if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
 
-        const location = item.location?.name || school.defaultVenueId;
         const awayOrg = item.awayTeam?.name || item.competitor?.name || 'Opponent';
         const sportRaw = item.sport || 'other';
+
+        // Extract venue details from structured data
+        const scrapedVenueName = item.location?.name || null;
+        const venueCity = item.location?.address?.addressLocality || null;
+        const venueState = item.location?.address?.addressRegion || null;
+        const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
+
+        const verification = verifyVenue({
+          scrapedVenueName: fullVenueName || scrapedVenueName,
+          defaultVenueId: school.defaultVenueId,
+        });
+
+        if (verification.excluded) {
+          console.log(`[${school.id}] Excluding event: ${awayOrg} — ${verification.excludeReason}`);
+          continue;
+        }
 
         events.push(normalizeEvent({
           homeTeamId: school.scscTeamId,
@@ -303,7 +359,10 @@ async function parsePresto(html, school, startDate, endDate) {
           gender: inferGender(sportRaw, null),
           dateTime: gameDate.toISOString(),
           endTime: item.endDate ? new Date(item.endDate).toISOString() : null,
-          venueId: slugify(location) || school.defaultVenueId,
+          venueId: verification.venueId,
+          venueSourceName: verification.venueSourceName,
+          venueConfidence: verification.venueConfidence,
+          isNeutralSite: verification.isNeutralSite,
           eventName: `${awayOrg} at ${school.name}`,
           ticketUrl: item.url || school.ticketUrl || null,
           price: school.price,

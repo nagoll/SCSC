@@ -88,6 +88,16 @@ export default function EventCard({
             <TimeBadge timeOfDay={getTimeOfDay(event.dateTime)} />
             <span className="text-ink-muted">·</span>
             <span className="text-ink-muted">{venue.name}</span>
+            {event.venueConfidence === 'verified' && (
+              <span className="rounded bg-live-green/10 px-1.5 py-0.5 text-[10px] font-medium text-live-green" title="Venue confirmed by multiple sources">
+                Verified
+              </span>
+            )}
+            {event.venueConfidence === 'unverified' && (
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-700" title="Venue not independently confirmed">
+                Unverified
+              </span>
+            )}
           </div>
         </div>
 
