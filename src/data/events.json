@@ -2329,7 +2329,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.114Z"
+    "lastUpdated": "2026-03-31T15:02:53.288Z"
   },
   {
     "id": "la-dodgers-20260331",
@@ -2364,7 +2364,7 @@
     "dateTime": "2026-04-01T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2373,7 +2373,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.096Z"
+    "lastUpdated": "2026-03-31T15:02:53.176Z"
   },
   {
     "id": "la-lakers-20260401",
@@ -2395,7 +2395,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.115Z"
+    "lastUpdated": "2026-03-31T15:02:53.288Z"
   },
   {
     "id": "la-clippers-20260401",
@@ -2417,7 +2417,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.084Z"
+    "lastUpdated": "2026-03-31T15:02:53.487Z"
   },
   {
     "id": "la-dodgers-20260402",
@@ -2430,7 +2430,7 @@
     "dateTime": "2026-04-02T00:20:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2439,7 +2439,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.096Z"
+    "lastUpdated": "2026-03-31T15:02:53.176Z"
   },
   {
     "id": "la-kings-20260402",
@@ -2461,7 +2461,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.354Z"
+    "lastUpdated": "2026-03-31T15:02:54.777Z"
   },
   {
     "id": "la-kings-20260403",
@@ -2483,7 +2483,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.354Z"
+    "lastUpdated": "2026-03-31T15:02:54.777Z"
   },
   {
     "id": "la-clippers-20260403",
@@ -2505,7 +2505,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.084Z"
+    "lastUpdated": "2026-03-31T15:02:53.487Z"
   },
   {
     "id": "pomona-pitzer-waterpolo-20260404",
@@ -2571,7 +2571,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.354Z"
+    "lastUpdated": "2026-03-31T15:02:54.777Z"
   },
   {
     "id": "calstate-la-softball-20260405",
@@ -2615,7 +2615,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.354Z"
+    "lastUpdated": "2026-03-31T15:02:54.777Z"
   },
   {
     "id": "la-lakers-20260408",
@@ -2637,7 +2637,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.115Z"
+    "lastUpdated": "2026-03-31T15:02:53.288Z"
   },
   {
     "id": "la-clippers-20260408",
@@ -2659,7 +2659,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.084Z"
+    "lastUpdated": "2026-03-31T15:02:53.487Z"
   },
   {
     "id": "la-clippers-20260409",
@@ -2681,7 +2681,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.084Z"
+    "lastUpdated": "2026-03-31T15:02:53.487Z"
   },
   {
     "id": "la-kings-20260410",
@@ -2703,7 +2703,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.354Z"
+    "lastUpdated": "2026-03-31T15:02:54.778Z"
   },
   {
     "id": "la-dodgers-20260411",
@@ -2716,7 +2716,7 @@
     "dateTime": "2026-04-11T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2725,7 +2725,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.096Z"
+    "lastUpdated": "2026-03-31T15:02:53.176Z"
   },
   {
     "id": "la-lakers-20260411",
@@ -2747,7 +2747,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.115Z"
+    "lastUpdated": "2026-03-31T15:02:53.288Z"
   },
   {
     "id": "occidental-track-20260411",
@@ -2791,7 +2791,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-03-26T15:05:15.355Z"
+    "lastUpdated": "2026-03-31T15:02:54.778Z"
   },
   {
     "id": "la-dodgers-20260412",
@@ -2804,7 +2804,7 @@
     "dateTime": "2026-04-12T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2813,7 +2813,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.096Z"
+    "lastUpdated": "2026-03-31T15:02:53.177Z"
   },
   {
     "id": "la-lakers-20260413",
@@ -2835,7 +2835,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.115Z"
+    "lastUpdated": "2026-03-31T15:02:53.288Z"
   },
   {
     "id": "la-clippers-20260413",
@@ -2857,7 +2857,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-03-26T15:05:14.085Z"
+    "lastUpdated": "2026-03-31T15:02:53.487Z"
   },
   {
     "id": "la-dodgers-20260414",
@@ -2870,7 +2870,7 @@
     "dateTime": "2026-04-14T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2879,7 +2879,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.097Z"
+    "lastUpdated": "2026-03-31T15:02:53.177Z"
   },
   {
     "id": "la-dodgers-20260415",
@@ -2892,7 +2892,7 @@
     "dateTime": "2026-04-15T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2901,7 +2901,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.097Z"
+    "lastUpdated": "2026-03-31T15:02:53.177Z"
   },
   {
     "id": "la-dodgers-20260416",
@@ -2914,7 +2914,7 @@
     "dateTime": "2026-04-16T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2923,7 +2923,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.097Z"
+    "lastUpdated": "2026-03-31T15:02:53.177Z"
   },
   {
     "id": "la-dodgers-20260425",
@@ -2936,7 +2936,7 @@
     "dateTime": "2026-04-25T23:15:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2945,7 +2945,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.097Z"
+    "lastUpdated": "2026-03-31T15:02:53.177Z"
   },
   {
     "id": "la-dodgers-20260426",
@@ -2958,7 +2958,7 @@
     "dateTime": "2026-04-26T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2967,7 +2967,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.097Z"
+    "lastUpdated": "2026-03-31T15:02:53.178Z"
   },
   {
     "id": "la-dodgers-20260428",
@@ -2980,7 +2980,7 @@
     "dateTime": "2026-04-28T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -2989,7 +2989,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.178Z"
   },
   {
     "id": "la-dodgers-20260429",
@@ -3002,7 +3002,7 @@
     "dateTime": "2026-04-29T19:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3011,7 +3011,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.178Z"
   },
   {
     "id": "la-dodgers-20260509",
@@ -3024,7 +3024,7 @@
     "dateTime": "2026-05-09T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3033,7 +3033,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.178Z"
   },
   {
     "id": "la-dodgers-20260510",
@@ -3046,7 +3046,7 @@
     "dateTime": "2026-05-10T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3055,7 +3055,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.179Z"
   },
   {
     "id": "la-dodgers-20260512",
@@ -3068,7 +3068,7 @@
     "dateTime": "2026-05-12T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3077,7 +3077,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.180Z"
   },
   {
     "id": "la-dodgers-20260513",
@@ -3090,7 +3090,7 @@
     "dateTime": "2026-05-13T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3099,7 +3099,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260514",
@@ -3112,7 +3112,7 @@
     "dateTime": "2026-05-14T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3121,7 +3121,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.098Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260515",
@@ -3134,7 +3134,7 @@
     "dateTime": "2026-05-15T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3143,7 +3143,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260526",
@@ -3156,7 +3156,7 @@
     "dateTime": "2026-05-26T01:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3165,7 +3165,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260527",
@@ -3178,7 +3178,7 @@
     "dateTime": "2026-05-27T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3187,7 +3187,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260528",
@@ -3200,7 +3200,7 @@
     "dateTime": "2026-05-28T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3209,7 +3209,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260530",
@@ -3222,7 +3222,7 @@
     "dateTime": "2026-05-30T02:15:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3231,7 +3231,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.181Z"
   },
   {
     "id": "la-dodgers-20260531",
@@ -3244,7 +3244,7 @@
     "dateTime": "2026-05-31T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3253,7 +3253,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.099Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260606",
@@ -3266,7 +3266,7 @@
     "dateTime": "2026-06-06T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3275,7 +3275,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.100Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260607",
@@ -3288,7 +3288,7 @@
     "dateTime": "2026-06-07T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3297,7 +3297,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.100Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260616",
@@ -3310,7 +3310,7 @@
     "dateTime": "2026-06-16T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3319,7 +3319,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.100Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260617",
@@ -3332,7 +3332,7 @@
     "dateTime": "2026-06-17T19:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3341,7 +3341,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.100Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260620",
@@ -3354,7 +3354,7 @@
     "dateTime": "2026-06-20T02:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3363,7 +3363,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.100Z"
+    "lastUpdated": "2026-03-31T15:02:53.182Z"
   },
   {
     "id": "la-dodgers-20260621",
@@ -3376,7 +3376,7 @@
     "dateTime": "2026-06-21T20:10:00",
     "endTime": null,
     "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO FIELD AT DODGER STADIUM",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -3385,6 +3385,6 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-03-26T15:05:14.101Z"
+    "lastUpdated": "2026-03-31T15:02:53.183Z"
   }
 ]
