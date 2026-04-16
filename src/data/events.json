@@ -2904,6 +2904,28 @@
     "lastUpdated": "2026-04-11T14:36:13.048Z"
   },
   {
+    "id": "la-clippers-20260416",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Golden State Warriors at LA Clippers",
+    "dateTime": "2026-04-16T02:00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api",
+    "lastUpdated": "2026-04-16T15:26:47.024Z"
+  },
+  {
     "id": "la-dodgers-20260416",
     "sport": "baseball",
     "level": "pro",
@@ -2945,7 +2967,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.048Z"
+    "lastUpdated": "2026-04-16T15:26:46.871Z"
   },
   {
     "id": "la-dodgers-20260426",
@@ -2967,7 +2989,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.048Z"
+    "lastUpdated": "2026-04-16T15:26:46.871Z"
   },
   {
     "id": "la-dodgers-20260428",
@@ -2989,7 +3011,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.048Z"
+    "lastUpdated": "2026-04-16T15:26:46.872Z"
   },
   {
     "id": "la-dodgers-20260429",
@@ -3011,7 +3033,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.048Z"
+    "lastUpdated": "2026-04-16T15:26:46.872Z"
   },
   {
     "id": "la-dodgers-20260509",
@@ -3033,7 +3055,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.048Z"
+    "lastUpdated": "2026-04-16T15:26:46.872Z"
   },
   {
     "id": "la-dodgers-20260510",
@@ -3055,7 +3077,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.049Z"
+    "lastUpdated": "2026-04-16T15:26:46.872Z"
   },
   {
     "id": "la-dodgers-20260512",
@@ -3077,7 +3099,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.049Z"
+    "lastUpdated": "2026-04-16T15:26:46.872Z"
   },
   {
     "id": "la-dodgers-20260513",
@@ -3099,7 +3121,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.049Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260514",
@@ -3121,7 +3143,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.049Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260515",
@@ -3143,7 +3165,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260526",
@@ -3165,7 +3187,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260527",
@@ -3187,7 +3209,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260528",
@@ -3209,7 +3231,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.873Z"
   },
   {
     "id": "la-dodgers-20260530",
@@ -3231,7 +3253,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.875Z"
   },
   {
     "id": "la-dodgers-20260531",
@@ -3253,7 +3275,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.875Z"
   },
   {
     "id": "la-dodgers-20260606",
@@ -3275,7 +3297,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.050Z"
+    "lastUpdated": "2026-04-16T15:26:46.875Z"
   },
   {
     "id": "la-dodgers-20260607",
@@ -3297,7 +3319,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.875Z"
   },
   {
     "id": "la-dodgers-20260616",
@@ -3319,7 +3341,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260617",
@@ -3341,7 +3363,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260620",
@@ -3363,7 +3385,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260621",
@@ -3385,7 +3407,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260703",
@@ -3407,7 +3429,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260704",
@@ -3429,7 +3451,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.876Z"
   },
   {
     "id": "la-dodgers-20260705",
@@ -3451,7 +3473,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
   },
   {
     "id": "la-dodgers-20260707",
@@ -3473,7 +3495,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
   },
   {
     "id": "la-dodgers-20260708",
@@ -3495,7 +3517,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
   },
   {
     "id": "la-dodgers-20260709",
@@ -3517,7 +3539,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.051Z"
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
   },
   {
     "id": "la-dodgers-20260711",
@@ -3539,6 +3561,28 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-04-11T14:36:13.052Z"
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
+  },
+  {
+    "id": "la-dodgers-20260712",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Arizona Diamondbacks at Dodgers",
+    "dateTime": "2026-07-12T20:10:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "mlb-api",
+    "lastUpdated": "2026-04-16T15:26:46.877Z"
   }
 ]
