@@ -3187,7 +3187,29 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.832Z"
+    "lastUpdated": "2026-05-06T16:01:19.908Z"
+  },
+  {
+    "id": "la-lakers-20260510",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at Los Angeles Lakers",
+    "dateTime": "2026-05-10T00:30:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api",
+    "lastUpdated": "2026-05-06T16:01:19.872Z"
   },
   {
     "id": "la-dodgers-20260510",
@@ -3209,7 +3231,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.832Z"
+    "lastUpdated": "2026-05-06T16:01:19.908Z"
   },
   {
     "id": "la-dodgers-20260512",
@@ -3231,7 +3253,29 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.832Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
+  },
+  {
+    "id": "la-lakers-20260512",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at Los Angeles Lakers",
+    "dateTime": "2026-05-12T02:30:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api",
+    "lastUpdated": "2026-05-06T16:01:19.872Z"
   },
   {
     "id": "la-dodgers-20260513",
@@ -3253,7 +3297,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.832Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260514",
@@ -3275,7 +3319,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.832Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260515",
@@ -3297,7 +3341,29 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
+  },
+  {
+    "id": "la-lakers-20260516",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at Los Angeles Lakers",
+    "dateTime": "2026-05-16T04:00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api",
+    "lastUpdated": "2026-05-06T16:01:19.872Z"
   },
   {
     "id": "la-dodgers-20260526",
@@ -3319,7 +3385,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260527",
@@ -3341,7 +3407,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260528",
@@ -3363,7 +3429,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260530",
@@ -3385,7 +3451,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.909Z"
   },
   {
     "id": "la-dodgers-20260531",
@@ -3407,7 +3473,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.833Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260606",
@@ -3429,7 +3495,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260607",
@@ -3451,7 +3517,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260616",
@@ -3473,7 +3539,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260617",
@@ -3495,7 +3561,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260620",
@@ -3517,7 +3583,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.910Z"
   },
   {
     "id": "la-dodgers-20260621",
@@ -3539,7 +3605,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260703",
@@ -3561,7 +3627,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260704",
@@ -3583,7 +3649,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.834Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260705",
@@ -3605,7 +3671,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.835Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260707",
@@ -3627,7 +3693,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.835Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260708",
@@ -3649,7 +3715,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.835Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260709",
@@ -3671,7 +3737,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.835Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260711",
@@ -3693,7 +3759,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.835Z"
+    "lastUpdated": "2026-05-06T16:01:19.911Z"
   },
   {
     "id": "la-dodgers-20260712",
@@ -3715,7 +3781,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.836Z"
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
   },
   {
     "id": "la-dodgers-20260729",
@@ -3737,7 +3803,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.836Z"
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
   },
   {
     "id": "la-dodgers-20260730",
@@ -3759,7 +3825,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.836Z"
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
   },
   {
     "id": "la-dodgers-20260731",
@@ -3781,6 +3847,50 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-05-01T14:55:44.836Z"
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
+  },
+  {
+    "id": "la-dodgers-20260801",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Boston Red Sox at Dodgers",
+    "dateTime": "2026-08-01T02:10:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "mlb-api",
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
+  },
+  {
+    "id": "la-dodgers-20260802",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Boston Red Sox at Dodgers",
+    "dateTime": "2026-08-02T23:20:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "mlb-api",
+    "lastUpdated": "2026-05-06T16:01:19.912Z"
   }
 ]
