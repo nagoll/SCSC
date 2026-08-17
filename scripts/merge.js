@@ -174,4 +174,23 @@ function mergeEvents(newEvents) {
   return { added, updated, skipped, discrepancies: discrepancies.length };
 }
 
-module.exports = { mergeEvents };
+/**
+ * Remove events whose dateTime is before yesterday.
+ * Returns the number of events pruned.
+ */
+function prunePastEvents() {
+  const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  yesterday.setHours(0, 0, 0, 0);
+
+  const kept = events.filter(e => new Date(e.dateTime) >= yesterday);
+  const pruned = events.length - kept.length;
+
+  if (pruned > 0) {
+    fs.writeFileSync(EVENTS_PATH, JSON.stringify(kept, null, 2));
+  }
+  return pruned;
+}
+
+module.exports = { mergeEvents, prunePastEvents };

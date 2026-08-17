@@ -6,7 +6,7 @@
  * and merges into src/data/events.json.
  *
  * Usage:
- *   node scripts/fetch-schedules.js                  # default: today → +90 days
+ *   node scripts/fetch-schedules.js                  # default: today → +365 days
  *   node scripts/fetch-schedules.js --days 120       # custom window
  *   node scripts/fetch-schedules.js --level pro      # only pro teams
  *   node scripts/fetch-schedules.js --level college  # only college teams
@@ -22,7 +22,7 @@ const { fetchAllESPN } = require('./fetchers/pro/espn');
 const { scrapeAllColleges } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
-const { mergeEvents } = require('./merge');
+const { mergeEvents, prunePastEvents } = require('./merge');
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -33,7 +33,7 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-const DAYS = parseInt(flags.days || '90', 10);
+const DAYS = parseInt(flags.days || '365', 10);
 const LEVEL_FILTER = flags.level || 'all'; // 'pro' | 'college' | 'juco' | 'all'
 const DRY_RUN = flags['dry-run'] === true || flags['dry-run'] === 'true';
 
@@ -136,10 +136,19 @@ async function main() {
   console.log(`  Updated:      ${stats.updated}`);
   console.log(`  Skipped:      ${stats.skipped}`);
   console.log(`  Discrepancies logged: ${stats.discrepancies}`);
-  console.log(`\nDone. src/data/events.json updated.`);
   if (stats.discrepancies > 0) {
     console.log(`Review discrepancies in scripts/sync-log.json`);
   }
+
+  // Prune past events
+  const pruned = prunePastEvents();
+  console.log(`\nCleanup: pruned ${pruned} past events`);
+
+  // Regenerate featured content
+  console.log(`\nRegenerating featured picks...`);
+  require('./generate-featured');
+
+  console.log(`\nDone. src/data/events.json and src/data/featured.json updated.`);
 }
 
 main().catch(err => {

@@ -1,13 +1,13 @@
 name: Refresh Schedules
 
 on:
-  # Run every 5 days at 6am PT (14:00 UTC)
+  # Run daily at 6am PT (14:00 UTC)
   schedule:
-    - cron: '0 14 */5 * *'
+    - cron: '0 14 * * *'
 
   # Allow manual trigger from GitHub Actions UI
   # Optionally pass level: 'pro' | 'college' | 'juco' | 'all'
-  # and days: number (default 90)
+  # and days: number (default 365)
   workflow_dispatch:
     inputs:
       level:
@@ -21,9 +21,9 @@ on:
           - college
           - juco
       days:
-        description: 'Days ahead to fetch (default: 90)'
+        description: 'Days ahead to fetch (default: 365)'
         required: false
-        default: '90'
+        default: '365'
         type: string
       dry_run:
         description: 'Dry run (fetch but do not commit)'
@@ -50,13 +50,13 @@ jobs:
         run: |
           node scripts/fetch-schedules.js \
             --level "${{ github.event.inputs.level || 'all' }}" \
-            --days "${{ github.event.inputs.days || '90' }}" \
+            --days "${{ github.event.inputs.days || '365' }}" \
             ${{ (github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
 
       - name: Check for changes
         id: changes
         run: |
-          if [[ -n $(git status --porcelain src/data/events.json scripts/sync-log.json) ]]; then
+          if [[ -n $(git status --porcelain src/data/events.json src/data/featured.json scripts/sync-log.json) ]]; then
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name  "scsc-bot"
           git config user.email "bot@scsc.com"
-          git add src/data/events.json scripts/sync-log.json
+          git add src/data/events.json src/data/featured.json scripts/sync-log.json
           git commit -m "chore: refresh schedules $(date -u +%Y-%m-%d)"
           git push
 
