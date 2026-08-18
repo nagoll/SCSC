@@ -51,11 +51,14 @@ export default function Header() {
           <Link href="/" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
             Calendar
           </Link>
+          <Link href="/events" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
+            Events
+          </Link>
+          <Link href="/teams" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
+            Teams
+          </Link>
           <Link href="/featured" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
             Featured
-          </Link>
-          <Link href="/newsletter" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
-            Newsletter
           </Link>
           <button
             onClick={toggleTheme}
@@ -99,11 +102,14 @@ export default function Header() {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
               Calendar
             </Link>
+            <Link href="/events" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
+              Events
+            </Link>
+            <Link href="/teams" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
+              Teams
+            </Link>
             <Link href="/featured" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
               Featured
-            </Link>
-            <Link href="/newsletter" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
-              Newsletter
             </Link>
           </nav>
         </div>
