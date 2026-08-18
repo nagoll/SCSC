@@ -13,6 +13,7 @@ import {
   DEFAULT_FILTERS,
 } from '@/lib/constants';
 import { getActiveFilterCount, isFiltersEmpty } from '@/lib/filters';
+import { lookupZipCode, isValidZipFormat } from '@/lib/zipcodes';
 
 const RADIUS_OPTIONS = [5, 10, 25, 50] as const;
 
@@ -90,6 +91,9 @@ export default function FilterSidebar({
 }: FilterSidebarProps) {
   const activeCount = getActiveFilterCount(filters);
 
+  const [zipInput, setZipInput] = useState(nearMe.zipCode || '');
+  const [zipError, setZipError] = useState<string | null>(null);
+
   function requestNearMe() {
     onNearMeChange({ ...nearMe, status: 'loading', active: false });
     navigator.geolocation.getCurrentPosition(
@@ -100,12 +104,53 @@ export default function FilterSidebar({
           lat: pos.coords.latitude,
           lng: pos.coords.longitude,
           radiusMiles: nearMe.radiusMiles,
+          source: 'gps',
+          zipCode: null,
         });
+        setZipInput('');
+        setZipError(null);
       },
       () => {
         onNearMeChange({ ...nearMe, status: 'denied', active: false });
       }
     );
+  }
+
+  function submitZipCode() {
+    const zip = zipInput.trim();
+    if (!isValidZipFormat(zip)) {
+      setZipError('Enter a 5-digit zip code');
+      return;
+    }
+    const coords = lookupZipCode(zip);
+    if (!coords) {
+      setZipError('Zip code not in LA County');
+      return;
+    }
+    setZipError(null);
+    onNearMeChange({
+      active: true,
+      status: 'granted',
+      lat: coords.lat,
+      lng: coords.lng,
+      radiusMiles: nearMe.radiusMiles,
+      source: 'zip',
+      zipCode: zip,
+    });
+  }
+
+  function clearLocation() {
+    setZipInput('');
+    setZipError(null);
+    onNearMeChange({
+      active: false,
+      status: 'idle',
+      lat: null,
+      lng: null,
+      radiusMiles: nearMe.radiusMiles,
+      source: null,
+      zipCode: null,
+    });
   }
 
   function toggleArrayFilter<K extends keyof Filters>(key: K, value: string) {
@@ -136,26 +181,74 @@ export default function FilterSidebar({
       {/* Near Me */}
       <div className="border-b border-border pb-3">
         <div className="py-2 text-sm font-semibold text-ink">Near Me</div>
-        {nearMe.status === 'idle' && (
-          <button
-            onClick={requestNearMe}
-            className="flex w-full items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-ink-light transition-colors hover:bg-cream-dark hover:text-burnt-orange"
-          >
-            <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-            </svg>
-            Use My Location
-          </button>
+
+        {nearMe.status !== 'granted' && (
+          <div className="space-y-2">
+            {/* GPS button */}
+            <button
+              onClick={requestNearMe}
+              className="flex w-full items-center gap-2 rounded-md border border-border px-3 py-2 text-sm text-ink-light transition-colors hover:bg-cream-dark hover:text-burnt-orange"
+            >
+              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+              {nearMe.status === 'loading' ? 'Getting location...' : 'Use My Location'}
+            </button>
+
+            {nearMe.status === 'denied' && (
+              <p className="px-1 text-xs text-burnt-orange">Location denied by browser.</p>
+            )}
+
+            {/* Divider */}
+            <div className="flex items-center gap-2">
+              <div className="h-px flex-1 bg-border" />
+              <span className="text-[10px] font-medium text-ink-muted uppercase">or</span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+
+            {/* Zip code input */}
+            <form
+              onSubmit={(e) => { e.preventDefault(); submitZipCode(); }}
+              className="flex gap-1.5"
+            >
+              <input
+                type="text"
+                inputMode="numeric"
+                maxLength={5}
+                placeholder="Zip code"
+                value={zipInput}
+                onChange={(e) => {
+                  setZipInput(e.target.value.replace(/\D/g, ''));
+                  setZipError(null);
+                }}
+                className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-burnt-orange focus:outline-none focus:ring-1 focus:ring-burnt-orange"
+              />
+              <button
+                type="submit"
+                className="shrink-0 rounded-md bg-navy px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-navy-light"
+              >
+                Go
+              </button>
+            </form>
+            {zipError && (
+              <p className="px-1 text-xs text-burnt-orange">{zipError}</p>
+            )}
+          </div>
         )}
-        {nearMe.status === 'loading' && (
-          <p className="px-1 py-1 text-xs text-ink-muted">Getting location...</p>
-        )}
-        {nearMe.status === 'denied' && (
-          <p className="px-1 py-1 text-xs text-burnt-orange">Location denied. Enable in browser settings.</p>
-        )}
+
         {nearMe.status === 'granted' && (
           <div className="space-y-2">
+            {/* Active location indicator */}
+            <div className="flex items-center gap-1.5 rounded-md bg-cream-dark px-2 py-1.5 text-xs text-ink-light">
+              <svg className="h-3.5 w-3.5 shrink-0 text-live-green" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+              {nearMe.source === 'zip' ? `Zip: ${nearMe.zipCode}` : 'GPS location'}
+            </div>
+
+            {/* Radius selector */}
             <div className="flex gap-1">
               {RADIUS_OPTIONS.map((miles) => (
                 <button
@@ -171,8 +264,9 @@ export default function FilterSidebar({
                 </button>
               ))}
             </div>
+
             <button
-              onClick={() => onNearMeChange({ active: false, status: 'idle', lat: null, lng: null, radiusMiles: nearMe.radiusMiles })}
+              onClick={clearLocation}
               className="text-xs text-ink-muted hover:text-burnt-orange"
             >
               Clear location

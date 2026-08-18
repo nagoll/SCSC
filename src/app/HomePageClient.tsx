@@ -51,6 +51,8 @@ export default function HomePage() {
     lat: null,
     lng: null,
     radiusMiles: 10,
+    source: null,
+    zipCode: null,
   });
 
   // Sync filters to URL
