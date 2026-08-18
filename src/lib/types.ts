@@ -125,4 +125,6 @@ export interface NearMeState {
   lat: number | null;
   lng: number | null;
   radiusMiles: number;
+  source: 'gps' | 'zip' | null;
+  zipCode: string | null;
 }

@@ -51,6 +51,8 @@ export default function HomePage() {
     lat: null,
     lng: null,
     radiusMiles: 10,
+    source: null,
+    zipCode: null,
   });
 
   // Sync filters to URL
@@ -150,7 +152,7 @@ export default function HomePage() {
                       <LevelBadge level={event.level} size="sm" />
                     </div>
                     <div className="mt-1.5 text-sm font-semibold text-ink">
-                      {away ? `${away.shortName} @ ${home.shortName}` : event.eventName || home.shortName}
+                      {away ? `${home.shortName} vs ${away.shortName}` : event.eventName || home.shortName}
                     </div>
                     <div className="mt-1 text-xs text-ink-muted">
                       {formatTime(event.dateTime)} · {venue.name}

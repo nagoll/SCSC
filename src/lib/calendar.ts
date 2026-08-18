@@ -1,47 +1,79 @@
 import type { TimeOfDay, DayType } from './types';
 
+const TZ = 'America/Los_Angeles';
+
+function toPacific(dateStr: string): string {
+  if (!dateStr.endsWith('Z') && !dateStr.includes('+') && !dateStr.includes('-', 10)) {
+    return dateStr + 'Z';
+  }
+  return dateStr;
+}
+
+function getPacificHour(dateStr: string): number {
+  const parts = new Date(toPacific(dateStr)).toLocaleString('en-US', { timeZone: TZ, hour: 'numeric', hour12: false });
+  return parseInt(parts, 10);
+}
+
+function getPacificDay(dateStr: string): number {
+  const parts = new Date(toPacific(dateStr)).toLocaleDateString('en-US', { timeZone: TZ, weekday: 'narrow' });
+  return ['S', 'M', 'T', 'W', 'T', 'F', 'S'].indexOf(parts);
+}
+
 export function getTimeOfDay(dateStr: string): TimeOfDay {
-  const hour = new Date(dateStr).getHours();
+  const hour = getPacificHour(dateStr);
   if (hour < 12) return 'morning';
   if (hour < 17) return 'afternoon';
   return 'evening';
 }
 
 export function getDayType(dateStr: string): DayType {
-  const day = new Date(dateStr).getDay();
-  return day === 0 || day === 6 ? 'weekend' : 'weekday';
+  const d = new Date(toPacific(dateStr));
+  const dayNum = parseInt(d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' }).slice(0, 1) === 'S' ? '0' : '1');
+  const wd = d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' });
+  return wd === 'Sat' || wd === 'Sun' ? 'weekend' : 'weekday';
 }
 
 export function formatTime(dateStr: string): string {
-  return new Date(dateStr).toLocaleTimeString('en-US', {
+  return new Date(toPacific(dateStr)).toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: '2-digit',
     hour12: true,
+    timeZone: TZ,
   });
 }
 
 export function formatDate(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
+  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
     weekday: 'short',
     month: 'short',
     day: 'numeric',
+    timeZone: TZ,
   });
 }
 
 export function formatDateLong(dateStr: string): string {
-  return new Date(dateStr).toLocaleDateString('en-US', {
+  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
     weekday: 'long',
     month: 'long',
     day: 'numeric',
     year: 'numeric',
+    timeZone: TZ,
   });
 }
 
+export function toPacificDate(date: Date): Date {
+  const str = date.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
+  const [m, d, y] = str.split('/').map(Number);
+  return new Date(y, m - 1, d);
+}
+
 export function isSameDay(date1: Date, date2: Date): boolean {
+  const d1 = toPacificDate(date1);
+  const d2 = toPacificDate(date2);
   return (
-    date1.getFullYear() === date2.getFullYear() &&
-    date1.getMonth() === date2.getMonth() &&
-    date1.getDate() === date2.getDate()
+    d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate()
   );
 }
 
@@ -86,7 +118,15 @@ export function getWeekDays(date: Date): Date[] {
 }
 
 export function toDateKey(date: Date): string {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  const d = toPacificDate(date);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+export function eventToDateKey(dateStr: string): string {
+  const d = new Date(toPacific(dateStr));
+  const parts = d.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
+  const [m, day, y] = parts.split('/');
+  return `${y}-${m}-${day}`;
 }
 
 export function parseDate(dateKey: string): Date {

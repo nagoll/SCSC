@@ -120,8 +120,8 @@ function buildEventId(teamId, dateStr, suffix = '') {
 function normalizeEvent(raw) {
   const sport = normalizeSport(raw.sport);
   const gender = inferGender(raw.sport, raw.gender);
-  const dateTime = new Date(raw.dateTime).toISOString().slice(0, 19);
-  const endTime = raw.endTime ? new Date(raw.endTime).toISOString().slice(0, 19) : null;
+  const dateTime = new Date(raw.dateTime).toISOString();
+  const endTime = raw.endTime ? new Date(raw.endTime).toISOString() : null;
   const id = raw.id || buildEventId(raw.homeTeamId, dateTime, raw.idSuffix);
 
   return {

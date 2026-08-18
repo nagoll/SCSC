@@ -28,16 +28,24 @@ export default function EventCard({
     return (
       <button
         onClick={onClick}
-        className="group w-full rounded border border-border bg-surface p-2 text-left transition-all hover:border-burnt-orange/30 hover:shadow-sm"
+        className="group w-full rounded border border-border bg-surface p-1.5 text-left transition-all hover:border-burnt-orange/30 hover:shadow-sm sm:p-2"
       >
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1">
           <SportIcon sport={event.sport} size="sm" />
-          <span className="truncate text-xs font-medium text-ink">
-            {awayTeam
-              ? `${awayTeam.shortName} @ ${homeTeam.shortName}`
-              : event.eventName || homeTeam.shortName}
+          <span className="truncate text-xs font-semibold text-ink">
+            {homeTeam.shortName}
           </span>
         </div>
+        {awayTeam && (
+          <div className="mt-0.5 truncate text-[10px] text-ink-muted">
+            vs {awayTeam.shortName}
+          </div>
+        )}
+        {!awayTeam && event.eventName && (
+          <div className="mt-0.5 truncate text-[10px] text-ink-muted">
+            {event.eventName}
+          </div>
+        )}
         <div className="mt-0.5 flex items-center gap-1">
           <span className="text-[10px] text-ink-muted">{formatTime(event.dateTime)}</span>
           <LevelBadge level={event.level} size="sm" />
@@ -70,10 +78,10 @@ export default function EventCard({
           {/* Teams / Event Name */}
           <div className="mt-2">
             {awayTeam ? (
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-ink">{awayTeam.name}</span>
-                <span className="text-xs text-ink-muted">@</span>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                 <span className="font-semibold text-ink">{homeTeam.name}</span>
+                <span className="text-xs text-ink-muted">vs</span>
+                <span className="font-semibold text-ink">{awayTeam.name}</span>
               </div>
             ) : (
               <span className="font-semibold text-ink">

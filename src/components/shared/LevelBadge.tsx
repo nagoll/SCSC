@@ -6,6 +6,13 @@ interface LevelBadgeProps {
   size?: 'sm' | 'md';
 }
 
+const SHORT_LABELS: Record<Level, string> = {
+  pro: 'Pro',
+  college: 'College',
+  juco: 'JuCo',
+  high_school: 'HS',
+};
+
 const levelStyles: Record<Level, string> = {
   pro: 'bg-gold text-navy',
   college: 'bg-navy text-white',
@@ -21,9 +28,9 @@ const sizeStyles = {
 export default function LevelBadge({ level, size = 'md' }: LevelBadgeProps) {
   return (
     <span
-      className={`inline-block rounded font-semibold uppercase tracking-wider ${levelStyles[level]} ${sizeStyles[size]}`}
+      className={`inline-block shrink-0 rounded font-semibold uppercase tracking-wider ${levelStyles[level]} ${sizeStyles[size]}`}
     >
-      {LEVEL_LABELS[level]}
+      {size === 'sm' ? SHORT_LABELS[level] : LEVEL_LABELS[level]}
     </span>
   );
 }
