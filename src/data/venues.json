@@ -363,6 +363,28 @@
     "transitInfo": "Metro Bus 164 or 161 along Winnetka Ave; limited transit access."
   },
   {
+    "id": "csudh-athletics",
+    "name": "CSUDH Toro Athletics Complex",
+    "address": "1000 E Victoria St, Carson, CA 90747",
+    "neighborhood": "south-bay",
+    "lat": 33.8633,
+    "lng": -118.2564,
+    "capacity": 3000,
+    "parkingInfo": "Campus parking lots $5-$10; Lot 7 closest to athletics complex.",
+    "transitInfo": "Metro Bus 205 along Victoria St; Metro C Line to Carson station, then walk or bus."
+  },
+  {
+    "id": "la-southwest-athletics",
+    "name": "LA Southwest College Athletic Complex",
+    "address": "1600 W Imperial Hwy, Los Angeles, CA 90047",
+    "neighborhood": "south-la",
+    "lat": 33.9292,
+    "lng": -118.3148,
+    "capacity": 1500,
+    "parkingInfo": "Free campus parking in main lot off Imperial Hwy.",
+    "transitInfo": "Metro Bus 115 along Imperial Hwy; Metro A Line to Vermont/Athens, then bus west."
+  },
+  {
     "id": "glendale-cc-athletics",
     "name": "Glendale Community College Athletic Complex",
     "address": "1500 N Verdugo Rd, Glendale, CA 91208",

@@ -21,7 +21,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.elac.edu/Student-Services/Associated-Student-Organization/Athletics/Schedule',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'elac-campus',
+    defaultVenueId: 'elac-stadium',
     price: 'free',
   },
   {
@@ -31,7 +31,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.lacitycollege.edu/Athletics/Schedules',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'lacc-campus',
+    defaultVenueId: 'lacc-athletic-field',
     price: 'free',
   },
   {
@@ -41,7 +41,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.lavc.edu/athletics/schedules.aspx',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'lavc-campus',
+    defaultVenueId: 'lavc-athletic-complex',
     price: 'free',
   },
   {
@@ -51,7 +51,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.piercecollege.edu/offices/athletics/schedule.asp',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'lapc-campus',
+    defaultVenueId: 'lapc-athletics',
     price: 'free',
   },
   {
@@ -61,7 +61,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.elcaminowarriors.com/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'el-camino-campus',
+    defaultVenueId: 'el-camino-stadium',
     price: 'free',
   },
   {
@@ -71,7 +71,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.smccorsairs.com/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'smc-campus',
+    defaultVenueId: 'smc-corsair-field',
     price: 'free',
   },
   {
@@ -81,7 +81,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://athletics.cerritos.edu/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'cerritos-campus',
+    defaultVenueId: 'cerritos-college-stadium',
     price: 'free',
   },
   {
@@ -91,7 +91,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.mtsacmounties.com/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'mt-sac-campus',
+    defaultVenueId: 'mt-sac-hilmer-lodge',
     price: 'free',
   },
   {
@@ -101,7 +101,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.pcc.edu/athletics/schedule/',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'pcc-campus',
+    defaultVenueId: 'pcc-robinson-stadium',
     price: 'free',
   },
   {
@@ -111,7 +111,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.glendalevaqueros.com/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'glendale-campus',
+    defaultVenueId: 'glendale-cc-athletics',
     price: 'free',
   },
   {
@@ -121,7 +121,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.riohondoroadrunners.com/composite-schedule',
     platform: 'sidearm',
     level: 'juco',
-    defaultVenueId: 'rio-hondo-campus',
+    defaultVenueId: 'rio-hondo-athletics',
     price: 'free',
   },
   {
@@ -131,7 +131,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.citruscollege.edu/studentlife/athletics/Pages/schedule.aspx',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'citrus-campus',
+    defaultVenueId: 'citrus-athletics',
     price: 'free',
   },
   {
@@ -141,7 +141,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.wlac.edu/student-services/athletics/',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'west-la-campus',
+    defaultVenueId: 'west-la-athletics',
     price: 'free',
   },
   {
@@ -151,7 +151,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.compton.edu/studentservices/athletics/',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'compton-campus',
+    defaultVenueId: 'compton-athletics',
     price: 'free',
   },
   {
@@ -161,7 +161,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.laharbor.edu/student-services/athletics/',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'harbor-campus',
+    defaultVenueId: 'harbor-athletics',
     price: 'free',
   },
   {
@@ -171,7 +171,7 @@ const JUCO_SCHOOLS = [
     scheduleUrl: 'https://www.lasc.edu/student_services/athletics/',
     platform: 'generic',
     level: 'juco',
-    defaultVenueId: 'la-southwest-campus',
+    defaultVenueId: 'la-southwest-athletics',
     price: 'free',
   },
 ];
