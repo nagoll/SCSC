@@ -1,7 +1,7 @@
 'use client';
 
 import type { SportEvent } from '@/lib/types';
-import { getMonthDays, isSameDay, toDateKey } from '@/lib/calendar';
+import { getMonthDays, isSameDay, toDateKey, eventToDateKey } from '@/lib/calendar';
 import { DAYS_OF_WEEK, SPORT_ICONS } from '@/lib/constants';
 
 interface MonthViewProps {
@@ -17,7 +17,7 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
 
   const eventsByDay = new Map<string, SportEvent[]>();
   for (const event of events) {
-    const key = toDateKey(new Date(event.dateTime));
+    const key = eventToDateKey(event.dateTime);
     if (!eventsByDay.has(key)) eventsByDay.set(key, []);
     eventsByDay.get(key)!.push(event);
   }

@@ -1,7 +1,7 @@
 'use client';
 
 import type { SportEvent, Team, Venue } from '@/lib/types';
-import { getWeekDays, isSameDay, toDateKey } from '@/lib/calendar';
+import { getWeekDays, isSameDay, toDateKey, eventToDateKey } from '@/lib/calendar';
 import { DAYS_OF_WEEK } from '@/lib/constants';
 import EventCard from './EventCard';
 
@@ -27,7 +27,7 @@ export default function WeekView({
 
   const eventsByDay = new Map<string, SportEvent[]>();
   for (const event of events) {
-    const key = toDateKey(new Date(event.dateTime));
+    const key = eventToDateKey(event.dateTime);
     if (!eventsByDay.has(key)) eventsByDay.set(key, []);
     eventsByDay.get(key)!.push(event);
   }
