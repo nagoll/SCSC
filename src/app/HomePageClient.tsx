@@ -7,6 +7,7 @@ import { DEFAULT_FILTERS } from '@/lib/constants';
 import { applyFilters, searchParamsToFilters, filtersToSearchParams, getActiveFilterCount, getVenuesWithinRadius } from '@/lib/filters';
 import type { NearMeState } from '@/lib/types';
 import { isSameDay } from '@/lib/calendar';
+import Link from 'next/link';
 import CalendarView from '@/components/calendar/CalendarView';
 import FilterSidebar from '@/components/filters/FilterSidebar';
 import FilterDrawer from '@/components/filters/FilterDrawer';
@@ -104,18 +105,18 @@ export default function HomePage() {
 
           {/* Quick Stats */}
           <div className="mt-6 flex flex-wrap gap-4">
-            <div className="rounded-lg border border-border bg-surface px-4 py-2">
+            <Link href="/events?today=1" className="rounded-lg border border-border bg-surface px-4 py-2 transition-all hover:border-burnt-orange/30 hover:shadow-md">
               <span className="text-2xl font-bold text-burnt-orange">{todayEvents.length}</span>
               <span className="ml-2 text-sm text-ink-muted">events today</span>
-            </div>
-            <div className="rounded-lg border border-border bg-surface px-4 py-2">
+            </Link>
+            <Link href="/events" className="rounded-lg border border-border bg-surface px-4 py-2 transition-all hover:border-burnt-orange/30 hover:shadow-md">
               <span className="text-2xl font-bold text-navy dark:text-gold">{allEvents.length}</span>
               <span className="ml-2 text-sm text-ink-muted">total events</span>
-            </div>
-            <div className="rounded-lg border border-border bg-surface px-4 py-2">
+            </Link>
+            <Link href="/teams" className="rounded-lg border border-border bg-surface px-4 py-2 transition-all hover:border-burnt-orange/30 hover:shadow-md">
               <span className="text-2xl font-bold text-live-green">{Object.keys(teamsMap).length}</span>
               <span className="ml-2 text-sm text-ink-muted">teams</span>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
