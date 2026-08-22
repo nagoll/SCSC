@@ -1,12 +1,12 @@
 [
   {
-    "id": "gotw-la-chargers-20260821",
+    "id": "gotw-la-chargers-20260828",
     "type": "game-of-week",
-    "title": "NFC West vs. AFC West: Chargers vs. San Francisco 49ers",
-    "description": "NFC West vs. AFC West — need we say more? SoFi Stadium will be rocking when the San Francisco 49ers roll in. Don't miss this one.",
-    "eventId": "la-chargers-20260821",
+    "title": "Battle of LA: Chargers vs. Los Angeles Rams",
+    "description": "One of the best rivalries in football is back. The Los Angeles Rams visit SoFi Stadium with bragging rights on the line.",
+    "eventId": "la-chargers-20260828",
     "imageUrl": null,
-    "publishDate": "2026-08-21T00:00:00Z"
+    "publishDate": "2026-08-22T00:00:00Z"
   },
   {
     "id": "gotw-la-rams-20260822",
@@ -15,7 +15,7 @@
     "description": "SoFi Stadium plays host as the Rams take on the New Orleans Saints this Saturday. Circle this one on the calendar.",
     "eventId": "la-rams-20260822",
     "imageUrl": null,
-    "publishDate": "2026-08-21T00:00:00Z"
+    "publishDate": "2026-08-22T00:00:00Z"
   },
   {
     "id": "gotw-la-dodgers-20260822",
@@ -24,7 +24,7 @@
     "description": "Dodger Stadium plays host as the Dodgers take on the Pittsburgh Pirates this Saturday. Circle this one on the calendar.",
     "eventId": "la-dodgers-20260822",
     "imageUrl": null,
-    "publishDate": "2026-08-21T00:00:00Z"
+    "publishDate": "2026-08-22T00:00:00Z"
   },
   {
     "id": "gem-long-beach-state-49ers-20260829-womens-college-volleyball",
@@ -33,6 +33,6 @@
     "description": "LBSU takes on UCLA Bruins in women's volleyball at Walter Pyramid. Competitive, fast-paced, and affordable.",
     "eventId": "long-beach-state-49ers-20260829-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-08-21T00:00:00Z"
+    "publishDate": "2026-08-22T00:00:00Z"
   }
 ]
