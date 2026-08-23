@@ -6,25 +6,25 @@
     "description": "One of the best rivalries in football is back. The Los Angeles Rams visit SoFi Stadium with bragging rights on the line.",
     "eventId": "la-chargers-20260828",
     "imageUrl": null,
-    "publishDate": "2026-08-22T00:00:00Z"
+    "publishDate": "2026-08-23T00:00:00Z"
   },
   {
-    "id": "gotw-la-rams-20260822",
-    "type": "game-of-week",
-    "title": "Rams vs. New Orleans Saints",
-    "description": "SoFi Stadium plays host as the Rams take on the New Orleans Saints this Saturday. Circle this one on the calendar.",
-    "eventId": "la-rams-20260822",
-    "imageUrl": null,
-    "publishDate": "2026-08-22T00:00:00Z"
-  },
-  {
-    "id": "gotw-la-dodgers-20260822",
+    "id": "gotw-la-dodgers-20260823",
     "type": "game-of-week",
     "title": "Dodgers vs. Pittsburgh Pirates",
-    "description": "Dodger Stadium plays host as the Dodgers take on the Pittsburgh Pirates this Saturday. Circle this one on the calendar.",
-    "eventId": "la-dodgers-20260822",
+    "description": "The Dodgers host the Pittsburgh Pirates at Dodger Stadium this Sunday. A marquee matchup you won't want to miss.",
+    "eventId": "la-dodgers-20260823",
     "imageUrl": null,
-    "publishDate": "2026-08-22T00:00:00Z"
+    "publishDate": "2026-08-23T00:00:00Z"
+  },
+  {
+    "id": "gotw-usc-trojans-20260829-college-football",
+    "type": "game-of-week",
+    "title": "USC vs. San José State Spartans",
+    "description": "The USC host the San José State Spartans at Los Angeles Memorial Coliseum this Saturday. A solid matchup you won't want to miss.",
+    "eventId": "usc-trojans-20260829-college-football",
+    "imageUrl": null,
+    "publishDate": "2026-08-23T00:00:00Z"
   },
   {
     "id": "gem-long-beach-state-49ers-20260829-womens-college-volleyball",
@@ -33,6 +33,6 @@
     "description": "LBSU takes on UCLA Bruins in women's volleyball at Walter Pyramid. Competitive, fast-paced, and affordable.",
     "eventId": "long-beach-state-49ers-20260829-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-08-22T00:00:00Z"
+    "publishDate": "2026-08-23T00:00:00Z"
   }
 ]
