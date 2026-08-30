@@ -6,33 +6,33 @@
     "description": "The Dodgers host the St. Louis Cardinals at Dodger Stadium this Friday. A marquee matchup you won't want to miss.",
     "eventId": "la-dodgers-20260904",
     "imageUrl": null,
-    "publishDate": "2026-08-29T00:00:00Z"
+    "publishDate": "2026-08-30T00:00:00Z"
   },
   {
-    "id": "gotw-usc-trojans-20260829-college-football",
-    "type": "game-of-week",
-    "title": "USC vs. San José State Spartans",
-    "description": "The USC host the San José State Spartans at Los Angeles Memorial Coliseum this Saturday. A solid matchup you won't want to miss.",
-    "eventId": "usc-trojans-20260829-college-football",
-    "imageUrl": null,
-    "publishDate": "2026-08-29T00:00:00Z"
-  },
-  {
-    "id": "gotw-ucla-bruins-20260829-womens-college-volleyball",
+    "id": "gotw-ucla-bruins-20260830-womens-college-volleyball",
     "type": "game-of-week",
     "title": "UCLA vs. Long Beach State 49ers",
-    "description": "The Long Beach State 49ers come to town for a Saturday clash at Pauley Pavilion. The UCLA are looking to put on a show for the home crowd.",
-    "eventId": "ucla-bruins-20260829-womens-college-volleyball",
+    "description": "Pauley Pavilion plays host as the UCLA take on the Long Beach State 49ers this Sunday. Circle this one on the calendar.",
+    "eventId": "ucla-bruins-20260830-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-08-29T00:00:00Z"
+    "publishDate": "2026-08-30T00:00:00Z"
   },
   {
-    "id": "gem-long-beach-state-49ers-20260829-womens-college-volleyball",
-    "type": "hidden-gem",
-    "title": "Women's Volleyball: LBSU vs. UCLA Bruins",
-    "description": "LBSU takes on UCLA Bruins in women's volleyball at Walter Pyramid. Competitive, fast-paced, and affordable.",
-    "eventId": "long-beach-state-49ers-20260829-womens-college-volleyball",
+    "id": "gotw-usc-trojans-20260905-college-football",
+    "type": "game-of-week",
+    "title": "USC vs. Fresno State Bulldogs",
+    "description": "Los Angeles Memorial Coliseum plays host as the USC take on the Fresno State Bulldogs this Saturday. Circle this one on the calendar.",
+    "eventId": "usc-trojans-20260905-college-football",
     "imageUrl": null,
-    "publishDate": "2026-08-29T00:00:00Z"
+    "publishDate": "2026-08-30T00:00:00Z"
+  },
+  {
+    "id": "gem-long-beach-state-49ers-20260912-womens-college-volleyball",
+    "type": "hidden-gem",
+    "title": "Women's Volleyball: LBSU vs. San José State Spartans",
+    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting San José State Spartans at Walter Pyramid.",
+    "eventId": "long-beach-state-49ers-20260912-womens-college-volleyball",
+    "imageUrl": null,
+    "publishDate": "2026-08-30T00:00:00Z"
   }
 ]
