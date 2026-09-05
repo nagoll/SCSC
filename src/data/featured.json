@@ -6,16 +6,16 @@
     "description": "The Chargers host the Arizona Cardinals at SoFi Stadium this Sunday. A marquee matchup you won't want to miss.",
     "eventId": "la-chargers-20260913",
     "imageUrl": null,
-    "publishDate": "2026-09-04T00:00:00Z"
+    "publishDate": "2026-09-05T00:00:00Z"
   },
   {
-    "id": "gotw-la-dodgers-20260904",
+    "id": "gotw-la-dodgers-20260905",
     "type": "game-of-week",
-    "title": "Dodgers vs. St. Louis Cardinals",
-    "description": "The Dodgers host the St. Louis Cardinals at Dodger Stadium this Friday. A marquee matchup you won't want to miss.",
-    "eventId": "la-dodgers-20260904",
+    "title": "Dodgers vs. Washington Nationals",
+    "description": "The Washington Nationals come to town for a Saturday clash at Dodger Stadium. The Dodgers are looking to put on a show for the home crowd.",
+    "eventId": "la-dodgers-20260905",
     "imageUrl": null,
-    "publishDate": "2026-09-04T00:00:00Z"
+    "publishDate": "2026-09-05T00:00:00Z"
   },
   {
     "id": "gotw-usc-trojans-20260905-college-football",
@@ -24,7 +24,7 @@
     "description": "Los Angeles Memorial Coliseum plays host as the USC take on the Fresno State Bulldogs this Saturday. Circle this one on the calendar.",
     "eventId": "usc-trojans-20260905-college-football",
     "imageUrl": null,
-    "publishDate": "2026-09-04T00:00:00Z"
+    "publishDate": "2026-09-05T00:00:00Z"
   },
   {
     "id": "gem-long-beach-state-49ers-20260912-womens-college-volleyball",
@@ -33,6 +33,6 @@
     "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting San José State Spartans at Walter Pyramid.",
     "eventId": "long-beach-state-49ers-20260912-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-04T00:00:00Z"
+    "publishDate": "2026-09-05T00:00:00Z"
   }
 ]
