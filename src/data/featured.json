@@ -1,30 +1,30 @@
 [
   {
+    "id": "gotw-la-dodgers-20260919",
+    "type": "game-of-week",
+    "title": "The Best Rivalry in Baseball: Dodgers vs. San Francisco Giants",
+    "description": "Dating back to New York, this one defines the NL West. The San Francisco Giants come to Dodger Stadium for a Saturday showdown. This is appointment viewing.",
+    "eventId": "la-dodgers-20260919",
+    "imageUrl": null,
+    "publishDate": "2026-09-06T00:00:00Z"
+  },
+  {
     "id": "gotw-la-chargers-20260913",
     "type": "game-of-week",
     "title": "Chargers vs. Arizona Cardinals",
     "description": "The Chargers host the Arizona Cardinals at SoFi Stadium this Sunday. A marquee matchup you won't want to miss.",
     "eventId": "la-chargers-20260913",
     "imageUrl": null,
-    "publishDate": "2026-09-05T00:00:00Z"
+    "publishDate": "2026-09-06T00:00:00Z"
   },
   {
-    "id": "gotw-la-dodgers-20260905",
+    "id": "gotw-usc-trojans-20260912-womens-college-volleyball",
     "type": "game-of-week",
-    "title": "Dodgers vs. Washington Nationals",
-    "description": "The Washington Nationals come to town for a Saturday clash at Dodger Stadium. The Dodgers are looking to put on a show for the home crowd.",
-    "eventId": "la-dodgers-20260905",
+    "title": "USC vs. Arizona Wildcats",
+    "description": "Galen Center plays host as the USC take on the Arizona Wildcats this Saturday. Circle this one on the calendar.",
+    "eventId": "usc-trojans-20260912-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-05T00:00:00Z"
-  },
-  {
-    "id": "gotw-usc-trojans-20260905-college-football",
-    "type": "game-of-week",
-    "title": "USC vs. Fresno State Bulldogs",
-    "description": "Los Angeles Memorial Coliseum plays host as the USC take on the Fresno State Bulldogs this Saturday. Circle this one on the calendar.",
-    "eventId": "usc-trojans-20260905-college-football",
-    "imageUrl": null,
-    "publishDate": "2026-09-05T00:00:00Z"
+    "publishDate": "2026-09-06T00:00:00Z"
   },
   {
     "id": "gem-long-beach-state-49ers-20260912-womens-college-volleyball",
@@ -33,6 +33,6 @@
     "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting San José State Spartans at Walter Pyramid.",
     "eventId": "long-beach-state-49ers-20260912-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-05T00:00:00Z"
+    "publishDate": "2026-09-06T00:00:00Z"
   }
 ]
