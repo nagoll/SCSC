@@ -1,70 +1,47 @@
+import { formatInTimeZone, toZonedTime } from 'date-fns-tz';
 import type { TimeOfDay, DayType } from './types';
 
 const TZ = 'America/Los_Angeles';
 
-function toPacific(dateStr: string): string {
-  if (!dateStr.endsWith('Z') && !dateStr.includes('+') && !dateStr.includes('-', 10)) {
-    return dateStr + 'Z';
-  }
-  return dateStr;
-}
-
-function getPacificHour(dateStr: string): number {
-  const parts = new Date(toPacific(dateStr)).toLocaleString('en-US', { timeZone: TZ, hour: 'numeric', hour12: false });
-  return parseInt(parts, 10);
-}
-
-function getPacificDay(dateStr: string): number {
-  const parts = new Date(toPacific(dateStr)).toLocaleDateString('en-US', { timeZone: TZ, weekday: 'narrow' });
-  return ['S', 'M', 'T', 'W', 'T', 'F', 'S'].indexOf(parts);
-}
-
 export function getTimeOfDay(dateStr: string): TimeOfDay {
-  const hour = getPacificHour(dateStr);
+  const hour = Number(formatInTimeZone(dateStr, TZ, 'H'));
   if (hour < 12) return 'morning';
   if (hour < 17) return 'afternoon';
   return 'evening';
 }
 
 export function getDayType(dateStr: string): DayType {
-  const d = new Date(toPacific(dateStr));
-  const dayNum = parseInt(d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' }).slice(0, 1) === 'S' ? '0' : '1');
-  const wd = d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' });
-  return wd === 'Sat' || wd === 'Sun' ? 'weekend' : 'weekday';
+  const weekday = formatInTimeZone(dateStr, TZ, 'EEE');
+  return weekday === 'Sat' || weekday === 'Sun' ? 'weekend' : 'weekday';
 }
 
 export function formatTime(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'h:mm a');
 }
 
 export function formatDate(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'EEE, MMM d');
 }
 
 export function formatDateLong(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'EEEE, MMMM d, yyyy');
 }
 
+/**
+ * Re-anchors a real instant (e.g. an event timestamp or `new Date()`) to
+ * midnight on its Pacific calendar day.
+ *
+ * Only meaningful for genuine instants. The calendar grid in getMonthDays/
+ * getWeekDays instead builds plain `new Date(year, month, day)` placeholders
+ * with no real-world instant behind them — running one of those through here
+ * reinterprets it via the viewer's own system timezone first, which can shift
+ * it onto the adjacent day for a viewer whose device isn't set to Pacific time.
+ * That's a pre-existing limitation of the calendar/day-view components, not
+ * something this function can resolve on its own.
+ */
 export function toPacificDate(date: Date): Date {
-  const str = date.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
-  const [m, d, y] = str.split('/').map(Number);
-  return new Date(y, m - 1, d);
+  const zoned = toZonedTime(date, TZ);
+  return new Date(zoned.getFullYear(), zoned.getMonth(), zoned.getDate());
 }
 
 export function isSameDay(date1: Date, date2: Date): boolean {
@@ -123,15 +100,21 @@ export function toDateKey(date: Date): string {
 }
 
 export function eventToDateKey(dateStr: string): string {
-  const d = new Date(toPacific(dateStr));
-  const parts = d.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
-  const [m, day, y] = parts.split('/');
-  return `${y}-${m}-${day}`;
+  return formatInTimeZone(dateStr, TZ, 'yyyy-MM-dd');
 }
 
 export function parseDate(dateKey: string): Date {
   const [year, month, day] = dateKey.split('-').map(Number);
   return new Date(year, month - 1, day);
+}
+
+function formatCalendarDate(dateStr: string): string {
+  return new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+}
+
+function resolveEventWindow(event: { start: string; end: string | null }): { start: string; end: string } {
+  const end = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  return { start: event.start, end };
 }
 
 export function generateICS(event: {
@@ -141,18 +124,15 @@ export function generateICS(event: {
   location: string;
   description: string;
 }): string {
-  const formatICSDate = (dateStr: string) =>
-    new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-
-  const endDate = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  const { start, end } = resolveEventWindow(event);
 
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//SCSC//Southern California Sports Calendar//EN',
     'BEGIN:VEVENT',
-    `DTSTART:${formatICSDate(event.start)}`,
-    `DTEND:${formatICSDate(endDate)}`,
+    `DTSTART:${formatCalendarDate(start)}`,
+    `DTEND:${formatCalendarDate(end)}`,
     `SUMMARY:${event.title}`,
     `LOCATION:${event.location}`,
     `DESCRIPTION:${event.description}`,
@@ -168,15 +148,12 @@ export function getGoogleCalendarUrl(event: {
   location: string;
   description: string;
 }): string {
-  const formatGCal = (dateStr: string) =>
-    new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-
-  const endDate = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  const { start, end } = resolveEventWindow(event);
 
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
-    dates: `${formatGCal(event.start)}/${formatGCal(endDate)}`,
+    dates: `${formatCalendarDate(start)}/${formatCalendarDate(end)}`,
     location: event.location,
     details: event.description,
   });

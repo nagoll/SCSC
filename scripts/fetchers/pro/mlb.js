@@ -69,7 +69,7 @@ async function fetchMLB(startDate, endDate) {
           price: 'under_50',
           conference: null,
           league: 'MLB',
-          source: 'mlb-api',
+          source: 'pro-api:mlb',
         })
       );
     }

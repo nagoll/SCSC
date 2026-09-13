@@ -10,6 +10,7 @@
  *   - Fall back to CCCAA conference schedule pages for cross-referencing
  */
 
+const cheerio = require('cheerio');
 const { normalizeEvent, inferGender } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
@@ -181,12 +182,13 @@ const JUCO_SCHOOLS = [
  */
 async function parseSidearmJuco(html, school, start, end) {
   const events = [];
+  const $ = cheerio.load(html);
 
   // Try __NEXT_DATA__ JSON first
-  const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
-  if (nextDataMatch) {
+  const nextDataText = $('script#__NEXT_DATA__').html();
+  if (nextDataText) {
     try {
-      const json = JSON.parse(nextDataMatch[1]);
+      const json = JSON.parse(nextDataText);
       const scheduleItems =
         json?.props?.pageProps?.schedule ||
         json?.props?.pageProps?.events ||
@@ -233,7 +235,7 @@ async function parseSidearmJuco(html, school, start, end) {
           price: school.price,
           conference: null,
           league: null,
-          source: `${school.id}-juco-scraper`,
+          source: `juco-scraper:${school.id}`,
         }));
       }
       if (events.length > 0) return events;
@@ -241,23 +243,23 @@ async function parseSidearmJuco(html, school, start, end) {
   }
 
   // Fallback: parse <li class="sidearm-schedule-game"> blocks
-  const gameBlocks = html.matchAll(/<li[^>]+class="[^"]*sidearm-schedule-game[^"]*"[^>]*>([\s\S]*?)<\/li>/g);
-  for (const [, block] of gameBlocks) {
-    if (/sidearm-schedule-game-away|data-home-away="away"/.test(block)) continue;
+  $('li.sidearm-schedule-game').each((_, el) => {
+    const $block = $(el);
+    const isAway =
+      $block.hasClass('sidearm-schedule-game-away') || $block.attr('data-home-away') === 'away';
+    if (isAway) return;
 
-    const dateMatch = block.match(/data-date="([^"]+)"|<time[^>]*datetime="([^"]+)"/);
-    if (!dateMatch) continue;
-    const gameDate = new Date(dateMatch[1] || dateMatch[2]);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
+    const rawDate = $block.attr('data-date') || $block.find('time[datetime]').first().attr('datetime');
+    if (!rawDate) return;
+    const gameDate = new Date(rawDate);
+    if (isNaN(gameDate) || gameDate < start || gameDate > end) return;
 
-    const opponentMatch = block.match(/class="[^"]*opponent[^"]*"[^>]*>([^<]+)</);
-    const opponent = opponentMatch ? opponentMatch[1].trim() : 'Opponent';
-    const sportMatch = block.match(/data-sport="([^"]+)"/);
-    const sportRaw = sportMatch ? sportMatch[1] : 'other';
+    const opponent = $block.find('[class*="opponent"]').first().text().trim() || 'Opponent';
+    const sportRaw = $block.attr('data-sport') || 'other';
 
     // Try to extract venue from HTML
-    const venueMatch = block.match(/class="[^"]*(?:venue|location|facility)[^"]*"[^>]*>([^<]+)/);
-    const scrapedVenueName = venueMatch ? venueMatch[1].trim() : null;
+    const scrapedVenueName =
+      $block.find('[class*="venue"], [class*="location"], [class*="facility"]').first().text().trim() || null;
 
     const verification = verifyVenue({
       scrapedVenueName,
@@ -266,7 +268,7 @@ async function parseSidearmJuco(html, school, start, end) {
 
     if (verification.excluded) {
       console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-      continue;
+      return;
     }
 
     events.push(normalizeEvent({
@@ -286,9 +288,9 @@ async function parseSidearmJuco(html, school, start, end) {
       price: school.price,
       conference: null,
       league: null,
-      source: `${school.id}-juco-scraper`,
+      source: `juco-scraper:${school.id}`,
     }));
-  }
+  });
 
   return events;
 }
@@ -299,10 +301,13 @@ async function parseSidearmJuco(html, school, start, end) {
  */
 async function parseGenericJuco(html, school, start, end) {
   const events = [];
+  const $ = cheerio.load(html);
 
   // Look for JSON-LD SportsEvent structured data
-  const ldMatches = html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
-  for (const [, json] of ldMatches) {
+  const ldScripts = $('script[type="application/ld+json"]')
+    .map((_, el) => $(el).html())
+    .get();
+  for (const json of ldScripts) {
     try {
       const data = JSON.parse(json);
       const items = Array.isArray(data) ? data : [data];
@@ -347,7 +352,7 @@ async function parseGenericJuco(html, school, start, end) {
           price: school.price,
           conference: null,
           league: null,
-          source: `${school.id}-juco-scraper`,
+          source: `juco-scraper:${school.id}`,
         }));
       }
     } catch { continue; }

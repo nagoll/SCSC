@@ -19,23 +19,32 @@ const EVENTS_PATH = path.join(__dirname, '../src/data/events.json');
 const SYNC_LOG_PATH = path.join(__dirname, '../scripts/sync-log.json');
 
 const SOURCE_PRECEDENCE = {
-  'manual': 0,
+  manual: 0,
   'pro-api': 1,
   'espn-api': 2,
   'juco-scraper': 3,
   'university-scraper': 4,
 };
 
+// Fetchers stamp their own tier as a "<tier>:<detail>" prefix on the source
+// field (e.g. "university-scraper:usc"), so precedence is read directly
+// rather than guessed from naming conventions. This table exists only to
+// make sense of the flat, unprefixed source strings already sitting in
+// events.json from before that convention existed.
+const LEGACY_SOURCE_TIER = {
+  manual: 'manual',
+  'mlb-api': 'pro-api',
+  'nhl-api': 'pro-api',
+  'espn-api': 'espn-api',
+};
+
 function getPrecedence(source) {
-  // Exact match first (e.g. 'manual', 'espn-api', 'juco-scraper')
-  if (!source || source === 'manual') return SOURCE_PRECEDENCE['manual'];
-  if (source in SOURCE_PRECEDENCE) return SOURCE_PRECEDENCE[source];
-  // Pattern match for derived names (e.g. 'mlb-api' → pro-api tier, 'ucla-composite' → university-scraper tier)
-  if (source.endsWith('-api') && !source.startsWith('espn')) return SOURCE_PRECEDENCE['pro-api'];
-  if (source.startsWith('espn-')) return SOURCE_PRECEDENCE['espn-api'];
-  if (source.endsWith('-juco-scraper')) return SOURCE_PRECEDENCE['juco-scraper'];
-  if (source.endsWith('-scraper') || source.endsWith('-composite')) return SOURCE_PRECEDENCE['university-scraper'];
-  return SOURCE_PRECEDENCE['pro-api']; // unknown → treat as pro-api tier
+  const tier = source && source.includes(':') ? source.split(':')[0] : LEGACY_SOURCE_TIER[source];
+  if (tier && tier in SOURCE_PRECEDENCE) return SOURCE_PRECEDENCE[tier];
+  throw new Error(
+    `Unknown event source "${source}" — fetchers must tag sources as "<tier>:<detail>" ` +
+    `(one of ${Object.keys(SOURCE_PRECEDENCE).join(', ')}), or add a legacy mapping in LEGACY_SOURCE_TIER.`
+  );
 }
 
 /**
@@ -193,4 +202,4 @@ function prunePastEvents() {
   return pruned;
 }
 
-module.exports = { mergeEvents, prunePastEvents };
+module.exports = { mergeEvents, prunePastEvents, getPrecedence, detectDiscrepancies };
