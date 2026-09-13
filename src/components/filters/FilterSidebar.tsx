@@ -17,6 +17,27 @@ import { lookupZipCode, isValidZipFormat } from '@/lib/zipcodes';
 
 const RADIUS_OPTIONS = [5, 10, 25, 50] as const;
 
+type EnumFilterKey = 'sport' | 'level' | 'timeOfDay' | 'dayType' | 'gender' | 'price' | 'area';
+
+interface EnumFilterSection {
+  key: EnumFilterKey;
+  title: string;
+  labels: Record<string, string>;
+  defaultOpen: boolean;
+  exclude?: string[];
+}
+
+const ENUM_FILTER_SECTIONS: EnumFilterSection[] = [
+  { key: 'sport', title: 'Sport', labels: SPORT_LABELS, defaultOpen: true },
+  // High school is out of scope for v1 (see SPEC.md §13) — hidden, not deleted, so it's a one-line change to enable.
+  { key: 'level', title: 'Level', labels: LEVEL_LABELS, defaultOpen: true, exclude: ['high_school'] },
+  { key: 'timeOfDay', title: 'Time of Day', labels: TIME_LABELS, defaultOpen: false },
+  { key: 'dayType', title: 'Day Type', labels: DAY_TYPE_LABELS, defaultOpen: false },
+  { key: 'gender', title: 'Gender', labels: GENDER_LABELS, defaultOpen: false },
+  { key: 'price', title: 'Price', labels: PRICE_LABELS, defaultOpen: false },
+  { key: 'area', title: 'Area', labels: AREA_LABELS, defaultOpen: false },
+];
+
 interface FilterSidebarProps {
   filters: Filters;
   onFiltersChange: (filters: Filters) => void;
@@ -286,91 +307,21 @@ export default function FilterSidebar({
         />
       </div>
 
-      {/* Sport */}
-      <FilterSection title="Sport" defaultOpen={true}>
-        {(Object.entries(SPORT_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.sport.includes(key as never)}
-            onChange={() => toggleArrayFilter('sport', key)}
-          />
-        ))}
-      </FilterSection>
-
-      {/* Level */}
-      <FilterSection title="Level" defaultOpen={true}>
-        {(Object.entries(LEVEL_LABELS) as [string, string][])
-          .filter(([key]) => key !== 'high_school')
-          .map(([key, label]) => (
-            <CheckboxFilter
-              key={key}
-              label={label}
-              checked={filters.level.includes(key as never)}
-              onChange={() => toggleArrayFilter('level', key)}
-            />
-          ))}
-      </FilterSection>
-
-      {/* Time of Day */}
-      <FilterSection title="Time of Day" defaultOpen={false}>
-        {(Object.entries(TIME_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.timeOfDay.includes(key as never)}
-            onChange={() => toggleArrayFilter('timeOfDay', key)}
-          />
-        ))}
-      </FilterSection>
-
-      {/* Day Type */}
-      <FilterSection title="Day Type" defaultOpen={false}>
-        {(Object.entries(DAY_TYPE_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.dayType.includes(key as never)}
-            onChange={() => toggleArrayFilter('dayType', key)}
-          />
-        ))}
-      </FilterSection>
-
-      {/* Gender */}
-      <FilterSection title="Gender" defaultOpen={false}>
-        {(Object.entries(GENDER_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.gender.includes(key as never)}
-            onChange={() => toggleArrayFilter('gender', key)}
-          />
-        ))}
-      </FilterSection>
-
-      {/* Price */}
-      <FilterSection title="Price" defaultOpen={false}>
-        {(Object.entries(PRICE_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.price.includes(key as never)}
-            onChange={() => toggleArrayFilter('price', key)}
-          />
-        ))}
-      </FilterSection>
-
-      {/* Area */}
-      <FilterSection title="Area" defaultOpen={false}>
-        {(Object.entries(AREA_LABELS) as [string, string][]).map(([key, label]) => (
-          <CheckboxFilter
-            key={key}
-            label={label}
-            checked={filters.area.includes(key as never)}
-            onChange={() => toggleArrayFilter('area', key)}
-          />
-        ))}
-      </FilterSection>
+      {/* Sport / Level / Time of Day / Day Type / Gender / Price / Area — all driven by ENUM_FILTER_SECTIONS above */}
+      {ENUM_FILTER_SECTIONS.map(({ key, title, labels, defaultOpen, exclude }) => (
+        <FilterSection key={key} title={title} defaultOpen={defaultOpen}>
+          {Object.entries(labels)
+            .filter(([value]) => !exclude?.includes(value))
+            .map(([value, label]) => (
+              <CheckboxFilter
+                key={value}
+                label={label}
+                checked={(filters[key] as string[]).includes(value)}
+                onChange={() => toggleArrayFilter(key, value)}
+              />
+            ))}
+        </FilterSection>
+      ))}
 
       {/* Teams */}
       <FilterSection title="Team" defaultOpen={false}>

@@ -177,7 +177,7 @@ async function fetchESPNTeam(teamConfig, startDate, endDate) {
         price,
         conference: null,
         league,
-        source: 'espn-api',
+        source: 'espn-api:pro',
       })
     );
   }

@@ -1,70 +1,75 @@
+import { formatInTimeZone, toZonedTime, fromZonedTime } from 'date-fns-tz';
 import type { TimeOfDay, DayType } from './types';
 
 const TZ = 'America/Los_Angeles';
 
-function toPacific(dateStr: string): string {
-  if (!dateStr.endsWith('Z') && !dateStr.includes('+') && !dateStr.includes('-', 10)) {
-    return dateStr + 'Z';
-  }
-  return dateStr;
+export interface PacificDateParts {
+  year: number;
+  month: number; // 0-indexed, matches Date.getMonth()
+  day: number;
+  weekday: number; // 0 = Sunday .. 6 = Saturday, matches Date.getDay()
 }
 
-function getPacificHour(dateStr: string): number {
-  const parts = new Date(toPacific(dateStr)).toLocaleString('en-US', { timeZone: TZ, hour: 'numeric', hour12: false });
-  return parseInt(parts, 10);
+/** Reads the Pacific-calendar-day fields of a real instant (an event timestamp, `new Date()`, etc). */
+export function getPacificDateParts(date: Date): PacificDateParts {
+  const zoned = toZonedTime(date, TZ);
+  return {
+    year: zoned.getFullYear(),
+    month: zoned.getMonth(),
+    day: zoned.getDate(),
+    weekday: zoned.getDay(),
+  };
 }
 
-function getPacificDay(dateStr: string): number {
-  const parts = new Date(toPacific(dateStr)).toLocaleDateString('en-US', { timeZone: TZ, weekday: 'narrow' });
-  return ['S', 'M', 'T', 'W', 'T', 'F', 'S'].indexOf(parts);
+/** The real instant corresponding to midnight, Pacific time, on the given calendar day. */
+function pacificMidnight(year: number, month: number, day: number): Date {
+  return fromZonedTime(new Date(year, month, day), TZ);
+}
+
+/** Shifts an instant by a number of Pacific calendar days, independent of the viewer's own timezone. */
+export function addPacificDays(date: Date, amount: number): Date {
+  const { year, month, day } = getPacificDateParts(date);
+  return pacificMidnight(year, month, day + amount);
+}
+
+/** Shifts an instant by a number of Pacific calendar months, independent of the viewer's own timezone. */
+export function addPacificMonths(date: Date, amount: number): Date {
+  const { year, month, day } = getPacificDateParts(date);
+  return pacificMidnight(year, month + amount, day);
 }
 
 export function getTimeOfDay(dateStr: string): TimeOfDay {
-  const hour = getPacificHour(dateStr);
+  const hour = Number(formatInTimeZone(dateStr, TZ, 'H'));
   if (hour < 12) return 'morning';
   if (hour < 17) return 'afternoon';
   return 'evening';
 }
 
 export function getDayType(dateStr: string): DayType {
-  const d = new Date(toPacific(dateStr));
-  const dayNum = parseInt(d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' }).slice(0, 1) === 'S' ? '0' : '1');
-  const wd = d.toLocaleDateString('en-US', { timeZone: TZ, weekday: 'short' });
-  return wd === 'Sat' || wd === 'Sun' ? 'weekend' : 'weekday';
+  const weekday = formatInTimeZone(dateStr, TZ, 'EEE');
+  return weekday === 'Sat' || weekday === 'Sun' ? 'weekend' : 'weekday';
 }
 
 export function formatTime(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'h:mm a');
 }
 
 export function formatDate(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'EEE, MMM d');
 }
 
 export function formatDateLong(dateStr: string): string {
-  return new Date(toPacific(dateStr)).toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: TZ,
-  });
+  return formatInTimeZone(dateStr, TZ, 'EEEE, MMMM d, yyyy');
 }
 
+/**
+ * Re-anchors a real instant (e.g. an event timestamp, `new Date()`, or a grid
+ * day from getMonthDays/getWeekDays — see their docs) to midnight on its
+ * Pacific calendar day.
+ */
 export function toPacificDate(date: Date): Date {
-  const str = date.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
-  const [m, d, y] = str.split('/').map(Number);
-  return new Date(y, m - 1, d);
+  const zoned = toZonedTime(date, TZ);
+  return new Date(zoned.getFullYear(), zoned.getMonth(), zoned.getDate());
 }
 
 export function isSameDay(date1: Date, date2: Date): boolean {
@@ -77,43 +82,44 @@ export function isSameDay(date1: Date, date2: Date): boolean {
   );
 }
 
+/**
+ * Every day is returned as the real instant of Pacific midnight for that
+ * calendar day (not a viewer-local placeholder), so isSameDay/toDateKey and
+ * event-instant comparisons stay correct regardless of the viewer's own
+ * device timezone. Read a returned day's calendar fields for display via
+ * getPacificDateParts, not raw Date getters.
+ */
 export function getMonthDays(year: number, month: number): Date[] {
   const days: Date[] = [];
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
+  // Pure calendar arithmetic (no timezone conversion involved): the day-0
+  // rollover trick for "last day of the month".
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // Pad with days from previous month to fill the first week
-  const startPad = firstDay.getDay();
-  for (let i = startPad - 1; i >= 0; i--) {
-    const d = new Date(year, month, -i);
-    days.push(d);
+  const firstWeekday = getPacificDateParts(pacificMidnight(year, month, 1)).weekday;
+  for (let i = firstWeekday - 1; i >= 0; i--) {
+    days.push(pacificMidnight(year, month, -i));
   }
 
-  // Days of the month
-  for (let d = 1; d <= lastDay.getDate(); d++) {
-    days.push(new Date(year, month, d));
+  for (let d = 1; d <= daysInMonth; d++) {
+    days.push(pacificMidnight(year, month, d));
   }
 
-  // Pad with days from next month to complete the last week
-  const endPad = 6 - lastDay.getDay();
+  const lastWeekday = getPacificDateParts(pacificMidnight(year, month, daysInMonth)).weekday;
+  const endPad = 6 - lastWeekday;
   for (let i = 1; i <= endPad; i++) {
-    days.push(new Date(year, month + 1, i));
+    days.push(pacificMidnight(year, month + 1, i));
   }
 
   return days;
 }
 
+/** See getMonthDays — each day is the real instant of Pacific midnight for that calendar day. */
 export function getWeekDays(date: Date): Date[] {
+  const { year, month, day, weekday } = getPacificDateParts(date);
   const days: Date[] = [];
-  const startOfWeek = new Date(date);
-  startOfWeek.setDate(date.getDate() - date.getDay());
-
   for (let i = 0; i < 7; i++) {
-    const d = new Date(startOfWeek);
-    d.setDate(startOfWeek.getDate() + i);
-    days.push(d);
+    days.push(pacificMidnight(year, month, day - weekday + i));
   }
-
   return days;
 }
 
@@ -123,15 +129,21 @@ export function toDateKey(date: Date): string {
 }
 
 export function eventToDateKey(dateStr: string): string {
-  const d = new Date(toPacific(dateStr));
-  const parts = d.toLocaleDateString('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
-  const [m, day, y] = parts.split('/');
-  return `${y}-${m}-${day}`;
+  return formatInTimeZone(dateStr, TZ, 'yyyy-MM-dd');
 }
 
 export function parseDate(dateKey: string): Date {
   const [year, month, day] = dateKey.split('-').map(Number);
   return new Date(year, month - 1, day);
+}
+
+function formatCalendarDate(dateStr: string): string {
+  return new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+}
+
+function resolveEventWindow(event: { start: string; end: string | null }): { start: string; end: string } {
+  const end = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  return { start: event.start, end };
 }
 
 export function generateICS(event: {
@@ -141,18 +153,15 @@ export function generateICS(event: {
   location: string;
   description: string;
 }): string {
-  const formatICSDate = (dateStr: string) =>
-    new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-
-  const endDate = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  const { start, end } = resolveEventWindow(event);
 
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//SCSC//Southern California Sports Calendar//EN',
     'BEGIN:VEVENT',
-    `DTSTART:${formatICSDate(event.start)}`,
-    `DTEND:${formatICSDate(endDate)}`,
+    `DTSTART:${formatCalendarDate(start)}`,
+    `DTEND:${formatCalendarDate(end)}`,
     `SUMMARY:${event.title}`,
     `LOCATION:${event.location}`,
     `DESCRIPTION:${event.description}`,
@@ -168,15 +177,12 @@ export function getGoogleCalendarUrl(event: {
   location: string;
   description: string;
 }): string {
-  const formatGCal = (dateStr: string) =>
-    new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-
-  const endDate = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
+  const { start, end } = resolveEventWindow(event);
 
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
-    dates: `${formatGCal(event.start)}/${formatGCal(endDate)}`,
+    dates: `${formatCalendarDate(start)}/${formatCalendarDate(end)}`,
     location: event.location,
     details: event.description,
   });
