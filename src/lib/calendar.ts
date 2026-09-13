@@ -1,7 +1,42 @@
-import { formatInTimeZone, toZonedTime } from 'date-fns-tz';
+import { formatInTimeZone, toZonedTime, fromZonedTime } from 'date-fns-tz';
 import type { TimeOfDay, DayType } from './types';
 
 const TZ = 'America/Los_Angeles';
+
+export interface PacificDateParts {
+  year: number;
+  month: number; // 0-indexed, matches Date.getMonth()
+  day: number;
+  weekday: number; // 0 = Sunday .. 6 = Saturday, matches Date.getDay()
+}
+
+/** Reads the Pacific-calendar-day fields of a real instant (an event timestamp, `new Date()`, etc). */
+export function getPacificDateParts(date: Date): PacificDateParts {
+  const zoned = toZonedTime(date, TZ);
+  return {
+    year: zoned.getFullYear(),
+    month: zoned.getMonth(),
+    day: zoned.getDate(),
+    weekday: zoned.getDay(),
+  };
+}
+
+/** The real instant corresponding to midnight, Pacific time, on the given calendar day. */
+function pacificMidnight(year: number, month: number, day: number): Date {
+  return fromZonedTime(new Date(year, month, day), TZ);
+}
+
+/** Shifts an instant by a number of Pacific calendar days, independent of the viewer's own timezone. */
+export function addPacificDays(date: Date, amount: number): Date {
+  const { year, month, day } = getPacificDateParts(date);
+  return pacificMidnight(year, month, day + amount);
+}
+
+/** Shifts an instant by a number of Pacific calendar months, independent of the viewer's own timezone. */
+export function addPacificMonths(date: Date, amount: number): Date {
+  const { year, month, day } = getPacificDateParts(date);
+  return pacificMidnight(year, month + amount, day);
+}
 
 export function getTimeOfDay(dateStr: string): TimeOfDay {
   const hour = Number(formatInTimeZone(dateStr, TZ, 'H'));
@@ -28,16 +63,9 @@ export function formatDateLong(dateStr: string): string {
 }
 
 /**
- * Re-anchors a real instant (e.g. an event timestamp or `new Date()`) to
- * midnight on its Pacific calendar day.
- *
- * Only meaningful for genuine instants. The calendar grid in getMonthDays/
- * getWeekDays instead builds plain `new Date(year, month, day)` placeholders
- * with no real-world instant behind them — running one of those through here
- * reinterprets it via the viewer's own system timezone first, which can shift
- * it onto the adjacent day for a viewer whose device isn't set to Pacific time.
- * That's a pre-existing limitation of the calendar/day-view components, not
- * something this function can resolve on its own.
+ * Re-anchors a real instant (e.g. an event timestamp, `new Date()`, or a grid
+ * day from getMonthDays/getWeekDays — see their docs) to midnight on its
+ * Pacific calendar day.
  */
 export function toPacificDate(date: Date): Date {
   const zoned = toZonedTime(date, TZ);
@@ -54,43 +82,44 @@ export function isSameDay(date1: Date, date2: Date): boolean {
   );
 }
 
+/**
+ * Every day is returned as the real instant of Pacific midnight for that
+ * calendar day (not a viewer-local placeholder), so isSameDay/toDateKey and
+ * event-instant comparisons stay correct regardless of the viewer's own
+ * device timezone. Read a returned day's calendar fields for display via
+ * getPacificDateParts, not raw Date getters.
+ */
 export function getMonthDays(year: number, month: number): Date[] {
   const days: Date[] = [];
-  const firstDay = new Date(year, month, 1);
-  const lastDay = new Date(year, month + 1, 0);
+  // Pure calendar arithmetic (no timezone conversion involved): the day-0
+  // rollover trick for "last day of the month".
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // Pad with days from previous month to fill the first week
-  const startPad = firstDay.getDay();
-  for (let i = startPad - 1; i >= 0; i--) {
-    const d = new Date(year, month, -i);
-    days.push(d);
+  const firstWeekday = getPacificDateParts(pacificMidnight(year, month, 1)).weekday;
+  for (let i = firstWeekday - 1; i >= 0; i--) {
+    days.push(pacificMidnight(year, month, -i));
   }
 
-  // Days of the month
-  for (let d = 1; d <= lastDay.getDate(); d++) {
-    days.push(new Date(year, month, d));
+  for (let d = 1; d <= daysInMonth; d++) {
+    days.push(pacificMidnight(year, month, d));
   }
 
-  // Pad with days from next month to complete the last week
-  const endPad = 6 - lastDay.getDay();
+  const lastWeekday = getPacificDateParts(pacificMidnight(year, month, daysInMonth)).weekday;
+  const endPad = 6 - lastWeekday;
   for (let i = 1; i <= endPad; i++) {
-    days.push(new Date(year, month + 1, i));
+    days.push(pacificMidnight(year, month + 1, i));
   }
 
   return days;
 }
 
+/** See getMonthDays — each day is the real instant of Pacific midnight for that calendar day. */
 export function getWeekDays(date: Date): Date[] {
+  const { year, month, day, weekday } = getPacificDateParts(date);
   const days: Date[] = [];
-  const startOfWeek = new Date(date);
-  startOfWeek.setDate(date.getDate() - date.getDay());
-
   for (let i = 0; i < 7; i++) {
-    const d = new Date(startOfWeek);
-    d.setDate(startOfWeek.getDate() + i);
-    days.push(d);
+    days.push(pacificMidnight(year, month, day - weekday + i));
   }
-
   return days;
 }
 

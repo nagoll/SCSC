@@ -10,6 +10,9 @@ import {
   eventToDateKey,
   getMonthDays,
   getWeekDays,
+  getPacificDateParts,
+  addPacificDays,
+  addPacificMonths,
   parseDate,
   generateICS,
   getGoogleCalendarUrl,
@@ -96,24 +99,55 @@ describe('isSameDay / toDateKey (operating on real instants, e.g. event timestam
   });
 });
 
-describe('getMonthDays', () => {
-  it('pads to full weeks and includes every day of the month', () => {
-    const days = getMonthDays(2026, 8); // September 2026 (0-indexed month)
-    expect(days.length % 7).toBe(0);
-    const inMonth = days.filter((d) => d.getMonth() === 8);
-    expect(inMonth).toHaveLength(30);
-    // First day of the grid should be a Sunday
-    expect(days[0].getDay()).toBe(0);
+describe('getPacificDateParts', () => {
+  it('reads the Pacific calendar fields of a real instant, independent of the system timezone running this test', () => {
+    // Noon Pacific (PDT) on Saturday Sept 12, 2026 = 19:00 UTC
+    expect(getPacificDateParts(new Date('2026-09-12T19:00:00.000Z'))).toEqual({
+      year: 2026,
+      month: 8,
+      day: 12,
+      weekday: 6,
+    });
   });
 });
 
-describe('getWeekDays', () => {
-  it('returns 7 consecutive days starting on Sunday', () => {
-    const wed = new Date(2026, 8, 16); // a Wednesday
+describe('getMonthDays (regression: this vitest run executes under system TZ=UTC, which is exactly the "viewer not in Pacific time" case that used to shift the grid by a day)', () => {
+  it('pads to full weeks and maps every day of the month to its own Pacific day-of-month with no gaps or dupes', () => {
+    const days = getMonthDays(2026, 8); // September 2026 (0-indexed month)
+    expect(days.length % 7).toBe(0);
+    const inMonthDayNumbers = days
+      .filter((d) => getPacificDateParts(d).month === 8)
+      .map((d) => getPacificDateParts(d).day)
+      .sort((a, b) => a - b);
+    expect(inMonthDayNumbers).toEqual(Array.from({ length: 30 }, (_, i) => i + 1));
+  });
+
+  it('starts the grid on a Pacific Sunday', () => {
+    const days = getMonthDays(2026, 8);
+    expect(getPacificDateParts(days[0]).weekday).toBe(0);
+  });
+});
+
+describe('getWeekDays (regression: same system TZ=UTC concern as above)', () => {
+  it('returns 7 consecutive Pacific days starting on Sunday, for a mid-week reference instant', () => {
+    const wed = new Date('2026-09-16T19:00:00.000Z'); // noon Pacific, a Wednesday
     const week = getWeekDays(wed);
     expect(week).toHaveLength(7);
-    expect(week[0].getDay()).toBe(0);
-    expect(week[6].getDay()).toBe(6);
+    expect(week.map((d) => getPacificDateParts(d).weekday)).toEqual([0, 1, 2, 3, 4, 5, 6]);
+    expect(week.map((d) => getPacificDateParts(d).day)).toEqual([13, 14, 15, 16, 17, 18, 19]);
+  });
+});
+
+describe('addPacificDays / addPacificMonths', () => {
+  it('shifts by Pacific calendar days regardless of system timezone', () => {
+    const start = new Date('2026-09-12T19:00:00.000Z'); // Sept 12, noon Pacific
+    expect(getPacificDateParts(addPacificDays(start, 1))).toMatchObject({ year: 2026, month: 8, day: 13 });
+    expect(getPacificDateParts(addPacificDays(start, -7))).toMatchObject({ year: 2026, month: 8, day: 5 });
+  });
+
+  it('shifts by Pacific calendar months, rolling the year over when needed', () => {
+    const dec = new Date('2026-12-15T19:00:00.000Z'); // Dec 15, Pacific
+    expect(getPacificDateParts(addPacificMonths(dec, 1))).toMatchObject({ year: 2027, month: 0, day: 15 });
   });
 });
 

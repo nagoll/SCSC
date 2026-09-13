@@ -1,7 +1,7 @@
 'use client';
 
 import type { SportEvent } from '@/lib/types';
-import { getMonthDays, isSameDay, toDateKey, eventToDateKey } from '@/lib/calendar';
+import { getMonthDays, isSameDay, toDateKey, eventToDateKey, getPacificDateParts } from '@/lib/calendar';
 import { DAYS_OF_WEEK, SPORT_ICONS } from '@/lib/constants';
 
 interface MonthViewProps {
@@ -40,7 +40,8 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
       {/* Day cells */}
       <div className="grid grid-cols-7 gap-px">
         {days.map((day, i) => {
-          const isCurrentMonth = day.getMonth() === month;
+          const dayParts = getPacificDateParts(day);
+          const isCurrentMonth = dayParts.month === month;
           const isToday = isSameDay(day, today);
           const key = toDateKey(day);
           const dayEvents = eventsByDay.get(key) || [];
@@ -59,7 +60,7 @@ export default function MonthView({ year, month, events, onDayClick }: MonthView
                   isToday ? 'text-burnt-orange' : 'text-ink'
                 }`}
               >
-                {day.getDate()}
+                {dayParts.day}
               </div>
 
               {dayEvents.length > 0 && (
