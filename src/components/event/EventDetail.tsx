@@ -140,7 +140,14 @@ export default function EventDetail({
                       </span>
                     )}
                   </div>
-                  <div className="text-sm text-ink-light">{venue.address}</div>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${venue.lat},${venue.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-ink-light underline decoration-dotted underline-offset-2 hover:text-burnt-orange"
+                  >
+                    {venue.address}
+                  </a>
                   <div className="mt-1 text-xs text-ink-muted">
                     {AREA_LABELS[venue.neighborhood]}
                     {venue.capacity && ` · Capacity: ${venue.capacity.toLocaleString()}`}
@@ -212,28 +219,15 @@ export default function EventDetail({
             </div>
 
             {/* Share */}
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4">
               <button
                 onClick={() => {
                   const url = `${window.location.origin}/event/${event.id}`;
                   navigator.clipboard.writeText(url);
                 }}
-                className="flex-1 rounded-md border border-border py-2 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
+                className="w-full rounded-md border border-border py-2 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
               >
                 Copy Link
-              </button>
-              <button
-                onClick={() => {
-                  const url = `${window.location.origin}/event/${event.id}`;
-                  const text = `Check out ${title} at ${venue.name}!`;
-                  window.open(
-                    `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
-                    '_blank'
-                  );
-                }}
-                className="flex-1 rounded-md border border-border py-2 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
-              >
-                Share on X
               </button>
             </div>
           </div>

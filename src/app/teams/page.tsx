@@ -70,7 +70,20 @@ export default function TeamsPage() {
                           style={{ backgroundColor: team.primaryColor || '#6b7280' }}
                         />
                         <div className="min-w-0">
-                          <div className="font-semibold text-ink">{team.name}</div>
+                          <div className="font-semibold text-ink">
+                            {team.websiteUrl ? (
+                              <a
+                                href={team.websiteUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-burnt-orange hover:underline"
+                              >
+                                {team.name}
+                              </a>
+                            ) : (
+                              team.name
+                            )}
+                          </div>
                           {team.school && (
                             <div className="text-xs text-ink-muted">{team.school}</div>
                           )}

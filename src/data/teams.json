@@ -9,7 +9,8 @@
     "sport": ["baseball"],
     "logoUrl": null,
     "primaryColor": "#005A9C",
-    "secondaryColor": "#EF3E42"
+    "secondaryColor": "#EF3E42",
+    "websiteUrl": "https://www.mlb.com/dodgers"
   },
   {
     "id": "la-rams",
@@ -21,7 +22,8 @@
     "sport": ["football"],
     "logoUrl": null,
     "primaryColor": "#003594",
-    "secondaryColor": "#FFD100"
+    "secondaryColor": "#FFD100",
+    "websiteUrl": "https://www.therams.com"
   },
   {
     "id": "la-chargers",
@@ -33,7 +35,8 @@
     "sport": ["football"],
     "logoUrl": null,
     "primaryColor": "#0080C6",
-    "secondaryColor": "#FFC20E"
+    "secondaryColor": "#FFC20E",
+    "websiteUrl": "https://www.chargers.com"
   },
   {
     "id": "la-lakers",
@@ -45,7 +48,8 @@
     "sport": ["basketball"],
     "logoUrl": null,
     "primaryColor": "#552583",
-    "secondaryColor": "#FDB927"
+    "secondaryColor": "#FDB927",
+    "websiteUrl": "https://www.nba.com/lakers"
   },
   {
     "id": "la-clippers",
@@ -57,7 +61,8 @@
     "sport": ["basketball"],
     "logoUrl": null,
     "primaryColor": "#C8102E",
-    "secondaryColor": "#1D428A"
+    "secondaryColor": "#1D428A",
+    "websiteUrl": "https://www.nba.com/clippers"
   },
   {
     "id": "la-sparks",
@@ -69,7 +74,8 @@
     "sport": ["basketball"],
     "logoUrl": null,
     "primaryColor": "#552583",
-    "secondaryColor": "#FDB927"
+    "secondaryColor": "#FDB927",
+    "websiteUrl": "https://sparks.wnba.com"
   },
   {
     "id": "la-kings",
@@ -81,7 +87,8 @@
     "sport": ["hockey"],
     "logoUrl": null,
     "primaryColor": "#111111",
-    "secondaryColor": "#A2AAAD"
+    "secondaryColor": "#A2AAAD",
+    "websiteUrl": "https://www.nhl.com/kings"
   },
   {
     "id": "lafc",
@@ -93,7 +100,8 @@
     "sport": ["soccer"],
     "logoUrl": null,
     "primaryColor": "#C39E6D",
-    "secondaryColor": "#000000"
+    "secondaryColor": "#000000",
+    "websiteUrl": "https://www.lafc.com"
   },
   {
     "id": "la-galaxy",
@@ -105,7 +113,8 @@
     "sport": ["soccer"],
     "logoUrl": null,
     "primaryColor": "#00245D",
-    "secondaryColor": "#FFD200"
+    "secondaryColor": "#FFD200",
+    "websiteUrl": "https://www.lagalaxy.com"
   },
   {
     "id": "angel-city-fc",
@@ -117,7 +126,8 @@
     "sport": ["soccer"],
     "logoUrl": null,
     "primaryColor": "#E8565D",
-    "secondaryColor": "#231F20"
+    "secondaryColor": "#231F20",
+    "websiteUrl": "https://www.angelcity.com"
   },
   {
     "id": "la-knight-riders",
@@ -129,7 +139,8 @@
     "sport": ["cricket"],
     "logoUrl": null,
     "primaryColor": "#3A225D",
-    "secondaryColor": "#FDCB08"
+    "secondaryColor": "#FDCB08",
+    "websiteUrl": "https://www.lakriders.us"
   },
   {
     "id": "usc-trojans",
@@ -141,7 +152,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo", "lacrosse"],
     "logoUrl": null,
     "primaryColor": "#990000",
-    "secondaryColor": "#FFCC00"
+    "secondaryColor": "#FFCC00",
+    "websiteUrl": "https://usctrojans.com"
   },
   {
     "id": "ucla-bruins",
@@ -153,7 +165,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo", "softball", "golf"],
     "logoUrl": null,
     "primaryColor": "#2D68C4",
-    "secondaryColor": "#F2A900"
+    "secondaryColor": "#F2A900",
+    "websiteUrl": "https://uclabruins.com"
   },
   {
     "id": "pepperdine-waves",
@@ -165,7 +178,8 @@
     "sport": ["basketball", "baseball", "soccer", "volleyball", "tennis", "swimming", "water-polo", "golf"],
     "logoUrl": null,
     "primaryColor": "#00205C",
-    "secondaryColor": "#E87722"
+    "secondaryColor": "#E87722",
+    "websiteUrl": "https://pepperdinewaves.com"
   },
   {
     "id": "lmu-lions",
@@ -177,7 +191,8 @@
     "sport": ["basketball", "baseball", "soccer", "volleyball", "tennis", "swimming", "water-polo", "track"],
     "logoUrl": null,
     "primaryColor": "#862633",
-    "secondaryColor": "#8B8B8B"
+    "secondaryColor": "#8B8B8B",
+    "websiteUrl": "https://lmulions.com"
   },
   {
     "id": "csun-matadors",
@@ -189,7 +204,8 @@
     "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "swimming", "golf"],
     "logoUrl": null,
     "primaryColor": "#CE1141",
-    "secondaryColor": "#000000"
+    "secondaryColor": "#000000",
+    "websiteUrl": "https://gomatadors.com"
   },
   {
     "id": "long-beach-state-49ers",
@@ -201,7 +217,8 @@
     "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf", "water-polo"],
     "logoUrl": null,
     "primaryColor": "#000000",
-    "secondaryColor": "#F0B323"
+    "secondaryColor": "#F0B323",
+    "websiteUrl": "https://longbeachstate.com"
   },
   {
     "id": "cal-poly-pomona-broncos",
@@ -213,7 +230,8 @@
     "sport": ["basketball", "baseball", "soccer", "volleyball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#1E4D2B",
-    "secondaryColor": "#CFB87C"
+    "secondaryColor": "#CFB87C",
+    "websiteUrl": "https://athletics.cpp.edu"
   },
   {
     "id": "elac-huskies",
@@ -225,7 +243,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003DA5",
-    "secondaryColor": "#C8102E"
+    "secondaryColor": "#C8102E",
+    "websiteUrl": "https://www.elac.edu/Student-Services/Associated-Student-Organization/Athletics"
   },
   {
     "id": "lacc-cubs",
@@ -237,7 +256,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003DA5",
-    "secondaryColor": "#FFFFFF"
+    "secondaryColor": "#FFFFFF",
+    "websiteUrl": "https://www.lacitycollege.edu/Athletics"
   },
   {
     "id": "lavc-monarchs",
@@ -249,7 +269,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#006341",
-    "secondaryColor": "#FFFFFF"
+    "secondaryColor": "#FFFFFF",
+    "websiteUrl": "https://www.lavc.edu/athletics/"
   },
   {
     "id": "lapc-brahmas",
@@ -261,7 +282,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "swimming"],
     "logoUrl": null,
     "primaryColor": "#B22222",
-    "secondaryColor": "#000000"
+    "secondaryColor": "#000000",
+    "websiteUrl": "https://www.piercecollege.edu/offices/athletics/"
   },
   {
     "id": "el-camino-warriors",
@@ -273,7 +295,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "volleyball", "track", "swimming", "tennis"],
     "logoUrl": null,
     "primaryColor": "#F47920",
-    "secondaryColor": "#000000"
+    "secondaryColor": "#000000",
+    "websiteUrl": "https://www.elcaminowarriors.com"
   },
   {
     "id": "smc-corsairs",
@@ -285,7 +308,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "volleyball", "track", "swimming", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003DA5",
-    "secondaryColor": "#FFFFFF"
+    "secondaryColor": "#FFFFFF",
+    "websiteUrl": "https://www.smccorsairs.com"
   },
   {
     "id": "cerritos-falcons",
@@ -297,7 +321,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "volleyball", "track", "swimming", "tennis"],
     "logoUrl": null,
     "primaryColor": "#CE1141",
-    "secondaryColor": "#808080"
+    "secondaryColor": "#808080",
+    "websiteUrl": "https://athletics.cerritos.edu"
   },
   {
     "id": "mt-sac-mounties",
@@ -309,7 +334,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "volleyball", "track", "swimming", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003366",
-    "secondaryColor": "#CC0000"
+    "secondaryColor": "#CC0000",
+    "websiteUrl": "https://www.mtsacmounties.com"
   },
   {
     "id": "pcc-lancers",
@@ -321,7 +347,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "swimming", "tennis"],
     "logoUrl": null,
     "primaryColor": "#CE1141",
-    "secondaryColor": "#000000"
+    "secondaryColor": "#000000",
+    "websiteUrl": "https://www.pcc.edu/athletics/"
   },
   {
     "id": "glendale-vaqueros",
@@ -333,7 +360,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "tennis", "track"],
     "logoUrl": null,
     "primaryColor": "#003594",
-    "secondaryColor": "#C8102E"
+    "secondaryColor": "#C8102E",
+    "websiteUrl": "https://www.glendalevaqueros.com"
   },
   {
     "id": "csuf-titans",
@@ -345,7 +373,8 @@
     "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
     "logoUrl": null,
     "primaryColor": "#00274C",
-    "secondaryColor": "#FF6600"
+    "secondaryColor": "#FF6600",
+    "websiteUrl": "https://fullertontitans.com"
   },
   {
     "id": "pomona-pitzer-sagehens",
@@ -357,7 +386,8 @@
     "sport": ["football", "basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo"],
     "logoUrl": null,
     "primaryColor": "#00356B",
-    "secondaryColor": "#C9A100"
+    "secondaryColor": "#C9A100",
+    "websiteUrl": "https://sagehens.com"
   },
   {
     "id": "calstate-la-eagles",
@@ -369,7 +399,8 @@
     "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
     "logoUrl": null,
     "primaryColor": "#000000",
-    "secondaryColor": "#C9A600"
+    "secondaryColor": "#C9A600",
+    "websiteUrl": "https://calstatelaeagles.com"
   },
   {
     "id": "occidental-tigers",
@@ -381,7 +412,8 @@
     "sport": ["football", "basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "swimming", "water-polo", "lacrosse"],
     "logoUrl": null,
     "primaryColor": "#EF7D00",
-    "secondaryColor": "#1A1A1A"
+    "secondaryColor": "#1A1A1A",
+    "websiteUrl": "https://www.occidentaltigers.com"
   },
   {
     "id": "rio-hondo-roadrunners",
@@ -393,7 +425,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003F87",
-    "secondaryColor": "#F5A800"
+    "secondaryColor": "#F5A800",
+    "websiteUrl": "https://www.riohondoroadrunners.com"
   },
   {
     "id": "citrus-owls",
@@ -405,7 +438,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis", "swimming"],
     "logoUrl": null,
     "primaryColor": "#003087",
-    "secondaryColor": "#FFCD00"
+    "secondaryColor": "#FFCD00",
+    "websiteUrl": "https://www.citruscollege.edu/studentlife/athletics/"
   },
   {
     "id": "west-la-wildcats",
@@ -417,7 +451,8 @@
     "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003399",
-    "secondaryColor": "#FFD700"
+    "secondaryColor": "#FFD700",
+    "websiteUrl": "https://www.wlac.edu/student-services/athletics/"
   },
   {
     "id": "compton-tartars",
@@ -429,7 +464,8 @@
     "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003087",
-    "secondaryColor": "#FFD700"
+    "secondaryColor": "#FFD700",
+    "websiteUrl": "https://www.compton.edu/studentservices/athletics/"
   },
   {
     "id": "harbor-seahawks",
@@ -441,7 +477,8 @@
     "sport": ["football", "basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#1B2A4A",
-    "secondaryColor": "#C9A84C"
+    "secondaryColor": "#C9A84C",
+    "websiteUrl": "https://www.laharbor.edu/student-services/athletics/"
   },
   {
     "id": "csudh-toros",
@@ -453,7 +490,8 @@
     "sport": ["basketball", "baseball", "softball", "soccer", "volleyball", "track", "tennis", "golf"],
     "logoUrl": null,
     "primaryColor": "#002D62",
-    "secondaryColor": "#C8AA6E"
+    "secondaryColor": "#C8AA6E",
+    "websiteUrl": "https://csudhtoros.com"
   },
   {
     "id": "lasw-cougars",
@@ -465,6 +503,7 @@
     "sport": ["basketball", "baseball", "soccer", "softball", "track", "tennis"],
     "logoUrl": null,
     "primaryColor": "#003087",
-    "secondaryColor": "#FFD700"
+    "secondaryColor": "#FFD700",
+    "websiteUrl": "https://www.lasc.edu/student_services/athletics/"
   }
 ]

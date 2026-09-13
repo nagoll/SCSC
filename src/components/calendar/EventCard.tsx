@@ -46,7 +46,7 @@ export default function EventCard({
             {event.eventName}
           </div>
         )}
-        <div className="mt-0.5 flex items-center gap-1">
+        <div className="mt-0.5 flex flex-wrap items-center gap-1">
           <span className="text-[10px] text-ink-muted">{formatTime(event.dateTime)}</span>
           <LevelBadge level={event.level} size="sm" />
         </div>
