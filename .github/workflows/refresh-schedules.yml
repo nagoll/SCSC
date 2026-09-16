@@ -47,6 +47,9 @@ jobs:
           node-version: '20'
 
       - name: Fetch schedules
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           node scripts/fetch-schedules.js \
             --level "${{ github.event.inputs.level || 'all' }}" \
@@ -56,7 +59,7 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          if [[ -n $(git status --porcelain src/data/events.json src/data/featured.json scripts/sync-log.json) ]]; then
+          if [[ -n $(git status --porcelain src/data/events.json src/data/featured.json src/data/teams.json src/data/venues.json scripts/sync-log.json) ]]; then
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
@@ -65,7 +68,7 @@ jobs:
         run: |
           git config user.name  "scsc-bot"
           git config user.email "bot@scsc.com"
-          git add src/data/events.json src/data/featured.json scripts/sync-log.json
+          git add src/data/events.json src/data/featured.json src/data/teams.json src/data/venues.json scripts/sync-log.json
           git commit -m "chore: refresh schedules $(date -u +%Y-%m-%d)"
           git push
 
