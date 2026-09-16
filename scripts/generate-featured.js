@@ -9,13 +9,7 @@
  * Runs as part of the daily schedule refresh.
  */
 
-const fs = require('fs');
-const path = require('path');
-
-const EVENTS_PATH = path.join(__dirname, '../src/data/events.json');
-const TEAMS_PATH = path.join(__dirname, '../src/data/teams.json');
-const VENUES_PATH = path.join(__dirname, '../src/data/venues.json');
-const FEATURED_PATH = path.join(__dirname, '../src/data/featured.json');
+const { supabaseAdmin } = require('./supabase-admin');
 
 const LOOKAHEAD_DAYS = 14;
 const GOTW_COUNT = 3;
@@ -74,8 +68,6 @@ const SPORT_DISPLAY = {
   swimming: 'swimming & diving', golf: 'golf', lacrosse: 'lacrosse',
   'water-polo': 'water polo', cricket: 'cricket', other: 'sports',
 };
-
-function loadJSON(p) { return JSON.parse(fs.readFileSync(p, 'utf-8')); }
 
 function hashPick(str, max) {
   let h = 0;
@@ -285,10 +277,19 @@ function diversePicks(scored, count, minScore) {
 
 // ---- Main ----
 
-function main() {
-  const events = loadJSON(EVENTS_PATH);
-  const teams = loadJSON(TEAMS_PATH);
-  const venues = loadJSON(VENUES_PATH);
+// `db` is injectable so tests can pass a fake client; defaults to the real one.
+async function generateFeatured(db = supabaseAdmin()) {
+  const [eventsRes, teamsRes, venuesRes] = await Promise.all([
+    db.from('events').select('*'),
+    db.from('teams').select('*'),
+    db.from('venues').select('*'),
+  ]);
+  for (const [name, res] of [['events', eventsRes], ['teams', teamsRes], ['venues', venuesRes]]) {
+    if (res.error) throw new Error(`generateFeatured: failed to read ${name} — ${res.error.message}`);
+  }
+  const events = eventsRes.data;
+  const teams = teamsRes.data;
+  const venues = venuesRes.data;
 
   let upcoming = getUpcoming(events, LOOKAHEAD_DAYS);
   console.log(`\n[featured] ${upcoming.length} events in next ${LOOKAHEAD_DAYS} days`);
@@ -299,7 +300,7 @@ function main() {
   }
 
   if (upcoming.length === 0) {
-    console.log('[featured] No upcoming events found — keeping existing featured.json');
+    console.log('[featured] No upcoming events found — keeping existing featured picks');
     return;
   }
 
@@ -344,7 +345,12 @@ function main() {
     });
   }
 
-  fs.writeFileSync(FEATURED_PATH, JSON.stringify(featured, null, 2) + '\n');
+  // Featured picks are entirely regenerated each run — replace the table wholesale.
+  const { error: deleteError } = await db.from('featured').delete().not('id', 'is', null);
+  if (deleteError) throw new Error(`generateFeatured: failed to clear featured — ${deleteError.message}`);
+  const { error: insertError } = await db.from('featured').insert(featured);
+  if (insertError) throw new Error(`generateFeatured: failed to write featured — ${insertError.message}`);
+
   console.log(`[featured] Generated ${gotwPicks.length} Game of the Week + ${gemPicks.length} Hidden Gem picks`);
 
   for (const { event, score } of gotwPicks) {
@@ -355,4 +361,11 @@ function main() {
   }
 }
 
-main();
+module.exports = { generateFeatured };
+
+if (require.main === module) {
+  generateFeatured().catch((err) => {
+    console.error('Fatal error:', err);
+    process.exit(1);
+  });
+}

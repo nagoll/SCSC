@@ -24,6 +24,8 @@ const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
 const { mergeEvents, prunePastEvents } = require('./merge');
 const { validateEvents } = require('./schema');
+const { generateFeatured } = require('./generate-featured');
+const { exportAllToJson } = require('./export-to-json');
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -139,7 +141,7 @@ async function main() {
     return;
   }
 
-  const stats = mergeEvents(valid);
+  const stats = await mergeEvents(valid);
   console.log(`\nMerge complete:`);
   console.log(`  Added:        ${stats.added}`);
   console.log(`  Updated:      ${stats.updated}`);
@@ -150,14 +152,18 @@ async function main() {
   }
 
   // Prune past events
-  const pruned = prunePastEvents();
+  const pruned = await prunePastEvents();
   console.log(`\nCleanup: pruned ${pruned} past events`);
 
   // Regenerate featured content
   console.log(`\nRegenerating featured picks...`);
-  require('./generate-featured');
+  await generateFeatured();
 
-  console.log(`\nDone. src/data/events.json and src/data/featured.json updated.`);
+  // Keep the JSON files in src/data as a readable snapshot of the DB
+  console.log(`\nExporting Supabase tables to src/data/*.json...`);
+  await exportAllToJson();
+
+  console.log(`\nDone. Supabase updated, src/data/*.json exported.`);
 }
 
 main().catch(err => {
