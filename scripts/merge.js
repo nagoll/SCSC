@@ -1,6 +1,6 @@
 /**
  * merge.js
- * Merges newly fetched events into the existing events.json.
+ * Merges newly fetched events into the events table in Supabase.
  *
  * Source precedence (highest → lowest):
  *   university-scraper > juco-scraper > espn-api > pro-api > manual
@@ -14,8 +14,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const { supabaseAdmin } = require('./supabase-admin');
 
-const EVENTS_PATH = path.join(__dirname, '../src/data/events.json');
 const SYNC_LOG_PATH = path.join(__dirname, '../scripts/sync-log.json');
 
 const SOURCE_PRECEDENCE = {
@@ -79,14 +79,18 @@ function loadSyncLog() {
 }
 
 /**
- * Merge an array of new events into events.json.
+ * Merge an array of new events into the events table.
+ * `db` is injectable so tests can pass a fake client; defaults to the real one.
  * Returns stats: { added, updated, skipped, discrepancies }.
  */
-function mergeEvents(newEvents) {
-  const existing = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+async function mergeEvents(newEvents, db = supabaseAdmin()) {
+  const { data: existing, error: readError } = await db.from('events').select('*');
+  if (readError) throw new Error(`mergeEvents: failed to read events — ${readError.message}`);
+
   const existingMap = new Map(existing.map(e => [e.id, e]));
   const syncLog = loadSyncLog();
   const discrepancies = [];
+  const toUpsert = [];
 
   let added = 0;
   let updated = 0;
@@ -96,6 +100,7 @@ function mergeEvents(newEvents) {
     const current = existingMap.get(incoming.id);
 
     if (!current) {
+      toUpsert.push(incoming);
       existingMap.set(incoming.id, incoming);
       added++;
       continue;
@@ -149,6 +154,7 @@ function mergeEvents(newEvents) {
         mergedEvent.venueConfidence = 'verified';
       }
 
+      toUpsert.push(mergedEvent);
       existingMap.set(incoming.id, mergedEvent);
       updated++;
     } else {
@@ -157,20 +163,18 @@ function mergeEvents(newEvents) {
       if (incoming.venue === current.venue &&
           incoming.source !== current.source &&
           incoming.venueSourceName && current.venueSourceName) {
-        existingMap.set(current.id, {
-          ...current,
-          venueConfidence: 'verified',
-        });
+        const upgraded = { ...current, venueConfidence: 'verified' };
+        toUpsert.push(upgraded);
+        existingMap.set(current.id, upgraded);
       }
       skipped++;
     }
   }
 
-  const merged = Array.from(existingMap.values()).sort(
-    (a, b) => new Date(a.dateTime) - new Date(b.dateTime)
-  );
-
-  fs.writeFileSync(EVENTS_PATH, JSON.stringify(merged, null, 2));
+  if (toUpsert.length > 0) {
+    const { error: writeError } = await db.from('events').upsert(toUpsert);
+    if (writeError) throw new Error(`mergeEvents: failed to write events — ${writeError.message}`);
+  }
 
   // Update sync log
   syncLog.lastRun = new Date().toISOString();
@@ -185,21 +189,21 @@ function mergeEvents(newEvents) {
 
 /**
  * Remove events whose dateTime is before yesterday.
+ * `db` is injectable so tests can pass a fake client; defaults to the real one.
  * Returns the number of events pruned.
  */
-function prunePastEvents() {
-  const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+async function prunePastEvents(db = supabaseAdmin()) {
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   yesterday.setHours(0, 0, 0, 0);
 
-  const kept = events.filter(e => new Date(e.dateTime) >= yesterday);
-  const pruned = events.length - kept.length;
-
-  if (pruned > 0) {
-    fs.writeFileSync(EVENTS_PATH, JSON.stringify(kept, null, 2));
-  }
-  return pruned;
+  const { data: deleted, error } = await db
+    .from('events')
+    .delete()
+    .lt('dateTime', yesterday.toISOString())
+    .select('id');
+  if (error) throw new Error(`prunePastEvents: ${error.message}`);
+  return deleted.length;
 }
 
 module.exports = { mergeEvents, prunePastEvents, getPrecedence, detectDiscrepancies };
