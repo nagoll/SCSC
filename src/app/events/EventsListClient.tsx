@@ -7,32 +7,36 @@ import type { SportEvent, Team, Venue } from '@/lib/types';
 import { SPORT_ICONS, LEVEL_LABELS, LEVEL_COLORS } from '@/lib/constants';
 import { formatDate, formatTime, isSameDay } from '@/lib/calendar';
 
-import teamsData from '@/data/teams.json';
-import venuesData from '@/data/venues.json';
-import eventsData from '@/data/events.json';
+interface EventsListClientProps {
+  teams: Team[];
+  venues: Venue[];
+  events: SportEvent[];
+}
 
-const teamsMap: Record<string, Team> = {};
-for (const t of teamsData as Team[]) teamsMap[t.id] = t;
-
-const venuesMap: Record<string, Venue> = {};
-for (const v of venuesData as Venue[]) venuesMap[v.id] = v;
-
-const allEvents = (eventsData as SportEvent[]).sort(
-  (a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
-);
-
-export default function EventsListClient() {
+export default function EventsListClient({ teams, venues, events }: EventsListClientProps) {
   const searchParams = useSearchParams();
   const showToday = searchParams.get('today') === '1';
+
+  const teamsMap = useMemo(() => {
+    const map: Record<string, Team> = {};
+    for (const t of teams) map[t.id] = t;
+    return map;
+  }, [teams]);
+
+  const venuesMap = useMemo(() => {
+    const map: Record<string, Venue> = {};
+    for (const v of venues) map[v.id] = v;
+    return map;
+  }, [venues]);
 
   const today = new Date();
 
   const filteredEvents = useMemo(() => {
     if (showToday) {
-      return allEvents.filter((e) => isSameDay(new Date(e.dateTime), today));
+      return events.filter((e) => isSameDay(new Date(e.dateTime), today));
     }
-    return allEvents;
-  }, [showToday]);
+    return events;
+  }, [showToday, events, today]);
 
   const title = showToday ? "Today's Events" : 'All Events';
   const subtitle = showToday
