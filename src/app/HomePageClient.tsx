@@ -18,25 +18,34 @@ import SportIcon from '@/components/shared/SportIcon';
 import LevelBadge from '@/components/shared/LevelBadge';
 import { formatTime } from '@/lib/calendar';
 
-// Import data
-import teamsData from '@/data/teams.json';
-import venuesData from '@/data/venues.json';
-import eventsData from '@/data/events.json';
-import featuredData from '@/data/featured.json';
+interface HomePageClientProps {
+  teams: Team[];
+  venues: Venue[];
+  events: SportEvent[];
+  featured: FeaturedContent[];
+}
 
-// Build lookup maps
-const teamsMap: Record<string, Team> = {};
-for (const t of teamsData as Team[]) teamsMap[t.id] = t;
-
-const venuesMap: Record<string, Venue> = {};
-for (const v of venuesData as Venue[]) venuesMap[v.id] = v;
-
-const eventsMap: Record<string, SportEvent> = {};
-for (const e of eventsData as SportEvent[]) eventsMap[e.id] = e;
-
-export default function HomePage() {
+export default function HomePage({ teams, venues, events, featured }: HomePageClientProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const teamsMap = useMemo(() => {
+    const map: Record<string, Team> = {};
+    for (const t of teams) map[t.id] = t;
+    return map;
+  }, [teams]);
+
+  const venuesMap = useMemo(() => {
+    const map: Record<string, Venue> = {};
+    for (const v of venues) map[v.id] = v;
+    return map;
+  }, [venues]);
+
+  const eventsMap = useMemo(() => {
+    const map: Record<string, SportEvent> = {};
+    for (const e of events) map[e.id] = e;
+    return map;
+  }, [events]);
 
   const [filters, setFilters] = useState<Filters>(() => {
     if (searchParams.toString()) {
@@ -66,16 +75,16 @@ export default function HomePage() {
     }
   }, [filters, router, searchParams]);
 
-  const allEvents = eventsData as SportEvent[];
+  const allEvents = events;
 
   const filteredEvents = useMemo(() => {
-    let events = applyFilters(allEvents, filters, teamsMap, venuesMap);
+    let filtered = applyFilters(allEvents, filters, teamsMap, venuesMap);
     if (nearMe.active && nearMe.lat !== null && nearMe.lng !== null) {
       const nearbyVenues = getVenuesWithinRadius(venuesMap, nearMe.lat, nearMe.lng, nearMe.radiusMiles);
-      events = events.filter((e) => nearbyVenues.has(e.venue));
+      filtered = filtered.filter((e) => nearbyVenues.has(e.venue));
     }
-    return events;
-  }, [allEvents, filters, nearMe]);
+    return filtered;
+  }, [allEvents, filters, nearMe, teamsMap, venuesMap]);
 
   // Today's events
   const today = new Date();
@@ -237,7 +246,7 @@ export default function HomePage() {
       <section className="border-t border-border px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <FeaturedSection
-            featured={featuredData as FeaturedContent[]}
+            featured={featured}
             events={eventsMap}
             teams={teamsMap}
             venues={venuesMap}

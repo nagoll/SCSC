@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import { getTeams, getVenues, getEvents } from '@/lib/data';
 import EventsListClient from './EventsListClient';
 
 export const metadata: Metadata = {
@@ -7,10 +8,12 @@ export const metadata: Metadata = {
   description: 'Browse every upcoming sporting event in LA County — filter by sport, level, and date.',
 };
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const [teams, venues, events] = await Promise.all([getTeams(), getVenues(), getEvents()]);
+
   return (
     <Suspense>
-      <EventsListClient />
+      <EventsListClient teams={teams} venues={venues} events={events} />
     </Suspense>
   );
 }
