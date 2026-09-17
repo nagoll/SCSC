@@ -90,7 +90,12 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
   const existingMap = new Map(existing.map(e => [e.id, e]));
   const syncLog = loadSyncLog();
   const discrepancies = [];
-  const toUpsert = [];
+  // Keyed by id (not an array) so that two incoming events resolving to the
+  // same id — e.g. duplicate listings from overlapping API sources — collapse
+  // into one row instead of producing two rows for the same key in a single
+  // upsert, which Postgres rejects ("ON CONFLICT DO UPDATE ... cannot affect
+  // row a second time").
+  const toUpsert = new Map();
 
   let added = 0;
   let updated = 0;
@@ -100,7 +105,7 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
     const current = existingMap.get(incoming.id);
 
     if (!current) {
-      toUpsert.push(incoming);
+      toUpsert.set(incoming.id, incoming);
       existingMap.set(incoming.id, incoming);
       added++;
       continue;
@@ -154,7 +159,7 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
         mergedEvent.venueConfidence = 'verified';
       }
 
-      toUpsert.push(mergedEvent);
+      toUpsert.set(incoming.id, mergedEvent);
       existingMap.set(incoming.id, mergedEvent);
       updated++;
     } else {
@@ -164,15 +169,15 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
           incoming.source !== current.source &&
           incoming.venueSourceName && current.venueSourceName) {
         const upgraded = { ...current, venueConfidence: 'verified' };
-        toUpsert.push(upgraded);
+        toUpsert.set(current.id, upgraded);
         existingMap.set(current.id, upgraded);
       }
       skipped++;
     }
   }
 
-  if (toUpsert.length > 0) {
-    const { error: writeError } = await db.from('events').upsert(toUpsert);
+  if (toUpsert.size > 0) {
+    const { error: writeError } = await db.from('events').upsert(Array.from(toUpsert.values()));
     if (writeError) throw new Error(`mergeEvents: failed to write events — ${writeError.message}`);
   }
 

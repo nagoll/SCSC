@@ -129,6 +129,32 @@ describe('mergeEvents (against a fake Supabase client)', () => {
     expect(fake.tables.events[0].eventName).toBe('Keep');
   });
 
+  it('collapses duplicate ids within a single incoming batch into one upsert row', async () => {
+    const fake = makeFakeSupabase({ events: [] });
+    const upsertPayloads = [];
+    const originalFrom = fake.from;
+    fake.from = (name) => {
+      const b = originalFrom(name);
+      const originalUpsert = b.upsert;
+      b.upsert = (rows) => {
+        upsertPayloads.push(rows);
+        return originalUpsert(rows);
+      };
+      return b;
+    };
+
+    await mergeEvents([
+      baseEvent({ id: 'dup-1', source: 'espn-api:pro', eventName: 'First' }),
+      baseEvent({ id: 'dup-1', source: 'espn-api:pro', eventName: 'Second' }),
+    ], fake);
+
+    expect(upsertPayloads).toHaveLength(1);
+    const ids = upsertPayloads[0].map((r) => r.id);
+    expect(ids).toEqual(['dup-1']);
+    expect(fake.tables.events).toHaveLength(1);
+    expect(fake.tables.events[0].eventName).toBe('Second');
+  });
+
   it('upgrades venue confidence to verified when two independent sources agree on the venue', async () => {
     const fake = makeFakeSupabase({
       events: [baseEvent({ id: 'e1', source: 'pro-api:mlb', venue: 'galen-center', venueSourceName: 'Galen Center', venueConfidence: 'likely' })],
