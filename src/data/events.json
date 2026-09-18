@@ -1,159 +1,5 @@
 [
   {
-    "id": "usc-trojans-20260912-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Arizona Wildcats at USC Trojans",
-    "dateTime": "2026-09-12T02:00:00.000Z",
-    "endTime": null,
-    "venue": "galen-center",
-    "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886059",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.533Z"
-  },
-  {
-    "id": "long-beach-state-49ers-20260912-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "long-beach-state-49ers",
-    "awayTeam": null,
-    "eventName": "San José State Spartans at Long Beach State 49ers",
-    "dateTime": "2026-09-12T23:00:00.000Z",
-    "endTime": null,
-    "venue": "walter-pyramid",
-    "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897087",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549Z"
-  },
-  {
-    "id": "ucla-bruins-20260912-college-football",
-    "sport": "other",
-    "level": "college",
-    "gender": "mens",
-    "homeTeam": "ucla-bruins",
-    "awayTeam": null,
-    "eventName": "San Diego State Aztecs at UCLA Bruins",
-    "dateTime": "2026-09-12T23:15:00.000Z",
-    "endTime": null,
-    "venue": "rose-bowl",
-    "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858443/san-diego-st-ucla",
-    "price": "over_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337Z"
-  },
-  {
-    "id": "usc-trojans-20260913-college-football",
-    "sport": "other",
-    "level": "college",
-    "gender": "mens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Louisiana Ragin' Cajuns at USC Trojans",
-    "dateTime": "2026-09-13T03:00:00.000Z",
-    "endTime": null,
-    "venue": "la-memorial-coliseum",
-    "venueSourceName": "Los Angeles Memorial Coliseum",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858445/louisiana-usc",
-    "price": "over_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.375Z"
-  },
-  {
-    "id": "la-chargers-20260913",
-    "sport": "football",
-    "level": "pro",
-    "gender": "mens",
-    "homeTeam": "la-chargers",
-    "awayTeam": null,
-    "eventName": "Arizona Cardinals at Los Angeles Chargers",
-    "dateTime": "2026-09-13T20:25:00.000Z",
-    "endTime": null,
-    "venue": "sofi-stadium",
-    "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.chargers.com/tickets",
-    "price": "over_50",
-    "conference": null,
-    "league": "NFL",
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
-  },
-  {
-    "id": "usc-trojans-20260913-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Oregon State Beavers at USC Trojans",
-    "dateTime": "2026-09-13T21:00:00.000Z",
-    "endTime": null,
-    "venue": "galen-center",
-    "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886061",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.533Z"
-  },
-  {
-    "id": "long-beach-state-49ers-20260913-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "long-beach-state-49ers",
-    "awayTeam": null,
-    "eventName": "Loyola Marymount Lions at Long Beach State 49ers",
-    "dateTime": "2026-09-13T23:00:00.000Z",
-    "endTime": null,
-    "venue": "walter-pyramid",
-    "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401888441",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549Z"
-  },
-  {
     "id": "usc-trojans-20260919-womens-college-volleyball",
     "sport": "volleyball",
     "level": "college",
@@ -161,7 +7,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "UC Davis Aggies at USC Trojans",
-    "dateTime": "2026-09-19T02:00:00.000Z",
+    "dateTime": "2026-09-19T02:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -173,7 +19,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "la-dodgers-20260919",
@@ -183,19 +29,19 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2026-09-19T02:15:00.000Z",
+    "dateTime": "2026-09-19T02:15:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.973Z"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
   },
   {
     "id": "la-kings-20260920",
@@ -205,19 +51,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Golden Knights at Kings",
-    "dateTime": "2026-09-20T01:00:00.000Z",
+    "dateTime": "2026-09-20T01:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Toyota Arena",
-    "venueConfidence": "unverified",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
   },
   {
     "id": "ucla-bruins-20260920-college-football",
@@ -227,7 +73,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Purdue Boilermakers at UCLA Bruins",
-    "dateTime": "2026-09-20T03:00:00.000Z",
+    "dateTime": "2026-09-20T03:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -239,7 +85,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337Z"
+    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
   },
   {
     "id": "la-chargers-20260920",
@@ -249,19 +95,19 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "Las Vegas Raiders at Los Angeles Chargers",
-    "dateTime": "2026-09-20T20:05:00.000Z",
+    "dateTime": "2026-09-20T20:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
   },
   {
     "id": "la-dodgers-20260920",
@@ -271,19 +117,19 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2026-09-20T20:10:00.000Z",
+    "dateTime": "2026-09-20T20:10:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.973Z"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
   },
   {
     "id": "usc-trojans-20260920-womens-college-volleyball",
@@ -293,7 +139,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "UC Santa Barbara Gauchos at USC Trojans",
-    "dateTime": "2026-09-20T21:00:00.000Z",
+    "dateTime": "2026-09-20T21:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -305,7 +151,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "la-rams-20260922",
@@ -315,19 +161,19 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "New York Giants at Los Angeles Rams",
-    "dateTime": "2026-09-22T00:15:00.000Z",
+    "dateTime": "2026-09-22T00:15:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
   },
   {
     "id": "la-kings-20260923",
@@ -337,19 +183,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Mammoth at Kings",
-    "dateTime": "2026-09-23T02:00:00.000Z",
+    "dateTime": "2026-09-23T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
   },
   {
     "id": "la-dodgers-20260923",
@@ -359,19 +205,19 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2026-09-23T02:10:00.000Z",
+    "dateTime": "2026-09-23T02:10:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.973Z"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
   },
   {
     "id": "la-dodgers-20260924",
@@ -381,19 +227,19 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2026-09-24T02:10:00.000Z",
+    "dateTime": "2026-09-24T02:10:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.973Z"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
   },
   {
     "id": "la-dodgers-20260925",
@@ -403,19 +249,19 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2026-09-25T02:10:00.000Z",
+    "dateTime": "2026-09-25T02:10:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975Z"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
   },
   {
     "id": "usc-trojans-20260926-college-football",
@@ -425,7 +271,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Oregon Ducks at USC Trojans",
-    "dateTime": "2026-09-26T04:00:00.000Z",
+    "dateTime": "2026-09-26T04:00:00+00:00",
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
@@ -437,7 +283,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.375Z"
+    "lastUpdated": "2026-09-12T16:34:41.375+00:00"
   },
   {
     "id": "la-kings-20260926",
@@ -447,19 +293,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Ducks at Kings",
-    "dateTime": "2026-09-26T20:00:00.000Z",
+    "dateTime": "2026-09-26T20:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
   },
   {
     "id": "ucla-bruins-20261003-womens-college-volleyball",
@@ -469,7 +315,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Michigan State Spartans at UCLA Bruins",
-    "dateTime": "2026-10-03T02:00:00.000Z",
+    "dateTime": "2026-10-03T02:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -481,7 +327,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.479Z"
+    "lastUpdated": "2026-09-12T16:34:41.479+00:00"
   },
   {
     "id": "usc-trojans-20261003-womens-college-volleyball",
@@ -491,7 +337,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Michigan Wolverines at USC Trojans",
-    "dateTime": "2026-10-03T03:00:00.000Z",
+    "dateTime": "2026-10-03T03:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -503,7 +349,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "usc-trojans-20261003-college-football",
@@ -513,7 +359,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Washington Huskies at USC Trojans",
-    "dateTime": "2026-10-03T04:00:00.000Z",
+    "dateTime": "2026-10-03T04:00:00+00:00",
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
@@ -525,7 +371,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.375Z"
+    "lastUpdated": "2026-09-12T16:34:41.375+00:00"
   },
   {
     "id": "ucla-bruins-20261004-womens-college-volleyball",
@@ -535,7 +381,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Michigan Wolverines at UCLA Bruins",
-    "dateTime": "2026-10-04T02:00:00.000Z",
+    "dateTime": "2026-10-04T02:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -547,7 +393,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "usc-trojans-20261004-womens-college-volleyball",
@@ -557,7 +403,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Michigan State Spartans at USC Trojans",
-    "dateTime": "2026-10-04T21:00:00.000Z",
+    "dateTime": "2026-10-04T21:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -569,7 +415,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "la-clippers-20261004",
@@ -579,19 +425,19 @@
     "homeTeam": "la-clippers",
     "awayTeam": null,
     "eventName": "Golden State Warriors at LA Clippers",
-    "dateTime": "2026-10-04T23:00:00.000Z",
+    "dateTime": "2026-10-04T23:00:00+00:00",
     "endTime": null,
     "venue": "intuit-dome",
     "venueSourceName": "Intuit Dome",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nba.com/clippers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NBA",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.952Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
   },
   {
     "id": "la-kings-20261007",
@@ -601,19 +447,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Panthers at Kings",
-    "dateTime": "2026-10-07T02:30:00.000Z",
+    "dateTime": "2026-10-07T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
   },
   {
     "id": "la-lakers-20261008",
@@ -623,7 +469,7 @@
     "homeTeam": "la-lakers",
     "awayTeam": null,
     "eventName": "Sacramento Kings at Los Angeles Lakers",
-    "dateTime": "2026-10-08T04:00:00Z",
+    "dateTime": "2026-10-08T04:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "crypto.com Arena",
@@ -635,7 +481,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-07-26T15:05:17.631Z"
+    "lastUpdated": "2026-07-26T15:05:17.631+00:00"
   },
   {
     "id": "la-lakers-20261009",
@@ -645,19 +491,19 @@
     "homeTeam": "la-lakers",
     "awayTeam": null,
     "eventName": "Sacramento Kings at Los Angeles Lakers",
-    "dateTime": "2026-10-09T02:30:00.000Z",
+    "dateTime": "2026-10-09T02:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nba.com/lakers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NBA",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.922Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261009-womens-college-volleyball",
@@ -667,7 +513,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "UC Santa Barbara Gauchos at Long Beach State 49ers",
-    "dateTime": "2026-10-09T04:00:00.000Z",
+    "dateTime": "2026-10-09T04:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -679,7 +525,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549Z"
+    "lastUpdated": "2026-09-12T16:34:41.549+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261011-womens-college-volleyball",
@@ -689,7 +535,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "Cal Poly Mustangs at Long Beach State 49ers",
-    "dateTime": "2026-10-11T01:00:00.000Z",
+    "dateTime": "2026-10-11T01:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -701,7 +547,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549Z"
+    "lastUpdated": "2026-09-12T16:34:41.549+00:00"
   },
   {
     "id": "la-chargers-20261011",
@@ -711,19 +557,19 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "Denver Broncos at Los Angeles Chargers",
-    "dateTime": "2026-10-11T20:05:00.000Z",
+    "dateTime": "2026-10-11T20:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
   },
   {
     "id": "la-rams-20261013",
@@ -733,19 +579,19 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Buffalo Bills at Los Angeles Rams",
-    "dateTime": "2026-10-13T00:15:00.000Z",
+    "dateTime": "2026-10-13T00:15:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
   },
   {
     "id": "la-kings-20261014",
@@ -755,19 +601,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Oilers at Kings",
-    "dateTime": "2026-10-14T02:30:00.000Z",
+    "dateTime": "2026-10-14T02:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
   },
   {
     "id": "la-clippers-20261015",
@@ -777,19 +623,19 @@
     "homeTeam": "la-clippers",
     "awayTeam": null,
     "eventName": "Denver Nuggets at LA Clippers",
-    "dateTime": "2026-10-15T02:30:00.000Z",
+    "dateTime": "2026-10-15T02:30:00+00:00",
     "endTime": null,
     "venue": "intuit-dome",
     "venueSourceName": "Intuit Dome",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nba.com/clippers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NBA",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.952Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
   },
   {
     "id": "la-lakers-20261016",
@@ -799,7 +645,7 @@
     "homeTeam": "la-lakers",
     "awayTeam": null,
     "eventName": "Denver Nuggets at Los Angeles Lakers",
-    "dateTime": "2026-10-16T04:00:00.000Z",
+    "dateTime": "2026-10-16T04:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "crypto.com Arena",
@@ -811,7 +657,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-08-20T14:23:19.503Z"
+    "lastUpdated": "2026-08-20T14:23:19.503+00:00"
   },
   {
     "id": "ucla-bruins-20261017-womens-college-volleyball",
@@ -821,7 +667,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Penn State Nittany Lions at UCLA Bruins",
-    "dateTime": "2026-10-17T02:00:00.000Z",
+    "dateTime": "2026-10-17T02:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -833,7 +679,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "la-lakers-20261017",
@@ -843,19 +689,19 @@
     "homeTeam": "la-lakers",
     "awayTeam": null,
     "eventName": "Denver Nuggets at Los Angeles Lakers",
-    "dateTime": "2026-10-17T02:30:00.000Z",
+    "dateTime": "2026-10-17T02:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nba.com/lakers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NBA",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.922Z"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
   },
   {
     "id": "usc-trojans-20261017-womens-college-volleyball",
@@ -865,7 +711,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Penn State Nittany Lions at USC Trojans",
-    "dateTime": "2026-10-17T04:00:00.000Z",
+    "dateTime": "2026-10-17T04:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -877,7 +723,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "ucla-bruins-20261017-college-football",
@@ -887,7 +733,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Wisconsin Badgers at UCLA Bruins",
-    "dateTime": "2026-10-17T04:00:00.000Z",
+    "dateTime": "2026-10-17T04:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -899,7 +745,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337Z"
+    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
   },
   {
     "id": "la-kings-20261018",
@@ -909,19 +755,19 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Bruins at Kings",
-    "dateTime": "2026-10-18T01:00:00.000Z",
+    "dateTime": "2026-10-18T01:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.281Z"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
   },
   {
     "id": "la-rams-20261018",
@@ -931,7 +777,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Arizona Cardinals at Los Angeles Rams",
-    "dateTime": "2026-10-18T20:05:00.000Z",
+    "dateTime": "2026-10-18T20:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -943,7 +789,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926Z"
+    "lastUpdated": "2026-09-12T16:34:40.926+00:00"
   },
   {
     "id": "ucla-bruins-20261018-womens-college-volleyball",
@@ -953,7 +799,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Ohio State Buckeyes at UCLA Bruins",
-    "dateTime": "2026-10-18T22:00:00.000Z",
+    "dateTime": "2026-10-18T22:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -965,7 +811,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261024-womens-college-volleyball",
@@ -975,7 +821,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "Cal State Fullerton Titans at Long Beach State 49ers",
-    "dateTime": "2026-10-24T02:00:00.000Z",
+    "dateTime": "2026-10-24T02:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -987,7 +833,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549Z"
+    "lastUpdated": "2026-09-12T16:34:41.549+00:00"
   },
   {
     "id": "ucla-bruins-20261024-college-football",
@@ -997,7 +843,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Michigan State Spartans at UCLA Bruins",
-    "dateTime": "2026-10-24T04:00:00.000Z",
+    "dateTime": "2026-10-24T04:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -1009,7 +855,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337Z"
+    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
   },
   {
     "id": "la-kings-20261030",
@@ -1019,7 +865,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Senators at Kings",
-    "dateTime": "2026-10-30T02:00:00.000Z",
+    "dateTime": "2026-10-30T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1031,7 +877,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "usc-trojans-20261031-womens-college-volleyball",
@@ -1041,7 +887,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Wisconsin Badgers at USC Trojans",
-    "dateTime": "2026-10-31T02:00:00.000Z",
+    "dateTime": "2026-10-31T02:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -1053,7 +899,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "ucla-bruins-20261031-womens-college-volleyball",
@@ -1063,7 +909,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Minnesota Golden Gophers at UCLA Bruins",
-    "dateTime": "2026-10-31T02:00:00.000Z",
+    "dateTime": "2026-10-31T02:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1075,7 +921,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261031-womens-college-volleyball",
@@ -1085,7 +931,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "Cal State Bakersfield Roadrunners at Long Beach State 49ers",
-    "dateTime": "2026-10-31T02:00:00.000Z",
+    "dateTime": "2026-10-31T02:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1097,7 +943,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "usc-trojans-20261031-college-football",
@@ -1107,7 +953,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Ohio State Buckeyes at USC Trojans",
-    "dateTime": "2026-10-31T04:00:00.000Z",
+    "dateTime": "2026-10-31T04:00:00+00:00",
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
@@ -1119,7 +965,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.376Z"
+    "lastUpdated": "2026-09-12T16:34:41.376+00:00"
   },
   {
     "id": "ucla-bruins-20261031-college-football",
@@ -1129,7 +975,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Nevada Wolf Pack at UCLA Bruins",
-    "dateTime": "2026-10-31T04:00:00.000Z",
+    "dateTime": "2026-10-31T04:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -1141,7 +987,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338Z"
+    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
   },
   {
     "id": "la-kings-20261031",
@@ -1151,7 +997,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Sabres at Kings",
-    "dateTime": "2026-10-31T20:00:00.000Z",
+    "dateTime": "2026-10-31T20:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1163,7 +1009,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261101-womens-college-volleyball",
@@ -1173,7 +1019,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "Cal State Northridge Matadors at Long Beach State 49ers",
-    "dateTime": "2026-11-01T01:00:00.000Z",
+    "dateTime": "2026-11-01T01:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1185,7 +1031,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "la-rams-20261101",
@@ -1195,7 +1041,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Los Angeles Chargers at Los Angeles Rams",
-    "dateTime": "2026-11-01T21:05:00.000Z",
+    "dateTime": "2026-11-01T21:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1207,7 +1053,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926Z"
+    "lastUpdated": "2026-09-12T16:34:40.926+00:00"
   },
   {
     "id": "usc-trojans-20261101-womens-college-volleyball",
@@ -1217,7 +1063,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Minnesota Golden Gophers at USC Trojans",
-    "dateTime": "2026-11-01T22:00:00.000Z",
+    "dateTime": "2026-11-01T22:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -1229,7 +1075,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "ucla-bruins-20261101-womens-college-volleyball",
@@ -1239,7 +1085,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Wisconsin Badgers at UCLA Bruins",
-    "dateTime": "2026-11-01T23:00:00.000Z",
+    "dateTime": "2026-11-01T23:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1251,7 +1097,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "ucla-bruins-20261102-womens-college-basketball",
@@ -1261,7 +1107,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Lehigh Mountain Hawks at UCLA Bruins",
-    "dateTime": "2026-11-02T05:00:00.000Z",
+    "dateTime": "2026-11-02T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1273,7 +1119,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.486Z"
+    "lastUpdated": "2026-09-12T16:34:41.486+00:00"
   },
   {
     "id": "la-kings-20261105",
@@ -1283,7 +1129,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Sharks at Kings",
-    "dateTime": "2026-11-05T03:00:00.000Z",
+    "dateTime": "2026-11-05T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1295,7 +1141,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "ucla-bruins-20261105-womens-college-basketball",
@@ -1305,7 +1151,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "UC Irvine Anteaters at UCLA Bruins",
-    "dateTime": "2026-11-05T05:00:00.000Z",
+    "dateTime": "2026-11-05T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1317,7 +1163,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.486Z"
+    "lastUpdated": "2026-09-12T16:34:41.486+00:00"
   },
   {
     "id": "la-kings-20261108",
@@ -1327,7 +1173,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Penguins at Kings",
-    "dateTime": "2026-11-08T02:00:00.000Z",
+    "dateTime": "2026-11-08T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1339,7 +1185,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "la-chargers-20261108",
@@ -1349,7 +1195,7 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "Houston Texans at Los Angeles Chargers",
-    "dateTime": "2026-11-08T21:05:00.000Z",
+    "dateTime": "2026-11-08T21:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1361,7 +1207,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
   },
   {
     "id": "la-kings-20261111",
@@ -1371,7 +1217,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Predators at Kings",
-    "dateTime": "2026-11-11T03:00:00.000Z",
+    "dateTime": "2026-11-11T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1383,7 +1229,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-basketball",
@@ -1393,7 +1239,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Arizona Wildcats at UCLA Bruins",
-    "dateTime": "2026-11-12T05:00:00.000Z",
+    "dateTime": "2026-11-12T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1405,7 +1251,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487Z"
+    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-volleyball",
@@ -1415,7 +1261,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Washington Huskies at UCLA Bruins",
-    "dateTime": "2026-11-12T19:00:00.000Z",
+    "dateTime": "2026-11-12T19:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1427,7 +1273,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "usc-trojans-20261113-womens-college-volleyball",
@@ -1437,7 +1283,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Oregon Ducks at USC Trojans",
-    "dateTime": "2026-11-13T02:00:00.000Z",
+    "dateTime": "2026-11-13T02:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -1449,7 +1295,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "la-kings-20261113",
@@ -1459,7 +1305,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Islanders at Kings",
-    "dateTime": "2026-11-13T03:00:00.000Z",
+    "dateTime": "2026-11-13T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1471,7 +1317,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "ucla-bruins-20261114-college-football",
@@ -1481,7 +1327,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Illinois Fighting Illini at UCLA Bruins",
-    "dateTime": "2026-11-14T02:00:00.000Z",
+    "dateTime": "2026-11-14T02:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -1493,7 +1339,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338Z"
+    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261114-womens-college-volleyball",
@@ -1503,7 +1349,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "UC Riverside Highlanders at Long Beach State 49ers",
-    "dateTime": "2026-11-14T03:00:00.000Z",
+    "dateTime": "2026-11-14T03:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1515,7 +1361,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-volleyball",
@@ -1525,7 +1371,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Oregon Ducks at UCLA Bruins",
-    "dateTime": "2026-11-15T01:00:00.000Z",
+    "dateTime": "2026-11-15T01:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1537,7 +1383,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261115-womens-college-volleyball",
@@ -1547,7 +1393,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "California Baptist Lancers at Long Beach State 49ers",
-    "dateTime": "2026-11-15T02:00:00.000Z",
+    "dateTime": "2026-11-15T02:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1559,7 +1405,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "la-kings-20261115",
@@ -1569,7 +1415,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Flames at Kings",
-    "dateTime": "2026-11-15T03:00:00.000Z",
+    "dateTime": "2026-11-15T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1581,7 +1427,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "usc-trojans-20261115-womens-college-volleyball",
@@ -1591,7 +1437,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Washington Huskies at USC Trojans",
-    "dateTime": "2026-11-15T03:00:00.000Z",
+    "dateTime": "2026-11-15T03:00:00+00:00",
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
@@ -1603,7 +1449,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534Z"
+    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-basketball",
@@ -1613,7 +1459,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Princeton Tigers at UCLA Bruins",
-    "dateTime": "2026-11-15T05:00:00.000Z",
+    "dateTime": "2026-11-15T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1625,7 +1471,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487Z"
+    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
   },
   {
     "id": "ucla-bruins-20261118-womens-college-volleyball",
@@ -1635,7 +1481,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "USC Trojans at UCLA Bruins",
-    "dateTime": "2026-11-18T03:30:00.000Z",
+    "dateTime": "2026-11-18T03:30:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1647,7 +1493,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.480Z"
+    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
   },
   {
     "id": "ucla-bruins-20261119-womens-college-basketball",
@@ -1657,7 +1503,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Cal Poly Mustangs at UCLA Bruins",
-    "dateTime": "2026-11-19T05:00:00.000Z",
+    "dateTime": "2026-11-19T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1669,7 +1515,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487Z"
+    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261121-womens-college-volleyball",
@@ -1679,7 +1525,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "UC San Diego Tritons at Long Beach State 49ers",
-    "dateTime": "2026-11-21T03:00:00.000Z",
+    "dateTime": "2026-11-21T03:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1691,7 +1537,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "usc-trojans-20261121-college-football",
@@ -1701,7 +1547,7 @@
     "homeTeam": "usc-trojans",
     "awayTeam": null,
     "eventName": "Maryland Terrapins at USC Trojans",
-    "dateTime": "2026-11-21T05:00:00.000Z",
+    "dateTime": "2026-11-21T05:00:00+00:00",
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
@@ -1713,7 +1559,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.376Z"
+    "lastUpdated": "2026-09-12T16:34:41.376+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261122-womens-college-volleyball",
@@ -1723,7 +1569,7 @@
     "homeTeam": "long-beach-state-49ers",
     "awayTeam": null,
     "eventName": "UC Irvine Anteaters at Long Beach State 49ers",
-    "dateTime": "2026-11-22T02:00:00.000Z",
+    "dateTime": "2026-11-22T02:00:00+00:00",
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
@@ -1735,7 +1581,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.550Z"
+    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
   },
   {
     "id": "la-chargers-20261122",
@@ -1745,7 +1591,7 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "New York Jets at Los Angeles Chargers",
-    "dateTime": "2026-11-22T21:05:00.000Z",
+    "dateTime": "2026-11-22T21:05:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1757,7 +1603,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
   },
   {
     "id": "la-rams-20261126",
@@ -1767,7 +1613,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Green Bay Packers at Los Angeles Rams",
-    "dateTime": "2026-11-26T01:00:00.000Z",
+    "dateTime": "2026-11-26T01:00:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1779,7 +1625,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927Z"
+    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
   },
   {
     "id": "ucla-bruins-20261128-college-football",
@@ -1789,7 +1635,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "USC Trojans at UCLA Bruins",
-    "dateTime": "2026-11-28T05:00:00.000Z",
+    "dateTime": "2026-11-28T05:00:00+00:00",
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
@@ -1801,7 +1647,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338Z"
+    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
   },
   {
     "id": "la-kings-20261129",
@@ -1811,7 +1657,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Ducks at Kings",
-    "dateTime": "2026-11-29T02:00:00.000Z",
+    "dateTime": "2026-11-29T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1823,7 +1669,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "ucla-bruins-20261129-womens-college-basketball",
@@ -1833,7 +1679,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Pennsylvania Quakers at UCLA Bruins",
-    "dateTime": "2026-11-29T05:00:00.000Z",
+    "dateTime": "2026-11-29T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1845,7 +1691,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487Z"
+    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
   },
   {
     "id": "la-chargers-20261130",
@@ -1855,7 +1701,7 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "New England Patriots at Los Angeles Chargers",
-    "dateTime": "2026-11-30T01:20:00.000Z",
+    "dateTime": "2026-11-30T01:20:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1867,7 +1713,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
   },
   {
     "id": "la-kings-20261202",
@@ -1877,7 +1723,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Golden Knights at Kings",
-    "dateTime": "2026-12-02T03:00:00.000Z",
+    "dateTime": "2026-12-02T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1889,7 +1735,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "la-rams-20261204",
@@ -1899,7 +1745,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Kansas City Chiefs at Los Angeles Rams",
-    "dateTime": "2026-12-04T01:15:00.000Z",
+    "dateTime": "2026-12-04T01:15:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -1911,7 +1757,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927Z"
+    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
   },
   {
     "id": "la-kings-20261204",
@@ -1921,7 +1767,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Wild at Kings",
-    "dateTime": "2026-12-04T03:00:00.000Z",
+    "dateTime": "2026-12-04T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1933,7 +1779,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "la-kings-20261206",
@@ -1943,7 +1789,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Mammoth at Kings",
-    "dateTime": "2026-12-06T03:00:00.000Z",
+    "dateTime": "2026-12-06T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1955,7 +1801,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "la-kings-20261210",
@@ -1965,7 +1811,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Sharks at Kings",
-    "dateTime": "2026-12-10T02:30:00.000Z",
+    "dateTime": "2026-12-10T02:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -1977,7 +1823,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "ucla-bruins-20261211-womens-college-basketball",
@@ -1987,7 +1833,7 @@
     "homeTeam": "ucla-bruins",
     "awayTeam": null,
     "eventName": "Cal State Bakersfield Roadrunners at UCLA Bruins",
-    "dateTime": "2026-12-11T05:00:00.000Z",
+    "dateTime": "2026-12-11T05:00:00+00:00",
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
@@ -1999,7 +1845,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487Z"
+    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
   },
   {
     "id": "la-kings-20261213",
@@ -2009,7 +1855,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Canucks at Kings",
-    "dateTime": "2026-12-13T03:00:00.000Z",
+    "dateTime": "2026-12-13T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2021,7 +1867,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282Z"
+    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
   },
   {
     "id": "la-chargers-20261218",
@@ -2031,7 +1877,7 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "San Francisco 49ers at Los Angeles Chargers",
-    "dateTime": "2026-12-18T01:15:00.000Z",
+    "dateTime": "2026-12-18T01:15:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -2043,7 +1889,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
   },
   {
     "id": "la-rams-20261220",
@@ -2053,7 +1899,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Dallas Cowboys at Los Angeles Rams",
-    "dateTime": "2026-12-20T21:25:00.000Z",
+    "dateTime": "2026-12-20T21:25:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -2065,7 +1911,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927Z"
+    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
   },
   {
     "id": "la-kings-20261227",
@@ -2075,7 +1921,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Mammoth at Kings",
-    "dateTime": "2026-12-27T03:00:00.000Z",
+    "dateTime": "2026-12-27T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2087,7 +1933,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20261231",
@@ -2097,7 +1943,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Maple Leafs at Kings",
-    "dateTime": "2026-12-31T03:00:00.000Z",
+    "dateTime": "2026-12-31T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2109,7 +1955,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270103",
@@ -2119,7 +1965,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Devils at Kings",
-    "dateTime": "2027-01-03T02:00:00.000Z",
+    "dateTime": "2027-01-03T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2131,7 +1977,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-chargers-20270103",
@@ -2141,7 +1987,7 @@
     "homeTeam": "la-chargers",
     "awayTeam": null,
     "eventName": "Kansas City Chiefs at Los Angeles Chargers",
-    "dateTime": "2027-01-03T05:00:00.000Z",
+    "dateTime": "2027-01-03T05:00:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -2153,7 +1999,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967Z"
+    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
   },
   {
     "id": "la-kings-20270105",
@@ -2163,7 +2009,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Flyers at Kings",
-    "dateTime": "2027-01-05T03:00:00.000Z",
+    "dateTime": "2027-01-05T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2175,7 +2021,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270107",
@@ -2185,7 +2031,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Capitals at Kings",
-    "dateTime": "2027-01-07T03:00:00.000Z",
+    "dateTime": "2027-01-07T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2197,7 +2043,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270110",
@@ -2207,7 +2053,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Stars at Kings",
-    "dateTime": "2027-01-10T02:00:00.000Z",
+    "dateTime": "2027-01-10T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2219,7 +2065,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-rams-20270110",
@@ -2229,7 +2075,7 @@
     "homeTeam": "la-rams",
     "awayTeam": null,
     "eventName": "Seattle Seahawks at Los Angeles Rams",
-    "dateTime": "2027-01-10T05:00:00.000Z",
+    "dateTime": "2027-01-10T05:00:00+00:00",
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
@@ -2241,7 +2087,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927Z"
+    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
   },
   {
     "id": "la-kings-20270112",
@@ -2251,7 +2097,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Rangers at Kings",
-    "dateTime": "2027-01-12T03:00:00.000Z",
+    "dateTime": "2027-01-12T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2263,7 +2109,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270114",
@@ -2273,7 +2119,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Blues at Kings",
-    "dateTime": "2027-01-14T03:00:00.000Z",
+    "dateTime": "2027-01-14T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2285,7 +2131,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270120",
@@ -2295,7 +2141,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Kraken at Kings",
-    "dateTime": "2027-01-20T03:00:00.000Z",
+    "dateTime": "2027-01-20T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2307,7 +2153,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270122",
@@ -2317,7 +2163,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Oilers at Kings",
-    "dateTime": "2027-01-22T03:00:00.000Z",
+    "dateTime": "2027-01-22T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2329,7 +2175,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270212",
@@ -2339,7 +2185,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Red Wings at Kings",
-    "dateTime": "2027-02-12T03:00:00.000Z",
+    "dateTime": "2027-02-12T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2351,7 +2197,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270213",
@@ -2361,7 +2207,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Blackhawks at Kings",
-    "dateTime": "2027-02-13T23:00:00.000Z",
+    "dateTime": "2027-02-13T23:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2373,7 +2219,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270216",
@@ -2383,7 +2229,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Flames at Kings",
-    "dateTime": "2027-02-16T03:00:00.000Z",
+    "dateTime": "2027-02-16T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2395,7 +2241,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270221",
@@ -2405,7 +2251,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Kraken at Kings",
-    "dateTime": "2027-02-21T03:30:00.000Z",
+    "dateTime": "2027-02-21T03:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2417,7 +2263,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270225",
@@ -2427,7 +2273,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Canadiens at Kings",
-    "dateTime": "2027-02-25T03:00:00.000Z",
+    "dateTime": "2027-02-25T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2439,7 +2285,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283Z"
+    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
   },
   {
     "id": "la-kings-20270302",
@@ -2449,7 +2295,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Ducks at Kings",
-    "dateTime": "2027-03-02T03:00:00.000Z",
+    "dateTime": "2027-03-02T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2461,7 +2307,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270304",
@@ -2471,7 +2317,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Lightning at Kings",
-    "dateTime": "2027-03-04T03:00:00.000Z",
+    "dateTime": "2027-03-04T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2483,7 +2329,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270306",
@@ -2493,7 +2339,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Blue Jackets at Kings",
-    "dateTime": "2027-03-06T03:00:00.000Z",
+    "dateTime": "2027-03-06T03:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2505,7 +2351,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270307",
@@ -2515,7 +2361,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Avalanche at Kings",
-    "dateTime": "2027-03-07T21:00:00.000Z",
+    "dateTime": "2027-03-07T21:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2527,7 +2373,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270314",
@@ -2537,7 +2383,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Stars at Kings",
-    "dateTime": "2027-03-14T02:00:00.000Z",
+    "dateTime": "2027-03-14T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2549,7 +2395,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270317",
@@ -2559,7 +2405,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Jets at Kings",
-    "dateTime": "2027-03-17T02:00:00.000Z",
+    "dateTime": "2027-03-17T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2571,7 +2417,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270319",
@@ -2581,7 +2427,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Hurricanes at Kings",
-    "dateTime": "2027-03-19T02:00:00.000Z",
+    "dateTime": "2027-03-19T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2593,7 +2439,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-dodgers-20270325",
@@ -2603,7 +2449,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Atlanta Braves at Dodgers",
-    "dateTime": "2027-03-25T10:33:00.000Z",
+    "dateTime": "2027-03-25T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2615,7 +2461,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975Z"
+    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
   },
   {
     "id": "la-dodgers-20270327",
@@ -2625,7 +2471,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Atlanta Braves at Dodgers",
-    "dateTime": "2027-03-27T10:33:00.000Z",
+    "dateTime": "2027-03-27T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2637,7 +2483,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975Z"
+    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
   },
   {
     "id": "la-dodgers-20270328",
@@ -2647,7 +2493,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Atlanta Braves at Dodgers",
-    "dateTime": "2027-03-28T10:33:00.000Z",
+    "dateTime": "2027-03-28T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2659,7 +2505,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975Z"
+    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
   },
   {
     "id": "la-dodgers-20270329",
@@ -2669,7 +2515,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Minnesota Twins at Dodgers",
-    "dateTime": "2027-03-29T10:33:00.000Z",
+    "dateTime": "2027-03-29T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2681,7 +2527,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-kings-20270330",
@@ -2691,7 +2537,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Canucks at Kings",
-    "dateTime": "2027-03-30T01:30:00.000Z",
+    "dateTime": "2027-03-30T01:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2703,7 +2549,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-dodgers-20270330",
@@ -2713,7 +2559,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Minnesota Twins at Dodgers",
-    "dateTime": "2027-03-30T10:33:00.000Z",
+    "dateTime": "2027-03-30T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2725,7 +2571,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270331",
@@ -2735,7 +2581,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Minnesota Twins at Dodgers",
-    "dateTime": "2027-03-31T10:33:00.000Z",
+    "dateTime": "2027-03-31T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2747,7 +2593,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-kings-20270401",
@@ -2757,7 +2603,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Jets at Kings",
-    "dateTime": "2027-04-01T02:00:00.000Z",
+    "dateTime": "2027-04-01T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2769,7 +2615,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270404",
@@ -2779,7 +2625,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Blues at Kings",
-    "dateTime": "2027-04-04T02:30:00.000Z",
+    "dateTime": "2027-04-04T02:30:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2791,7 +2637,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-kings-20270409",
@@ -2801,7 +2647,7 @@
     "homeTeam": "la-kings",
     "awayTeam": null,
     "eventName": "Golden Knights at Kings",
-    "dateTime": "2027-04-09T02:00:00.000Z",
+    "dateTime": "2027-04-09T02:00:00+00:00",
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
@@ -2813,7 +2659,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284Z"
+    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
   },
   {
     "id": "la-dodgers-20270413",
@@ -2823,7 +2669,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-04-13T10:33:00.000Z",
+    "dateTime": "2027-04-13T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2835,7 +2681,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270414",
@@ -2845,7 +2691,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-04-14T10:33:00.000Z",
+    "dateTime": "2027-04-14T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2857,7 +2703,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270415",
@@ -2867,7 +2713,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-04-15T10:33:00.000Z",
+    "dateTime": "2027-04-15T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2879,7 +2725,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270416",
@@ -2889,7 +2735,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago Cubs at Dodgers",
-    "dateTime": "2027-04-16T10:33:00.000Z",
+    "dateTime": "2027-04-16T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2901,7 +2747,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270417",
@@ -2911,7 +2757,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago Cubs at Dodgers",
-    "dateTime": "2027-04-17T10:33:00.000Z",
+    "dateTime": "2027-04-17T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2923,7 +2769,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976Z"
+    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
   },
   {
     "id": "la-dodgers-20270418",
@@ -2933,7 +2779,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago Cubs at Dodgers",
-    "dateTime": "2027-04-18T10:33:00.000Z",
+    "dateTime": "2027-04-18T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2945,7 +2791,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270426",
@@ -2955,7 +2801,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago White Sox at Dodgers",
-    "dateTime": "2027-04-26T10:33:00.000Z",
+    "dateTime": "2027-04-26T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2967,7 +2813,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270427",
@@ -2977,7 +2823,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago White Sox at Dodgers",
-    "dateTime": "2027-04-27T10:33:00.000Z",
+    "dateTime": "2027-04-27T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -2989,7 +2835,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270428",
@@ -2999,7 +2845,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Chicago White Sox at Dodgers",
-    "dateTime": "2027-04-28T10:33:00.000Z",
+    "dateTime": "2027-04-28T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3011,7 +2857,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270430",
@@ -3021,7 +2867,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Detroit Tigers at Dodgers",
-    "dateTime": "2027-04-30T10:33:00.000Z",
+    "dateTime": "2027-04-30T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3033,7 +2879,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270501",
@@ -3043,7 +2889,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Detroit Tigers at Dodgers",
-    "dateTime": "2027-05-01T10:33:00.000Z",
+    "dateTime": "2027-05-01T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3055,7 +2901,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270502",
@@ -3065,7 +2911,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Detroit Tigers at Dodgers",
-    "dateTime": "2027-05-02T10:33:00.000Z",
+    "dateTime": "2027-05-02T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3077,7 +2923,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270506",
@@ -3087,7 +2933,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-05-06T10:33:00.000Z",
+    "dateTime": "2027-05-06T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3099,7 +2945,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270507",
@@ -3109,7 +2955,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-05-07T10:33:00.000Z",
+    "dateTime": "2027-05-07T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3121,7 +2967,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270508",
@@ -3131,7 +2977,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-05-08T10:33:00.000Z",
+    "dateTime": "2027-05-08T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3143,7 +2989,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270509",
@@ -3153,7 +2999,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-05-09T10:33:00.000Z",
+    "dateTime": "2027-05-09T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3165,7 +3011,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977Z"
+    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
   },
   {
     "id": "la-dodgers-20270517",
@@ -3175,7 +3021,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Cincinnati Reds at Dodgers",
-    "dateTime": "2027-05-17T10:33:00.000Z",
+    "dateTime": "2027-05-17T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3187,7 +3033,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270518",
@@ -3197,7 +3043,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Cincinnati Reds at Dodgers",
-    "dateTime": "2027-05-18T10:33:00.000Z",
+    "dateTime": "2027-05-18T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3209,7 +3055,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270519",
@@ -3219,7 +3065,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Cincinnati Reds at Dodgers",
-    "dateTime": "2027-05-19T10:33:00.000Z",
+    "dateTime": "2027-05-19T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3231,7 +3077,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270521",
@@ -3241,7 +3087,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-05-21T10:33:00.000Z",
+    "dateTime": "2027-05-21T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3253,7 +3099,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270522",
@@ -3263,7 +3109,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-05-22T10:33:00.000Z",
+    "dateTime": "2027-05-22T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3275,7 +3121,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270523",
@@ -3285,7 +3131,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-05-23T10:33:00.000Z",
+    "dateTime": "2027-05-23T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3297,7 +3143,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270524",
@@ -3307,7 +3153,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Arizona Diamondbacks at Dodgers",
-    "dateTime": "2027-05-24T10:33:00.000Z",
+    "dateTime": "2027-05-24T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3319,7 +3165,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270525",
@@ -3329,7 +3175,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Arizona Diamondbacks at Dodgers",
-    "dateTime": "2027-05-25T10:33:00.000Z",
+    "dateTime": "2027-05-25T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3341,7 +3187,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270526",
@@ -3351,7 +3197,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Arizona Diamondbacks at Dodgers",
-    "dateTime": "2027-05-26T10:33:00.000Z",
+    "dateTime": "2027-05-26T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3363,7 +3209,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270607",
@@ -3373,7 +3219,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Milwaukee Brewers at Dodgers",
-    "dateTime": "2027-06-07T10:33:00.000Z",
+    "dateTime": "2027-06-07T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3385,7 +3231,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270608",
@@ -3395,7 +3241,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Milwaukee Brewers at Dodgers",
-    "dateTime": "2027-06-08T10:33:00.000Z",
+    "dateTime": "2027-06-08T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3407,7 +3253,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978Z"
+    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
   },
   {
     "id": "la-dodgers-20270609",
@@ -3417,7 +3263,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Milwaukee Brewers at Dodgers",
-    "dateTime": "2027-06-09T10:33:00.000Z",
+    "dateTime": "2027-06-09T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3429,7 +3275,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270611",
@@ -3439,7 +3285,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Pittsburgh Pirates at Dodgers",
-    "dateTime": "2027-06-11T10:33:00.000Z",
+    "dateTime": "2027-06-11T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3451,7 +3297,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270612",
@@ -3461,7 +3307,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Pittsburgh Pirates at Dodgers",
-    "dateTime": "2027-06-12T10:33:00.000Z",
+    "dateTime": "2027-06-12T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3473,7 +3319,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270613",
@@ -3483,7 +3329,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Pittsburgh Pirates at Dodgers",
-    "dateTime": "2027-06-13T10:33:00.000Z",
+    "dateTime": "2027-06-13T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3495,7 +3341,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270618",
@@ -3505,7 +3351,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Miami Marlins at Dodgers",
-    "dateTime": "2027-06-18T10:33:00.000Z",
+    "dateTime": "2027-06-18T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3517,7 +3363,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270619",
@@ -3527,7 +3373,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Miami Marlins at Dodgers",
-    "dateTime": "2027-06-19T10:33:00.000Z",
+    "dateTime": "2027-06-19T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3539,7 +3385,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270620",
@@ -3549,7 +3395,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Miami Marlins at Dodgers",
-    "dateTime": "2027-06-20T10:33:00.000Z",
+    "dateTime": "2027-06-20T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3561,7 +3407,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979Z"
+    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
   },
   {
     "id": "la-dodgers-20270628",
@@ -3571,7 +3417,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Washington Nationals at Dodgers",
-    "dateTime": "2027-06-28T10:33:00.000Z",
+    "dateTime": "2027-06-28T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3583,7 +3429,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270629",
@@ -3593,7 +3439,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Washington Nationals at Dodgers",
-    "dateTime": "2027-06-29T10:33:00.000Z",
+    "dateTime": "2027-06-29T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3605,7 +3451,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270630",
@@ -3615,7 +3461,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Washington Nationals at Dodgers",
-    "dateTime": "2027-06-30T10:33:00.000Z",
+    "dateTime": "2027-06-30T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3627,7 +3473,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270701",
@@ -3637,7 +3483,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Mets at Dodgers",
-    "dateTime": "2027-07-01T10:33:00.000Z",
+    "dateTime": "2027-07-01T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3649,7 +3495,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270702",
@@ -3659,7 +3505,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Mets at Dodgers",
-    "dateTime": "2027-07-02T10:33:00.000Z",
+    "dateTime": "2027-07-02T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3671,7 +3517,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270703",
@@ -3681,7 +3527,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Mets at Dodgers",
-    "dateTime": "2027-07-03T10:33:00.000Z",
+    "dateTime": "2027-07-03T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3693,7 +3539,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270704",
@@ -3703,7 +3549,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Mets at Dodgers",
-    "dateTime": "2027-07-04T10:33:00.000Z",
+    "dateTime": "2027-07-04T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3715,7 +3561,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.980Z"
+    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
   },
   {
     "id": "la-dodgers-20270716",
@@ -3725,7 +3571,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Los Angeles Angels at Dodgers",
-    "dateTime": "2027-07-16T10:33:00.000Z",
+    "dateTime": "2027-07-16T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3737,7 +3583,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981Z"
+    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
   },
   {
     "id": "la-dodgers-20270717",
@@ -3747,7 +3593,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Los Angeles Angels at Dodgers",
-    "dateTime": "2027-07-17T10:33:00.000Z",
+    "dateTime": "2027-07-17T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3759,7 +3605,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981Z"
+    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
   },
   {
     "id": "la-dodgers-20270718",
@@ -3769,7 +3615,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Los Angeles Angels at Dodgers",
-    "dateTime": "2027-07-18T10:33:00.000Z",
+    "dateTime": "2027-07-18T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3781,7 +3627,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981Z"
+    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
   },
   {
     "id": "la-dodgers-20270719",
@@ -3791,7 +3637,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Athletics at Dodgers",
-    "dateTime": "2027-07-19T10:33:00.000Z",
+    "dateTime": "2027-07-19T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3803,7 +3649,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270720",
@@ -3813,7 +3659,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Athletics at Dodgers",
-    "dateTime": "2027-07-20T10:33:00.000Z",
+    "dateTime": "2027-07-20T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3825,7 +3671,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270721",
@@ -3835,7 +3681,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Athletics at Dodgers",
-    "dateTime": "2027-07-21T10:33:00.000Z",
+    "dateTime": "2027-07-21T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3847,7 +3693,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270730",
@@ -3857,7 +3703,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-07-30T10:33:00.000Z",
+    "dateTime": "2027-07-30T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3869,7 +3715,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270731",
@@ -3879,7 +3725,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-07-31T10:33:00.000Z",
+    "dateTime": "2027-07-31T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3891,7 +3737,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270801",
@@ -3901,7 +3747,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Francisco Giants at Dodgers",
-    "dateTime": "2027-08-01T10:33:00.000Z",
+    "dateTime": "2027-08-01T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3913,7 +3759,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983Z"
+    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
   },
   {
     "id": "la-dodgers-20270803",
@@ -3923,7 +3769,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Houston Astros at Dodgers",
-    "dateTime": "2027-08-03T10:33:00.000Z",
+    "dateTime": "2027-08-03T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3935,7 +3781,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270804",
@@ -3945,7 +3791,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Houston Astros at Dodgers",
-    "dateTime": "2027-08-04T10:33:00.000Z",
+    "dateTime": "2027-08-04T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3957,7 +3803,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270805",
@@ -3967,7 +3813,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Houston Astros at Dodgers",
-    "dateTime": "2027-08-05T10:33:00.000Z",
+    "dateTime": "2027-08-05T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -3979,7 +3825,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270813",
@@ -3989,7 +3835,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Philadelphia Phillies at Dodgers",
-    "dateTime": "2027-08-13T10:33:00.000Z",
+    "dateTime": "2027-08-13T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4001,7 +3847,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270814",
@@ -4011,7 +3857,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Philadelphia Phillies at Dodgers",
-    "dateTime": "2027-08-14T10:33:00.000Z",
+    "dateTime": "2027-08-14T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4023,7 +3869,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270815",
@@ -4033,7 +3879,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Philadelphia Phillies at Dodgers",
-    "dateTime": "2027-08-15T10:33:00.000Z",
+    "dateTime": "2027-08-15T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4045,7 +3891,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270816",
@@ -4055,7 +3901,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-08-16T10:33:00.000Z",
+    "dateTime": "2027-08-16T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4067,7 +3913,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270817",
@@ -4077,7 +3923,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-08-17T10:33:00.000Z",
+    "dateTime": "2027-08-17T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4089,7 +3935,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270818",
@@ -4099,7 +3945,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "Colorado Rockies at Dodgers",
-    "dateTime": "2027-08-18T10:33:00.000Z",
+    "dateTime": "2027-08-18T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4111,7 +3957,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270827",
@@ -4121,7 +3967,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Yankees at Dodgers",
-    "dateTime": "2027-08-27T10:33:00.000Z",
+    "dateTime": "2027-08-27T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4133,7 +3979,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270828",
@@ -4143,7 +3989,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Yankees at Dodgers",
-    "dateTime": "2027-08-28T10:33:00.000Z",
+    "dateTime": "2027-08-28T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4155,7 +4001,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270829",
@@ -4165,7 +4011,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "New York Yankees at Dodgers",
-    "dateTime": "2027-08-29T10:33:00.000Z",
+    "dateTime": "2027-08-29T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4177,7 +4023,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270830",
@@ -4187,7 +4033,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "St. Louis Cardinals at Dodgers",
-    "dateTime": "2027-08-30T10:33:00.000Z",
+    "dateTime": "2027-08-30T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4199,7 +4045,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270831",
@@ -4209,7 +4055,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "St. Louis Cardinals at Dodgers",
-    "dateTime": "2027-08-31T10:33:00.000Z",
+    "dateTime": "2027-08-31T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4221,7 +4067,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270901",
@@ -4231,7 +4077,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "St. Louis Cardinals at Dodgers",
-    "dateTime": "2027-09-01T10:33:00.000Z",
+    "dateTime": "2027-09-01T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4243,7 +4089,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984Z"
+    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
   },
   {
     "id": "la-dodgers-20270910",
@@ -4253,7 +4099,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-09-10T10:33:00.000Z",
+    "dateTime": "2027-09-10T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4265,7 +4111,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985Z"
+    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
   },
   {
     "id": "la-dodgers-20270911",
@@ -4275,7 +4121,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-09-11T10:33:00.000Z",
+    "dateTime": "2027-09-11T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4287,7 +4133,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985Z"
+    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
   },
   {
     "id": "la-dodgers-20270912",
@@ -4297,7 +4143,7 @@
     "homeTeam": "la-dodgers",
     "awayTeam": null,
     "eventName": "San Diego Padres at Dodgers",
-    "dateTime": "2027-09-12T10:33:00.000Z",
+    "dateTime": "2027-09-12T10:33:00+00:00",
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
@@ -4309,6 +4155,6 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985Z"
+    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
   }
 ]

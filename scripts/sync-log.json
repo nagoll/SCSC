@@ -1,4 +1,14 @@
 {
-  "lastRun": "2026-09-12T16:34:42.469Z",
-  "discrepancies": []
+  "lastRun": "2026-09-18T22:38:17.736Z",
+  "discrepancies": [
+    {
+      "eventId": "la-lakers-20261017",
+      "existingSource": "espn-api",
+      "incomingSource": "espn-api:pro",
+      "diffs": [
+        "dateTime: \"2026-10-17T02:30:00+00:00\" → \"2026-10-17T02:30:00.000Z\""
+      ],
+      "timestamp": "2026-09-18T22:38:17.479Z"
+    }
+  ]
 }
