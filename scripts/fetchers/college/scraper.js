@@ -9,6 +9,7 @@
  *   const events = await scrapeComposite(schoolConfig, startDate, endDate);
  */
 
+const cheerio = require('cheerio');
 const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
@@ -176,12 +177,13 @@ async function parseSidearm(html, school, startDate, endDate) {
   const events = [];
   const start = new Date(startDate);
   const end = new Date(endDate);
+  const $ = cheerio.load(html);
 
   // Attempt 1: Extract JSON from __NEXT_DATA__ (newer Sidearm sites)
-  const nextDataMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
-  if (nextDataMatch) {
+  const nextDataText = $('script#__NEXT_DATA__').html();
+  if (nextDataText) {
     try {
-      const json = JSON.parse(nextDataMatch[1]);
+      const json = JSON.parse(nextDataText);
       // Navigate the Next.js page props structure to find schedule items
       const props = json?.props?.pageProps;
       const scheduleItems = props?.schedule || props?.events || props?.games || [];
@@ -196,12 +198,10 @@ async function parseSidearm(html, school, startDate, endDate) {
   }
 
   // Attempt 2: Parse HTML <li> game elements (classic Sidearm)
-  // Pattern: <li class="sidearm-schedule-game ...">
-  const gameBlocks = html.matchAll(/<li[^>]+class="[^"]*sidearm-schedule-game[^"]*"[^>]*>([\s\S]*?)<\/li>/g);
-  for (const [, block] of gameBlocks) {
-    const ev = parseSidearmBlock(block, school, start, end);
+  $('li.sidearm-schedule-game').each((_, el) => {
+    const ev = parseSidearmBlock($(el), school, start, end);
     if (ev) events.push(ev);
-  }
+  });
 
   return events;
 }
@@ -257,36 +257,36 @@ function parseSidearmItem(item, school, start, end) {
       price: school.price,
       conference: item.conference || null,
       league: null,
-      source: `${school.id}-composite`,
+      source: `university-scraper:${school.id}`,
     });
   } catch {
     return null;
   }
 }
 
-function parseSidearmBlock(block, school, start, end) {
+function parseSidearmBlock($block, school, start, end) {
   try {
     // Extract date from data attributes or datetime elements
-    const dateMatch = block.match(/data-date="([^"]+)"|<time[^>]*datetime="([^"]+)"/);
-    if (!dateMatch) return null;
-    const rawDate = dateMatch[1] || dateMatch[2];
+    const rawDate = $block.attr('data-date') || $block.find('time[datetime]').first().attr('datetime');
+    if (!rawDate) return null;
     const gameDate = new Date(rawDate);
     if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
 
     // Check home/away
-    if (/sidearm-schedule-game-away|data-home-away="away"/.test(block)) return null;
+    const isAway =
+      $block.hasClass('sidearm-schedule-game-away') || $block.attr('data-home-away') === 'away';
+    if (isAway) return null;
 
     // Extract opponent
-    const opponentMatch = block.match(/class="[^"]*opponent[^"]*"[^>]*>([^<]+)</);
-    const opponent = opponentMatch ? opponentMatch[1].trim() : 'Opponent';
+    const opponentText = $block.find('[class*="opponent"]').first().text().trim();
+    const opponent = opponentText || 'Opponent';
 
     // Extract sport
-    const sportMatch = block.match(/data-sport="([^"]+)"/);
-    const sportRaw = sportMatch ? sportMatch[1] : 'other';
+    const sportRaw = $block.attr('data-sport') || 'other';
 
     // Try to extract venue from HTML block
-    const venueMatch = block.match(/class="[^"]*(?:venue|location|facility)[^"]*"[^>]*>([^<]+)/);
-    const scrapedVenueName = venueMatch ? venueMatch[1].trim() : null;
+    const scrapedVenueName =
+      $block.find('[class*="venue"], [class*="location"], [class*="facility"]').first().text().trim() || null;
 
     // Run venue verification
     const verification = verifyVenue({
@@ -316,7 +316,7 @@ function parseSidearmBlock(block, school, start, end) {
       price: school.price,
       conference: null,
       league: null,
-      source: `${school.id}-composite`,
+      source: `university-scraper:${school.id}`,
     });
   } catch {
     return null;
@@ -332,10 +332,13 @@ async function parsePresto(html, school, startDate, endDate) {
   const events = [];
   const start = new Date(startDate);
   const end = new Date(endDate);
+  const $ = cheerio.load(html);
 
   // Try JSON-LD structured data
-  const ldMatches = html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g);
-  for (const [, json] of ldMatches) {
+  const ldScripts = $('script[type="application/ld+json"]')
+    .map((_, el) => $(el).html())
+    .get();
+  for (const json of ldScripts) {
     try {
       const data = JSON.parse(json);
       const items = Array.isArray(data) ? data : [data];
@@ -380,7 +383,7 @@ async function parsePresto(html, school, startDate, endDate) {
           price: school.price,
           conference: null,
           league: null,
-          source: `${school.id}-composite`,
+          source: `university-scraper:${school.id}`,
         }));
       }
     } catch {

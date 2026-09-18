@@ -23,6 +23,9 @@ const { scrapeAllColleges } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
 const { mergeEvents, prunePastEvents } = require('./merge');
+const { validateEvents } = require('./schema');
+const { generateFeatured } = require('./generate-featured');
+const { exportAllToJson } = require('./export-to-json');
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -123,14 +126,22 @@ async function main() {
 
   console.log(`\nTotal fetched: ${allEvents.length} events`);
 
+  const { valid, invalid } = validateEvents(allEvents);
+  if (invalid.length > 0) {
+    console.warn(`\n[validate] Rejected ${invalid.length} malformed event(s) — not written to events.json:`);
+    for (const { event, reasons } of invalid) {
+      console.warn(`  ${event?.id || event?.source || '(unknown)'}: ${reasons.join('; ')}`);
+    }
+  }
+
   if (DRY_RUN) {
     console.log('\n[dry-run] Skipping write to events.json');
     console.log('Sample events:');
-    console.log(JSON.stringify(allEvents.slice(0, 3), null, 2));
+    console.log(JSON.stringify(valid.slice(0, 3), null, 2));
     return;
   }
 
-  const stats = mergeEvents(allEvents);
+  const stats = await mergeEvents(valid);
   console.log(`\nMerge complete:`);
   console.log(`  Added:        ${stats.added}`);
   console.log(`  Updated:      ${stats.updated}`);
@@ -141,14 +152,18 @@ async function main() {
   }
 
   // Prune past events
-  const pruned = prunePastEvents();
+  const pruned = await prunePastEvents();
   console.log(`\nCleanup: pruned ${pruned} past events`);
 
   // Regenerate featured content
   console.log(`\nRegenerating featured picks...`);
-  require('./generate-featured');
+  await generateFeatured();
 
-  console.log(`\nDone. src/data/events.json and src/data/featured.json updated.`);
+  // Keep the JSON files in src/data as a readable snapshot of the DB
+  console.log(`\nExporting Supabase tables to src/data/*.json...`);
+  await exportAllToJson();
+
+  console.log(`\nDone. Supabase updated, src/data/*.json exported.`);
 }
 
 main().catch(err => {

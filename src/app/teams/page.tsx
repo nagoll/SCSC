@@ -1,26 +1,23 @@
 import type { Metadata } from 'next';
-import type { Team, SportEvent } from '@/lib/types';
+import type { Team } from '@/lib/types';
 import { LEVEL_LABELS, SPORT_ICONS } from '@/lib/constants';
+import { getTeams, getEvents } from '@/lib/data';
 import Link from 'next/link';
-
-import teamsData from '@/data/teams.json';
-import eventsData from '@/data/events.json';
 
 export const metadata: Metadata = {
   title: 'All Teams — SCSC',
   description: 'Every team tracked on the Southern California Sports Calendar — pro, college, and junior college teams across LA County.',
 };
 
-const teams = teamsData as Team[];
-const events = eventsData as SportEvent[];
+export default async function TeamsPage() {
+  const [teams, events] = await Promise.all([getTeams(), getEvents()]);
 
-function countUpcomingEvents(teamId: string): number {
-  return events.filter(
-    (e) => e.homeTeam === teamId || e.awayTeam === teamId
-  ).length;
-}
+  function countUpcomingEvents(teamId: string): number {
+    return events.filter(
+      (e) => e.homeTeam === teamId || e.awayTeam === teamId
+    ).length;
+  }
 
-export default function TeamsPage() {
   const grouped: Record<string, Team[]> = {};
   for (const t of teams) {
     const level = t.level;
@@ -70,7 +67,20 @@ export default function TeamsPage() {
                           style={{ backgroundColor: team.primaryColor || '#6b7280' }}
                         />
                         <div className="min-w-0">
-                          <div className="font-semibold text-ink">{team.name}</div>
+                          <div className="font-semibold text-ink">
+                            {team.websiteUrl ? (
+                              <a
+                                href={team.websiteUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-burnt-orange hover:underline"
+                              >
+                                {team.name}
+                              </a>
+                            ) : (
+                              team.name
+                            )}
+                          </div>
                           {team.school && (
                             <div className="text-xs text-ink-muted">{team.school}</div>
                           )}

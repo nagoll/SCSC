@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import type { SportEvent, Team, Venue, CalendarViewMode } from '@/lib/types';
 import { MONTHS } from '@/lib/constants';
+import { getPacificDateParts, addPacificDays, addPacificMonths, getWeekDays, formatDateLong } from '@/lib/calendar';
 import MonthView from './MonthView';
 import WeekView from './WeekView';
 import DayView from './DayView';
@@ -31,21 +32,17 @@ export default function CalendarView({
 
   const handlePrev = useCallback(() => {
     setCurrentDate((d) => {
-      const next = new Date(d);
-      if (viewMode === 'month') next.setMonth(next.getMonth() - 1);
-      else if (viewMode === 'week') next.setDate(next.getDate() - 7);
-      else next.setDate(next.getDate() - 1);
-      return next;
+      if (viewMode === 'month') return addPacificMonths(d, -1);
+      if (viewMode === 'week') return addPacificDays(d, -7);
+      return addPacificDays(d, -1);
     });
   }, [viewMode]);
 
   const handleNext = useCallback(() => {
     setCurrentDate((d) => {
-      const next = new Date(d);
-      if (viewMode === 'month') next.setMonth(next.getMonth() + 1);
-      else if (viewMode === 'week') next.setDate(next.getDate() + 7);
-      else next.setDate(next.getDate() + 1);
-      return next;
+      if (viewMode === 'month') return addPacificMonths(d, 1);
+      if (viewMode === 'week') return addPacificDays(d, 7);
+      return addPacificDays(d, 1);
     });
   }, [viewMode]);
 
@@ -60,24 +57,19 @@ export default function CalendarView({
 
   const getTitle = () => {
     if (viewMode === 'month') {
-      return `${MONTHS[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+      const { year, month } = getPacificDateParts(currentDate);
+      return `${MONTHS[month]} ${year}`;
     }
     if (viewMode === 'week') {
-      const start = new Date(currentDate);
-      start.setDate(currentDate.getDate() - currentDate.getDay());
-      const end = new Date(start);
-      end.setDate(start.getDate() + 6);
-      if (start.getMonth() === end.getMonth()) {
-        return `${MONTHS[start.getMonth()]} ${start.getDate()}–${end.getDate()}, ${start.getFullYear()}`;
+      const week = getWeekDays(currentDate);
+      const start = getPacificDateParts(week[0]);
+      const end = getPacificDateParts(week[6]);
+      if (start.month === end.month) {
+        return `${MONTHS[start.month]} ${start.day}–${end.day}, ${start.year}`;
       }
-      return `${MONTHS[start.getMonth()].slice(0, 3)} ${start.getDate()} – ${MONTHS[end.getMonth()].slice(0, 3)} ${end.getDate()}, ${end.getFullYear()}`;
+      return `${MONTHS[start.month].slice(0, 3)} ${start.day} – ${MONTHS[end.month].slice(0, 3)} ${end.day}, ${end.year}`;
     }
-    return currentDate.toLocaleDateString('en-US', {
-      weekday: 'long',
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    });
+    return formatDateLong(currentDate.toISOString());
   };
 
   return (
@@ -136,8 +128,8 @@ export default function CalendarView({
       {/* Calendar Body */}
       {viewMode === 'month' && (
         <MonthView
-          year={currentDate.getFullYear()}
-          month={currentDate.getMonth()}
+          year={getPacificDateParts(currentDate).year}
+          month={getPacificDateParts(currentDate).month}
           events={events}
           onDayClick={handleDayClick}
         />

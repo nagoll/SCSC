@@ -311,7 +311,7 @@ async function fetchESPNCollegeTeam(config, startDate, endDate) {
         price: config.price,
         conference: null,
         league: null,
-        source: 'espn-api',
+        source: 'espn-api:college',
         idSuffix: config.espnLeague,
       })
     );

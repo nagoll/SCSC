@@ -1,7 +1,7 @@
 'use client';
 
 import type { SportEvent, Team, Venue } from '@/lib/types';
-import { getWeekDays, isSameDay, toDateKey, eventToDateKey } from '@/lib/calendar';
+import { getWeekDays, isSameDay, toDateKey, eventToDateKey, getPacificDateParts } from '@/lib/calendar';
 import { DAYS_OF_WEEK } from '@/lib/constants';
 import EventCard from './EventCard';
 
@@ -42,6 +42,7 @@ export default function WeekView({
     <div className="grid min-w-[560px] grid-cols-7 gap-px overflow-hidden bg-border">
       {/* Day Headers */}
       {weekDays.map((day, i) => {
+        const dayParts = getPacificDateParts(day);
         const isToday = isSameDay(day, today);
         return (
           <button
@@ -51,13 +52,13 @@ export default function WeekView({
               isToday ? 'bg-burnt-orange/5' : ''
             }`}
           >
-            <div className="text-xs font-medium text-ink-muted">{DAYS_OF_WEEK[day.getDay()]}</div>
+            <div className="text-xs font-medium text-ink-muted">{DAYS_OF_WEEK[dayParts.weekday]}</div>
             <div
               className={`mt-1 text-lg font-semibold ${
                 isToday ? 'text-burnt-orange' : 'text-ink'
               }`}
             >
-              {day.getDate()}
+              {dayParts.day}
             </div>
           </button>
         );

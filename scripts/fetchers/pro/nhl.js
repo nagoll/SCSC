@@ -61,7 +61,7 @@ async function fetchNHL(startDate, endDate) {
         price: 'under_50',
         conference: null,
         league: 'NHL',
-        source: 'nhl-api',
+        source: 'pro-api:nhl',
       })
     );
   }

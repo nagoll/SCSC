@@ -98,7 +98,14 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
             </svg>
             <div>
               <div className="text-lg font-semibold text-ink">{venue.name}</div>
-              <div className="text-ink-light">{venue.address}</div>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${venue.lat},${venue.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-light underline decoration-dotted underline-offset-2 hover:text-burnt-orange"
+              >
+                {venue.address}
+              </a>
               <div className="mt-1 text-sm text-ink-muted">
                 {AREA_LABELS[venue.neighborhood]}
                 {venue.capacity && ` · Capacity: ${venue.capacity.toLocaleString()}`}
@@ -164,26 +171,14 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
         </div>
 
         {/* Share */}
-        <div className="mt-4 flex gap-3">
+        <div className="mt-4">
           <button
             onClick={() => {
               navigator.clipboard.writeText(window.location.href);
             }}
-            className="flex-1 rounded-lg border border-border py-3 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
+            className="w-full rounded-lg border border-border py-3 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
           >
             Copy Link
-          </button>
-          <button
-            onClick={() => {
-              const text = `Check out ${title} at ${venue.name}!`;
-              window.open(
-                `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`,
-                '_blank'
-              );
-            }}
-            className="flex-1 rounded-lg border border-border py-3 text-center text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
-          >
-            Share on X
           </button>
         </div>
       </div>

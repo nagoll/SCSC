@@ -50,6 +50,7 @@ export interface Team {
   primaryColor: string;
   secondaryColor: string;
   ticketUrl?: string | null; // athletic department ticket page for referral links
+  websiteUrl?: string | null; // official team site (pro) or athletics site (college/juco)
 }
 
 export interface Venue {

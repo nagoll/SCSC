@@ -1,6 +1,6 @@
 /**
  * merge.js
- * Merges newly fetched events into the existing events.json.
+ * Merges newly fetched events into the events table in Supabase.
  *
  * Source precedence (highest → lowest):
  *   university-scraper > juco-scraper > espn-api > pro-api > manual
@@ -14,28 +14,37 @@
 
 const fs = require('fs');
 const path = require('path');
+const { supabaseAdmin } = require('./supabase-admin');
 
-const EVENTS_PATH = path.join(__dirname, '../src/data/events.json');
 const SYNC_LOG_PATH = path.join(__dirname, '../scripts/sync-log.json');
 
 const SOURCE_PRECEDENCE = {
-  'manual': 0,
+  manual: 0,
   'pro-api': 1,
   'espn-api': 2,
   'juco-scraper': 3,
   'university-scraper': 4,
 };
 
+// Fetchers stamp their own tier as a "<tier>:<detail>" prefix on the source
+// field (e.g. "university-scraper:usc"), so precedence is read directly
+// rather than guessed from naming conventions. This table exists only to
+// make sense of the flat, unprefixed source strings already sitting in
+// events.json from before that convention existed.
+const LEGACY_SOURCE_TIER = {
+  manual: 'manual',
+  'mlb-api': 'pro-api',
+  'nhl-api': 'pro-api',
+  'espn-api': 'espn-api',
+};
+
 function getPrecedence(source) {
-  // Exact match first (e.g. 'manual', 'espn-api', 'juco-scraper')
-  if (!source || source === 'manual') return SOURCE_PRECEDENCE['manual'];
-  if (source in SOURCE_PRECEDENCE) return SOURCE_PRECEDENCE[source];
-  // Pattern match for derived names (e.g. 'mlb-api' → pro-api tier, 'ucla-composite' → university-scraper tier)
-  if (source.endsWith('-api') && !source.startsWith('espn')) return SOURCE_PRECEDENCE['pro-api'];
-  if (source.startsWith('espn-')) return SOURCE_PRECEDENCE['espn-api'];
-  if (source.endsWith('-juco-scraper')) return SOURCE_PRECEDENCE['juco-scraper'];
-  if (source.endsWith('-scraper') || source.endsWith('-composite')) return SOURCE_PRECEDENCE['university-scraper'];
-  return SOURCE_PRECEDENCE['pro-api']; // unknown → treat as pro-api tier
+  const tier = source && source.includes(':') ? source.split(':')[0] : LEGACY_SOURCE_TIER[source];
+  if (tier && tier in SOURCE_PRECEDENCE) return SOURCE_PRECEDENCE[tier];
+  throw new Error(
+    `Unknown event source "${source}" — fetchers must tag sources as "<tier>:<detail>" ` +
+    `(one of ${Object.keys(SOURCE_PRECEDENCE).join(', ')}), or add a legacy mapping in LEGACY_SOURCE_TIER.`
+  );
 }
 
 /**
@@ -70,14 +79,23 @@ function loadSyncLog() {
 }
 
 /**
- * Merge an array of new events into events.json.
+ * Merge an array of new events into the events table.
+ * `db` is injectable so tests can pass a fake client; defaults to the real one.
  * Returns stats: { added, updated, skipped, discrepancies }.
  */
-function mergeEvents(newEvents) {
-  const existing = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+async function mergeEvents(newEvents, db = supabaseAdmin()) {
+  const { data: existing, error: readError } = await db.from('events').select('*');
+  if (readError) throw new Error(`mergeEvents: failed to read events — ${readError.message}`);
+
   const existingMap = new Map(existing.map(e => [e.id, e]));
   const syncLog = loadSyncLog();
   const discrepancies = [];
+  // Keyed by id (not an array) so that two incoming events resolving to the
+  // same id — e.g. duplicate listings from overlapping API sources — collapse
+  // into one row instead of producing two rows for the same key in a single
+  // upsert, which Postgres rejects ("ON CONFLICT DO UPDATE ... cannot affect
+  // row a second time").
+  const toUpsert = new Map();
 
   let added = 0;
   let updated = 0;
@@ -87,6 +105,7 @@ function mergeEvents(newEvents) {
     const current = existingMap.get(incoming.id);
 
     if (!current) {
+      toUpsert.set(incoming.id, incoming);
       existingMap.set(incoming.id, incoming);
       added++;
       continue;
@@ -140,6 +159,7 @@ function mergeEvents(newEvents) {
         mergedEvent.venueConfidence = 'verified';
       }
 
+      toUpsert.set(incoming.id, mergedEvent);
       existingMap.set(incoming.id, mergedEvent);
       updated++;
     } else {
@@ -148,20 +168,18 @@ function mergeEvents(newEvents) {
       if (incoming.venue === current.venue &&
           incoming.source !== current.source &&
           incoming.venueSourceName && current.venueSourceName) {
-        existingMap.set(current.id, {
-          ...current,
-          venueConfidence: 'verified',
-        });
+        const upgraded = { ...current, venueConfidence: 'verified' };
+        toUpsert.set(current.id, upgraded);
+        existingMap.set(current.id, upgraded);
       }
       skipped++;
     }
   }
 
-  const merged = Array.from(existingMap.values()).sort(
-    (a, b) => new Date(a.dateTime) - new Date(b.dateTime)
-  );
-
-  fs.writeFileSync(EVENTS_PATH, JSON.stringify(merged, null, 2));
+  if (toUpsert.size > 0) {
+    const { error: writeError } = await db.from('events').upsert(Array.from(toUpsert.values()));
+    if (writeError) throw new Error(`mergeEvents: failed to write events — ${writeError.message}`);
+  }
 
   // Update sync log
   syncLog.lastRun = new Date().toISOString();
@@ -176,21 +194,21 @@ function mergeEvents(newEvents) {
 
 /**
  * Remove events whose dateTime is before yesterday.
+ * `db` is injectable so tests can pass a fake client; defaults to the real one.
  * Returns the number of events pruned.
  */
-function prunePastEvents() {
-  const events = JSON.parse(fs.readFileSync(EVENTS_PATH, 'utf-8'));
+async function prunePastEvents(db = supabaseAdmin()) {
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   yesterday.setHours(0, 0, 0, 0);
 
-  const kept = events.filter(e => new Date(e.dateTime) >= yesterday);
-  const pruned = events.length - kept.length;
-
-  if (pruned > 0) {
-    fs.writeFileSync(EVENTS_PATH, JSON.stringify(kept, null, 2));
-  }
-  return pruned;
+  const { data: deleted, error } = await db
+    .from('events')
+    .delete()
+    .lt('dateTime', yesterday.toISOString())
+    .select('id');
+  if (error) throw new Error(`prunePastEvents: ${error.message}`);
+  return deleted.length;
 }
 
-module.exports = { mergeEvents, prunePastEvents };
+module.exports = { mergeEvents, prunePastEvents, getPrecedence, detectDiscrepancies };

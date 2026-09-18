@@ -1,27 +1,14 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import type { SportEvent, Team, Venue } from '@/lib/types';
+import type { Team, Venue } from '@/lib/types';
 import { formatDateLong, formatTime } from '@/lib/calendar';
 import { SPORT_LABELS, AREA_LABELS } from '@/lib/constants';
+import { getTeams, getVenues, getEvents } from '@/lib/data';
 import EventDetailClient from './EventDetailClient';
 
-import teamsData from '@/data/teams.json';
-import venuesData from '@/data/venues.json';
-import eventsData from '@/data/events.json';
-
-const teamsMap: Record<string, Team> = {};
-for (const t of teamsData as Team[]) teamsMap[t.id] = t;
-
-const venuesMap: Record<string, Venue> = {};
-for (const v of venuesData as Venue[]) venuesMap[v.id] = v;
-
-const eventsMap: Record<string, SportEvent> = {};
-for (const e of eventsData as SportEvent[]) eventsMap[e.id] = e;
-
 export async function generateStaticParams() {
-  return (eventsData as SportEvent[]).map((event) => ({
-    id: event.id,
-  }));
+  const events = await getEvents();
+  return events.map((event) => ({ id: event.id }));
 }
 
 export async function generateMetadata({
@@ -30,12 +17,13 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const event = eventsMap[id];
+  const [teams, venues, events] = await Promise.all([getTeams(), getVenues(), getEvents()]);
+  const event = events.find((e) => e.id === id);
   if (!event) return { title: 'Event Not Found' };
 
-  const home = teamsMap[event.homeTeam];
-  const away = event.awayTeam ? teamsMap[event.awayTeam] : null;
-  const venue = venuesMap[event.venue];
+  const home = teams.find((t) => t.id === event.homeTeam) as Team;
+  const away = event.awayTeam ? teams.find((t) => t.id === event.awayTeam) : null;
+  const venue = venues.find((v) => v.id === event.venue) as Venue;
   const title = away
     ? `${away.name} at ${home.name}`
     : event.eventName || home.name;
@@ -52,12 +40,13 @@ export default async function EventPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const event = eventsMap[id];
+  const [teams, venues, events] = await Promise.all([getTeams(), getVenues(), getEvents()]);
+  const event = events.find((e) => e.id === id);
   if (!event) notFound();
 
-  const homeTeam = teamsMap[event.homeTeam];
-  const awayTeam = event.awayTeam ? teamsMap[event.awayTeam] : null;
-  const venue = venuesMap[event.venue];
+  const homeTeam = teams.find((t) => t.id === event.homeTeam) as Team;
+  const awayTeam = event.awayTeam ? teams.find((t) => t.id === event.awayTeam) ?? null : null;
+  const venue = venues.find((v) => v.id === event.venue) as Venue;
 
   return (
     <EventDetailClient
