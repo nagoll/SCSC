@@ -1,38 +1,29 @@
 [
   {
+    "id": "gotw-la-chargers-20260920",
+    "type": "game-of-week",
+    "title": "Chargers vs. Las Vegas Raiders",
+    "description": "The Las Vegas Raiders come to town for a Sunday clash at SoFi Stadium. The Chargers are looking to put on a show for the home crowd.",
+    "eventId": "la-chargers-20260920",
+    "imageUrl": null,
+    "publishDate": "2026-09-18T00:00:00+00:00"
+  },
+  {
     "id": "gotw-la-dodgers-20260919",
     "type": "game-of-week",
     "title": "The Best Rivalry in Baseball: Dodgers vs. San Francisco Giants",
     "description": "Dating back to New York, this one defines the NL West. The San Francisco Giants come to Dodger Stadium for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-dodgers-20260919",
     "imageUrl": null,
-    "publishDate": "2026-09-12T00:00:00Z"
+    "publishDate": "2026-09-18T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-chargers-20260913",
+    "id": "gotw-la-kings-20260926",
     "type": "game-of-week",
-    "title": "Chargers vs. Arizona Cardinals",
-    "description": "The Chargers host the Arizona Cardinals at SoFi Stadium this Sunday. A marquee matchup you won't want to miss.",
-    "eventId": "la-chargers-20260913",
+    "title": "Freeway Faceoff: Kings vs. Ducks",
+    "description": "One of the best rivalries in hockey is back. The Ducks visit Crypto.com Arena with bragging rights on the line.",
+    "eventId": "la-kings-20260926",
     "imageUrl": null,
-    "publishDate": "2026-09-12T00:00:00Z"
-  },
-  {
-    "id": "gotw-la-rams-20260922",
-    "type": "game-of-week",
-    "title": "Rams vs. New York Giants",
-    "description": "The New York Giants come to town for a Tuesday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
-    "eventId": "la-rams-20260922",
-    "imageUrl": null,
-    "publishDate": "2026-09-12T00:00:00Z"
-  },
-  {
-    "id": "gem-long-beach-state-49ers-20260912-womens-college-volleyball",
-    "type": "hidden-gem",
-    "title": "Women's Volleyball: LBSU vs. San José State Spartans",
-    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting San José State Spartans at Walter Pyramid.",
-    "eventId": "long-beach-state-49ers-20260912-womens-college-volleyball",
-    "imageUrl": null,
-    "publishDate": "2026-09-12T00:00:00Z"
+    "publishDate": "2026-09-18T00:00:00+00:00"
   }
 ]
