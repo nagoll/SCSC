@@ -1,6 +1,15 @@
 {
-  "lastRun": "2026-09-18T22:38:17.736Z",
+  "lastRun": "2026-09-19T14:23:46.076Z",
   "discrepancies": [
+    {
+      "eventId": "la-rams-20261018",
+      "existingSource": "espn-api",
+      "incomingSource": "espn-api:pro",
+      "diffs": [
+        "dateTime: \"2026-10-18T20:05:00+00:00\" → \"2026-10-18T20:05:00.000Z\""
+      ],
+      "timestamp": "2026-09-19T14:23:45.779Z"
+    },
     {
       "eventId": "la-lakers-20261017",
       "existingSource": "espn-api",

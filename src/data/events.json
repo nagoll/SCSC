@@ -63,7 +63,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "ucla-bruins-20260920-college-football",
@@ -107,7 +107,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.177+00:00"
   },
   {
     "id": "la-dodgers-20260920",
@@ -129,7 +129,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
+    "lastUpdated": "2026-09-19T14:23:44.986+00:00"
   },
   {
     "id": "usc-trojans-20260920-womens-college-volleyball",
@@ -173,7 +173,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.234+00:00"
   },
   {
     "id": "la-kings-20260923",
@@ -195,7 +195,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "la-dodgers-20260923",
@@ -217,7 +217,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
+    "lastUpdated": "2026-09-19T14:23:44.986+00:00"
   },
   {
     "id": "la-dodgers-20260924",
@@ -239,7 +239,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
+    "lastUpdated": "2026-09-19T14:23:44.986+00:00"
   },
   {
     "id": "la-dodgers-20260925",
@@ -261,7 +261,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
+    "lastUpdated": "2026-09-19T14:23:44.986+00:00"
   },
   {
     "id": "usc-trojans-20260926-college-football",
@@ -305,7 +305,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "ucla-bruins-20261003-womens-college-volleyball",
@@ -437,7 +437,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.057+00:00"
   },
   {
     "id": "la-kings-20261007",
@@ -459,7 +459,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "la-lakers-20261008",
@@ -503,7 +503,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.067+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261009-womens-college-volleyball",
@@ -569,7 +569,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.177+00:00"
   },
   {
     "id": "la-rams-20261013",
@@ -591,7 +591,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.235+00:00"
   },
   {
     "id": "la-kings-20261014",
@@ -613,7 +613,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "la-clippers-20261015",
@@ -635,7 +635,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.057+00:00"
   },
   {
     "id": "la-lakers-20261016",
@@ -701,7 +701,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.067+00:00"
   },
   {
     "id": "usc-trojans-20261017-womens-college-volleyball",
@@ -767,7 +767,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T14:23:45.289+00:00"
   },
   {
     "id": "la-rams-20261018",
@@ -781,15 +781,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T14:23:45.235+00:00"
   },
   {
     "id": "ucla-bruins-20261018-womens-college-volleyball",
