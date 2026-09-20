@@ -11,15 +11,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886062",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.381+00:00"
   },
   {
     "id": "la-dodgers-20260919",
@@ -63,7 +63,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
   },
   {
     "id": "ucla-bruins-20260920-college-football",
@@ -77,15 +77,15 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858458/purdue-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.255+00:00"
   },
   {
     "id": "la-chargers-20260920",
@@ -107,7 +107,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.841+00:00"
   },
   {
     "id": "la-dodgers-20260920",
@@ -129,7 +129,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.725+00:00"
   },
   {
     "id": "usc-trojans-20260920-womens-college-volleyball",
@@ -143,15 +143,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886064",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.381+00:00"
   },
   {
     "id": "la-rams-20260922",
@@ -173,7 +173,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "la-kings-20260923",
@@ -195,7 +195,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.694+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
   },
   {
     "id": "la-dodgers-20260923",
@@ -217,7 +217,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.563+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.725+00:00"
   },
   {
     "id": "la-dodgers-20260924",
@@ -239,7 +239,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.725+00:00"
   },
   {
     "id": "la-dodgers-20260925",
@@ -261,29 +261,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-09-18T22:38:16.564+00:00"
-  },
-  {
-    "id": "usc-trojans-20260926-college-football",
-    "sport": "other",
-    "level": "college",
-    "gender": "mens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Oregon Ducks at USC Trojans",
-    "dateTime": "2026-09-26T04:00:00+00:00",
-    "endTime": null,
-    "venue": "la-memorial-coliseum",
-    "venueSourceName": "Los Angeles Memorial Coliseum",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858469/oregon-usc",
-    "price": "over_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.375+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.725+00:00"
   },
   {
     "id": "la-kings-20260926",
@@ -305,7 +283,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
+  },
+  {
+    "id": "usc-trojans-20260926-college-football",
+    "sport": "other",
+    "level": "college",
+    "gender": "mens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Oregon Ducks at USC Trojans",
+    "dateTime": "2026-09-26T23:30:00+00:00",
+    "endTime": null,
+    "venue": "la-memorial-coliseum",
+    "venueSourceName": "Los Angeles Memorial Coliseum",
+    "venueConfidence": "verified",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858469/oregon-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.264+00:00"
   },
   {
     "id": "ucla-bruins-20261003-womens-college-volleyball",
@@ -319,15 +319,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885608",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.479+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.301+00:00"
   },
   {
     "id": "usc-trojans-20261003-womens-college-volleyball",
@@ -341,15 +341,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885208",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.381+00:00"
   },
   {
     "id": "usc-trojans-20261003-college-football",
@@ -363,15 +363,15 @@
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858478/washington-usc",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.375+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.265+00:00"
   },
   {
     "id": "ucla-bruins-20261004-womens-college-volleyball",
@@ -385,15 +385,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885209",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.301+00:00"
   },
   {
     "id": "usc-trojans-20261004-womens-college-volleyball",
@@ -407,15 +407,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885609",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.381+00:00"
   },
   {
     "id": "la-clippers-20261004",
@@ -437,7 +437,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.621+00:00"
   },
   {
     "id": "la-kings-20261007",
@@ -459,7 +459,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
   },
   {
     "id": "la-lakers-20261008",
@@ -503,7 +503,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.567+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261009-womens-college-volleyball",
@@ -528,6 +528,28 @@
     "lastUpdated": "2026-09-12T16:34:41.549+00:00"
   },
   {
+    "id": "long-beach-state-49ers-20261010-womens-college-volleyball",
+    "sport": "volleyball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "long-beach-state-49ers",
+    "awayTeam": null,
+    "eventName": "UC Santa Barbara Gauchos at Long Beach State 49ers",
+    "dateTime": "2026-10-10T02:00:00+00:00",
+    "endTime": null,
+    "venue": "walter-pyramid",
+    "venueSourceName": "Walter Pyramid",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897090",
+    "price": "under_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.286+00:00"
+  },
+  {
     "id": "long-beach-state-49ers-20261011-womens-college-volleyball",
     "sport": "volleyball",
     "level": "college",
@@ -539,15 +561,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401896936",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "la-chargers-20261011",
@@ -569,7 +591,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.605+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-rams-20261013",
@@ -591,7 +613,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.567+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "la-kings-20261014",
@@ -613,7 +635,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
   },
   {
     "id": "la-clippers-20261015",
@@ -635,7 +657,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.686+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.621+00:00"
   },
   {
     "id": "la-lakers-20261016",
@@ -671,15 +693,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886016",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.301+00:00"
   },
   {
     "id": "la-lakers-20261017",
@@ -701,29 +723,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-09-18T22:38:16.528+00:00"
-  },
-  {
-    "id": "usc-trojans-20261017-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Penn State Nittany Lions at USC Trojans",
-    "dateTime": "2026-10-17T04:00:00+00:00",
-    "endTime": null,
-    "venue": "galen-center",
-    "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886017",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "lastUpdated": "2026-09-19T16:50:58.568+00:00"
   },
   {
     "id": "ucla-bruins-20261017-college-football",
@@ -737,15 +737,37 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858494/wisconsin-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.255+00:00"
+  },
+  {
+    "id": "usc-trojans-20261017-womens-college-volleyball",
+    "sport": "volleyball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Penn State Nittany Lions at USC Trojans",
+    "dateTime": "2026-10-17T04:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "verified",
+    "isNeutralSite": false,
+    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886017",
+    "price": "under_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.382+00:00"
   },
   {
     "id": "la-kings-20261018",
@@ -767,7 +789,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-09-18T22:38:16.695+00:00"
+    "lastUpdated": "2026-09-19T16:50:59.982+00:00"
   },
   {
     "id": "la-rams-20261018",
@@ -781,15 +803,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "ucla-bruins-20261018-womens-college-volleyball",
@@ -803,15 +825,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885891",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261024-womens-college-volleyball",
@@ -825,15 +847,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897003",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.549+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "ucla-bruins-20261024-college-football",
@@ -847,15 +869,15 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858499/michigan-st-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.337+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.255+00:00"
   },
   {
     "id": "la-kings-20261030",
@@ -869,15 +891,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "usc-trojans-20261031-womens-college-volleyball",
@@ -891,15 +913,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401884158",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.382+00:00"
   },
   {
     "id": "ucla-bruins-20261031-womens-college-volleyball",
@@ -913,15 +935,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885629",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261031-womens-college-volleyball",
@@ -935,15 +957,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401896963",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "usc-trojans-20261031-college-football",
@@ -957,15 +979,15 @@
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858509/ohio-state-usc",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.376+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.265+00:00"
   },
   {
     "id": "ucla-bruins-20261031-college-football",
@@ -979,15 +1001,15 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858508/nevada-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.255+00:00"
   },
   {
     "id": "la-kings-20261031",
@@ -1001,15 +1023,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261101-womens-college-volleyball",
@@ -1023,15 +1045,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897040",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "la-rams-20261101",
@@ -1045,15 +1067,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.926+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "usc-trojans-20261101-womens-college-volleyball",
@@ -1067,15 +1089,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885630",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.382+00:00"
   },
   {
     "id": "ucla-bruins-20261101-womens-college-volleyball",
@@ -1089,15 +1111,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401884159",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "ucla-bruins-20261102-womens-college-basketball",
@@ -1111,15 +1133,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918896/lehigh-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.486+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.282+00:00"
   },
   {
     "id": "la-kings-20261105",
@@ -1133,15 +1155,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "ucla-bruins-20261105-womens-college-basketball",
@@ -1155,15 +1177,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918897/uc-irvine-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.486+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.282+00:00"
   },
   {
     "id": "la-kings-20261108",
@@ -1177,15 +1199,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "la-chargers-20261108",
@@ -1199,15 +1221,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-kings-20261111",
@@ -1221,15 +1243,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-basketball",
@@ -1243,15 +1265,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401913056/arizona-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.282+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-volleyball",
@@ -1265,15 +1287,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886088",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "usc-trojans-20261113-womens-college-volleyball",
@@ -1287,15 +1309,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885945",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.382+00:00"
   },
   {
     "id": "la-kings-20261113",
@@ -1309,15 +1331,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "ucla-bruins-20261114-college-football",
@@ -1331,15 +1353,15 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858526/illinois-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.256+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261114-womens-college-volleyball",
@@ -1353,15 +1375,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897094",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-volleyball",
@@ -1375,15 +1397,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885946",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261115-womens-college-volleyball",
@@ -1397,15 +1419,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897081",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "la-kings-20261115",
@@ -1419,15 +1441,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "usc-trojans-20261115-womens-college-volleyball",
@@ -1441,15 +1463,15 @@
     "endTime": null,
     "venue": "galen-center",
     "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886068",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.534+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.382+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-basketball",
@@ -1463,15 +1485,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401915326/princeton-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.282+00:00"
   },
   {
     "id": "ucla-bruins-20261118-womens-college-volleyball",
@@ -1485,15 +1507,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401886069",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.48+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.302+00:00"
   },
   {
     "id": "ucla-bruins-20261119-womens-college-basketball",
@@ -1507,15 +1529,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918898/cal-poly-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.282+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261121-womens-college-volleyball",
@@ -1529,15 +1551,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897095",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "usc-trojans-20261121-college-football",
@@ -1551,15 +1573,15 @@
     "endTime": null,
     "venue": "la-memorial-coliseum",
     "venueSourceName": "Los Angeles Memorial Coliseum",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858534/maryland-usc",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.376+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.265+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261122-womens-college-volleyball",
@@ -1573,15 +1595,15 @@
     "endTime": null,
     "venue": "walter-pyramid",
     "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401897096",
     "price": "under_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.55+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.287+00:00"
   },
   {
     "id": "la-chargers-20261122",
@@ -1595,15 +1617,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-rams-20261126",
@@ -1617,15 +1639,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "ucla-bruins-20261128-college-football",
@@ -1639,15 +1661,15 @@
     "endTime": null,
     "venue": "rose-bowl",
     "venueSourceName": "Rose Bowl",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/college-football/game/_/gameId/401858543/usc-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.338+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.256+00:00"
   },
   {
     "id": "la-kings-20261129",
@@ -1661,15 +1683,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "ucla-bruins-20261129-womens-college-basketball",
@@ -1683,15 +1705,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918899/penn-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.283+00:00"
   },
   {
     "id": "la-chargers-20261130",
@@ -1705,15 +1727,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-kings-20261202",
@@ -1727,15 +1749,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "la-rams-20261204",
@@ -1749,15 +1771,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "la-kings-20261204",
@@ -1771,15 +1793,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "la-kings-20261206",
@@ -1793,15 +1815,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "la-kings-20261210",
@@ -1815,15 +1837,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.983+00:00"
   },
   {
     "id": "ucla-bruins-20261211-womens-college-basketball",
@@ -1837,15 +1859,15 @@
     "endTime": null,
     "venue": "pauley-pavilion",
     "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401918900/bakersfield-ucla",
     "price": "over_50",
     "conference": null,
     "league": null,
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:41.487+00:00"
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.283+00:00"
   },
   {
     "id": "la-kings-20261213",
@@ -1859,15 +1881,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.282+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-chargers-20261218",
@@ -1881,15 +1903,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-rams-20261220",
@@ -1903,15 +1925,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "la-kings-20261227",
@@ -1925,15 +1947,37 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "ucla-bruins-20261230-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Northwestern Wildcats at UCLA Bruins",
+    "dateTime": "2026-12-30T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922065/northwestern-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.283+00:00"
   },
   {
     "id": "la-kings-20261231",
@@ -1947,15 +1991,59 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "usc-trojans-20270102-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Northwestern Wildcats at USC Trojans",
+    "dateTime": "2027-01-02T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922073/northwestern-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.269+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270102-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Nebraska Cornhuskers at UCLA Bruins",
+    "dateTime": "2027-01-02T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922072/nebraska-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.283+00:00"
   },
   {
     "id": "la-kings-20270103",
@@ -1969,15 +2057,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-chargers-20270103",
@@ -1991,15 +2079,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.chargers.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.967+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.842+00:00"
   },
   {
     "id": "la-kings-20270105",
@@ -2013,15 +2101,37 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "usc-trojans-20270105-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Nebraska Cornhuskers at USC Trojans",
+    "dateTime": "2027-01-05T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922076/nebraska-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.269+00:00"
   },
   {
     "id": "la-kings-20270107",
@@ -2035,15 +2145,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-kings-20270110",
@@ -2057,15 +2167,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-rams-20270110",
@@ -2079,15 +2189,15 @@
     "endTime": null,
     "venue": "sofi-stadium",
     "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.therams.com/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NFL",
     "isFeatured": false,
-    "source": "espn-api",
-    "lastUpdated": "2026-09-12T16:34:40.927+00:00"
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-09-19T16:50:58.792+00:00"
   },
   {
     "id": "la-kings-20270112",
@@ -2101,15 +2211,37 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270112-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Minnesota Golden Gophers at UCLA Bruins",
+    "dateTime": "2027-01-12T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922095/minnesota-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
   },
   {
     "id": "la-kings-20270114",
@@ -2123,15 +2255,81 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "usc-trojans-20270115-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Minnesota Golden Gophers at USC Trojans",
+    "dateTime": "2027-01-15T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922102/minnesota-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.269+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270115-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Penn State Lady Lions at UCLA Bruins",
+    "dateTime": "2027-01-15T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922103/penn-state-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
+  },
+  {
+    "id": "usc-trojans-20270118-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Penn State Lady Lions at USC Trojans",
+    "dateTime": "2027-01-18T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922111/penn-state-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.269+00:00"
   },
   {
     "id": "la-kings-20270120",
@@ -2145,15 +2343,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-kings-20270122",
@@ -2167,15 +2365,125 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "usc-trojans-20270130-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Michigan Wolverines at USC Trojans",
+    "dateTime": "2027-01-30T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922136/michigan-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.269+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270130-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Illinois Fighting Illini at UCLA Bruins",
+    "dateTime": "2027-01-30T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922135/illinois-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
+  },
+  {
+    "id": "usc-trojans-20270202-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Illinois Fighting Illini at USC Trojans",
+    "dateTime": "2027-02-02T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922143/illinois-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.27+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270202-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Michigan Wolverines at UCLA Bruins",
+    "dateTime": "2027-02-02T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922144/michigan-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270207-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "USC Trojans at UCLA Bruins",
+    "dateTime": "2027-02-07T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922158/usc-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
   },
   {
     "id": "la-kings-20270212",
@@ -2189,15 +2497,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-kings-20270213",
@@ -2211,15 +2519,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
   },
   {
     "id": "la-kings-20270216",
@@ -2233,15 +2541,59 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.984+00:00"
+  },
+  {
+    "id": "usc-trojans-20270218-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Michigan State Spartans at USC Trojans",
+    "dateTime": "2027-02-18T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922181/michigan-st-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.27+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270218-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Ohio State Buckeyes at UCLA Bruins",
+    "dateTime": "2027-02-18T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922182/ohio-state-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
   },
   {
     "id": "la-kings-20270221",
@@ -2255,15 +2607,59 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
+  },
+  {
+    "id": "usc-trojans-20270221-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Ohio State Buckeyes at USC Trojans",
+    "dateTime": "2027-02-21T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922189/ohio-state-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.27+00:00"
+  },
+  {
+    "id": "ucla-bruins-20270221-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Michigan State Spartans at UCLA Bruins",
+    "dateTime": "2027-02-21T05:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922188/michigan-st-ucla",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.284+00:00"
   },
   {
     "id": "la-kings-20270225",
@@ -2277,15 +2673,37 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.283+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
+  },
+  {
+    "id": "usc-trojans-20270225-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "UCLA Bruins at USC Trojans",
+    "dateTime": "2027-02-25T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922199/ucla-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-09-19T16:50:59.27+00:00"
   },
   {
     "id": "la-kings-20270302",
@@ -2299,15 +2717,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270304",
@@ -2321,15 +2739,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270306",
@@ -2343,15 +2761,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270307",
@@ -2365,15 +2783,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270314",
@@ -2387,15 +2805,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270317",
@@ -2409,15 +2827,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270319",
@@ -2431,15 +2849,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-dodgers-20270325",
@@ -2453,15 +2871,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270327",
@@ -2475,15 +2893,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270328",
@@ -2497,15 +2915,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.975+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270329",
@@ -2519,15 +2937,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-kings-20270330",
@@ -2541,15 +2959,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-dodgers-20270330",
@@ -2563,15 +2981,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270331",
@@ -2585,15 +3003,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-kings-20270401",
@@ -2607,15 +3025,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270404",
@@ -2629,15 +3047,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-kings-20270409",
@@ -2651,15 +3069,15 @@
     "endTime": null,
     "venue": "crypto-arena",
     "venueSourceName": "Crypto.com Arena",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.nhl.com/kings/tickets",
     "price": "over_50",
     "conference": null,
     "league": "NHL",
     "isFeatured": false,
-    "source": "nhl-api",
-    "lastUpdated": "2026-09-12T16:34:42.284+00:00"
+    "source": "pro-api:nhl",
+    "lastUpdated": "2026-09-19T16:50:59.985+00:00"
   },
   {
     "id": "la-dodgers-20270413",
@@ -2673,15 +3091,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270414",
@@ -2695,15 +3113,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.726+00:00"
   },
   {
     "id": "la-dodgers-20270415",
@@ -2717,15 +3135,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270416",
@@ -2739,15 +3157,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270417",
@@ -2761,15 +3179,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.976+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270418",
@@ -2783,15 +3201,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270426",
@@ -2805,15 +3223,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270427",
@@ -2827,15 +3245,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270428",
@@ -2849,15 +3267,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270430",
@@ -2871,15 +3289,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270501",
@@ -2893,15 +3311,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.727+00:00"
   },
   {
     "id": "la-dodgers-20270502",
@@ -2915,15 +3333,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270506",
@@ -2937,15 +3355,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270507",
@@ -2959,15 +3377,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270508",
@@ -2981,15 +3399,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270509",
@@ -3003,15 +3421,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.977+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270517",
@@ -3025,15 +3443,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270518",
@@ -3047,15 +3465,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270519",
@@ -3069,15 +3487,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270521",
@@ -3091,15 +3509,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.728+00:00"
   },
   {
     "id": "la-dodgers-20270522",
@@ -3113,15 +3531,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270523",
@@ -3135,15 +3553,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270524",
@@ -3157,15 +3575,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270525",
@@ -3179,15 +3597,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270526",
@@ -3201,15 +3619,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270607",
@@ -3223,15 +3641,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270608",
@@ -3245,15 +3663,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.978+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270609",
@@ -3267,15 +3685,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270611",
@@ -3289,15 +3707,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.729+00:00"
   },
   {
     "id": "la-dodgers-20270612",
@@ -3311,15 +3729,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270613",
@@ -3333,15 +3751,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270618",
@@ -3355,15 +3773,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270619",
@@ -3377,15 +3795,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270620",
@@ -3399,15 +3817,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.979+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270628",
@@ -3421,15 +3839,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270629",
@@ -3443,15 +3861,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270630",
@@ -3465,15 +3883,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270701",
@@ -3487,15 +3905,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270702",
@@ -3509,15 +3927,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.73+00:00"
   },
   {
     "id": "la-dodgers-20270703",
@@ -3531,15 +3949,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270704",
@@ -3553,15 +3971,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.98+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270716",
@@ -3575,15 +3993,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270717",
@@ -3597,15 +4015,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270718",
@@ -3619,15 +4037,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.981+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270719",
@@ -3641,15 +4059,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270720",
@@ -3663,15 +4081,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270721",
@@ -3685,15 +4103,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270730",
@@ -3707,15 +4125,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.731+00:00"
   },
   {
     "id": "la-dodgers-20270731",
@@ -3729,15 +4147,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270801",
@@ -3751,15 +4169,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.983+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270803",
@@ -3773,15 +4191,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270804",
@@ -3795,15 +4213,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270805",
@@ -3817,15 +4235,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270813",
@@ -3839,15 +4257,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270814",
@@ -3861,15 +4279,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270815",
@@ -3883,15 +4301,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270816",
@@ -3905,15 +4323,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.732+00:00"
   },
   {
     "id": "la-dodgers-20270817",
@@ -3927,15 +4345,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270818",
@@ -3949,15 +4367,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270827",
@@ -3971,15 +4389,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270828",
@@ -3993,15 +4411,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270829",
@@ -4015,15 +4433,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270830",
@@ -4037,15 +4455,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270831",
@@ -4059,15 +4477,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270901",
@@ -4081,15 +4499,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.984+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270910",
@@ -4103,15 +4521,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.733+00:00"
   },
   {
     "id": "la-dodgers-20270911",
@@ -4125,15 +4543,15 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
+    "venueConfidence": "verified",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
     "price": "over_50",
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
   },
   {
     "id": "la-dodgers-20270912",
@@ -4147,6 +4565,28 @@
     "endTime": null,
     "venue": "dodger-stadium",
     "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "verified",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270913",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Toronto Blue Jays at Dodgers",
+    "dateTime": "2027-09-13T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
     "venueConfidence": "likely",
     "isNeutralSite": false,
     "ticketUrl": "https://www.mlb.com/dodgers/tickets",
@@ -4154,7 +4594,139 @@
     "conference": null,
     "league": "MLB",
     "isFeatured": false,
-    "source": "mlb-api",
-    "lastUpdated": "2026-09-12T16:34:40.985+00:00"
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270914",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Toronto Blue Jays at Dodgers",
+    "dateTime": "2027-09-14T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270915",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Toronto Blue Jays at Dodgers",
+    "dateTime": "2027-09-15T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270916",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Arizona Diamondbacks at Dodgers",
+    "dateTime": "2027-09-16T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270917",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Arizona Diamondbacks at Dodgers",
+    "dateTime": "2027-09-17T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270918",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Arizona Diamondbacks at Dodgers",
+    "dateTime": "2027-09-18T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.734+00:00"
+  },
+  {
+    "id": "la-dodgers-20270919",
+    "sport": "baseball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-dodgers",
+    "awayTeam": null,
+    "eventName": "Arizona Diamondbacks at Dodgers",
+    "dateTime": "2027-09-19T10:33:00+00:00",
+    "endTime": null,
+    "venue": "dodger-stadium",
+    "venueSourceName": "UNIQLO Field at Dodger Stadium",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "MLB",
+    "isFeatured": false,
+    "source": "pro-api:mlb",
+    "lastUpdated": "2026-09-19T16:50:58.735+00:00"
   }
 ]
