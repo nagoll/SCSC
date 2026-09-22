@@ -1,21 +1,12 @@
 [
   {
-    "id": "gotw-la-chargers-20260920",
+    "id": "gotw-la-dodgers-20260925",
     "type": "game-of-week",
-    "title": "Chargers vs. Las Vegas Raiders",
-    "description": "The Las Vegas Raiders come to town for a Sunday clash at SoFi Stadium. The Chargers are looking to put on a show for the home crowd.",
-    "eventId": "la-chargers-20260920",
+    "title": "NL West Battle: Dodgers vs. San Diego Padres",
+    "description": "Southern California's NL West rivalry heats up. The San Diego Padres come to Dodger Stadium for a Friday showdown. This is appointment viewing.",
+    "eventId": "la-dodgers-20260925",
     "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
-  },
-  {
-    "id": "gotw-la-dodgers-20260919",
-    "type": "game-of-week",
-    "title": "The Best Rivalry in Baseball: Dodgers vs. San Francisco Giants",
-    "description": "Dating back to New York, this one defines the NL West. The San Francisco Giants come to Dodger Stadium for a Saturday showdown. This is appointment viewing.",
-    "eventId": "la-dodgers-20260919",
-    "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
+    "publishDate": "2026-09-22T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20260926",
@@ -24,6 +15,15 @@
     "description": "One of the best rivalries in hockey is back. The Ducks visit Crypto.com Arena with bragging rights on the line.",
     "eventId": "la-kings-20260926",
     "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
+    "publishDate": "2026-09-22T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
+    "type": "game-of-week",
+    "title": "Big Ten Heavyweights: USC vs. Michigan Wolverines",
+    "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
+    "eventId": "usc-trojans-20261003-womens-college-volleyball",
+    "imageUrl": null,
+    "publishDate": "2026-09-22T00:00:00+00:00"
   }
 ]
