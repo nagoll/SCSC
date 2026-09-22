@@ -11,6 +11,7 @@
  */
 
 const cheerio = require('cheerio');
+const { chromium } = require('playwright');
 const { normalizeEvent, inferGender } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
@@ -372,35 +373,20 @@ async function parseGenericJuco(html, school, start, end) {
   return events;
 }
 
-async function scrapeJucoSchool(school, startDate, endDate) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 15_000);
+async function scrapeJucoSchool(school, startDate, endDate, browserContext) {
+  const page = await browserContext.newPage();
   try {
-    const res = await fetch(school.scheduleUrl, {
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Referer': 'https://www.google.com/',
-        'Upgrade-Insecure-Requests': '1',
-        'sec-ch-ua': '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'cross-site',
-        'sec-fetch-user': '?1',
-      },
+    const res = await page.goto(school.scheduleUrl, {
+      waitUntil: 'domcontentloaded',
+      timeout: 20_000,
     });
 
-    if (!res.ok) {
-      console.warn(`[${school.id}] HTTP ${res.status} — ${school.scheduleUrl} — server: ${res.headers.get('server')}, cf-ray: ${res.headers.get('cf-ray')}, cf-mitigated: ${res.headers.get('cf-mitigated')}`);
+    if (!res || !res.ok()) {
+      console.warn(`[${school.id}] HTTP ${res ? res.status() : '(no response)'} — ${school.scheduleUrl}`);
       return [];
     }
 
-    const html = await res.text();
+    const html = await page.content();
     const start = new Date(startDate);
     const end = new Date(endDate);
 
@@ -409,18 +395,33 @@ async function scrapeJucoSchool(school, startDate, endDate) {
     }
     return parseGenericJuco(html, school, start, end);
   } catch (err) {
-    const msg = err.name === 'AbortError' ? 'timed out after 15s' : err.message;
+    const msg = err.name === 'TimeoutError' ? 'timed out after 20s' : err.message;
     console.warn(`[${school.id}] Scrape error: ${msg}`);
     return [];
   } finally {
-    clearTimeout(timer);
+    await page.close();
   }
 }
 
 async function scrapeAllJuco(startDate, endDate) {
-  const results = await Promise.allSettled(
-    JUCO_SCHOOLS.map(school => scrapeJucoSchool(school, startDate, endDate))
-  );
+  // A real (non-headless-detectable) browser is required here — every LA
+  // County CCCAA school's SIDEARM-hosted athletics site sits behind edge bot
+  // detection (CloudFront/WAF) that uniformly blocks plain HTTP requests
+  // with a 405, regardless of headers or User-Agent. Verified against the
+  // real network (not just this sandbox) before committing to this.
+  const browser = await chromium.launch();
+  const browserContext = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  });
+
+  let results;
+  try {
+    results = await Promise.allSettled(
+      JUCO_SCHOOLS.map(school => scrapeJucoSchool(school, startDate, endDate, browserContext))
+    );
+  } finally {
+    await browser.close();
+  }
 
   const events = [];
   for (let i = 0; i < results.length; i++) {
