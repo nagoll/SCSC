@@ -1,12 +1,12 @@
 [
   {
-    "id": "gotw-la-dodgers-20260925",
-    "type": "game-of-week",
-    "title": "NL West Battle: Dodgers vs. San Diego Padres",
-    "description": "Southern California's NL West rivalry heats up. The San Diego Padres come to Dodger Stadium for a Friday showdown. This is appointment viewing.",
-    "eventId": "la-dodgers-20260925",
+    "id": "gem-long-beach-state-49ers-20261009-womens-college-volleyball",
+    "type": "hidden-gem",
+    "title": "Women's Volleyball: LBSU vs. UC Santa Barbara Gauchos",
+    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
+    "eventId": "long-beach-state-49ers-20261009-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-25T00:00:00+00:00"
+    "publishDate": "2026-09-26T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20260926",
@@ -15,7 +15,16 @@
     "description": "One of the best rivalries in hockey is back. The Ducks visit Crypto.com Arena with bragging rights on the line.",
     "eventId": "la-kings-20260926",
     "imageUrl": null,
-    "publishDate": "2026-09-25T00:00:00+00:00"
+    "publishDate": "2026-09-26T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-la-lakers-20261009",
+    "type": "game-of-week",
+    "title": "Lakers vs. Sacramento Kings",
+    "description": "The Sacramento Kings come to town for a Friday clash at Crypto.com Arena. The Lakers are looking to put on a show for the home crowd.",
+    "eventId": "la-lakers-20261009",
+    "imageUrl": null,
+    "publishDate": "2026-09-26T00:00:00+00:00"
   },
   {
     "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
@@ -24,6 +33,6 @@
     "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
     "eventId": "usc-trojans-20261003-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-25T00:00:00+00:00"
+    "publishDate": "2026-09-26T00:00:00+00:00"
   }
 ]
