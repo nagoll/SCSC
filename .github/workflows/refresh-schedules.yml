@@ -57,6 +57,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          WEBSHARE_PROXIES: ${{ secrets.WEBSHARE_PROXIES }}
         run: |
           node scripts/fetch-schedules.js \
             --level "${{ github.event.inputs.level || 'all' }}" \

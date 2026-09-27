@@ -373,8 +373,26 @@ async function parseGenericJuco(html, school, start, end) {
   return events;
 }
 
-async function scrapeJucoSchool(school, startDate, endDate, browserContext) {
-  const page = await browserContext.newPage();
+// Parses WEBSHARE_PROXIES ("host:port:username:password" per line, as
+// exported from the Webshare dashboard) into Playwright proxy configs.
+function parseProxyList(raw) {
+  if (!raw) return [];
+  return raw
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(line => {
+      const [host, port, username, password] = line.split(':');
+      return { server: `http://${host}:${port}`, username, password };
+    });
+}
+
+async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
+  const context = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+    ...(proxy ? { proxy } : {}),
+  });
+  const page = await context.newPage();
   try {
     const res = await page.goto(school.scheduleUrl, {
       waitUntil: 'domcontentloaded',
@@ -400,6 +418,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browserContext) {
     return [];
   } finally {
     await page.close();
+    await context.close();
   }
 }
 
@@ -409,15 +428,23 @@ async function scrapeAllJuco(startDate, endDate) {
   // detection (CloudFront/WAF) that uniformly blocks plain HTTP requests
   // with a 405, regardless of headers or User-Agent. Verified against the
   // real network (not just this sandbox) before committing to this.
+  //
+  // That same edge detection also blocks by IP reputation, so requests are
+  // additionally routed through rotating proxies (one context per school,
+  // proxies cycled round-robin) when WEBSHARE_PROXIES is set.
   const browser = await chromium.launch();
-  const browserContext = await browser.newContext({
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
-  });
+  const proxies = parseProxyList(process.env.WEBSHARE_PROXIES);
+  if (proxies.length > 0) {
+    console.log(`[juco] Routing through ${proxies.length} rotating proxies`);
+  }
 
   let results;
   try {
     results = await Promise.allSettled(
-      JUCO_SCHOOLS.map(school => scrapeJucoSchool(school, startDate, endDate, browserContext))
+      JUCO_SCHOOLS.map((school, i) => {
+        const proxy = proxies.length > 0 ? proxies[i % proxies.length] : undefined;
+        return scrapeJucoSchool(school, startDate, endDate, browser, proxy);
+      })
     );
   } finally {
     await browser.close();
