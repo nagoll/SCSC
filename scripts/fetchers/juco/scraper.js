@@ -10,7 +10,6 @@
  *   - Fall back to CCCAA conference schedule pages for cross-referencing
  */
 
-const fs = require('fs');
 const cheerio = require('cheerio');
 const { chromium } = require('playwright');
 const { normalizeEvent, inferGender } = require('../../normalize');
@@ -412,13 +411,20 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    // Temporary: dumps the raw page HTML to disk so it can be pulled down
-    // as a workflow artifact and inspected offline while writing the real
-    // parser for SIDEARM's actual (undocumented, apparently multi-variant)
-    // composite-schedule markup. Remove once that parser is in place.
-    if (process.env.JUCO_DEBUG_HTML) {
-      fs.mkdirSync('/tmp/juco-html', { recursive: true });
-      fs.writeFileSync(`/tmp/juco-html/${school.id}.html`, html);
+    // Temporary: dumps a window of raw HTML around the first real event
+    // card to the job log (workflow artifacts aren't reachable from where
+    // this gets inspected), for a small fixed set of schools representing
+    // each SIDEARM composite-calendar markup variant seen so far. Remove
+    // once the real parser is written and verified against it.
+    const DEBUG_SCHOOLS = ['citrus', 'rio-hondo', 'compton'];
+    if (process.env.JUCO_DEBUG_HTML && DEBUG_SCHOOLS.includes(school.id)) {
+      const marker = html.search(/event-box|cal-event-item|event-row/);
+      if (marker >= 0) {
+        const start = Math.max(0, marker - 1500);
+        console.warn(`[${school.id}] DEBUG HTML WINDOW START\n${html.slice(start, start + 8500)}\n[${school.id}] DEBUG HTML WINDOW END`);
+      } else {
+        console.warn(`[${school.id}] DEBUG: no event marker found in ${html.length}b of html`);
+      }
     }
 
     const events = school.platform === 'sidearm'
