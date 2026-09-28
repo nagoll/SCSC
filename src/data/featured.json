@@ -6,16 +6,16 @@
     "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
     "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-27T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-clippers-20261004",
+    "id": "gotw-la-chargers-20261011",
     "type": "game-of-week",
-    "title": "Clippers vs. Golden State Warriors",
-    "description": "The Golden State Warriors come to town for a Sunday clash at Intuit Dome. The Clippers are looking to put on a show for the home crowd.",
-    "eventId": "la-clippers-20261004",
+    "title": "Chargers vs. Denver Broncos",
+    "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
+    "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-09-27T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261009",
@@ -24,7 +24,7 @@
     "description": "The Sacramento Kings come to town for a Friday clash at Crypto.com Arena. The Lakers are looking to put on a show for the home crowd.",
     "eventId": "la-lakers-20261009",
     "imageUrl": null,
-    "publishDate": "2026-09-27T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   },
   {
     "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
@@ -33,6 +33,6 @@
     "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
     "eventId": "usc-trojans-20261003-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-27T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   }
 ]
