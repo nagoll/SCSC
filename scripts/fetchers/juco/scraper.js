@@ -396,7 +396,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   try {
     const res = await page.goto(school.scheduleUrl, {
       waitUntil: 'domcontentloaded',
-      timeout: 20_000,
+      timeout: 45_000,
     });
 
     if (!res || !res.ok()) {
@@ -413,7 +413,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     }
     return parseGenericJuco(html, school, start, end);
   } catch (err) {
-    const msg = err.name === 'TimeoutError' ? 'timed out after 20s' : err.message;
+    const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
     console.warn(`[${school.id}] Scrape error: ${msg}`);
     return [];
   } finally {
@@ -438,14 +438,23 @@ async function scrapeAllJuco(startDate, endDate) {
     console.log(`[juco] Routing through ${proxies.length} rotating proxies`);
   }
 
-  let results;
+  // Residential proxy bandwidth is real-home-network speed, not datacenter —
+  // scraping all 16 schools at once over one shared connection starved every
+  // request. A small batch size gives each page room to actually load.
+  const BATCH_SIZE = 4;
+  const results = [];
   try {
-    results = await Promise.allSettled(
-      JUCO_SCHOOLS.map((school, i) => {
-        const proxy = proxies.length > 0 ? proxies[i % proxies.length] : undefined;
-        return scrapeJucoSchool(school, startDate, endDate, browser, proxy);
-      })
-    );
+    for (let i = 0; i < JUCO_SCHOOLS.length; i += BATCH_SIZE) {
+      const batch = JUCO_SCHOOLS.slice(i, i + BATCH_SIZE);
+      const batchResults = await Promise.allSettled(
+        batch.map((school, j) => {
+          const idx = i + j;
+          const proxy = proxies.length > 0 ? proxies[idx % proxies.length] : undefined;
+          return scrapeJucoSchool(school, startDate, endDate, browser, proxy);
+        })
+      );
+      results.push(...batchResults);
+    }
   } finally {
     await browser.close();
   }
