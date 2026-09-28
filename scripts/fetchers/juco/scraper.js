@@ -416,7 +416,14 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       : await parseGenericJuco(html, school, start, end);
 
     if (events.length === 0) {
-      console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, sidearm-schedule-game: ${html.includes('sidearm-schedule-game')}`);
+      const $ = cheerio.load(html);
+      const classes = new Set();
+      $('[class]').each((_, el) => {
+        ($(el).attr('class') || '').split(/\s+/).forEach(c => {
+          if (/schedule|game|event|contest|match|composite/i.test(c)) classes.add(c);
+        });
+      });
+      console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, relevant classes: ${[...classes].slice(0, 20).join(', ') || '(none found)'}`);
     }
     return events;
   } catch (err) {
@@ -446,12 +453,15 @@ async function scrapeAllJuco(startDate, endDate) {
   }
 
   // Residential proxy bandwidth is real-home-network speed, not datacenter —
-  // scraping all 16 schools at once over one shared connection starved every
-  // request. A small batch size gives each page room to actually load.
-  const BATCH_SIZE = 4;
+  // scraping too many schools at once over one shared connection starved
+  // requests (timeouts) and even broke the proxy tunnel itself under burst
+  // load (ERR_TUNNEL_CONNECTION_FAILED). Small batches with a short stagger
+  // between them keep each connection healthy.
+  const BATCH_SIZE = 2;
   const results = [];
   try {
     for (let i = 0; i < JUCO_SCHOOLS.length; i += BATCH_SIZE) {
+      if (i > 0) await new Promise(r => setTimeout(r, 1500));
       const batch = JUCO_SCHOOLS.slice(i, i + BATCH_SIZE);
       const batchResults = await Promise.allSettled(
         batch.map((school, j) => {
