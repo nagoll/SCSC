@@ -424,6 +424,11 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
         });
       });
       console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, relevant classes: ${[...classes].slice(0, 20).join(', ') || '(none found)'}`);
+
+      const sample = $('.event-box, .cal-event-item, .event-row').first();
+      if (sample.length > 0) {
+        console.warn(`[${school.id}] sample markup: ${$.html(sample).slice(0, 1500)}`);
+      }
     }
     return events;
   } catch (err) {
