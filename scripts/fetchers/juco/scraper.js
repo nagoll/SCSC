@@ -10,6 +10,7 @@
  *   - Fall back to CCCAA conference schedule pages for cross-referencing
  */
 
+const fs = require('fs');
 const cheerio = require('cheerio');
 const { chromium } = require('playwright');
 const { normalizeEvent, inferGender } = require('../../normalize');
@@ -411,25 +412,19 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
+    // Temporary: dumps the raw page HTML to disk so it can be pulled down
+    // as a workflow artifact and inspected offline while writing the real
+    // parser for SIDEARM's actual (undocumented, apparently multi-variant)
+    // composite-schedule markup. Remove once that parser is in place.
+    if (process.env.JUCO_DEBUG_HTML) {
+      fs.mkdirSync('/tmp/juco-html', { recursive: true });
+      fs.writeFileSync(`/tmp/juco-html/${school.id}.html`, html);
+    }
+
     const events = school.platform === 'sidearm'
       ? await parseSidearmJuco(html, school, start, end)
       : await parseGenericJuco(html, school, start, end);
 
-    if (events.length === 0) {
-      const $ = cheerio.load(html);
-      const classes = new Set();
-      $('[class]').each((_, el) => {
-        ($(el).attr('class') || '').split(/\s+/).forEach(c => {
-          if (/schedule|game|event|contest|match|composite/i.test(c)) classes.add(c);
-        });
-      });
-      console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, relevant classes: ${[...classes].slice(0, 20).join(', ') || '(none found)'}`);
-
-      const sample = $('.event-box, .cal-event-item, .event-row').first();
-      if (sample.length > 0) {
-        console.warn(`[${school.id}] sample markup: ${$.html(sample).slice(0, 1500)}`);
-      }
-    }
     return events;
   } catch (err) {
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;

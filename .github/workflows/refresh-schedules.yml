@@ -30,6 +30,11 @@ on:
         required: false
         default: false
         type: boolean
+      debug_juco_html:
+        description: 'Upload raw JuCo scrape HTML as a workflow artifact (temporary, for parser debugging)'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   refresh:
@@ -58,11 +63,20 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           WEBSHARE_PROXIES: ${{ secrets.WEBSHARE_PROXIES }}
+          JUCO_DEBUG_HTML: ${{ github.event.inputs.debug_juco_html }}
         run: |
           node scripts/fetch-schedules.js \
             --level "${{ github.event.inputs.level || 'all' }}" \
             --days "${{ github.event.inputs.days || '365' }}" \
             ${{ (github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
+
+      - name: Upload JuCo debug HTML
+        if: github.event.inputs.debug_juco_html == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: juco-html
+          path: /tmp/juco-html/
+          retention-days: 1
 
       - name: Check for changes
         id: changes
