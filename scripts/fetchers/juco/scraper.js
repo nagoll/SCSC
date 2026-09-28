@@ -12,6 +12,7 @@
 
 const cheerio = require('cheerio');
 const { chromium } = require('playwright');
+const { fromZonedTime } = require('date-fns-tz');
 const { normalizeEvent, inferGender } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
@@ -186,9 +187,106 @@ const JUCO_SCHOOLS = [
 ];
 
 /**
+ * Combines a "Sun. September 27, 2026" date string and a "9:00 AM PDT" time
+ * string (as found on SIDEARM composite-calendar pages) into a UTC ISO
+ * string, correctly anchored to Pacific time regardless of the scraping
+ * machine's own timezone. Returns null if either piece can't be parsed.
+ */
+function parsePacificDateTime(dateText, timeText) {
+  const dateOnly = (dateText || '').replace(/^\s*\w+\.\s*/, '').trim();
+  const timeMatch = (timeText || '').match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!dateOnly || !timeMatch) return null;
+
+  const probe = new Date(`${dateOnly} ${timeMatch[0]}`);
+  if (isNaN(probe)) return null;
+
+  const pad = n => String(n).padStart(2, '0');
+  const localIso = `${probe.getFullYear()}-${pad(probe.getMonth() + 1)}-${pad(probe.getDate())}T${pad(probe.getHours())}:${pad(probe.getMinutes())}:00`;
+  const utc = fromZonedTime(localIso, 'America/Los_Angeles');
+  return isNaN(utc) ? null : utc.toISOString();
+}
+
+/**
+ * Extract games from SIDEARM's actual composite-calendar markup: date
+ * groups (.section-event-date) each containing one or more event cards
+ * (.event-box), with team names, sport, and time as direct text/attributes.
+ * Reverse-engineered from real pages — SIDEARM has no public schema for
+ * this, and it doesn't match either of the older strategies below.
+ */
+function parseSidearmComposite(html, school, start, end) {
+  const events = [];
+  const $ = cheerio.load(html);
+
+  $('.section-event-date').each((_, dateGroup) => {
+    const $group = $(dateGroup);
+    const dateText = $group.find('.date-title').first().text().trim();
+
+    $group.find('.event-box').each((__, box) => {
+      const $box = $(box);
+      const classes = ($box.attr('class') || '').split(/\s+/);
+      if (classes.includes('away')) return;
+
+      const timeText = $box.find('.cal-status').first().text().trim();
+      const dateTime = parsePacificDateTime(dateText, timeText);
+      if (!dateTime) return;
+      const gameDate = new Date(dateTime);
+      if (gameDate < start || gameDate > end) return;
+
+      const sportRaw = $box.find('.list-event-sport .sport').first().text().trim() || 'other';
+
+      const teamNames = $box.find('.list-events-participants .team-name')
+        .map((___, el) => $(el).attr('title')?.trim()).get()
+        .filter(Boolean);
+      const opponent = teamNames[0] || 'Opponent';
+
+      const isNeutral = classes.includes('neutral');
+      const neutralSiteName = isNeutral
+        ? $box.find('.neutral-site').first().text().trim() || null
+        : null;
+
+      const verification = verifyVenue({
+        scrapedVenueName: neutralSiteName,
+        defaultVenueId: school.defaultVenueId,
+        isNeutralSiteFlag: isNeutral,
+      });
+
+      if (verification.excluded) {
+        console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+        return;
+      }
+
+      events.push(normalizeEvent({
+        homeTeamId: school.scscTeamId,
+        awayTeamId: null,
+        sport: sportRaw,
+        level: school.level,
+        gender: inferGender(sportRaw, null),
+        dateTime,
+        endTime: null,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
+        eventName: `${opponent} at ${school.name}`,
+        ticketUrl: null,
+        price: school.price,
+        conference: null,
+        league: null,
+        source: `juco-scraper:${school.id}`,
+      }));
+    });
+  });
+
+  return events;
+}
+
+/**
  * Extract games from a Sidearm Sports page (same logic as college scraper).
  */
 async function parseSidearmJuco(html, school, start, end) {
+  const composite = parseSidearmComposite(html, school, start, end);
+  if (composite.length > 0) return composite;
+
   const events = [];
   const $ = cheerio.load(html);
 
