@@ -281,11 +281,87 @@ function parseSidearmComposite(html, school, start, end) {
 }
 
 /**
+ * Extract games from SIDEARM's calendar-grid composite variant: a month
+ * grid of <td class="cal-day"> cells, each holding a <ul> of
+ * .cal-event-item entries. The cell's date comes from the aria-label on
+ * its "show more" link (e.g. "Show events for Tue Sep 01 ... 2026") since
+ * there's no per-event date field — only a per-event time (or "Final" for
+ * past games, which naturally fails to parse as a time and gets skipped).
+ */
+function parseSidearmCalendarGrid(html, school, start, end) {
+  const events = [];
+  const $ = cheerio.load(html);
+
+  $('.cal-day').each((_, dayCell) => {
+    const $day = $(dayCell);
+    const ariaLabel = $day.find('.cal-show-more a[aria-label]').first().attr('aria-label') || '';
+    const dateMatch = ariaLabel.match(/([A-Za-z]{3})\s+(\d{1,2})\s+[\d:]+\s+\S+\s+(\d{4})/);
+    if (!dateMatch) return;
+    const dateText = `${dateMatch[1]} ${dateMatch[2]}, ${dateMatch[3]}`;
+
+    $day.find('.cal-event-item').each((__, item) => {
+      const $item = $(item);
+      const timeText = $item.find('.cal-status').first().text().trim();
+      const dateTime = parsePacificDateTime(dateText, timeText);
+      if (!dateTime) return;
+      const gameDate = new Date(dateTime);
+      if (gameDate < start || gameDate > end) return;
+
+      const $teamName = $item.find('.cal-event-team-name').first();
+      const isAway = $teamName.find('.va').first().text().trim().toLowerCase() === 'at';
+      if (isAway) return;
+
+      const sportRaw = $item.find('.cal-sport .sport').first().text().trim() || 'other';
+      const opponent = $teamName.attr('title')?.trim() || 'Opponent';
+
+      const neutralSiteName = $item.find('.cal-neutral-site').first().text().trim() || null;
+      const isNeutral = Boolean(neutralSiteName);
+
+      const verification = verifyVenue({
+        scrapedVenueName: neutralSiteName,
+        defaultVenueId: school.defaultVenueId,
+        isNeutralSiteFlag: isNeutral,
+      });
+
+      if (verification.excluded) {
+        console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+        return;
+      }
+
+      events.push(normalizeEvent({
+        homeTeamId: school.scscTeamId,
+        awayTeamId: null,
+        sport: sportRaw,
+        level: school.level,
+        gender: inferGender(sportRaw, null),
+        dateTime,
+        endTime: null,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
+        eventName: `${opponent} at ${school.name}`,
+        ticketUrl: null,
+        price: school.price,
+        conference: null,
+        league: null,
+        source: `juco-scraper:${school.id}`,
+      }));
+    });
+  });
+
+  return events;
+}
+
+/**
  * Extract games from a Sidearm Sports page (same logic as college scraper).
  */
 async function parseSidearmJuco(html, school, start, end) {
   const composite = parseSidearmComposite(html, school, start, end);
   if (composite.length > 0) return composite;
+
+  const calendarGrid = parseSidearmCalendarGrid(html, school, start, end);
+  if (calendarGrid.length > 0) return calendarGrid;
 
   const events = [];
   const $ = cheerio.load(html);
@@ -514,8 +590,8 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     // this gets inspected), for a small fixed set of schools representing
     // each SIDEARM composite-calendar markup variant seen so far. Remove
     // once the real parser is written and verified against it.
-    const DEBUG_SCHOOLS = ['citrus', 'rio-hondo', 'compton'];
-    if (process.env.JUCO_DEBUG_HTML && DEBUG_SCHOOLS.includes(school.id)) {
+    const DEBUG_SCHOOLS = ['citrus', 'west-la'];
+    if (process.env.JUCO_DEBUG_HTML === 'true' && DEBUG_SCHOOLS.includes(school.id)) {
       const marker = html.search(/event-box|cal-event-item|event-row/);
       if (marker >= 0) {
         const start = Math.max(0, marker - 1500);
