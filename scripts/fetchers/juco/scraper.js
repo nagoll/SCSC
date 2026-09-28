@@ -395,7 +395,10 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   const page = await context.newPage();
   try {
     const res = await page.goto(school.scheduleUrl, {
-      waitUntil: 'domcontentloaded',
+      // SIDEARM's composite schedule fetches game data client-side after
+      // the initial document loads — domcontentloaded fires before that
+      // data lands in the DOM. networkidle waits for it to actually settle.
+      waitUntil: 'networkidle',
       timeout: 45_000,
     });
 
@@ -408,10 +411,14 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    if (school.platform === 'sidearm') {
-      return parseSidearmJuco(html, school, start, end);
+    const events = school.platform === 'sidearm'
+      ? parseSidearmJuco(html, school, start, end)
+      : parseGenericJuco(html, school, start, end);
+
+    if (events.length === 0) {
+      console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, sidearm-schedule-game: ${html.includes('sidearm-schedule-game')}`);
     }
-    return parseGenericJuco(html, school, start, end);
+    return events;
   } catch (err) {
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
     console.warn(`[${school.id}] Scrape error: ${msg}`);
