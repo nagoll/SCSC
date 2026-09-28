@@ -1,29 +1,56 @@
 [
   {
-    "id": "gotw-la-chargers-20260920",
-    "type": "game-of-week",
-    "title": "Chargers vs. Las Vegas Raiders",
-    "description": "The Las Vegas Raiders come to town for a Sunday clash at SoFi Stadium. The Chargers are looking to put on a show for the home crowd.",
-    "eventId": "la-chargers-20260920",
+    "id": "gem-lapc-brahmas-20260929",
+    "type": "hidden-gem",
+    "title": "Free JuCo Soccer: Pierce vs. Santa Barbara",
+    "description": "Western State Conference soccer at its best. Pierce hosts Santa Barbara — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
+    "eventId": "lapc-brahmas-20260929",
     "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-dodgers-20260919",
-    "type": "game-of-week",
-    "title": "The Best Rivalry in Baseball: Dodgers vs. San Francisco Giants",
-    "description": "Dating back to New York, this one defines the NL West. The San Francisco Giants come to Dodger Stadium for a Saturday showdown. This is appointment viewing.",
-    "eventId": "la-dodgers-20260919",
+    "id": "gem-mt-sac-mounties-20260928",
+    "type": "hidden-gem",
+    "title": "Sports at Mt. SAC: Mt. SAC vs. Pacific Grove GL - Pacific Grove, CA",
+    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Pacific Grove GL - Pacific Grove, CA for sports. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "mt-sac-mounties-20260928",
     "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-kings-20260926",
-    "type": "game-of-week",
-    "title": "Freeway Faceoff: Kings vs. Ducks",
-    "description": "One of the best rivalries in hockey is back. The Ducks visit Crypto.com Arena with bragging rights on the line.",
-    "eventId": "la-kings-20260926",
+    "id": "gem-rio-hondo-roadrunners-20261003",
+    "type": "hidden-gem",
+    "title": "Free JuCo Basketball: Rio Hondo vs. Compton",
+    "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. Rio Hondo vs. Compton is free and delivers real energy.",
+    "eventId": "rio-hondo-roadrunners-20261003",
     "imageUrl": null,
-    "publishDate": "2026-09-19T00:00:00+00:00"
+    "publishDate": "2026-09-28T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-la-chargers-20261011",
+    "type": "game-of-week",
+    "title": "Chargers vs. Denver Broncos",
+    "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
+    "eventId": "la-chargers-20261011",
+    "imageUrl": null,
+    "publishDate": "2026-09-28T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-la-lakers-20261009",
+    "type": "game-of-week",
+    "title": "Lakers vs. Sacramento Kings",
+    "description": "The Sacramento Kings come to town for a Friday clash at Crypto.com Arena. The Lakers are looking to put on a show for the home crowd.",
+    "eventId": "la-lakers-20261009",
+    "imageUrl": null,
+    "publishDate": "2026-09-28T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
+    "type": "game-of-week",
+    "title": "Big Ten Heavyweights: USC vs. Michigan Wolverines",
+    "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
+    "eventId": "usc-trojans-20261003-womens-college-volleyball",
+    "imageUrl": null,
+    "publishDate": "2026-09-28T00:00:00+00:00"
   }
 ]
