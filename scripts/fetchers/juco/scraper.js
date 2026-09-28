@@ -412,8 +412,8 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const end = new Date(endDate);
 
     const events = school.platform === 'sidearm'
-      ? parseSidearmJuco(html, school, start, end)
-      : parseGenericJuco(html, school, start, end);
+      ? await parseSidearmJuco(html, school, start, end)
+      : await parseGenericJuco(html, school, start, end);
 
     if (events.length === 0) {
       console.warn(`[${school.id}] 0 events parsed — html ${html.length}b, __NEXT_DATA__: ${html.includes('__NEXT_DATA__')}, sidearm-schedule-game: ${html.includes('sidearm-schedule-game')}`);
