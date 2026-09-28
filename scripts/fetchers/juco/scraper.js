@@ -354,6 +354,76 @@ function parseSidearmCalendarGrid(html, school, start, end) {
 }
 
 /**
+ * Extract games from SIDEARM's older PrestoSports "schedule grid" variant
+ * (schedule.grid.plugin.js): a .date-panel per day with .event-box entries.
+ * The composite page only server-renders the currently active date tab —
+ * other days load via AJAX on click, which this scraper doesn't follow — so
+ * schools on this variant only yield whatever game falls on that one active
+ * day per run. Acceptable given the daily refresh cadence; a full crawl of
+ * every date tab would add real complexity for a variant only two schools use.
+ */
+function parseSidearmScheduleGrid(html, school, start, end) {
+  const events = [];
+  const $ = cheerio.load(html);
+
+  $('.date-panel').each((_, panel) => {
+    const $panel = $(panel);
+    const dateText = $panel.find('.month-title').first().text().trim();
+
+    $panel.find('.event-box').each((__, box) => {
+      const $box = $(box);
+      const classes = ($box.attr('class') || '').split(/\s+/);
+      if (classes.includes('event-box-away')) return;
+
+      const timeText = $box.find('.status').first().text().trim();
+      const dateTime = parsePacificDateTime(dateText, timeText);
+      if (!dateTime) return;
+      const gameDate = new Date(dateTime);
+      if (gameDate < start || gameDate > end) return;
+
+      const sportRaw = $box.find('.sport').first().text().trim() || 'other';
+
+      const teamNames = $box.find('.team-name')
+        .map((___, el) => $(el).attr('title')?.trim()).get()
+        .filter(Boolean);
+      const opponent = teamNames[0] || 'Opponent';
+
+      const verification = verifyVenue({
+        scrapedVenueName: null,
+        defaultVenueId: school.defaultVenueId,
+      });
+
+      if (verification.excluded) {
+        console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+        return;
+      }
+
+      events.push(normalizeEvent({
+        homeTeamId: school.scscTeamId,
+        awayTeamId: null,
+        sport: sportRaw,
+        level: school.level,
+        gender: inferGender(sportRaw, null),
+        dateTime,
+        endTime: null,
+        venueId: verification.venueId,
+        venueSourceName: verification.venueSourceName,
+        venueConfidence: verification.venueConfidence,
+        isNeutralSite: verification.isNeutralSite,
+        eventName: `${opponent} at ${school.name}`,
+        ticketUrl: null,
+        price: school.price,
+        conference: null,
+        league: null,
+        source: `juco-scraper:${school.id}`,
+      }));
+    });
+  });
+
+  return events;
+}
+
+/**
  * Extract games from a Sidearm Sports page (same logic as college scraper).
  */
 async function parseSidearmJuco(html, school, start, end) {
@@ -362,6 +432,9 @@ async function parseSidearmJuco(html, school, start, end) {
 
   const calendarGrid = parseSidearmCalendarGrid(html, school, start, end);
   if (calendarGrid.length > 0) return calendarGrid;
+
+  const scheduleGrid = parseSidearmScheduleGrid(html, school, start, end);
+  if (scheduleGrid.length > 0) return scheduleGrid;
 
   const events = [];
   const $ = cheerio.load(html);
@@ -584,22 +657,6 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const html = await page.content();
     const start = new Date(startDate);
     const end = new Date(endDate);
-
-    // Temporary: dumps a window of raw HTML around the first real event
-    // card to the job log (workflow artifacts aren't reachable from where
-    // this gets inspected), for a small fixed set of schools representing
-    // each SIDEARM composite-calendar markup variant seen so far. Remove
-    // once the real parser is written and verified against it.
-    const DEBUG_SCHOOLS = ['citrus', 'west-la'];
-    if (process.env.JUCO_DEBUG_HTML === 'true' && DEBUG_SCHOOLS.includes(school.id)) {
-      const marker = html.search(/event-box|cal-event-item|event-row/);
-      if (marker >= 0) {
-        const start = Math.max(0, marker - 1500);
-        console.warn(`[${school.id}] DEBUG HTML WINDOW START\n${html.slice(start, start + 8500)}\n[${school.id}] DEBUG HTML WINDOW END`);
-      } else {
-        console.warn(`[${school.id}] DEBUG: no event marker found in ${html.length}b of html`);
-      }
-    }
 
     const events = school.platform === 'sidearm'
       ? await parseSidearmJuco(html, school, start, end)

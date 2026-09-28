@@ -30,11 +30,6 @@ on:
         required: false
         default: false
         type: boolean
-      debug_juco_html:
-        description: 'Log raw JuCo scrape HTML for a few schools (temporary, for parser debugging)'
-        required: false
-        default: false
-        type: boolean
 
 jobs:
   refresh:
@@ -63,7 +58,6 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           WEBSHARE_PROXIES: ${{ secrets.WEBSHARE_PROXIES }}
-          JUCO_DEBUG_HTML: ${{ github.event.inputs.debug_juco_html }}
         run: |
           node scripts/fetch-schedules.js \
             --level "${{ github.event.inputs.level || 'all' }}" \
