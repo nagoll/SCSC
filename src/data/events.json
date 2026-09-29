@@ -440,6 +440,28 @@
     "lastUpdated": "2026-09-29T05:51:45.196+00:00"
   },
   {
+    "id": "rio-hondo-roadrunners-20261003",
+    "sport": "basketball",
+    "level": "juco",
+    "gender": "womens",
+    "homeTeam": "rio-hondo-roadrunners",
+    "awayTeam": null,
+    "eventName": "Compton at Rio Hondo College Roadrunners",
+    "dateTime": "2026-10-03T22:00:00+00:00",
+    "endTime": null,
+    "venue": "rio-hondo-athletics",
+    "venueSourceName": null,
+    "venueConfidence": "unverified",
+    "isNeutralSite": false,
+    "ticketUrl": null,
+    "price": "free",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "juco-scraper:rio-hondo",
+    "lastUpdated": "2026-09-29T05:51:45.196+00:00"
+  },
+  {
     "id": "usc-trojans-20261003-college-football",
     "sport": "other",
     "level": "college",
