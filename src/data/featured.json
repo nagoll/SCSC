@@ -1,12 +1,30 @@
 [
   {
-    "id": "gem-long-beach-state-49ers-20261010-womens-college-volleyball",
+    "id": "gem-el-camino-warriors-20260929",
     "type": "hidden-gem",
-    "title": "Women's Volleyball: LBSU vs. UC Santa Barbara Gauchos",
-    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
-    "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
+    "title": "Free JuCo Soccer: El Camino vs. El Camino",
+    "description": "Want competitive soccer without spending a dime? El Camino takes on El Camino at El Camino College Murdock Stadium. Free admission — just show up.",
+    "eventId": "el-camino-warriors-20260929",
     "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
+    "publishDate": "2026-09-29T00:00:00+00:00"
+  },
+  {
+    "id": "gem-lapc-brahmas-20260929",
+    "type": "hidden-gem",
+    "title": "Free JuCo Soccer: Pierce vs. Santa Barbara",
+    "description": "Western State Conference soccer at its best. Pierce hosts Santa Barbara — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
+    "eventId": "lapc-brahmas-20260929",
+    "imageUrl": null,
+    "publishDate": "2026-09-29T00:00:00+00:00"
+  },
+  {
+    "id": "gem-rio-hondo-roadrunners-20261003",
+    "type": "hidden-gem",
+    "title": "Free JuCo Basketball: Rio Hondo vs. Compton",
+    "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. Rio Hondo vs. Compton is free and delivers real energy.",
+    "eventId": "rio-hondo-roadrunners-20261003",
+    "imageUrl": null,
+    "publishDate": "2026-09-29T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -15,7 +33,7 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
+    "publishDate": "2026-09-29T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261009",
@@ -24,7 +42,7 @@
     "description": "The Sacramento Kings come to town for a Friday clash at Crypto.com Arena. The Lakers are looking to put on a show for the home crowd.",
     "eventId": "la-lakers-20261009",
     "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
+    "publishDate": "2026-09-29T00:00:00+00:00"
   },
   {
     "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
@@ -33,6 +51,6 @@
     "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
     "eventId": "usc-trojans-20261003-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
+    "publishDate": "2026-09-29T00:00:00+00:00"
   }
 ]

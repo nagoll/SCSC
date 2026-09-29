@@ -242,6 +242,17 @@
     "transitInfo": "Metro B Line to Vermont/Santa Monica station (2 blocks); Metro buses 204, 754 on Vermont."
   },
   {
+    "id": "lamc-athletics",
+    "name": "LA Mission College Athletic Complex",
+    "address": "13356 Eldridge Ave, Sylmar, CA 91342",
+    "neighborhood": "san-fernando-valley",
+    "lat": 34.3247,
+    "lng": -118.4429,
+    "capacity": 1000,
+    "parkingInfo": "Free campus parking in the main lot off Eldridge Ave.",
+    "transitInfo": "Metro Bus 168 along Foothill Blvd; limited transit access, driving recommended."
+  },
+  {
     "id": "lapc-athletics",
     "name": "LA Pierce College Athletic Complex",
     "address": "6201 Winnetka Ave, Woodland Hills, CA 91371",
