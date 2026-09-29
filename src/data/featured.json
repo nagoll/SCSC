@@ -1,28 +1,10 @@
 [
   {
-    "id": "gem-lapc-brahmas-20260929",
+    "id": "gem-long-beach-state-49ers-20261010-womens-college-volleyball",
     "type": "hidden-gem",
-    "title": "Free JuCo Soccer: Pierce vs. Santa Barbara",
-    "description": "Western State Conference soccer at its best. Pierce hosts Santa Barbara — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
-    "eventId": "lapc-brahmas-20260929",
-    "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
-  },
-  {
-    "id": "gem-mt-sac-mounties-20260928",
-    "type": "hidden-gem",
-    "title": "Sports at Mt. SAC: Mt. SAC vs. Pacific Grove GL - Pacific Grove, CA",
-    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Pacific Grove GL - Pacific Grove, CA for sports. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "mt-sac-mounties-20260928",
-    "imageUrl": null,
-    "publishDate": "2026-09-28T00:00:00+00:00"
-  },
-  {
-    "id": "gem-rio-hondo-roadrunners-20261003",
-    "type": "hidden-gem",
-    "title": "Free JuCo Basketball: Rio Hondo vs. Compton",
-    "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. Rio Hondo vs. Compton is free and delivers real energy.",
-    "eventId": "rio-hondo-roadrunners-20261003",
+    "title": "Women's Volleyball: LBSU vs. UC Santa Barbara Gauchos",
+    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
+    "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
     "imageUrl": null,
     "publishDate": "2026-09-28T00:00:00+00:00"
   },
