@@ -184,6 +184,16 @@ const JUCO_SCHOOLS = [
     defaultVenueId: 'la-southwest-athletics',
     price: 'free',
   },
+  {
+    id: 'lamc',
+    name: 'LA Mission College Eagles',
+    scscTeamId: 'lamc-eagles',
+    scheduleUrl: 'https://www.lamcathletics.com/composite',
+    platform: 'sidearm',
+    level: 'juco',
+    defaultVenueId: 'lamc-athletics',
+    price: 'free',
+  },
 ];
 
 /**

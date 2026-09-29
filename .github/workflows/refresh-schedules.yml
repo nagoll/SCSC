@@ -30,6 +30,11 @@ on:
         required: false
         default: false
         type: boolean
+      provision_teams:
+        description: 'Run the one-off scripts/_tmp_provision_lamc.js before fetching (temporary, for onboarding a new school)'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   refresh:
@@ -52,6 +57,13 @@ jobs:
 
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
+
+      - name: Provision new team/venue rows
+        if: github.event.inputs.provision_teams == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/_tmp_provision_lamc.js
 
       - name: Fetch schedules
         env:
