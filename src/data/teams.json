@@ -468,6 +468,27 @@
     "websiteUrl": "https://www.lafc.com"
   },
   {
+    "id": "lamc-eagles",
+    "name": "LA Mission College Eagles",
+    "shortName": "LA Mission",
+    "level": "juco",
+    "school": "Los Angeles Mission College",
+    "conference": "Western State Conference",
+    "sport": [
+      "baseball",
+      "basketball",
+      "soccer",
+      "softball",
+      "tennis",
+      "volleyball"
+    ],
+    "logoUrl": null,
+    "primaryColor": "#003DA5",
+    "secondaryColor": "#A2AAAD",
+    "ticketUrl": null,
+    "websiteUrl": "https://www.lamission.edu/athletics/"
+  },
+  {
     "id": "lapc-brahmas",
     "name": "LA Pierce College Brahmas",
     "shortName": "Pierce",
