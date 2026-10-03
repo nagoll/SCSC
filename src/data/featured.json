@@ -6,7 +6,7 @@
     "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
     "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-02T00:00:00+00:00"
+    "publishDate": "2026-10-03T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261003",
@@ -15,7 +15,7 @@
     "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. Rio Hondo vs. Compton is free and delivers real energy.",
     "eventId": "rio-hondo-roadrunners-20261003",
     "imageUrl": null,
-    "publishDate": "2026-10-02T00:00:00+00:00"
+    "publishDate": "2026-10-03T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -24,16 +24,16 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-10-02T00:00:00+00:00"
+    "publishDate": "2026-10-03T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-lakers-20261009",
+    "id": "gotw-la-lakers-20261016",
     "type": "game-of-week",
-    "title": "Lakers vs. Sacramento Kings",
-    "description": "The Sacramento Kings come to town for a Friday clash at Crypto.com Arena. The Lakers are looking to put on a show for the home crowd.",
-    "eventId": "la-lakers-20261009",
+    "title": "Western Conference Clash: Lakers vs. Denver Nuggets",
+    "description": "One of the best rivalries in basketball is back. The Denver Nuggets visit Crypto.com Arena with bragging rights on the line.",
+    "eventId": "la-lakers-20261016",
     "imageUrl": null,
-    "publishDate": "2026-10-02T00:00:00+00:00"
+    "publishDate": "2026-10-03T00:00:00+00:00"
   },
   {
     "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
@@ -42,6 +42,6 @@
     "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
     "eventId": "usc-trojans-20261003-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-02T00:00:00+00:00"
+    "publishDate": "2026-10-03T00:00:00+00:00"
   }
 ]
