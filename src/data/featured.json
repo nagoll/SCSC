@@ -6,16 +6,7 @@
     "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
     "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-03T00:00:00+00:00"
-  },
-  {
-    "id": "gem-rio-hondo-roadrunners-20261003",
-    "type": "hidden-gem",
-    "title": "Free JuCo Basketball: Rio Hondo vs. Compton",
-    "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. Rio Hondo vs. Compton is free and delivers real energy.",
-    "eventId": "rio-hondo-roadrunners-20261003",
-    "imageUrl": null,
-    "publishDate": "2026-10-03T00:00:00+00:00"
+    "publishDate": "2026-10-04T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -24,24 +15,24 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-10-03T00:00:00+00:00"
+    "publishDate": "2026-10-04T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-lakers-20261016",
+    "id": "gotw-la-lakers-20261017",
     "type": "game-of-week",
     "title": "Western Conference Clash: Lakers vs. Denver Nuggets",
-    "description": "One of the best rivalries in basketball is back. The Denver Nuggets visit Crypto.com Arena with bragging rights on the line.",
-    "eventId": "la-lakers-20261016",
+    "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
+    "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-03T00:00:00+00:00"
+    "publishDate": "2026-10-04T00:00:00+00:00"
   },
   {
-    "id": "gotw-usc-trojans-20261003-womens-college-volleyball",
+    "id": "gotw-usc-trojans-20261004-womens-college-volleyball",
     "type": "game-of-week",
-    "title": "Big Ten Heavyweights: USC vs. Michigan Wolverines",
-    "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan Wolverines roll in. Don't miss this one.",
-    "eventId": "usc-trojans-20261003-womens-college-volleyball",
+    "title": "Big Ten Heavyweights: USC vs. Michigan State Spartans",
+    "description": "Big Ten Heavyweights — need we say more? Galen Center will be rocking when the Michigan State Spartans roll in. Don't miss this one.",
+    "eventId": "usc-trojans-20261004-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-03T00:00:00+00:00"
+    "publishDate": "2026-10-04T00:00:00+00:00"
   }
 ]
