@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   description: 'Every team tracked on the Southern California Sports Calendar — pro, college, and junior college teams across LA County.',
 };
 
+// Event data changes daily via the scraper pipeline — render per-request so
+// it's never frozen at whatever Supabase looked like during the last build.
+export const dynamic = 'force-dynamic';
+
 export default async function TeamsPage() {
   const [teams, events] = await Promise.all([getTeams(), getEvents()]);
 

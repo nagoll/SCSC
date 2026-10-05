@@ -6,10 +6,9 @@ import { SPORT_LABELS, AREA_LABELS } from '@/lib/constants';
 import { getTeams, getVenues, getEvents } from '@/lib/data';
 import EventDetailClient from './EventDetailClient';
 
-export async function generateStaticParams() {
-  const events = await getEvents();
-  return events.map((event) => ({ id: event.id }));
-}
+// Event data changes daily via the scraper pipeline — render per-request so
+// new/updated events are never 404s or stale until the next Vercel build.
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params,
