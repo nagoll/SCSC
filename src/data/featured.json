@@ -1,30 +1,30 @@
 [
   {
-    "id": "gem-long-beach-state-49ers-20261010-womens-college-volleyball",
+    "id": "gem-cerritos-falcons-20261009",
     "type": "hidden-gem",
-    "title": "Women's Volleyball: LBSU vs. UC Santa Barbara Gauchos",
-    "description": "Women's volleyball is having a moment, and LBSU is part of it. Catch them hosting UC Santa Barbara Gauchos at Walter Pyramid.",
-    "eventId": "long-beach-state-49ers-20261010-womens-college-volleyball",
+    "title": "Free JuCo Water polo: Cerritos vs. Cerritos",
+    "description": "Want competitive water polo without spending a dime? Cerritos takes on Cerritos at Cerritos College Falcon Stadium. Free admission — just show up.",
+    "eventId": "cerritos-falcons-20261009",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   },
   {
-    "id": "gem-rio-hondo-roadrunners-20261008",
+    "id": "gem-mt-sac-mounties-20261009",
     "type": "hidden-gem",
-    "title": "Free JuCo Volleyball: Rio Hondo vs. Santa Ana",
-    "description": "South Coast Conference volleyball at its best. Rio Hondo hosts Santa Ana — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
-    "eventId": "rio-hondo-roadrunners-20261008",
+    "title": "Water polo at Mt. SAC: Mt. SAC vs. Mt. SAC",
+    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Mt. SAC for water polo. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "mt-sac-mounties-20261009",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   },
   {
-    "id": "gem-rio-hondo-roadrunners-20261010",
+    "id": "gem-mt-sac-mounties-20261010",
     "type": "hidden-gem",
-    "title": "Free JuCo Basketball: Rio Hondo vs. Long Beach",
-    "description": "Want competitive basketball without spending a dime? Rio Hondo takes on Long Beach at Rio Hondo College Athletic Complex. Free admission — just show up.",
-    "eventId": "rio-hondo-roadrunners-20261010",
+    "title": "Volleyball at Mt. SAC: Mt. SAC vs. Mt. SAC",
+    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Mt. SAC for volleyball. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "mt-sac-mounties-20261010",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -33,7 +33,7 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261017",
@@ -42,7 +42,7 @@
     "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-08T00:00:00+00:00"
+    "publishDate": "2026-10-09T00:00:00+00:00"
   }
 ]
