@@ -196,6 +196,42 @@ const JUCO_SCHOOLS = [
   },
 ];
 
+/** Lowercase, strip punctuation/extra whitespace so "Mt. SAC" == "mt sac". */
+function normalizeTeamName(name) {
+  return (name || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+/**
+ * The school's own name without the "College"/mascot words, e.g.
+ * "Cerritos College Falcons" -> "cerritos", "Mt. SAC Mounties" -> "mt sac".
+ */
+function schoolKey(school) {
+  return normalizeTeamName(school.name)
+    .replace(/\bcollege\b/g, ' ')
+    .replace(/\s+\S+$/, '')
+    .trim();
+}
+
+/**
+ * SIDEARM participant lists can include the host school itself (and in some
+ * sites list it first), so teamNames[0] is not reliably the opponent. Drop
+ * any name that is the school and take the first remaining one.
+ */
+function pickOpponent(teamNames, school) {
+  const key = schoolKey(school);
+  const others = teamNames.filter(n => {
+    const norm = normalizeTeamName(n);
+    return !(key && (norm === key || norm.startsWith(`${key} `)));
+  });
+  return others[0] || 'Opponent';
+}
+
+/** Distinguishes same-day events for one school (different sport/opponent). */
+function eventIdSuffix(sportRaw, opponent) {
+  const slug = s => normalizeTeamName(s).replace(/ /g, '-');
+  return [slug(sportRaw), slug(opponent)].filter(Boolean).join('-');
+}
+
 /**
  * Combines a "Sun. September 27, 2026" date string and a "9:00 AM PDT" time
  * string (as found on SIDEARM composite-calendar pages) into a UTC ISO
@@ -247,7 +283,7 @@ function parseSidearmComposite(html, school, start, end) {
       const teamNames = $box.find('.list-events-participants .team-name')
         .map((___, el) => $(el).attr('title')?.trim()).get()
         .filter(Boolean);
-      const opponent = teamNames[0] || 'Opponent';
+      const opponent = pickOpponent(teamNames, school);
 
       const isNeutral = classes.includes('neutral');
       const neutralSiteName = isNeutral
@@ -267,6 +303,7 @@ function parseSidearmComposite(html, school, start, end) {
 
       events.push(normalizeEvent({
         homeTeamId: school.scscTeamId,
+        idSuffix: eventIdSuffix(sportRaw, opponent),
         awayTeamId: null,
         sport: sportRaw,
         level: school.level,
@@ -340,6 +377,7 @@ function parseSidearmCalendarGrid(html, school, start, end) {
 
       events.push(normalizeEvent({
         homeTeamId: school.scscTeamId,
+        idSuffix: eventIdSuffix(sportRaw, opponent),
         awayTeamId: null,
         sport: sportRaw,
         level: school.level,
@@ -396,7 +434,7 @@ function parseSidearmScheduleGrid(html, school, start, end) {
       const teamNames = $box.find('.team-name')
         .map((___, el) => $(el).attr('title')?.trim()).get()
         .filter(Boolean);
-      const opponent = teamNames[0] || 'Opponent';
+      const opponent = pickOpponent(teamNames, school);
 
       const verification = verifyVenue({
         scrapedVenueName: null,
@@ -410,6 +448,7 @@ function parseSidearmScheduleGrid(html, school, start, end) {
 
       events.push(normalizeEvent({
         homeTeamId: school.scscTeamId,
+        idSuffix: eventIdSuffix(sportRaw, opponent),
         awayTeamId: null,
         sport: sportRaw,
         level: school.level,
@@ -485,6 +524,7 @@ async function parseSidearmJuco(html, school, start, end) {
 
         events.push(normalizeEvent({
           homeTeamId: school.scscTeamId,
+          idSuffix: eventIdSuffix(sportRaw, opponent),
           awayTeamId: null,
           sport: sportRaw,
           level: school.level,
@@ -538,6 +578,7 @@ async function parseSidearmJuco(html, school, start, end) {
 
     events.push(normalizeEvent({
       homeTeamId: school.scscTeamId,
+      idSuffix: eventIdSuffix(sportRaw, opponent),
       awayTeamId: null,
       sport: sportRaw,
       level: school.level,
@@ -602,6 +643,7 @@ async function parseGenericJuco(html, school, start, end) {
 
         events.push(normalizeEvent({
           homeTeamId: school.scscTeamId,
+          idSuffix: eventIdSuffix(sportRaw, awayOrg),
           awayTeamId: null,
           sport: sportRaw,
           level: school.level,
@@ -737,4 +779,4 @@ async function scrapeAllJuco(startDate, endDate) {
   return events;
 }
 
-module.exports = { scrapeAllJuco, JUCO_SCHOOLS };
+module.exports = { scrapeAllJuco, JUCO_SCHOOLS, pickOpponent, eventIdSuffix };
