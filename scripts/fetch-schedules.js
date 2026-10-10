@@ -22,7 +22,7 @@ const { fetchAllESPN } = require('./fetchers/pro/espn');
 const { scrapeAllColleges } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
-const { mergeEvents, prunePastEvents } = require('./merge');
+const { mergeEvents, prunePastEvents, removeLegacyJucoEvents } = require('./merge');
 const { validateEvents } = require('./schema');
 const { generateFeatured } = require('./generate-featured');
 const { exportAllToJson } = require('./export-to-json');
@@ -150,6 +150,10 @@ async function main() {
   if (stats.discrepancies > 0) {
     console.log(`Review discrepancies in scripts/sync-log.json`);
   }
+
+  // Drop JuCo rows written under the old ID format (self-opponent / collisions)
+  const legacyRemoved = await removeLegacyJucoEvents(valid);
+  console.log(`\nCleanup: removed ${legacyRemoved} legacy JuCo events`);
 
   // Prune past events
   const pruned = await prunePastEvents();

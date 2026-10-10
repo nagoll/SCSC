@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makeFakeSupabase } from './fake-supabase.js';
-import { getPrecedence, detectDiscrepancies, mergeEvents, prunePastEvents } from './merge.js';
+import { getPrecedence, detectDiscrepancies, mergeEvents, prunePastEvents, removeLegacyJucoEvents } from './merge.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SYNC_LOG_PATH = path.join(__dirname, 'sync-log.json');
@@ -176,5 +176,33 @@ describe('prunePastEvents (against a fake Supabase client)', () => {
     const pruned = await prunePastEvents(fake);
     expect(pruned).toBe(1);
     expect(fake.tables.events.map((e) => e.id)).toEqual(['future']);
+  });
+});
+
+describe('removeLegacyJucoEvents', () => {
+  const row = (id, source) => baseEvent({ id, source, level: 'juco' });
+
+  it('removes legacy-ID rows only for schools re-scraped under the new ID format', async () => {
+    const db = makeFakeSupabase({
+      events: [
+        row('cerritos-falcons-20261009', 'juco-scraper:cerritos'),
+        row('mt-sac-mounties-20261009', 'juco-scraper:mt-sac'),
+        row('cerritos-falcons-20261009-water-polo-grossmont', 'juco-scraper:cerritos'),
+        row('lakers-20261009', 'espn'),
+      ],
+    });
+    const incoming = [row('cerritos-falcons-20261009-water-polo-grossmont', 'juco-scraper:cerritos')];
+    expect(await removeLegacyJucoEvents(incoming, db)).toBe(1);
+    expect(db.tables.events.map(e => e.id).sort()).toEqual([
+      'cerritos-falcons-20261009-water-polo-grossmont',
+      'lakers-20261009',
+      'mt-sac-mounties-20261009',
+    ]);
+  });
+
+  it('does nothing when no JuCo events were refreshed', async () => {
+    const db = makeFakeSupabase({ events: [row('cerritos-falcons-20261009', 'juco-scraper:cerritos')] });
+    expect(await removeLegacyJucoEvents([], db)).toBe(0);
+    expect(db.tables.events).toHaveLength(1);
   });
 });
