@@ -36,6 +36,10 @@ function makeFakeSupabase(initialTables = {}) {
         op = 'delete';
         return api;
       },
+      in(field, values) {
+        filters.push((row) => values.includes(row[field]));
+        return api;
+      },
       lt(field, value) {
         filters.push((row) => row[field] < value);
         return api;

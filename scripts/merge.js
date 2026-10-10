@@ -211,4 +211,37 @@ async function prunePastEvents(db = supabaseAdmin()) {
   return deleted.length;
 }
 
-module.exports = { mergeEvents, prunePastEvents, getPrecedence, detectDiscrepancies };
+/**
+ * One-time cleanup for JuCo events written before event IDs carried a
+ * sport/opponent suffix. Those rows had IDs like `cerritos-falcons-20261009`,
+ * could collapse several same-day events into one, and often named the host
+ * school as its own opponent. A legacy row is only deleted when the current
+ * batch re-created events for the same school (source) under the new ID
+ * format, so a school whose scrape failed keeps its data until the next run.
+ * Returns the number of rows removed.
+ */
+async function removeLegacyJucoEvents(incoming, db = supabaseAdmin()) {
+  const refreshed = new Set(
+    incoming
+      .filter(e => e.source?.startsWith('juco-scraper:') && !/-\d{8}$/.test(e.id))
+      .map(e => e.source)
+  );
+  if (refreshed.size === 0) return 0;
+
+  const { data: rows, error } = await db.from('events').select('id, source');
+  if (error) throw new Error(`removeLegacyJucoEvents: ${error.message}`);
+  const legacyIds = rows
+    .filter(r => refreshed.has(r.source) && /-\d{8}$/.test(r.id))
+    .map(r => r.id);
+  if (legacyIds.length === 0) return 0;
+
+  const { data: deleted, error: delError } = await db
+    .from('events')
+    .delete()
+    .in('id', legacyIds)
+    .select('id');
+  if (delError) throw new Error(`removeLegacyJucoEvents: ${delError.message}`);
+  return deleted.length;
+}
+
+module.exports = { mergeEvents, prunePastEvents, removeLegacyJucoEvents, getPrecedence, detectDiscrepancies };
