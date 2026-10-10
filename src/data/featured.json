@@ -1,30 +1,30 @@
 [
   {
-    "id": "gem-cerritos-falcons-20261009",
-    "type": "hidden-gem",
-    "title": "Free JuCo Water polo: Cerritos vs. Cerritos",
-    "description": "Want competitive water polo without spending a dime? Cerritos takes on Cerritos at Cerritos College Falcon Stadium. Free admission — just show up.",
-    "eventId": "cerritos-falcons-20261009",
-    "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
-  },
-  {
-    "id": "gem-mt-sac-mounties-20261009",
-    "type": "hidden-gem",
-    "title": "Water polo at Mt. SAC: Mt. SAC vs. Mt. SAC",
-    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Mt. SAC for water polo. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "mt-sac-mounties-20261009",
-    "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
-  },
-  {
     "id": "gem-mt-sac-mounties-20261010",
     "type": "hidden-gem",
     "title": "Volleyball at Mt. SAC: Mt. SAC vs. Mt. SAC",
     "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Mt. SAC for volleyball. The setting alone makes this worth the trip — and admission is free.",
     "eventId": "mt-sac-mounties-20261010",
     "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
+    "publishDate": "2026-10-10T00:00:00+00:00"
+  },
+  {
+    "id": "gem-rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
+    "type": "hidden-gem",
+    "title": "Free JuCo Water polo: Rio Hondo vs. Crafton Hills",
+    "description": "Skip the $200 pro tickets and catch genuine water polo at Rio Hondo College Athletic Complex. Rio Hondo vs. Crafton Hills is free and delivers real energy.",
+    "eventId": "rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
+    "imageUrl": null,
+    "publishDate": "2026-10-10T00:00:00+00:00"
+  },
+  {
+    "id": "gem-smc-corsairs-20261010",
+    "type": "hidden-gem",
+    "title": "Free JuCo Volleyball: SMC vs. Santa Monica",
+    "description": "Skip the $200 pro tickets and catch genuine volleyball at SMC Corsair Field & Pavilion. SMC vs. Santa Monica is free and delivers real energy.",
+    "eventId": "smc-corsairs-20261010",
+    "imageUrl": null,
+    "publishDate": "2026-10-10T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -33,7 +33,7 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
+    "publishDate": "2026-10-10T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261017",
@@ -42,7 +42,7 @@
     "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
+    "publishDate": "2026-10-10T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-09T00:00:00+00:00"
+    "publishDate": "2026-10-10T00:00:00+00:00"
   }
 ]
