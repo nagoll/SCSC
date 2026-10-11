@@ -1,21 +1,21 @@
 [
   {
-    "id": "gem-mt-sac-mounties-20261010-women-s-water-polo-la-valley",
+    "id": "gem-citrus-owls-20261011-men-s-water-polo-cuesta",
     "type": "hidden-gem",
-    "title": "Water polo at Mt. SAC: Mt. SAC vs. LA Valley",
-    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts LA Valley for water polo. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "mt-sac-mounties-20261010-women-s-water-polo-la-valley",
+    "title": "Free JuCo Water polo: Citrus vs. Cuesta",
+    "description": "Want competitive water polo without spending a dime? Citrus takes on Cuesta at Citrus College Athletic Complex. Free admission — just show up.",
+    "eventId": "citrus-owls-20261011-men-s-water-polo-cuesta",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   },
   {
-    "id": "gem-pcc-lancers-20261010-women-s-basketball-long-beach",
+    "id": "gem-lacc-cubs-20261013-women-s-soccer-compton",
     "type": "hidden-gem",
-    "title": "Free JuCo Basketball: PCC vs. Long Beach",
-    "description": "Skip the $200 pro tickets and catch genuine basketball at Rio Hondo College Athletic Complex. PCC vs. Long Beach is free and delivers real energy.",
-    "eventId": "pcc-lancers-20261010-women-s-basketball-long-beach",
+    "title": "Free JuCo Soccer: LACC vs. Compton",
+    "description": "Western State Conference soccer at its best. LACC hosts Compton — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
+    "eventId": "lacc-cubs-20261013-women-s-soccer-compton",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
@@ -24,7 +24,7 @@
     "description": "Skip the $200 pro tickets and catch genuine water polo at Rio Hondo College Athletic Complex. Rio Hondo vs. Crafton Hills is free and delivers real energy.",
     "eventId": "rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261011",
@@ -33,7 +33,7 @@
     "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261011",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261017",
@@ -42,7 +42,7 @@
     "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-10T00:00:00+00:00"
+    "publishDate": "2026-10-11T00:00:00+00:00"
   }
 ]
