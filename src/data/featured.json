@@ -1,12 +1,12 @@
 [
   {
-    "id": "gem-citrus-owls-20261011-men-s-water-polo-cuesta",
+    "id": "gem-harbor-seahawks-20261013-women-s-soccer-la-harbor",
     "type": "hidden-gem",
-    "title": "Free JuCo Water polo: Citrus vs. Cuesta",
-    "description": "Want competitive water polo without spending a dime? Citrus takes on Cuesta at Citrus College Athletic Complex. Free admission — just show up.",
-    "eventId": "citrus-owls-20261011-men-s-water-polo-cuesta",
+    "title": "Free JuCo Soccer: Harbor vs. LA Harbor",
+    "description": "Skip the $200 pro tickets and catch genuine soccer at Harbor College Athletic Complex. Harbor vs. LA Harbor is free and delivers real energy.",
+    "eventId": "harbor-seahawks-20261013-women-s-soccer-la-harbor",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   },
   {
     "id": "gem-lacc-cubs-20261013-women-s-soccer-compton",
@@ -15,7 +15,7 @@
     "description": "Western State Conference soccer at its best. LACC hosts Compton — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
     "eventId": "lacc-cubs-20261013-women-s-soccer-compton",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
@@ -24,16 +24,16 @@
     "description": "Skip the $200 pro tickets and catch genuine water polo at Rio Hondo College Athletic Complex. Rio Hondo vs. Crafton Hills is free and delivers real energy.",
     "eventId": "rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-chargers-20261011",
+    "id": "gotw-la-kings-20261018",
     "type": "game-of-week",
-    "title": "Chargers vs. Denver Broncos",
-    "description": "SoFi Stadium plays host as the Chargers take on the Denver Broncos this Sunday. Circle this one on the calendar.",
-    "eventId": "la-chargers-20261011",
+    "title": "Kings vs. Bruins",
+    "description": "The Bruins come to town for a Sunday clash at Crypto.com Arena. The Kings are looking to put on a show for the home crowd.",
+    "eventId": "la-kings-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261017",
@@ -42,7 +42,7 @@
     "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-11T00:00:00+00:00"
+    "publishDate": "2026-10-12T00:00:00+00:00"
   }
 ]
