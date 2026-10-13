@@ -1,93 +1,5 @@
 [
   {
-    "id": "glendale-vaqueros-20261011-football-glendale",
-    "sport": "football",
-    "level": "juco",
-    "gender": "mens",
-    "homeTeam": "glendale-vaqueros",
-    "awayTeam": null,
-    "eventName": "Glendale at Glendale CC Vaqueros",
-    "dateTime": "2026-10-11T00:00:00+00:00",
-    "endTime": null,
-    "venue": "glendale-cc-athletics",
-    "venueSourceName": null,
-    "venueConfidence": "unverified",
-    "isNeutralSite": false,
-    "ticketUrl": null,
-    "price": "free",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "juco-scraper:glendale",
-    "lastUpdated": "2026-10-10T18:08:10.829+00:00"
-  },
-  {
-    "id": "citrus-owls-20261011-men-s-water-polo-cuesta",
-    "sport": "water-polo",
-    "level": "juco",
-    "gender": "mens",
-    "homeTeam": "citrus-owls",
-    "awayTeam": null,
-    "eventName": "Cuesta at Citrus College Owls",
-    "dateTime": "2026-10-11T00:00:00+00:00",
-    "endTime": null,
-    "venue": "citrus-athletics",
-    "venueSourceName": null,
-    "venueConfidence": "unverified",
-    "isNeutralSite": false,
-    "ticketUrl": null,
-    "price": "free",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "juco-scraper:citrus",
-    "lastUpdated": "2026-10-10T18:08:22.485+00:00"
-  },
-  {
-    "id": "long-beach-state-49ers-20261011-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "long-beach-state-49ers",
-    "awayTeam": null,
-    "eventName": "Cal Poly Mustangs at Long Beach State 49ers",
-    "dateTime": "2026-10-11T01:00:00+00:00",
-    "endTime": null,
-    "venue": "walter-pyramid",
-    "venueSourceName": "Walter Pyramid",
-    "venueConfidence": "verified",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401896936",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api:college",
-    "lastUpdated": "2026-10-11T18:30:44.227+00:00"
-  },
-  {
-    "id": "la-chargers-20261011",
-    "sport": "football",
-    "level": "pro",
-    "gender": "mens",
-    "homeTeam": "la-chargers",
-    "awayTeam": null,
-    "eventName": "Denver Broncos at Los Angeles Chargers",
-    "dateTime": "2026-10-11T20:05:00+00:00",
-    "endTime": null,
-    "venue": "sofi-stadium",
-    "venueSourceName": "SoFi Stadium",
-    "venueConfidence": "verified",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.chargers.com/tickets",
-    "price": "over_50",
-    "conference": null,
-    "league": "NFL",
-    "isFeatured": false,
-    "source": "espn-api:pro",
-    "lastUpdated": "2026-10-11T18:30:43.714+00:00"
-  },
-  {
     "id": "la-rams-20261013",
     "sport": "football",
     "level": "pro",
@@ -107,7 +19,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.114+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.065+00:00"
   },
   {
     "id": "lacc-cubs-20261013-women-s-soccer-compton",
@@ -261,7 +173,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.823+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "la-dodgers-20261014",
@@ -305,7 +217,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.282+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261015-wrestling-palomar",
@@ -349,7 +261,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.097+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.086+00:00"
   },
   {
     "id": "la-dodgers-20261016",
@@ -371,7 +283,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.282+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-lakers-20261016",
@@ -481,7 +393,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.282+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "ucla-bruins-20261017-womens-college-volleyball",
@@ -503,7 +415,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.668+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "la-lakers-20261017",
@@ -525,7 +437,7 @@
     "league": "NBA",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.106+00:00"
+    "lastUpdated": "2026-10-13T19:58:51.977+00:00"
   },
   {
     "id": "usc-trojans-20261017-womens-college-volleyball",
@@ -547,7 +459,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.655+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.685+00:00"
   },
   {
     "id": "ucla-bruins-20261017-college-football",
@@ -569,7 +481,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.614+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.595+00:00"
   },
   {
     "id": "la-kings-20261018",
@@ -591,7 +503,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.823+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "la-rams-20261018",
@@ -613,7 +525,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.114+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "ucla-bruins-20261018-womens-college-volleyball",
@@ -635,7 +547,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261021-men-s-soccer-east-los-angeles",
@@ -767,7 +679,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.666+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "ucla-bruins-20261024-college-football",
@@ -789,7 +701,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.614+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.595+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261028-men-s-soccer-el-camino",
@@ -877,7 +789,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261030-men-s-basketball-palo-verde",
@@ -943,7 +855,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "usc-trojans-20261031-womens-college-volleyball",
@@ -965,7 +877,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.655+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.685+00:00"
   },
   {
     "id": "usc-trojans-20261031-college-football",
@@ -987,7 +899,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.635+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.548+00:00"
   },
   {
     "id": "ucla-bruins-20261031-college-football",
@@ -1009,7 +921,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.614+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.595+00:00"
   },
   {
     "id": "la-kings-20261031",
@@ -1031,7 +943,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261031-womens-college-volleyball",
@@ -1053,7 +965,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.667+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261101-womens-college-volleyball",
@@ -1097,7 +1009,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.114+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "usc-trojans-20261101-womens-college-volleyball",
@@ -1119,7 +1031,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.655+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.685+00:00"
   },
   {
     "id": "ucla-bruins-20261101-womens-college-volleyball",
@@ -1141,7 +1053,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "ucla-bruins-20261102-womens-college-basketball",
@@ -1163,7 +1075,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.675+00:00"
   },
   {
     "id": "la-kings-20261105",
@@ -1185,7 +1097,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "ucla-bruins-20261105-womens-college-basketball",
@@ -1207,7 +1119,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-kings-20261108",
@@ -1229,7 +1141,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20261108-womens-college-basketball",
@@ -1273,7 +1185,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.157+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.103+00:00"
   },
   {
     "id": "usc-trojans-20261109-womens-college-basketball",
@@ -1295,7 +1207,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "usc-trojans-20261110-womens-college-basketball",
@@ -1339,7 +1251,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20261111-womens-college-basketball",
@@ -1361,7 +1273,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-basketball",
@@ -1405,7 +1317,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "usc-trojans-20261113-womens-college-volleyball",
@@ -1427,7 +1339,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.655+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.686+00:00"
   },
   {
     "id": "la-kings-20261113",
@@ -1449,7 +1361,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "ucla-bruins-20261113-womens-college-basketball",
@@ -1471,7 +1383,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "ucla-bruins-20261114-college-football",
@@ -1493,7 +1405,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.614+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.595+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261114-womens-college-volleyball",
@@ -1515,7 +1427,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.667+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-volleyball",
@@ -1537,7 +1449,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261115-womens-college-volleyball",
@@ -1559,7 +1471,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.667+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "la-kings-20261115",
@@ -1581,7 +1493,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20261115-womens-college-volleyball",
@@ -1603,7 +1515,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.655+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.686+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-basketball",
@@ -1625,7 +1537,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "ucla-bruins-20261118-womens-college-volleyball",
@@ -1647,7 +1559,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.669+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.687+00:00"
   },
   {
     "id": "ucla-bruins-20261119-womens-college-basketball",
@@ -1669,7 +1581,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261121-womens-college-volleyball",
@@ -1691,7 +1603,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.667+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "usc-trojans-20261121-womens-college-basketball",
@@ -1713,7 +1625,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "usc-trojans-20261121-college-football",
@@ -1735,7 +1647,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.635+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.548+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261122-womens-college-volleyball",
@@ -1757,7 +1669,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.667+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.641+00:00"
   },
   {
     "id": "la-chargers-20261122",
@@ -1779,7 +1691,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.157+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.103+00:00"
   },
   {
     "id": "usc-trojans-20261123-womens-college-basketball",
@@ -1801,7 +1713,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "la-rams-20261126",
@@ -1823,7 +1735,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.115+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "ucla-bruins-20261128-college-football",
@@ -1845,7 +1757,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.614+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.595+00:00"
   },
   {
     "id": "la-kings-20261129",
@@ -1867,7 +1779,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "ucla-bruins-20261129-womens-college-basketball",
@@ -1889,7 +1801,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-chargers-20261130",
@@ -1911,7 +1823,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.157+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.103+00:00"
   },
   {
     "id": "la-kings-20261202",
@@ -1933,7 +1845,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "la-rams-20261204",
@@ -1955,7 +1867,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.115+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "la-kings-20261204",
@@ -1977,7 +1889,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "la-kings-20261206",
@@ -1999,7 +1911,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20261208-womens-college-basketball",
@@ -2021,7 +1933,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "la-kings-20261210",
@@ -2043,7 +1955,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "ucla-bruins-20261211-womens-college-basketball",
@@ -2065,7 +1977,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-kings-20261213",
@@ -2087,7 +1999,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20261213-womens-college-basketball",
@@ -2109,7 +2021,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.641+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "la-chargers-20261218",
@@ -2131,7 +2043,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.157+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.103+00:00"
   },
   {
     "id": "la-rams-20261220",
@@ -2153,7 +2065,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.115+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "la-kings-20261227",
@@ -2175,7 +2087,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "ucla-bruins-20261230-womens-college-basketball",
@@ -2197,7 +2109,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-kings-20261231",
@@ -2219,7 +2131,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.824+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.78+00:00"
   },
   {
     "id": "usc-trojans-20270102-womens-college-basketball",
@@ -2241,7 +2153,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "ucla-bruins-20270102-womens-college-basketball",
@@ -2285,7 +2197,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-kings-20270103",
@@ -2307,7 +2219,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-chargers-20270103",
@@ -2329,7 +2241,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.157+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.103+00:00"
   },
   {
     "id": "la-kings-20270105",
@@ -2351,7 +2263,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "usc-trojans-20270105-womens-college-basketball",
@@ -2395,7 +2307,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "la-kings-20270107",
@@ -2417,7 +2329,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270110",
@@ -2439,7 +2351,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-rams-20270110",
@@ -2461,7 +2373,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-12T21:54:19.115+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.066+00:00"
   },
   {
     "id": "la-kings-20270112",
@@ -2483,7 +2395,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "ucla-bruins-20270112-womens-college-basketball",
@@ -2527,7 +2439,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "la-kings-20270114",
@@ -2549,7 +2461,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "usc-trojans-20270115-womens-college-basketball",
@@ -2571,7 +2483,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.645+00:00"
   },
   {
     "id": "ucla-bruins-20270115-womens-college-basketball",
@@ -2593,7 +2505,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.649+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.676+00:00"
   },
   {
     "id": "usc-trojans-20270118-womens-college-basketball",
@@ -2615,7 +2527,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "la-kings-20270120",
@@ -2637,7 +2549,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270122",
@@ -2659,7 +2571,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "ucla-bruins-20270130-womens-college-basketball",
@@ -2681,7 +2593,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.65+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.677+00:00"
   },
   {
     "id": "usc-trojans-20270130-womens-college-basketball",
@@ -2703,7 +2615,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "ucla-bruins-20270202-womens-college-basketball",
@@ -2769,7 +2681,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "ucla-bruins-20270203-womens-college-basketball",
@@ -2791,7 +2703,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.65+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.677+00:00"
   },
   {
     "id": "ucla-bruins-20270207-womens-college-basketball",
@@ -2835,7 +2747,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.65+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.677+00:00"
   },
   {
     "id": "la-kings-20270212",
@@ -2857,7 +2769,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270213",
@@ -2879,7 +2791,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270216",
@@ -2901,7 +2813,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "usc-trojans-20270218-womens-college-basketball",
@@ -2967,7 +2879,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "ucla-bruins-20270219-womens-college-basketball",
@@ -2989,7 +2901,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.65+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.677+00:00"
   },
   {
     "id": "la-kings-20270221",
@@ -3011,7 +2923,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "ucla-bruins-20270221-womens-college-basketball",
@@ -3033,7 +2945,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.65+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.677+00:00"
   },
   {
     "id": "usc-trojans-20270221-womens-college-basketball",
@@ -3055,7 +2967,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "la-kings-20270225",
@@ -3077,7 +2989,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "usc-trojans-20270225-womens-college-basketball",
@@ -3121,7 +3033,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-12T21:54:19.642+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.646+00:00"
   },
   {
     "id": "la-kings-20270302",
@@ -3143,7 +3055,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270304",
@@ -3165,7 +3077,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270306",
@@ -3187,7 +3099,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270307",
@@ -3209,7 +3121,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270314",
@@ -3231,7 +3143,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270317",
@@ -3253,7 +3165,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.825+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270319",
@@ -3275,7 +3187,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.826+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-dodgers-20270325",
@@ -3297,7 +3209,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270327",
@@ -3319,7 +3231,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270328",
@@ -3341,7 +3253,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270329",
@@ -3363,7 +3275,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-kings-20270330",
@@ -3385,7 +3297,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.826+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-dodgers-20270330",
@@ -3407,7 +3319,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270331",
@@ -3429,7 +3341,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-kings-20270401",
@@ -3451,7 +3363,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.826+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270404",
@@ -3473,7 +3385,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.826+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-kings-20270409",
@@ -3495,7 +3407,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-12T21:54:19.826+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.781+00:00"
   },
   {
     "id": "la-dodgers-20270413",
@@ -3517,7 +3429,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270414",
@@ -3539,7 +3451,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270415",
@@ -3561,7 +3473,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270416",
@@ -3583,7 +3495,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.283+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270417",
@@ -3605,7 +3517,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270418",
@@ -3627,7 +3539,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270426",
@@ -3649,7 +3561,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270427",
@@ -3671,7 +3583,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270428",
@@ -3693,7 +3605,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270430",
@@ -3715,7 +3627,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270501",
@@ -3737,7 +3649,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270502",
@@ -3759,7 +3671,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270506",
@@ -3781,7 +3693,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.159+00:00"
   },
   {
     "id": "la-dodgers-20270507",
@@ -3803,7 +3715,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270508",
@@ -3825,7 +3737,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270509",
@@ -3847,7 +3759,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270517",
@@ -3869,7 +3781,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270518",
@@ -3891,7 +3803,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.284+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270519",
@@ -3913,7 +3825,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270521",
@@ -3935,7 +3847,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270522",
@@ -3957,7 +3869,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270523",
@@ -3979,7 +3891,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270524",
@@ -4001,7 +3913,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270525",
@@ -4023,7 +3935,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270526",
@@ -4045,7 +3957,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270607",
@@ -4067,7 +3979,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270608",
@@ -4089,7 +4001,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270609",
@@ -4111,7 +4023,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270611",
@@ -4133,7 +4045,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270612",
@@ -4155,7 +4067,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270613",
@@ -4177,7 +4089,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270618",
@@ -4199,7 +4111,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270619",
@@ -4221,7 +4133,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.285+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270620",
@@ -4243,7 +4155,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270628",
@@ -4265,7 +4177,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270629",
@@ -4287,7 +4199,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270630",
@@ -4309,7 +4221,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.16+00:00"
   },
   {
     "id": "la-dodgers-20270701",
@@ -4331,7 +4243,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270702",
@@ -4353,7 +4265,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270703",
@@ -4375,7 +4287,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270704",
@@ -4397,7 +4309,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270716",
@@ -4419,7 +4331,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270717",
@@ -4441,7 +4353,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270718",
@@ -4463,7 +4375,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270719",
@@ -4485,7 +4397,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270720",
@@ -4507,7 +4419,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270721",
@@ -4529,7 +4441,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270730",
@@ -4551,7 +4463,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270731",
@@ -4573,7 +4485,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.286+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270801",
@@ -4595,7 +4507,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270803",
@@ -4617,7 +4529,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270804",
@@ -4639,7 +4551,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270805",
@@ -4661,7 +4573,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270813",
@@ -4683,7 +4595,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270814",
@@ -4705,7 +4617,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270815",
@@ -4727,7 +4639,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270816",
@@ -4749,7 +4661,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270817",
@@ -4771,7 +4683,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270818",
@@ -4793,7 +4705,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270827",
@@ -4815,7 +4727,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.161+00:00"
   },
   {
     "id": "la-dodgers-20270828",
@@ -4837,7 +4749,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270829",
@@ -4859,7 +4771,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270830",
@@ -4881,7 +4793,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270831",
@@ -4903,7 +4815,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.287+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270901",
@@ -4925,7 +4837,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270910",
@@ -4947,7 +4859,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270911",
@@ -4969,7 +4881,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270912",
@@ -4991,7 +4903,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270913",
@@ -5013,7 +4925,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270914",
@@ -5035,7 +4947,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270915",
@@ -5057,7 +4969,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270916",
@@ -5079,7 +4991,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270917",
@@ -5101,7 +5013,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.288+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270918",
@@ -5123,7 +5035,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.289+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   },
   {
     "id": "la-dodgers-20270919",
@@ -5145,6 +5057,6 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-12T21:54:19.289+00:00"
+    "lastUpdated": "2026-10-13T19:58:52.162+00:00"
   }
 ]
