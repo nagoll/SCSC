@@ -16,6 +16,7 @@
  * Runs standalone — no CI required. Works with any deployment host.
  */
 
+const fs = require('fs');
 const { fetchMLB } = require('./fetchers/pro/mlb');
 const { fetchNHL } = require('./fetchers/pro/nhl');
 const { fetchAllESPN } = require('./fetchers/pro/espn');
@@ -26,6 +27,7 @@ const { mergeEvents, prunePastEvents, removeLegacyJucoEvents } = require('./merg
 const { validateEvents } = require('./schema');
 const { generateFeatured } = require('./generate-featured');
 const { exportAllToJson } = require('./export-to-json');
+const { checkHealth, formatSummary } = require('./health-check');
 
 // Parse CLI args
 const args = process.argv.slice(2);
@@ -133,6 +135,19 @@ async function main() {
       console.warn(`  ${event?.id || event?.source || '(unknown)'}: ${reasons.join('; ')}`);
     }
   }
+
+  // Fail the run (after data is still written below) if any team came back
+  // empty or collapsed — otherwise dead sources look like a quiet week.
+  const health = checkHealth({
+    teams: require('../src/data/teams.json'),
+    fetched: valid,
+    previous: require('../src/data/events.json'),
+    level: LEVEL_FILTER,
+  });
+  const summary = formatSummary(health);
+  console.log(`\n${summary}`);
+  if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+  if (health.failures.length > 0) process.exitCode = 1;
 
   if (DRY_RUN) {
     console.log('\n[dry-run] Skipping write to events.json');
