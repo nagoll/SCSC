@@ -170,9 +170,10 @@ async function get(url) {
   return res.text();
 }
 
-function collegeEvent(school, { sportRaw, opponent: rawOpponent, dateTime, venueName, ticketUrl }) {
-  // Drop poll rankings ("#15 Penn State"): they go stale and split event IDs.
-  const opponent = rawOpponent.replace(/^(#|No\.\s*)\d+\s+/i, '');
+function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl }) {
+  // Poll rankings ("#15 Penn State") stay in the name, which every refresh
+  // rewrites, but not in the ID: a new ranking must not create a new event.
+  const unranked = opponent.replace(/^(#|No\.\s*)\d+\s+/i, '');
   const verification = verifyVenue({ scrapedVenueName: venueName, defaultVenueId: school.defaultVenueId });
   if (verification.excluded) {
     console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
@@ -180,7 +181,7 @@ function collegeEvent(school, { sportRaw, opponent: rawOpponent, dateTime, venue
   }
   return normalizeEvent({
     homeTeamId: school.scscTeamId,
-    idSuffix: eventIdSuffix(sportRaw, opponent),
+    idSuffix: eventIdSuffix(sportRaw, unranked),
     awayTeamId: null,
     sport: sportRaw,
     level: school.level,

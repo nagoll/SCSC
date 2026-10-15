@@ -53,9 +53,9 @@ describe('parseSidearmCalendarJson', () => {
     });
   });
 
-  it('drops the ranking from the opponent name', () => {
+  it('keeps the ranking in the name but not in the ID', () => {
     const [ev] = parseSidearmCalendarJson([{ events: [game({ opponent: { title: '#15 Penn State' } })] }], school('cal-poly-pomona'), start, end);
-    expect(ev.eventName).toBe('Penn State at Cal Poly Pomona Broncos');
+    expect(ev.eventName).toBe('#15 Penn State at Cal Poly Pomona Broncos');
     expect(ev.id).toBe('cal-poly-pomona-broncos-20260927-women-s-soccer-penn-state');
   });
 
