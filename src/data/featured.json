@@ -6,16 +6,7 @@
     "description": "LBSU takes on Cal State Fullerton Titans in women's volleyball at Walter Pyramid. Competitive, fast-paced, and affordable.",
     "eventId": "long-beach-state-49ers-20261024-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
-  },
-  {
-    "id": "gem-rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
-    "type": "hidden-gem",
-    "title": "Free JuCo Water polo: Rio Hondo vs. Crafton Hills",
-    "description": "Skip the $200 pro tickets and catch genuine water polo at Rio Hondo College Athletic Complex. Rio Hondo vs. Crafton Hills is free and delivers real energy.",
-    "eventId": "rio-hondo-roadrunners-20261016-women-s-water-polo-crafton-hills",
-    "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
+    "publishDate": "2026-10-15T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261022-women-s-volleyball-cerritos",
@@ -24,7 +15,16 @@
     "description": "Want competitive volleyball without spending a dime? Rio Hondo takes on Cerritos at Rio Hondo College Athletic Complex. Free admission — just show up.",
     "eventId": "rio-hondo-roadrunners-20261022-women-s-volleyball-cerritos",
     "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
+    "publishDate": "2026-10-15T00:00:00+00:00"
+  },
+  {
+    "id": "gem-rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
+    "type": "hidden-gem",
+    "title": "Free JuCo Water polo: Rio Hondo vs. East Los Angeles",
+    "description": "Want competitive water polo without spending a dime? Rio Hondo takes on East Los Angeles at Rio Hondo College Athletic Complex. Free admission — just show up.",
+    "eventId": "rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
+    "imageUrl": null,
+    "publishDate": "2026-10-15T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20261018",
@@ -33,7 +33,7 @@
     "description": "The Bruins come to town for a Sunday clash at Crypto.com Arena. The Kings are looking to put on a show for the home crowd.",
     "eventId": "la-kings-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
+    "publishDate": "2026-10-15T00:00:00+00:00"
   },
   {
     "id": "gotw-la-lakers-20261017",
@@ -42,7 +42,7 @@
     "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
     "eventId": "la-lakers-20261017",
     "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
+    "publishDate": "2026-10-15T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-14T00:00:00+00:00"
+    "publishDate": "2026-10-15T00:00:00+00:00"
   }
 ]
