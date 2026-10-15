@@ -71,7 +71,9 @@ function inferGender(raw, explicitGender) {
 function normalizeSport(raw) {
   if (!raw) return 'other';
   const key = raw.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z-]/g, '');
-  return SPORT_MAP[key] || 'other';
+  // Gender lives in its own field, so "mens-football" / "Men's Volleyball"
+  // fall back to the bare sport when the exact key isn't mapped.
+  return SPORT_MAP[key] || SPORT_MAP[key.replace(/^(wo)?mens?-/, '')] || 'other';
 }
 
 /**

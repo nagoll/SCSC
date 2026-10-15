@@ -693,18 +693,22 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   });
   const page = await context.newPage();
   try {
-    const res = await page.goto(school.scheduleUrl, {
-      // SIDEARM's composite schedule fetches game data client-side after
-      // the initial document loads — domcontentloaded fires before that
-      // data lands in the DOM. networkidle waits for it to actually settle.
-      waitUntil: 'networkidle',
-      timeout: 45_000,
-    });
-
-    if (!res || !res.ok()) {
-      console.warn(`[${school.id}] HTTP ${res ? res.status() : '(no response)'} — ${school.scheduleUrl}`);
-      return [];
+    // scheduleUrl may list fallbacks (sites differ on the composite path);
+    // the first one that loads wins.
+    let res;
+    for (const url of [].concat(school.scheduleUrl)) {
+      res = await page.goto(url, {
+        // SIDEARM's composite schedule fetches game data client-side after
+        // the initial document loads — domcontentloaded fires before that
+        // data lands in the DOM. networkidle waits for it to actually settle.
+        waitUntil: 'networkidle',
+        timeout: 45_000,
+      });
+      if (res?.ok()) break;
+      console.warn(`[${school.id}] HTTP ${res ? res.status() : '(no response)'} — ${url}`);
     }
+    if (!res?.ok()) return [];
+    console.log(`[${school.id}] schedule page: ${page.url()}`);
 
     const html = await page.content();
     const start = new Date(startDate);

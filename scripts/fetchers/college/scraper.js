@@ -20,7 +20,7 @@ const COLLEGE_SCHOOLS = [
     id: 'usc',
     name: 'USC Trojans',
     scscTeamId: 'usc-trojans',
-    scheduleUrl: 'https://usctrojans.com/composite',
+    site: 'https://usctrojans.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'galen-center',
@@ -31,7 +31,7 @@ const COLLEGE_SCHOOLS = [
     id: 'ucla',
     name: 'UCLA Bruins',
     scscTeamId: 'ucla-bruins',
-    scheduleUrl: 'https://uclabruins.com/composite',
+    site: 'https://uclabruins.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pauley-pavilion',
@@ -42,7 +42,7 @@ const COLLEGE_SCHOOLS = [
     id: 'pepperdine',
     name: 'Pepperdine Waves',
     scscTeamId: 'pepperdine-waves',
-    scheduleUrl: 'https://pepperdinewaves.com/composite',
+    site: 'https://pepperdinewaves.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'firestone-fieldhouse',
@@ -53,7 +53,7 @@ const COLLEGE_SCHOOLS = [
     id: 'lmu',
     name: 'LMU Lions',
     scscTeamId: 'lmu-lions',
-    scheduleUrl: 'https://lmulions.com/composite',
+    site: 'https://lmulions.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'gersten-pavilion',
@@ -64,7 +64,7 @@ const COLLEGE_SCHOOLS = [
     id: 'csun',
     name: 'CSUN Matadors',
     scscTeamId: 'csun-matadors',
-    scheduleUrl: 'https://gomatadors.com/composite',
+    site: 'https://gomatadors.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'matadome',
@@ -75,7 +75,7 @@ const COLLEGE_SCHOOLS = [
     id: 'lbsu',
     name: 'Long Beach State 49ers',
     scscTeamId: 'long-beach-state-49ers',
-    scheduleUrl: 'https://longbeachstate.com/composite',
+    site: 'https://longbeachstate.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'walter-pyramid',
@@ -86,7 +86,7 @@ const COLLEGE_SCHOOLS = [
     id: 'csuf',
     name: 'Cal State Fullerton Titans',
     scscTeamId: 'csuf-titans',
-    scheduleUrl: 'https://fullertontitans.com/composite',
+    site: 'https://fullertontitans.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csuf-athletics',
@@ -97,8 +97,8 @@ const COLLEGE_SCHOOLS = [
     id: 'cal-poly-pomona',
     name: 'Cal Poly Pomona Broncos',
     scscTeamId: 'cal-poly-pomona-broncos',
-    scheduleUrl: 'https://athletics.cpp.edu/composite',
-    platform: 'generic',
+    site: 'https://broncoathletics.com',
+    platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'cal-poly-pomona-kellogg-gym',
     ticketUrl: null,
@@ -108,18 +108,18 @@ const COLLEGE_SCHOOLS = [
     id: 'cal-state-la',
     name: 'Cal State LA Golden Eagles',
     scscTeamId: 'calstate-la-eagles',
-    scheduleUrl: 'https://calstatelaeagles.com/composite',
+    site: 'https://lagoldeneagles.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'calstate-la-athletics',
-    ticketUrl: 'https://calstatelaeagles.com/tickets',
+    ticketUrl: 'https://lagoldeneagles.com/tickets',
     price: 'free',
   },
   {
     id: 'csudh',
     name: 'Cal State Dominguez Hills Toros',
     scscTeamId: 'csudh-toros',
-    scheduleUrl: 'https://csudhtoros.com/composite',
+    site: 'https://gotoros.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csudh-athletics',
@@ -130,7 +130,7 @@ const COLLEGE_SCHOOLS = [
     id: 'pomona-pitzer',
     name: 'Pomona-Pitzer Sagehens',
     scscTeamId: 'pomona-pitzer-sagehens',
-    scheduleUrl: 'https://sagehens.com/composite',
+    site: 'https://sagehens.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pomona-pitzer-athletics',
@@ -141,7 +141,7 @@ const COLLEGE_SCHOOLS = [
     id: 'occidental',
     name: 'Occidental College Tigers',
     scscTeamId: 'occidental-tigers',
-    scheduleUrl: 'https://www.occidentaltigers.com/composite',
+    site: 'https://oxyathletics.com',
     platform: 'presto',
     level: 'college',
     defaultVenueId: 'occidental-athletics',
@@ -150,8 +150,12 @@ const COLLEGE_SCHOOLS = [
   },
 ];
 
+// SIDEARM sites put the all-sports schedule at one of these paths.
+const COMPOSITE_PATHS = ['/calendar', '/composite', '/calendar.aspx'];
+
 async function scrapeAllColleges(startDate, endDate) {
-  const events = await scrapeSidearmSchools(COLLEGE_SCHOOLS, startDate, endDate);
+  const schools = COLLEGE_SCHOOLS.map(s => ({ ...s, scheduleUrl: COMPOSITE_PATHS.map(p => s.site + p) }));
+  const events = await scrapeSidearmSchools(schools, startDate, endDate);
   // The shared parsers tag events as JuCo; college sites rank higher in merge.
   return events.map(e => ({ ...e, source: e.source.replace(/^juco-scraper:/, 'university-scraper:') }));
 }
