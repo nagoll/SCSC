@@ -53,6 +53,12 @@ describe('parseSidearmCalendarJson', () => {
     });
   });
 
+  it('drops the ranking from the opponent name', () => {
+    const [ev] = parseSidearmCalendarJson([{ events: [game({ opponent: { title: '#15 Penn State' } })] }], school('cal-poly-pomona'), start, end);
+    expect(ev.eventName).toBe('Penn State at Cal Poly Pomona Broncos');
+    expect(ev.id).toBe('cal-poly-pomona-broncos-20260927-women-s-soccer-penn-state');
+  });
+
   it('skips away, neutral, untimed and cancelled games', () => {
     const days = [{ date: '2026-09-27T00:00:00', events: [
       game({ id: 1, location_indicator: 'A' }),

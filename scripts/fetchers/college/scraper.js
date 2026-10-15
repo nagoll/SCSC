@@ -170,7 +170,9 @@ async function get(url) {
   return res.text();
 }
 
-function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl }) {
+function collegeEvent(school, { sportRaw, opponent: rawOpponent, dateTime, venueName, ticketUrl }) {
+  // Drop poll rankings ("#15 Penn State"): they go stale and split event IDs.
+  const opponent = rawOpponent.replace(/^(#|No\.\s*)\d+\s+/i, '');
   const verification = verifyVenue({ scrapedVenueName: venueName, defaultVenueId: school.defaultVenueId });
   if (verification.excluded) {
     console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
