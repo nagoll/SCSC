@@ -686,7 +686,7 @@ function parseProxyList(raw) {
     });
 }
 
-async function logZeroParseHints(school, html, jsonCalls, context) {
+function logZeroParseHints(school, html, jsonCalls) {
   const classCounts = {};
   for (const [, cls] of html.matchAll(/class="([^"]*(?:event|game|schedule)[^"]*)"/gi)) {
     for (const c of cls.split(/\s+/)) if (/event|game|schedule/i.test(c)) classCounts[c] = (classCounts[c] || 0) + 1;
@@ -697,16 +697,6 @@ async function logZeroParseHints(school, html, jsonCalls, context) {
   for (const { url, body } of jsonCalls.slice(0, 8)) {
     console.warn(`[${school.id}]   json: ${url}`);
     if (body) console.warn(`[${school.id}]     body: ${body}`);
-  }
-  // SIDEARM sites also publish an all-sports iCal feed; note whether it answers.
-  if (school.site) {
-    try {
-      const res = await context.request.get(`${school.site}/calendar.ashx/calendar.ics?sport_id=0`, { timeout: 15_000 });
-      const text = (await res.text()).slice(0, 700).replace(/\r?\n/g, '\\n');
-      console.warn(`[${school.id}]   ics: HTTP ${res.status()} ${text}`);
-    } catch (err) {
-      console.warn(`[${school.id}]   ics: ${err.message.split('\n')[0]}`);
-    }
   }
 }
 
@@ -754,7 +744,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       ? await parseSidearmJuco(html, school, start, end)
       : await parseGenericJuco(html, school, start, end);
 
-    if (events.length === 0) await logZeroParseHints(school, html, jsonCalls, context);
+    if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
     return events;
   } catch (err) {
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
@@ -767,8 +757,8 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
 }
 
 /**
- * Scrape SIDEARM-style schedule pages with a real browser. Shared by the JuCo
- * and college fetchers; `proxies` is only needed for sites that block by IP.
+ * Scrape SIDEARM-style schedule pages with a real browser. `proxies` is only
+ * needed for sites that block by IP.
  */
 async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   const browser = await chromium.launch();
