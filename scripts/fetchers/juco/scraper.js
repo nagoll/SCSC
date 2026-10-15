@@ -315,7 +315,7 @@ function parseSidearmComposite(html, school, start, end) {
         venueConfidence: verification.venueConfidence,
         isNeutralSite: verification.isNeutralSite,
         eventName: `${opponent} at ${school.name}`,
-        ticketUrl: null,
+        ticketUrl: school.ticketUrl || null,
         price: school.price,
         conference: null,
         league: null,
@@ -389,7 +389,7 @@ function parseSidearmCalendarGrid(html, school, start, end) {
         venueConfidence: verification.venueConfidence,
         isNeutralSite: verification.isNeutralSite,
         eventName: `${opponent} at ${school.name}`,
-        ticketUrl: null,
+        ticketUrl: school.ticketUrl || null,
         price: school.price,
         conference: null,
         league: null,
@@ -460,7 +460,7 @@ function parseSidearmScheduleGrid(html, school, start, end) {
         venueConfidence: verification.venueConfidence,
         isNeutralSite: verification.isNeutralSite,
         eventName: `${opponent} at ${school.name}`,
-        ticketUrl: null,
+        ticketUrl: school.ticketUrl || null,
         price: school.price,
         conference: null,
         league: null,
@@ -536,7 +536,7 @@ async function parseSidearmJuco(html, school, start, end) {
           venueConfidence: verification.venueConfidence,
           isNeutralSite: verification.isNeutralSite,
           eventName: `${opponent} at ${school.name}`,
-          ticketUrl: null,
+          ticketUrl: school.ticketUrl || null,
           price: school.price,
           conference: null,
           league: null,
@@ -655,7 +655,7 @@ async function parseGenericJuco(html, school, start, end) {
           venueConfidence: verification.venueConfidence,
           isNeutralSite: verification.isNeutralSite,
           eventName: `${awayOrg} at ${school.name}`,
-          ticketUrl: null,
+          ticketUrl: school.ticketUrl || null,
           price: school.price,
           conference: null,
           league: null,
@@ -725,20 +725,14 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   }
 }
 
-async function scrapeAllJuco(startDate, endDate) {
-  // A real (non-headless-detectable) browser is required here — every LA
-  // County CCCAA school's SIDEARM-hosted athletics site sits behind edge bot
-  // detection (CloudFront/WAF) that uniformly blocks plain HTTP requests
-  // with a 405, regardless of headers or User-Agent. Verified against the
-  // real network (not just this sandbox) before committing to this.
-  //
-  // That same edge detection also blocks by IP reputation, so requests are
-  // additionally routed through rotating proxies (one context per school,
-  // proxies cycled round-robin) when WEBSHARE_PROXIES is set.
+/**
+ * Scrape SIDEARM-style schedule pages with a real browser. Shared by the JuCo
+ * and college fetchers; `proxies` is only needed for sites that block by IP.
+ */
+async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   const browser = await chromium.launch();
-  const proxies = parseProxyList(process.env.WEBSHARE_PROXIES);
   if (proxies.length > 0) {
-    console.log(`[juco] Routing through ${proxies.length} rotating proxies`);
+    console.log(`[sidearm] Routing through ${proxies.length} rotating proxies`);
   }
 
   // Residential proxy bandwidth is real-home-network speed, not datacenter —
@@ -746,12 +740,12 @@ async function scrapeAllJuco(startDate, endDate) {
   // requests (timeouts) and even broke the proxy tunnel itself under burst
   // load (ERR_TUNNEL_CONNECTION_FAILED). Small batches with a short stagger
   // between them keep each connection healthy.
-  const BATCH_SIZE = 2;
+  const BATCH_SIZE = proxies.length > 0 ? 2 : 4;
   const results = [];
   try {
-    for (let i = 0; i < JUCO_SCHOOLS.length; i += BATCH_SIZE) {
-      if (i > 0) await new Promise(r => setTimeout(r, 1500));
-      const batch = JUCO_SCHOOLS.slice(i, i + BATCH_SIZE);
+    for (let i = 0; i < schools.length; i += BATCH_SIZE) {
+      if (i > 0 && proxies.length > 0) await new Promise(r => setTimeout(r, 1500));
+      const batch = schools.slice(i, i + BATCH_SIZE);
       const batchResults = await Promise.allSettled(
         batch.map((school, j) => {
           const idx = i + j;
@@ -768,7 +762,7 @@ async function scrapeAllJuco(startDate, endDate) {
   const events = [];
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
-    const school = JUCO_SCHOOLS[i];
+    const school = schools[i];
     if (result.status === 'fulfilled') {
       console.log(`[${school.id}] fetched ${result.value.length} events`);
       events.push(...result.value);
@@ -779,4 +773,17 @@ async function scrapeAllJuco(startDate, endDate) {
   return events;
 }
 
-module.exports = { scrapeAllJuco, JUCO_SCHOOLS, pickOpponent, eventIdSuffix };
+async function scrapeAllJuco(startDate, endDate) {
+  // A real (non-headless-detectable) browser is required here — every LA
+  // County CCCAA school's SIDEARM-hosted athletics site sits behind edge bot
+  // detection (CloudFront/WAF) that uniformly blocks plain HTTP requests
+  // with a 405, regardless of headers or User-Agent. Verified against the
+  // real network (not just this sandbox) before committing to this.
+  //
+  // That same edge detection also blocks by IP reputation, so requests are
+  // additionally routed through rotating proxies (one context per school,
+  // proxies cycled round-robin) when WEBSHARE_PROXIES is set.
+  return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
+}
+
+module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix };

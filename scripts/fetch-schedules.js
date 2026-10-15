@@ -20,7 +20,7 @@ const fs = require('fs');
 const { fetchMLB } = require('./fetchers/pro/mlb');
 const { fetchNHL } = require('./fetchers/pro/nhl');
 const { fetchAllESPN } = require('./fetchers/pro/espn');
-const { scrapeAllColleges } = require('./fetchers/college/scraper');
+const { scrapeAllColleges, combineCollegeSources } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
 const { mergeEvents, prunePastEvents, removeLegacyJucoEvents } = require('./merge');
@@ -82,25 +82,14 @@ async function fetchCollege(startDate, endDate) {
     fetchAllESPNCollege(startDate, endDate),
   ]);
 
-  const events = [];
+  if (espnResult.status === 'rejected') console.warn('  ESPN college fetch failed:', espnResult.reason?.message);
+  if (compositeResult.status === 'rejected') console.warn('  Composite scraper failed:', compositeResult.reason?.message);
+  const espn = espnResult.value || [];
+  const composite = compositeResult.value || [];
+  console.log(`  ESPN college: ${espn.length} events (secondary)`);
+  console.log(`  Composite scrapers: ${composite.length} events (primary)`);
 
-  // Add ESPN events first (lower precedence — will be overwritten by composite)
-  if (espnResult.status === 'fulfilled') {
-    console.log(`  ESPN college: ${espnResult.value.length} events (secondary)`);
-    events.push(...espnResult.value);
-  } else {
-    console.warn('  ESPN college fetch failed:', espnResult.reason?.message);
-  }
-
-  // Add composite scraper events (higher precedence — wins in merge)
-  if (compositeResult.status === 'fulfilled') {
-    console.log(`  Composite scrapers: ${compositeResult.value.length} events (primary)`);
-    events.push(...compositeResult.value);
-  } else {
-    console.warn('  Composite scraper failed:', compositeResult.reason?.message);
-  }
-
-  return events;
+  return combineCollegeSources(composite, espn);
 }
 
 async function fetchJuco(startDate, endDate) {

@@ -1,21 +1,17 @@
 /**
- * scraper.js — Shared college composite schedule scraper
+ * scraper.js — college composite schedules (primary college source).
  *
- * Most college athletic sites run on Sidearm Sports or PrestoSports platforms.
- * Both render composite schedule pages with consistent HTML/JSON structures.
- * This module handles both, with a fallback generic HTML parser.
- *
- * Usage:
- *   const events = await scrapeComposite(schoolConfig, startDate, endDate);
+ * The schools' SIDEARM sites render the composite schedule client-side, so
+ * these go through the same browser scraper and parsers as the JuCo sites.
+ * No proxy: plain requests from GitHub Actions reach these sites (the old
+ * /composite-schedule URLs answered 404 rather than a bot-block 405).
  */
 
-const cheerio = require('cheerio');
-const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
-const { verifyVenue } = require('../../venue-verify');
+const { scrapeSidearmSchools } = require('../juco/scraper');
 
 /**
  * School configs — composite schedule URLs and metadata.
- * compositeUrl: the full URL to the school's composite schedule page
+ * scheduleUrl: the full URL to the school's composite schedule page
  * platform: 'sidearm' | 'presto' | 'generic'
  * scscTeamPrefix: maps to team IDs like 'usc-trojans', 'ucla-bruins', etc.
  */
@@ -24,8 +20,7 @@ const COLLEGE_SCHOOLS = [
     id: 'usc',
     name: 'USC Trojans',
     scscTeamId: 'usc-trojans',
-    compositeUrl: 'https://usctrojans.com/composite-schedule',
-    espnTeamId: '30',
+    scheduleUrl: 'https://usctrojans.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'galen-center',
@@ -36,8 +31,7 @@ const COLLEGE_SCHOOLS = [
     id: 'ucla',
     name: 'UCLA Bruins',
     scscTeamId: 'ucla-bruins',
-    compositeUrl: 'https://uclabruins.com/composite-schedule',
-    espnTeamId: '26',
+    scheduleUrl: 'https://uclabruins.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pauley-pavilion',
@@ -48,8 +42,7 @@ const COLLEGE_SCHOOLS = [
     id: 'pepperdine',
     name: 'Pepperdine Waves',
     scscTeamId: 'pepperdine-waves',
-    compositeUrl: 'https://pepperdinewaves.com/composite-schedule',
-    espnTeamId: null, // Pepperdine not tracked via ESPN college API
+    scheduleUrl: 'https://pepperdinewaves.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'firestone-fieldhouse',
@@ -60,8 +53,7 @@ const COLLEGE_SCHOOLS = [
     id: 'lmu',
     name: 'LMU Lions',
     scscTeamId: 'lmu-lions',
-    compositeUrl: 'https://lmulions.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://lmulions.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'gersten-pavilion',
@@ -72,8 +64,7 @@ const COLLEGE_SCHOOLS = [
     id: 'csun',
     name: 'CSUN Matadors',
     scscTeamId: 'csun-matadors',
-    compositeUrl: 'https://gomatadors.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://gomatadors.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'matadome',
@@ -84,8 +75,7 @@ const COLLEGE_SCHOOLS = [
     id: 'lbsu',
     name: 'Long Beach State 49ers',
     scscTeamId: 'long-beach-state-49ers',
-    compositeUrl: 'https://longbeachstate.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://longbeachstate.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'walter-pyramid',
@@ -96,8 +86,7 @@ const COLLEGE_SCHOOLS = [
     id: 'csuf',
     name: 'Cal State Fullerton Titans',
     scscTeamId: 'csuf-titans',
-    compositeUrl: 'https://fullertontitans.com/composite-schedule',
-    espnTeamId: '2239',
+    scheduleUrl: 'https://fullertontitans.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csuf-athletics',
@@ -108,8 +97,7 @@ const COLLEGE_SCHOOLS = [
     id: 'cal-poly-pomona',
     name: 'Cal Poly Pomona Broncos',
     scscTeamId: 'cal-poly-pomona-broncos',
-    compositeUrl: 'https://athletics.cpp.edu/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://athletics.cpp.edu/composite',
     platform: 'generic',
     level: 'college',
     defaultVenueId: 'cal-poly-pomona-kellogg-gym',
@@ -120,8 +108,7 @@ const COLLEGE_SCHOOLS = [
     id: 'cal-state-la',
     name: 'Cal State LA Golden Eagles',
     scscTeamId: 'calstate-la-eagles',
-    compositeUrl: 'https://calstatelaeagles.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://calstatelaeagles.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'calstate-la-athletics',
@@ -132,8 +119,7 @@ const COLLEGE_SCHOOLS = [
     id: 'csudh',
     name: 'Cal State Dominguez Hills Toros',
     scscTeamId: 'csudh-toros',
-    compositeUrl: 'https://csudhtoros.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://csudhtoros.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csudh-athletics',
@@ -144,8 +130,7 @@ const COLLEGE_SCHOOLS = [
     id: 'pomona-pitzer',
     name: 'Pomona-Pitzer Sagehens',
     scscTeamId: 'pomona-pitzer-sagehens',
-    compositeUrl: 'https://sagehens.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://sagehens.com/composite',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pomona-pitzer-athletics',
@@ -156,8 +141,7 @@ const COLLEGE_SCHOOLS = [
     id: 'occidental',
     name: 'Occidental College Tigers',
     scscTeamId: 'occidental-tigers',
-    compositeUrl: 'https://www.occidentaltigers.com/composite-schedule',
-    espnTeamId: null,
+    scheduleUrl: 'https://www.occidentaltigers.com/composite',
     platform: 'presto',
     level: 'college',
     defaultVenueId: 'occidental-athletics',
@@ -166,311 +150,26 @@ const COLLEGE_SCHOOLS = [
   },
 ];
 
-/**
- * Parse a Sidearm Sports composite schedule page.
- * Sidearm renders schedule data in a <script id="__NEXT_DATA__"> JSON block
- * or in structured <li class="sidearm-schedule-game"> elements.
- *
- * We try the JSON approach first (more reliable), fall back to HTML parsing.
- */
-async function parseSidearm(html, school, startDate, endDate) {
-  const events = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-  const $ = cheerio.load(html);
-
-  // Attempt 1: Extract JSON from __NEXT_DATA__ (newer Sidearm sites)
-  const nextDataText = $('script#__NEXT_DATA__').html();
-  if (nextDataText) {
-    try {
-      const json = JSON.parse(nextDataText);
-      // Navigate the Next.js page props structure to find schedule items
-      const props = json?.props?.pageProps;
-      const scheduleItems = props?.schedule || props?.events || props?.games || [];
-      for (const item of scheduleItems) {
-        const ev = parseSidearmItem(item, school, start, end);
-        if (ev) events.push(ev);
-      }
-      if (events.length > 0) return events;
-    } catch {
-      // fall through to HTML parsing
-    }
-  }
-
-  // Attempt 2: Parse HTML <li> game elements (classic Sidearm)
-  $('li.sidearm-schedule-game').each((_, el) => {
-    const ev = parseSidearmBlock($(el), school, start, end);
-    if (ev) events.push(ev);
-  });
-
-  return events;
-}
-
-function parseSidearmItem(item, school, start, end) {
-  try {
-    const rawDate = item.date || item.gameDate || item.startDate;
-    if (!rawDate) return null;
-    const gameDate = new Date(rawDate);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
-
-    const sportRaw = item.sport?.name || item.sportName || item.sport || 'other';
-    const opponent = item.opponent?.name || item.opponentName || item.awayTeam || 'Opponent';
-    const isHome = item.homeAway === 'home' || item.location === 'home' || !item.isAway;
-    if (!isHome) return null;
-
-    // Extract the actual venue name from source data (don't just default)
-    const scrapedVenueName = item.venue?.name || item.venueName || item.location?.name || null;
-    const isNeutralSiteFlag = item.neutralSite === true || item.isNeutral === true;
-
-    // Extract location details if available
-    const venueCity = item.venue?.city || item.location?.city || null;
-    const venueState = item.venue?.state || item.location?.state || null;
-    const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
-
-    // Run venue verification
-    const verification = verifyVenue({
-      scrapedVenueName: fullVenueName || scrapedVenueName,
-      defaultVenueId: school.defaultVenueId,
-      isNeutralSiteFlag,
-    });
-
-    // Skip events that are confirmed out of LA County
-    if (verification.excluded) {
-      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-      return null;
-    }
-
-    return normalizeEvent({
-      homeTeamId: school.scscTeamId,
-      awayTeamId: null,
-      sport: sportRaw,
-      level: school.level,
-      gender: inferGender(sportRaw, item.gender),
-      dateTime: gameDate.toISOString(),
-      endTime: null,
-      venueId: verification.venueId,
-      venueSourceName: verification.venueSourceName,
-      venueConfidence: verification.venueConfidence,
-      isNeutralSite: verification.isNeutralSite,
-      eventName: `${opponent} at ${school.name}`,
-      ticketUrl: item.ticketUrl || school.ticketUrl || null,
-      price: school.price,
-      conference: item.conference || null,
-      league: null,
-      source: `university-scraper:${school.id}`,
-    });
-  } catch {
-    return null;
-  }
-}
-
-function parseSidearmBlock($block, school, start, end) {
-  try {
-    // Extract date from data attributes or datetime elements
-    const rawDate = $block.attr('data-date') || $block.find('time[datetime]').first().attr('datetime');
-    if (!rawDate) return null;
-    const gameDate = new Date(rawDate);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
-
-    // Check home/away
-    const isAway =
-      $block.hasClass('sidearm-schedule-game-away') || $block.attr('data-home-away') === 'away';
-    if (isAway) return null;
-
-    // Extract opponent
-    const opponentText = $block.find('[class*="opponent"]').first().text().trim();
-    const opponent = opponentText || 'Opponent';
-
-    // Extract sport
-    const sportRaw = $block.attr('data-sport') || 'other';
-
-    // Try to extract venue from HTML block
-    const scrapedVenueName =
-      $block.find('[class*="venue"], [class*="location"], [class*="facility"]').first().text().trim() || null;
-
-    // Run venue verification
-    const verification = verifyVenue({
-      scrapedVenueName,
-      defaultVenueId: school.defaultVenueId,
-    });
-
-    if (verification.excluded) {
-      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-      return null;
-    }
-
-    return normalizeEvent({
-      homeTeamId: school.scscTeamId,
-      awayTeamId: null,
-      sport: sportRaw,
-      level: school.level,
-      gender: inferGender(sportRaw, null),
-      dateTime: gameDate.toISOString(),
-      endTime: null,
-      venueId: verification.venueId,
-      venueSourceName: verification.venueSourceName,
-      venueConfidence: verification.venueConfidence,
-      isNeutralSite: verification.isNeutralSite,
-      eventName: `${opponent} at ${school.name}`,
-      ticketUrl: school.ticketUrl || null,
-      price: school.price,
-      conference: null,
-      league: null,
-      source: `university-scraper:${school.id}`,
-    });
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Parse a PrestoSports composite schedule page.
- * PrestoSports embeds schedule data as JSON in a <script type="application/ld+json"> block
- * or in a structured table.
- */
-async function parsePresto(html, school, startDate, endDate) {
-  const events = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-  const $ = cheerio.load(html);
-
-  // Try JSON-LD structured data
-  const ldScripts = $('script[type="application/ld+json"]')
-    .map((_, el) => $(el).html())
-    .get();
-  for (const json of ldScripts) {
-    try {
-      const data = JSON.parse(json);
-      const items = Array.isArray(data) ? data : [data];
-      for (const item of items) {
-        if (item['@type'] !== 'SportsEvent') continue;
-        const gameDate = new Date(item.startDate);
-        if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
-
-        const awayOrg = item.awayTeam?.name || item.competitor?.name || 'Opponent';
-        const sportRaw = item.sport || 'other';
-
-        // Extract venue details from structured data
-        const scrapedVenueName = item.location?.name || null;
-        const venueCity = item.location?.address?.addressLocality || null;
-        const venueState = item.location?.address?.addressRegion || null;
-        const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
-
-        const verification = verifyVenue({
-          scrapedVenueName: fullVenueName || scrapedVenueName,
-          defaultVenueId: school.defaultVenueId,
-        });
-
-        if (verification.excluded) {
-          console.log(`[${school.id}] Excluding event: ${awayOrg} — ${verification.excludeReason}`);
-          continue;
-        }
-
-        events.push(normalizeEvent({
-          homeTeamId: school.scscTeamId,
-          awayTeamId: null,
-          sport: sportRaw,
-          level: school.level,
-          gender: inferGender(sportRaw, null),
-          dateTime: gameDate.toISOString(),
-          endTime: item.endDate ? new Date(item.endDate).toISOString() : null,
-          venueId: verification.venueId,
-          venueSourceName: verification.venueSourceName,
-          venueConfidence: verification.venueConfidence,
-          isNeutralSite: verification.isNeutralSite,
-          eventName: `${awayOrg} at ${school.name}`,
-          ticketUrl: item.url || school.ticketUrl || null,
-          price: school.price,
-          conference: null,
-          league: null,
-          source: `university-scraper:${school.id}`,
-        }));
-      }
-    } catch {
-      continue;
-    }
-  }
-
-  return events;
-}
-
-/**
- * Generic HTML parser — fallback for schools not on Sidearm/PrestoSports.
- * Looks for common schedule table patterns.
- */
-async function parseGeneric(html, school, startDate, endDate) {
-  const events = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-
-  // Generic platform is not yet implemented — no events will be produced.
-  // Schools using platform: 'generic' require a custom parser.
-  console.warn(`[${school.id}] platform 'generic' has no parser — 0 events returned. Add a custom parser for ${school.compositeUrl}`);
-
-  return events;
-}
-
-function slugify(str) {
-  if (!str) return '';
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-/**
- * Fetch and parse a school's composite schedule page.
- */
-async function scrapeComposite(school, startDate, endDate) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 15_000);
-  try {
-    const res = await fetch(school.compositeUrl, {
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; SCSC-Bot/1.0; +https://github.com/SCSC)',
-        'Accept': 'text/html,application/xhtml+xml',
-      },
-    });
-
-    if (!res.ok) {
-      console.warn(`[${school.id}] HTTP ${res.status} for ${school.compositeUrl}`);
-      return [];
-    }
-
-    const html = await res.text();
-
-    switch (school.platform) {
-      case 'sidearm': return parseSidearm(html, school, startDate, endDate);
-      case 'presto':  return parsePresto(html, school, startDate, endDate);
-      default:        return parseGeneric(html, school, startDate, endDate);
-    }
-  } catch (err) {
-    const msg = err.name === 'AbortError' ? 'timed out after 15s' : err.message;
-    console.warn(`[${school.id}] Scrape failed: ${msg}`);
-    return [];
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-/**
- * Scrape all college schools.
- */
 async function scrapeAllColleges(startDate, endDate) {
-  const results = await Promise.allSettled(
-    COLLEGE_SCHOOLS.map(school => scrapeComposite(school, startDate, endDate))
-  );
+  const events = await scrapeSidearmSchools(COLLEGE_SCHOOLS, startDate, endDate);
+  // The shared parsers tag events as JuCo; college sites rank higher in merge.
+  return events.map(e => ({ ...e, source: e.source.replace(/^juco-scraper:/, 'university-scraper:') }));
+}
 
-  const events = [];
-  for (let i = 0; i < results.length; i++) {
-    const result = results[i];
-    const school = COLLEGE_SCHOOLS[i];
-    if (result.status === 'fulfilled') {
-      console.log(`[${school.id}] fetched ${result.value.length} events`);
-      events.push(...result.value);
-    } else {
-      console.warn(`[${school.id}] failed: ${result.reason?.message}`);
-    }
-  }
+function combineCollegeSources(composite, espn) {
+  // ESPN and the school's own site give the same game different IDs. Match on
+  // team + sport + gender + day: the school's data wins, but it takes over the
+  // ESPN row's ID so that row is updated in place instead of duplicated.
+  const key = e => `${e.homeTeam}|${e.sport}|${e.gender}|${e.dateTime.slice(0, 10)}`;
+  const espnByKey = new Map(espn.map(e => [key(e), e]));
+  const events = composite.map(e => {
+    const match = espnByKey.get(key(e));
+    if (!match) return e;
+    espnByKey.delete(key(e));
+    return { ...e, id: match.id, ticketUrl: e.ticketUrl || match.ticketUrl };
+  });
+  events.push(...espnByKey.values());
   return events;
 }
 
-module.exports = { scrapeAllColleges, scrapeComposite, COLLEGE_SCHOOLS };
+module.exports = { scrapeAllColleges, combineCollegeSources, COLLEGE_SCHOOLS };
