@@ -686,12 +686,29 @@ function parseProxyList(raw) {
     });
 }
 
+function logZeroParseHints(school, html, jsonCalls) {
+  const classCounts = {};
+  for (const [, cls] of html.matchAll(/class="([^"]*(?:event|game|schedule)[^"]*)"/gi)) {
+    for (const c of cls.split(/\s+/)) if (/event|game|schedule/i.test(c)) classCounts[c] = (classCounts[c] || 0) + 1;
+  }
+  const topClasses = Object.entries(classCounts).sort((a, b) => b[1] - a[1]).slice(0, 12)
+    .map(([c, n]) => `${c}×${n}`).join(' ');
+  console.warn(`[${school.id}] parsed 0 events from ${html.length}B page. classes: ${topClasses || '(none)'}`);
+  for (const url of jsonCalls.slice(0, 8)) console.warn(`[${school.id}]   json: ${url}`);
+}
+
 async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
     ...(proxy ? { proxy } : {}),
   });
   const page = await context.newPage();
+  // Remember the JSON calls the page makes; when parsing finds nothing, they
+  // point at the data API (and the markup to target) without guessing.
+  const jsonCalls = [];
+  page.on('response', r => {
+    if ((r.headers()['content-type'] || '').includes('json')) jsonCalls.push(r.url());
+  });
   try {
     // scheduleUrl may list fallbacks (sites differ on the composite path);
     // the first one that loads wins.
@@ -718,6 +735,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       ? await parseSidearmJuco(html, school, start, end)
       : await parseGenericJuco(html, school, start, end);
 
+    if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
     return events;
   } catch (err) {
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
