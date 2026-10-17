@@ -1,71 +1,5 @@
 [
   {
-    "id": "la-dodgers-20261015",
-    "sport": "baseball",
-    "level": "pro",
-    "gender": "mens",
-    "homeTeam": "la-dodgers",
-    "awayTeam": null,
-    "eventName": "Milwaukee Brewers at Dodgers",
-    "dateTime": "2026-10-15T00:00:00+00:00",
-    "endTime": null,
-    "venue": "dodger-stadium",
-    "venueSourceName": "UNIQLO Field at Dodger Stadium",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.mlb.com/dodgers/tickets",
-    "price": "over_50",
-    "conference": null,
-    "league": "MLB",
-    "isFeatured": false,
-    "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-14T18:13:14.76+00:00"
-  },
-  {
-    "id": "rio-hondo-roadrunners-20261015-wrestling-palomar",
-    "sport": "other",
-    "level": "juco",
-    "gender": "mens",
-    "homeTeam": "rio-hondo-roadrunners",
-    "awayTeam": null,
-    "eventName": "Palomar at Rio Hondo College Roadrunners",
-    "dateTime": "2026-10-15T02:00:00+00:00",
-    "endTime": null,
-    "venue": "rio-hondo-athletics",
-    "venueSourceName": null,
-    "venueConfidence": "unverified",
-    "isNeutralSite": false,
-    "ticketUrl": null,
-    "price": "free",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "juco-scraper:rio-hondo",
-    "lastUpdated": "2026-10-10T18:08:23.11+00:00"
-  },
-  {
-    "id": "la-clippers-20261015",
-    "sport": "basketball",
-    "level": "pro",
-    "gender": "mens",
-    "homeTeam": "la-clippers",
-    "awayTeam": null,
-    "eventName": "Denver Nuggets at LA Clippers",
-    "dateTime": "2026-10-15T02:30:00+00:00",
-    "endTime": null,
-    "venue": "intuit-dome",
-    "venueSourceName": "Intuit Dome",
-    "venueConfidence": "verified",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.nba.com/clippers/tickets",
-    "price": "over_50",
-    "conference": null,
-    "league": "NBA",
-    "isFeatured": false,
-    "source": "espn-api:pro",
-    "lastUpdated": "2026-10-15T17:55:27.707+00:00"
-  },
-  {
     "id": "la-dodgers-20261016",
     "sport": "baseball",
     "level": "pro",
@@ -217,7 +151,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
   },
   {
     "id": "la-lakers-20261017",
@@ -261,7 +195,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.641+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.924+00:00"
   },
   {
     "id": "ucla-bruins-20261017-college-football",
@@ -283,7 +217,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.576+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.927+00:00"
   },
   {
     "id": "la-kings-20261018",
@@ -305,7 +239,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "la-rams-20261018",
@@ -327,7 +261,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
   },
   {
     "id": "ucla-bruins-20261018-womens-college-volleyball",
@@ -349,7 +283,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261021-men-s-soccer-east-los-angeles",
@@ -396,6 +330,28 @@
     "lastUpdated": "2026-10-10T18:08:23.112+00:00"
   },
   {
+    "id": "la-lakers-20261022",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Golden State Warriors at Los Angeles Lakers",
+    "dateTime": "2026-10-22T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
+  },
+  {
     "id": "rio-hondo-roadrunners-20261022-wrestling-santa-ana",
     "sport": "other",
     "level": "juco",
@@ -416,6 +372,28 @@
     "isFeatured": false,
     "source": "juco-scraper:rio-hondo",
     "lastUpdated": "2026-10-10T18:08:23.112+00:00"
+  },
+  {
+    "id": "la-clippers-20261022",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Sacramento Kings at LA Clippers",
+    "dateTime": "2026-10-22T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.535+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261023-men-s-basketball-westcliff-university",
@@ -462,6 +440,28 @@
     "lastUpdated": "2026-10-10T18:07:01.387+00:00"
   },
   {
+    "id": "la-lakers-20261024",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "LA Clippers at Los Angeles Lakers",
+    "dateTime": "2026-10-24T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
+  },
+  {
     "id": "long-beach-state-49ers-20261024-womens-college-volleyball",
     "sport": "volleyball",
     "level": "college",
@@ -481,7 +481,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.871+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
   },
   {
     "id": "ucla-bruins-20261024-college-football",
@@ -503,7 +503,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.576+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.927+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261028-men-s-soccer-el-camino",
@@ -526,6 +526,28 @@
     "isFeatured": false,
     "source": "juco-scraper:rio-hondo",
     "lastUpdated": "2026-10-10T18:08:23.117+00:00"
+  },
+  {
+    "id": "la-lakers-20261028",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Portland Trail Blazers at Los Angeles Lakers",
+    "dateTime": "2026-10-28T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
@@ -572,6 +594,28 @@
     "lastUpdated": "2026-10-10T18:08:23.118+00:00"
   },
   {
+    "id": "la-clippers-20261029",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Los Angeles Lakers at LA Clippers",
+    "dateTime": "2026-10-29T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.535+00:00"
+  },
+  {
     "id": "la-kings-20261030",
     "sport": "hockey",
     "level": "pro",
@@ -591,7 +635,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "rio-hondo-roadrunners-20261030-men-s-basketball-palo-verde",
@@ -638,28 +682,6 @@
     "lastUpdated": "2026-10-10T18:08:23.119+00:00"
   },
   {
-    "id": "ucla-bruins-20261031-womens-college-volleyball",
-    "sport": "volleyball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "ucla-bruins",
-    "awayTeam": null,
-    "eventName": "Minnesota Golden Gophers at UCLA Bruins",
-    "dateTime": "2026-10-31T02:00:00+00:00",
-    "endTime": null,
-    "venue": "pauley-pavilion",
-    "venueSourceName": "Pauley Pavilion",
-    "venueConfidence": "verified",
-    "isNeutralSite": false,
-    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885629",
-    "price": "under_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
-  },
-  {
     "id": "usc-trojans-20261031-womens-college-volleyball",
     "sport": "volleyball",
     "level": "college",
@@ -679,7 +701,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.641+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.924+00:00"
+  },
+  {
+    "id": "ucla-bruins-20261031-womens-college-volleyball",
+    "sport": "volleyball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "ucla-bruins",
+    "awayTeam": null,
+    "eventName": "Minnesota Golden Gophers at UCLA Bruins",
+    "dateTime": "2026-10-31T02:00:00+00:00",
+    "endTime": null,
+    "venue": "pauley-pavilion",
+    "venueSourceName": "Pauley Pavilion",
+    "venueConfidence": "verified",
+    "isNeutralSite": false,
+    "ticketUrl": "sportscenter://x-callback-url/showGame?sportName=volleyball&leagueAbbrev=womens-college-volleyball&gameId=401885629",
+    "price": "under_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
   },
   {
     "id": "usc-trojans-20261031-college-football",
@@ -701,7 +745,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.536+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.93+00:00"
   },
   {
     "id": "ucla-bruins-20261031-college-football",
@@ -723,7 +767,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.576+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.927+00:00"
   },
   {
     "id": "la-kings-20261031",
@@ -745,7 +789,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261031-womens-college-volleyball",
@@ -767,7 +811,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.872+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261101-womens-college-volleyball",
@@ -811,7 +855,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
   },
   {
     "id": "usc-trojans-20261101-womens-college-volleyball",
@@ -833,7 +877,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.641+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.924+00:00"
   },
   {
     "id": "ucla-bruins-20261101-womens-college-volleyball",
@@ -855,7 +899,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
+  },
+  {
+    "id": "la-lakers-20261102",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Toronto Raptors at Los Angeles Lakers",
+    "dateTime": "2026-11-02T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "ucla-bruins-20261102-womens-college-basketball",
@@ -877,7 +943,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
+  },
+  {
+    "id": "la-lakers-20261103",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Miami Heat at Los Angeles Lakers",
+    "dateTime": "2026-11-03T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
+  },
+  {
+    "id": "la-clippers-20261103",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Toronto Raptors at LA Clippers",
+    "dateTime": "2026-11-03T03:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.535+00:00"
   },
   {
     "id": "la-kings-20261105",
@@ -899,7 +1009,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
+  },
+  {
+    "id": "la-clippers-20261105",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Miami Heat at LA Clippers",
+    "dateTime": "2026-11-05T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.535+00:00"
   },
   {
     "id": "ucla-bruins-20261105-womens-college-basketball",
@@ -921,7 +1053,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
+  },
+  {
+    "id": "la-lakers-20261107",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Portland Trail Blazers at Los Angeles Lakers",
+    "dateTime": "2026-11-07T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "la-kings-20261108",
@@ -943,7 +1097,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "usc-trojans-20261108-womens-college-basketball",
@@ -987,7 +1141,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.128+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.628+00:00"
   },
   {
     "id": "usc-trojans-20261109-womens-college-basketball",
@@ -1009,7 +1163,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.948+00:00"
+  },
+  {
+    "id": "la-clippers-20261109",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "New Orleans Pelicans at LA Clippers",
+    "dateTime": "2026-11-09T02:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.535+00:00"
   },
   {
     "id": "usc-trojans-20261110-womens-college-basketball",
@@ -1053,7 +1229,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "usc-trojans-20261111-womens-college-basketball",
@@ -1075,7 +1251,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.948+00:00"
   },
   {
     "id": "ucla-bruins-20261112-womens-college-basketball",
@@ -1119,7 +1295,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
   },
   {
     "id": "usc-trojans-20261113-womens-college-volleyball",
@@ -1141,7 +1317,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.641+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.924+00:00"
   },
   {
     "id": "la-kings-20261113",
@@ -1163,7 +1339,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.941+00:00"
   },
   {
     "id": "ucla-bruins-20261113-womens-college-basketball",
@@ -1185,7 +1361,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
   },
   {
     "id": "ucla-bruins-20261114-college-football",
@@ -1207,7 +1383,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.576+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.927+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261114-womens-college-volleyball",
@@ -1229,7 +1405,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.872+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
+  },
+  {
+    "id": "la-clippers-20261114",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at LA Clippers",
+    "dateTime": "2026-11-14T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.536+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-volleyball",
@@ -1251,7 +1449,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261115-womens-college-volleyball",
@@ -1273,7 +1471,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.872+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
   },
   {
     "id": "la-kings-20261115",
@@ -1295,7 +1493,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "usc-trojans-20261115-womens-college-volleyball",
@@ -1317,7 +1515,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.641+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.925+00:00"
+  },
+  {
+    "id": "la-clippers-20261115",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Charlotte Hornets at LA Clippers",
+    "dateTime": "2026-11-15T21:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.536+00:00"
   },
   {
     "id": "ucla-bruins-20261115-womens-college-basketball",
@@ -1339,7 +1559,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
+  },
+  {
+    "id": "la-lakers-20261118",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Charlotte Hornets at Los Angeles Lakers",
+    "dateTime": "2026-11-18T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "ucla-bruins-20261118-womens-college-volleyball",
@@ -1361,7 +1603,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.698+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.938+00:00"
+  },
+  {
+    "id": "la-clippers-20261118",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Utah Jazz at LA Clippers",
+    "dateTime": "2026-11-18T04:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.536+00:00"
+  },
+  {
+    "id": "la-lakers-20261119",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Utah Jazz at Los Angeles Lakers",
+    "dateTime": "2026-11-19T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "ucla-bruins-20261119-womens-college-basketball",
@@ -1383,7 +1669,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
+  },
+  {
+    "id": "la-lakers-20261121",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Sacramento Kings at Los Angeles Lakers",
+    "dateTime": "2026-11-21T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.646+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261121-womens-college-volleyball",
@@ -1405,7 +1713,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.872+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
   },
   {
     "id": "usc-trojans-20261121-womens-college-basketball",
@@ -1427,7 +1735,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.948+00:00"
   },
   {
     "id": "usc-trojans-20261121-college-football",
@@ -1449,7 +1757,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.536+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.931+00:00"
   },
   {
     "id": "long-beach-state-49ers-20261122-womens-college-volleyball",
@@ -1471,7 +1779,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.872+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.995+00:00"
   },
   {
     "id": "la-chargers-20261122",
@@ -1493,7 +1801,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.128+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.628+00:00"
   },
   {
     "id": "usc-trojans-20261123-womens-college-basketball",
@@ -1537,7 +1845,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.948+00:00"
+  },
+  {
+    "id": "la-lakers-20261124",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Utah Jazz at Los Angeles Lakers",
+    "dateTime": "2026-11-24T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "la-rams-20261126",
@@ -1559,7 +1889,29 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
+  },
+  {
+    "id": "la-clippers-20261128",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "New Orleans Pelicans at LA Clippers",
+    "dateTime": "2026-11-28T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.536+00:00"
   },
   {
     "id": "ucla-bruins-20261128-college-football",
@@ -1581,7 +1933,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.576+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.927+00:00"
   },
   {
     "id": "la-kings-20261129",
@@ -1603,7 +1955,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "ucla-bruins-20261129-womens-college-basketball",
@@ -1625,7 +1977,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
   },
   {
     "id": "la-chargers-20261130",
@@ -1647,7 +1999,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.128+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.628+00:00"
   },
   {
     "id": "la-kings-20261202",
@@ -1669,7 +2021,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-clippers-20261203",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Minnesota Timberwolves at LA Clippers",
+    "dateTime": "2026-12-03T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.536+00:00"
   },
   {
     "id": "la-rams-20261204",
@@ -1691,7 +2065,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
   },
   {
     "id": "la-kings-20261204",
@@ -1713,7 +2087,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.669+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "la-kings-20261206",
@@ -1735,7 +2109,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "usc-trojans-20261208-womens-college-basketball",
@@ -1757,7 +2131,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.948+00:00"
   },
   {
     "id": "la-kings-20261210",
@@ -1779,7 +2153,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "ucla-bruins-20261211-womens-college-basketball",
@@ -1801,7 +2175,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.693+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.969+00:00"
   },
   {
     "id": "la-kings-20261213",
@@ -1823,7 +2197,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "usc-trojans-20261213-womens-college-basketball",
@@ -1845,7 +2219,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.598+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
+  },
+  {
+    "id": "la-lakers-20261215",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "New Orleans Pelicans at Los Angeles Lakers",
+    "dateTime": "2026-12-15T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "la-chargers-20261218",
@@ -1867,7 +2263,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.128+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.628+00:00"
   },
   {
     "id": "la-rams-20261220",
@@ -1889,7 +2285,139 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
+  },
+  {
+    "id": "la-clippers-20261221",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Indiana Pacers at LA Clippers",
+    "dateTime": "2026-12-21T03:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20261222",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Indiana Pacers at Los Angeles Lakers",
+    "dateTime": "2026-12-22T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
+  },
+  {
+    "id": "la-clippers-20261222",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Denver Nuggets at LA Clippers",
+    "dateTime": "2026-12-22T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20261224",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Denver Nuggets at Los Angeles Lakers",
+    "dateTime": "2026-12-24T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
+  },
+  {
+    "id": "la-clippers-20261224",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Golden State Warriors at LA Clippers",
+    "dateTime": "2026-12-24T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20261225",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Philadelphia 76ers at Los Angeles Lakers",
+    "dateTime": "2026-12-25T22:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "la-kings-20261227",
@@ -1911,7 +2439,95 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-clippers-20261227",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Memphis Grizzlies at LA Clippers",
+    "dateTime": "2026-12-27T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20261228",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Memphis Grizzlies at Los Angeles Lakers",
+    "dateTime": "2026-12-28T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
+  },
+  {
+    "id": "la-clippers-20261228",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Philadelphia 76ers at LA Clippers",
+    "dateTime": "2026-12-28T02:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20261230",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Houston Rockets at Los Angeles Lakers",
+    "dateTime": "2026-12-30T03:30:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "ucla-bruins-20261230-womens-college-basketball",
@@ -1933,7 +2549,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "la-kings-20261231",
@@ -1955,29 +2571,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
-  },
-  {
-    "id": "usc-trojans-20270102-womens-college-basketball",
-    "sport": "basketball",
-    "level": "college",
-    "gender": "womens",
-    "homeTeam": "usc-trojans",
-    "awayTeam": null,
-    "eventName": "Northwestern Wildcats at USC Trojans",
-    "dateTime": "2027-01-02T05:00:00+00:00",
-    "endTime": null,
-    "venue": "galen-center",
-    "venueSourceName": "Galen Center",
-    "venueConfidence": "likely",
-    "isNeutralSite": false,
-    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922073/northwestern-usc",
-    "price": "over_50",
-    "conference": null,
-    "league": null,
-    "isFeatured": false,
-    "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "ucla-bruins-20270102-womens-college-basketball",
@@ -2002,6 +2596,28 @@
     "lastUpdated": "2026-10-06T19:13:11.552+00:00"
   },
   {
+    "id": "usc-trojans-20270102-womens-college-basketball",
+    "sport": "basketball",
+    "level": "college",
+    "gender": "womens",
+    "homeTeam": "usc-trojans",
+    "awayTeam": null,
+    "eventName": "Northwestern Wildcats at USC Trojans",
+    "dateTime": "2027-01-02T05:00:00+00:00",
+    "endTime": null,
+    "venue": "galen-center",
+    "venueSourceName": "Galen Center",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.espn.com/womens-college-basketball/game/_/gameId/401922073/northwestern-usc",
+    "price": "over_50",
+    "conference": null,
+    "league": null,
+    "isFeatured": false,
+    "source": "espn-api:college",
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
+  },
+  {
     "id": "ucla-bruins-20270103-womens-college-basketball",
     "sport": "basketball",
     "level": "college",
@@ -2021,7 +2637,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "la-kings-20270103",
@@ -2043,7 +2659,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "la-chargers-20270103",
@@ -2065,7 +2681,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.128+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.628+00:00"
   },
   {
     "id": "la-kings-20270105",
@@ -2087,7 +2703,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "usc-trojans-20270105-womens-college-basketball",
@@ -2131,7 +2747,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
   },
   {
     "id": "la-kings-20270107",
@@ -2153,7 +2769,51 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-lakers-20270108",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Boston Celtics at Los Angeles Lakers",
+    "dateTime": "2027-01-08T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
+  },
+  {
+    "id": "la-lakers-20270109",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Detroit Pistons at Los Angeles Lakers",
+    "dateTime": "2027-01-09T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "la-kings-20270110",
@@ -2175,7 +2835,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-clippers-20270110",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Boston Celtics at LA Clippers",
+    "dateTime": "2027-01-10T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
   },
   {
     "id": "la-rams-20270110",
@@ -2197,7 +2879,7 @@
     "league": "NFL",
     "isFeatured": false,
     "source": "espn-api:pro",
-    "lastUpdated": "2026-10-16T17:43:36.113+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.619+00:00"
   },
   {
     "id": "la-kings-20270112",
@@ -2219,7 +2901,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-clippers-20270112",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Los Angeles Lakers at LA Clippers",
+    "dateTime": "2027-01-12T03:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
   },
   {
     "id": "ucla-bruins-20270112-womens-college-basketball",
@@ -2263,7 +2967,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "la-kings-20270114",
@@ -2285,7 +2989,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-lakers-20270115",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Orlando Magic at Los Angeles Lakers",
+    "dateTime": "2027-01-15T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "usc-trojans-20270115-womens-college-basketball",
@@ -2307,7 +3033,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
   },
   {
     "id": "ucla-bruins-20270115-womens-college-basketball",
@@ -2329,7 +3055,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
+  },
+  {
+    "id": "la-clippers-20270116",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Orlando Magic at LA Clippers",
+    "dateTime": "2027-01-16T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
+  },
+  {
+    "id": "la-lakers-20270118",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Milwaukee Bucks at Los Angeles Lakers",
+    "dateTime": "2027-01-18T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
   },
   {
     "id": "usc-trojans-20270118-womens-college-basketball",
@@ -2351,7 +3121,29 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
+  },
+  {
+    "id": "la-clippers-20270119",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Phoenix Suns at LA Clippers",
+    "dateTime": "2027-01-19T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.537+00:00"
   },
   {
     "id": "la-kings-20270120",
@@ -2373,7 +3165,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
   },
   {
     "id": "la-kings-20270122",
@@ -2395,7 +3187,95 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-lakers-20270123",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Sacramento Kings at Los Angeles Lakers",
+    "dateTime": "2027-01-23T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.647+00:00"
+  },
+  {
+    "id": "la-clippers-20270123",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Washington Wizards at LA Clippers",
+    "dateTime": "2027-01-23T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
+  },
+  {
+    "id": "la-lakers-20270124",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Washington Wizards at Los Angeles Lakers",
+    "dateTime": "2027-01-24T21:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
+  },
+  {
+    "id": "la-lakers-20270127",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at Los Angeles Lakers",
+    "dateTime": "2027-01-27T04:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "ucla-bruins-20270130-womens-college-basketball",
@@ -2417,7 +3297,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "usc-trojans-20270130-womens-college-basketball",
@@ -2439,7 +3319,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
   },
   {
     "id": "ucla-bruins-20270202-womens-college-basketball",
@@ -2505,7 +3385,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.949+00:00"
   },
   {
     "id": "ucla-bruins-20270203-womens-college-basketball",
@@ -2527,7 +3407,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
+  },
+  {
+    "id": "la-clippers-20270203",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "San Antonio Spurs at LA Clippers",
+    "dateTime": "2027-02-03T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
+  },
+  {
+    "id": "la-clippers-20270204",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Golden State Warriors at LA Clippers",
+    "dateTime": "2027-02-04T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
   },
   {
     "id": "ucla-bruins-20270207-womens-college-basketball",
@@ -2571,7 +3495,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
+  },
+  {
+    "id": "la-clippers-20270210",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Detroit Pistons at LA Clippers",
+    "dateTime": "2027-02-10T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
+  },
+  {
+    "id": "la-lakers-20270211",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "LA Clippers at Los Angeles Lakers",
+    "dateTime": "2027-02-11T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "la-kings-20270212",
@@ -2593,7 +3561,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.942+00:00"
+  },
+  {
+    "id": "la-lakers-20270213",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Denver Nuggets at Los Angeles Lakers",
+    "dateTime": "2027-02-13T03:30:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "la-kings-20270213",
@@ -2615,7 +3605,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
   },
   {
     "id": "la-kings-20270216",
@@ -2637,7 +3627,73 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-lakers-20270217",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Chicago Bulls at Los Angeles Lakers",
+    "dateTime": "2027-02-17T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
+  },
+  {
+    "id": "la-clippers-20270217",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Houston Rockets at LA Clippers",
+    "dateTime": "2027-02-17T04:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
+  },
+  {
+    "id": "la-clippers-20270218",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Chicago Bulls at LA Clippers",
+    "dateTime": "2027-02-18T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
   },
   {
     "id": "usc-trojans-20270218-womens-college-basketball",
@@ -2684,6 +3740,28 @@
     "lastUpdated": "2026-10-06T19:13:11.552+00:00"
   },
   {
+    "id": "la-lakers-20270219",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Houston Rockets at Los Angeles Lakers",
+    "dateTime": "2027-02-19T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
+  },
+  {
     "id": "usc-trojans-20270219-womens-college-basketball",
     "sport": "basketball",
     "level": "college",
@@ -2703,7 +3781,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.95+00:00"
   },
   {
     "id": "ucla-bruins-20270219-womens-college-basketball",
@@ -2725,7 +3803,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "la-kings-20270221",
@@ -2747,7 +3825,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
   },
   {
     "id": "ucla-bruins-20270221-womens-college-basketball",
@@ -2769,7 +3847,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.694+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.97+00:00"
   },
   {
     "id": "usc-trojans-20270221-womens-college-basketball",
@@ -2791,7 +3869,7 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.95+00:00"
   },
   {
     "id": "la-kings-20270225",
@@ -2813,7 +3891,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
   },
   {
     "id": "usc-trojans-20270225-womens-college-basketball",
@@ -2857,7 +3935,51 @@
     "league": null,
     "isFeatured": false,
     "source": "espn-api:college",
-    "lastUpdated": "2026-10-16T17:43:36.599+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.95+00:00"
+  },
+  {
+    "id": "la-clippers-20270226",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Utah Jazz at LA Clippers",
+    "dateTime": "2027-02-26T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
+  },
+  {
+    "id": "la-clippers-20270301",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Portland Trail Blazers at LA Clippers",
+    "dateTime": "2027-03-01T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.538+00:00"
   },
   {
     "id": "la-kings-20270302",
@@ -2879,7 +4001,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
   },
   {
     "id": "la-kings-20270304",
@@ -2901,7 +4023,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-clippers-20270305",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Brooklyn Nets at LA Clippers",
+    "dateTime": "2027-03-05T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
   },
   {
     "id": "la-kings-20270306",
@@ -2923,7 +4067,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-lakers-20270307",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Oklahoma City Thunder at Los Angeles Lakers",
+    "dateTime": "2027-03-07T01:30:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "la-kings-20270307",
@@ -2945,7 +4111,139 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-lakers-20270308",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Brooklyn Nets at Los Angeles Lakers",
+    "dateTime": "2027-03-08T03:30:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
+  },
+  {
+    "id": "la-clippers-20270309",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Houston Rockets at LA Clippers",
+    "dateTime": "2027-03-09T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-clippers-20270311",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "New York Knicks at LA Clippers",
+    "dateTime": "2027-03-11T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-lakers-20270312",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "New York Knicks at Los Angeles Lakers",
+    "dateTime": "2027-03-12T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
+  },
+  {
+    "id": "la-clippers-20270312",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Cleveland Cavaliers at LA Clippers",
+    "dateTime": "2027-03-12T03:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-lakers-20270313",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Cleveland Cavaliers at Los Angeles Lakers",
+    "dateTime": "2027-03-13T03:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "la-kings-20270314",
@@ -2967,7 +4265,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-lakers-20270315",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Golden State Warriors at Los Angeles Lakers",
+    "dateTime": "2027-03-15T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.648+00:00"
   },
   {
     "id": "la-kings-20270317",
@@ -2989,7 +4309,51 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.67+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-clippers-20270317",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Denver Nuggets at LA Clippers",
+    "dateTime": "2027-03-17T03:00:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-lakers-20270318",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Phoenix Suns at Los Angeles Lakers",
+    "dateTime": "2027-03-18T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
   },
   {
     "id": "la-kings-20270319",
@@ -3011,7 +4375,139 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.671+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-clippers-20270319",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Memphis Grizzlies at LA Clippers",
+    "dateTime": "2027-03-19T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-lakers-20270320",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Atlanta Hawks at Los Angeles Lakers",
+    "dateTime": "2027-03-20T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-clippers-20270321",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Atlanta Hawks at LA Clippers",
+    "dateTime": "2027-03-21T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.539+00:00"
+  },
+  {
+    "id": "la-lakers-20270322",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Dallas Mavericks at Los Angeles Lakers",
+    "dateTime": "2027-03-22T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-clippers-20270323",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Dallas Mavericks at LA Clippers",
+    "dateTime": "2027-03-23T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
+  },
+  {
+    "id": "la-clippers-20270325",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Milwaukee Bucks at LA Clippers",
+    "dateTime": "2027-03-25T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
   },
   {
     "id": "la-dodgers-20270325",
@@ -3033,7 +4529,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270327",
@@ -3055,7 +4551,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270328",
@@ -3077,7 +4573,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270329",
@@ -3099,7 +4595,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-kings-20270330",
@@ -3121,7 +4617,7 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.671+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
   },
   {
     "id": "la-dodgers-20270330",
@@ -3143,7 +4639,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270331",
@@ -3165,7 +4661,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.045+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-kings-20270401",
@@ -3187,7 +4683,29 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.671+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-clippers-20270403",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "San Antonio Spurs at LA Clippers",
+    "dateTime": "2027-04-03T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
   },
   {
     "id": "la-kings-20270404",
@@ -3209,7 +4727,117 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.671+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-clippers-20270404",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Phoenix Suns at LA Clippers",
+    "dateTime": "2027-04-04T20:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
+  },
+  {
+    "id": "la-lakers-20270405",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "San Antonio Spurs at Los Angeles Lakers",
+    "dateTime": "2027-04-05T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-lakers-20270407",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Dallas Mavericks at Los Angeles Lakers",
+    "dateTime": "2027-04-07T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-clippers-20270407",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Minnesota Timberwolves at LA Clippers",
+    "dateTime": "2027-04-07T02:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
+  },
+  {
+    "id": "la-lakers-20270408",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Minnesota Timberwolves at Los Angeles Lakers",
+    "dateTime": "2027-04-08T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
   },
   {
     "id": "la-kings-20270409",
@@ -3231,7 +4859,73 @@
     "league": "NHL",
     "isFeatured": false,
     "source": "pro-api:nhl",
-    "lastUpdated": "2026-10-16T17:43:36.671+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.943+00:00"
+  },
+  {
+    "id": "la-lakers-20270410",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Minnesota Timberwolves at Los Angeles Lakers",
+    "dateTime": "2027-04-10T02:00:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-lakers-20270412",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-lakers",
+    "awayTeam": null,
+    "eventName": "Phoenix Suns at Los Angeles Lakers",
+    "dateTime": "2027-04-12T00:30:00+00:00",
+    "endTime": null,
+    "venue": "crypto-arena",
+    "venueSourceName": "crypto.com Arena",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/lakers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.649+00:00"
+  },
+  {
+    "id": "la-clippers-20270412",
+    "sport": "basketball",
+    "level": "pro",
+    "gender": "mens",
+    "homeTeam": "la-clippers",
+    "awayTeam": null,
+    "eventName": "Sacramento Kings at LA Clippers",
+    "dateTime": "2027-04-12T00:30:00+00:00",
+    "endTime": null,
+    "venue": "intuit-dome",
+    "venueSourceName": "Intuit Dome",
+    "venueConfidence": "likely",
+    "isNeutralSite": false,
+    "ticketUrl": "https://www.nba.com/clippers/tickets",
+    "price": "over_50",
+    "conference": null,
+    "league": "NBA",
+    "isFeatured": false,
+    "source": "espn-api:pro",
+    "lastUpdated": "2026-10-17T16:42:12.54+00:00"
   },
   {
     "id": "la-dodgers-20270413",
@@ -3253,7 +4947,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270414",
@@ -3275,7 +4969,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270415",
@@ -3297,7 +4991,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270416",
@@ -3319,7 +5013,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270417",
@@ -3341,7 +5035,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270418",
@@ -3363,7 +5057,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.653+00:00"
   },
   {
     "id": "la-dodgers-20270426",
@@ -3385,7 +5079,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270427",
@@ -3407,7 +5101,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270428",
@@ -3429,7 +5123,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270430",
@@ -3451,7 +5145,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270501",
@@ -3473,7 +5167,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270502",
@@ -3495,7 +5189,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270506",
@@ -3517,7 +5211,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270507",
@@ -3539,7 +5233,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.046+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270508",
@@ -3561,7 +5255,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270509",
@@ -3583,7 +5277,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270517",
@@ -3605,7 +5299,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270518",
@@ -3627,7 +5321,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270519",
@@ -3649,7 +5343,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270521",
@@ -3671,7 +5365,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270522",
@@ -3693,7 +5387,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270523",
@@ -3715,7 +5409,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.654+00:00"
   },
   {
     "id": "la-dodgers-20270524",
@@ -3737,7 +5431,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270525",
@@ -3759,7 +5453,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270526",
@@ -3781,7 +5475,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270607",
@@ -3803,7 +5497,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270608",
@@ -3825,7 +5519,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270609",
@@ -3847,7 +5541,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270611",
@@ -3869,7 +5563,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270612",
@@ -3891,7 +5585,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270613",
@@ -3913,7 +5607,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270618",
@@ -3935,7 +5629,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270619",
@@ -3957,7 +5651,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270620",
@@ -3979,7 +5673,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270628",
@@ -4001,7 +5695,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.047+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270629",
@@ -4023,7 +5717,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270630",
@@ -4045,7 +5739,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270701",
@@ -4067,7 +5761,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270702",
@@ -4089,7 +5783,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.655+00:00"
   },
   {
     "id": "la-dodgers-20270703",
@@ -4111,7 +5805,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270704",
@@ -4133,7 +5827,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270716",
@@ -4155,7 +5849,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270717",
@@ -4177,7 +5871,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270718",
@@ -4199,7 +5893,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270719",
@@ -4221,7 +5915,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270720",
@@ -4243,7 +5937,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270721",
@@ -4265,7 +5959,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270730",
@@ -4287,7 +5981,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270731",
@@ -4309,7 +6003,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270801",
@@ -4331,7 +6025,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270803",
@@ -4353,7 +6047,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270804",
@@ -4375,7 +6069,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270805",
@@ -4397,7 +6091,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270813",
@@ -4419,7 +6113,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270814",
@@ -4441,7 +6135,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270815",
@@ -4463,7 +6157,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.656+00:00"
   },
   {
     "id": "la-dodgers-20270816",
@@ -4485,7 +6179,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270817",
@@ -4507,7 +6201,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.048+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270818",
@@ -4529,7 +6223,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270827",
@@ -4551,7 +6245,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270828",
@@ -4573,7 +6267,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270829",
@@ -4595,7 +6289,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270830",
@@ -4617,7 +6311,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270831",
@@ -4639,7 +6333,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270901",
@@ -4661,7 +6355,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270910",
@@ -4683,7 +6377,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270911",
@@ -4705,7 +6399,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270912",
@@ -4727,7 +6421,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270913",
@@ -4749,7 +6443,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270914",
@@ -4771,7 +6465,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270915",
@@ -4793,7 +6487,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270916",
@@ -4815,7 +6509,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270917",
@@ -4837,7 +6531,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.657+00:00"
   },
   {
     "id": "la-dodgers-20270918",
@@ -4859,7 +6553,7 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.658+00:00"
   },
   {
     "id": "la-dodgers-20270919",
@@ -4881,6 +6575,6 @@
     "league": "MLB",
     "isFeatured": false,
     "source": "pro-api:mlb",
-    "lastUpdated": "2026-10-16T17:43:36.049+00:00"
+    "lastUpdated": "2026-10-17T16:42:12.658+00:00"
   }
 ]
