@@ -6,7 +6,7 @@
     "description": "LBSU takes on Cal State Fullerton Titans in women's volleyball at Walter Pyramid. Competitive, fast-paced, and affordable.",
     "eventId": "long-beach-state-49ers-20261024-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261022-women-s-volleyball-cerritos",
@@ -15,7 +15,7 @@
     "description": "Want competitive volleyball without spending a dime? Rio Hondo takes on Cerritos at Rio Hondo College Athletic Complex. Free admission — just show up.",
     "eventId": "rio-hondo-roadrunners-20261022-women-s-volleyball-cerritos",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   },
   {
     "id": "gem-rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
@@ -24,7 +24,7 @@
     "description": "Want competitive water polo without spending a dime? Rio Hondo takes on East Los Angeles at Rio Hondo College Athletic Complex. Free admission — just show up.",
     "eventId": "rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   },
   {
     "id": "gotw-la-clippers-20261029",
@@ -33,16 +33,16 @@
     "description": "One of the best rivalries in basketball is back. The Los Angeles Lakers visit Intuit Dome with bragging rights on the line.",
     "eventId": "la-clippers-20261029",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-lakers-20261017",
+    "id": "gotw-la-lakers-20261024",
     "type": "game-of-week",
-    "title": "Western Conference Clash: Lakers vs. Denver Nuggets",
-    "description": "A playoff-caliber matchup with real stakes. The Denver Nuggets come to Crypto.com Arena for a Saturday showdown. This is appointment viewing.",
-    "eventId": "la-lakers-20261017",
+    "title": "Battle of LA: Lakers vs. LA Clippers",
+    "description": "Battle of LA — need we say more? Crypto.com Arena will be rocking when the LA Clippers roll in. Don't miss this one.",
+    "eventId": "la-lakers-20261024",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261018",
@@ -51,6 +51,6 @@
     "description": "The Arizona Cardinals come to town for a Sunday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
     "eventId": "la-rams-20261018",
     "imageUrl": null,
-    "publishDate": "2026-10-17T00:00:00+00:00"
+    "publishDate": "2026-10-18T00:00:00+00:00"
   }
 ]
