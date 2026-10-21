@@ -64,15 +64,18 @@ jobs:
             --days "${{ github.event.inputs.days || '365' }}" \
             ${{ (github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
 
+      # The fetch step exits non-zero when the health check fails, but it has
+      # already written to Supabase, so still commit the exported snapshot.
       - name: Check for changes
         id: changes
+        if: ${{ !cancelled() }}
         run: |
           if [[ -n $(git status --porcelain src/data/events.json src/data/featured.json src/data/teams.json src/data/venues.json scripts/sync-log.json) ]]; then
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push updated data
-        if: steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true'
+        if: ${{ !cancelled() && steps.changes.outputs.changed == 'true' && github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name  "scsc-bot"
           git config user.email "bot@scsc.com"
@@ -81,5 +84,5 @@ jobs:
           git push
 
       - name: No changes detected
-        if: steps.changes.outputs.changed != 'true'
+        if: ${{ !cancelled() && steps.changes.outputs.changed != 'true' }}
         run: echo "No schedule changes found — events.json unchanged."

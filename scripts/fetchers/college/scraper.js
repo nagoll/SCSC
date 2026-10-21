@@ -1,31 +1,26 @@
 /**
- * scraper.js — Shared college composite schedule scraper
+ * scraper.js — college schedules from the schools' own SIDEARM sites
+ * (primary college source; ESPN fills in what these miss).
  *
- * Most college athletic sites run on Sidearm Sports or PrestoSports platforms.
- * Both render composite schedule pages with consistent HTML/JSON structures.
- * This module handles both, with a fallback generic HTML parser.
- *
- * Usage:
- *   const events = await scrapeComposite(schoolConfig, startDate, endDate);
+ * The composite pages render client-side from SIDEARM's calendar service, so
+ * we read that JSON directly instead of loading the page in a browser. Sites
+ * on SIDEARM's newer front end serve that service from an "admin." host, and
+ * every SIDEARM site also publishes an all-sports iCal feed, used last.
+ * No proxy: plain requests from GitHub Actions reach these sites.
  */
 
-const cheerio = require('cheerio');
-const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
+const { fromZonedTime } = require('date-fns-tz');
+const { normalizeEvent, normalizeSport } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
+const { eventIdSuffix } = require('../juco/scraper');
 
-/**
- * School configs — composite schedule URLs and metadata.
- * compositeUrl: the full URL to the school's composite schedule page
- * platform: 'sidearm' | 'presto' | 'generic'
- * scscTeamPrefix: maps to team IDs like 'usc-trojans', 'ucla-bruins', etc.
- */
 const COLLEGE_SCHOOLS = [
   {
     id: 'usc',
+    homeCity: 'Los Angeles',
     name: 'USC Trojans',
     scscTeamId: 'usc-trojans',
-    compositeUrl: 'https://usctrojans.com/composite-schedule',
-    espnTeamId: '30',
+    site: 'https://usctrojans.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'galen-center',
@@ -34,11 +29,11 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'ucla',
+    homeCity: 'Los Angeles',
     name: 'UCLA Bruins',
     scscTeamId: 'ucla-bruins',
-    compositeUrl: 'https://uclabruins.com/composite-schedule',
-    espnTeamId: '26',
-    platform: 'sidearm',
+    site: 'https://uclabruins.com',
+    platform: 'wmt', // not SIDEARM; ESPN covers UCLA for now
     level: 'college',
     defaultVenueId: 'pauley-pavilion',
     ticketUrl: 'https://uclabruins.com/tickets',
@@ -46,10 +41,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'pepperdine',
+    homeCity: 'Malibu',
     name: 'Pepperdine Waves',
     scscTeamId: 'pepperdine-waves',
-    compositeUrl: 'https://pepperdinewaves.com/composite-schedule',
-    espnTeamId: null, // Pepperdine not tracked via ESPN college API
+    site: 'https://pepperdinewaves.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'firestone-fieldhouse',
@@ -58,10 +53,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'lmu',
+    homeCity: 'Los Angeles',
     name: 'LMU Lions',
     scscTeamId: 'lmu-lions',
-    compositeUrl: 'https://lmulions.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://lmulions.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'gersten-pavilion',
@@ -70,10 +65,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'csun',
+    homeCity: 'Northridge',
     name: 'CSUN Matadors',
     scscTeamId: 'csun-matadors',
-    compositeUrl: 'https://gomatadors.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://gomatadors.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'matadome',
@@ -82,10 +77,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'lbsu',
+    homeCity: 'Long Beach',
     name: 'Long Beach State 49ers',
     scscTeamId: 'long-beach-state-49ers',
-    compositeUrl: 'https://longbeachstate.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://longbeachstate.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'walter-pyramid',
@@ -94,10 +89,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'csuf',
+    homeCity: 'Fullerton',
     name: 'Cal State Fullerton Titans',
     scscTeamId: 'csuf-titans',
-    compositeUrl: 'https://fullertontitans.com/composite-schedule',
-    espnTeamId: '2239',
+    site: 'https://fullertontitans.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csuf-athletics',
@@ -106,11 +101,11 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'cal-poly-pomona',
+    homeCity: 'Pomona',
     name: 'Cal Poly Pomona Broncos',
     scscTeamId: 'cal-poly-pomona-broncos',
-    compositeUrl: 'https://athletics.cpp.edu/composite-schedule',
-    espnTeamId: null,
-    platform: 'generic',
+    site: 'https://broncoathletics.com',
+    platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'cal-poly-pomona-kellogg-gym',
     ticketUrl: null,
@@ -118,22 +113,22 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'cal-state-la',
+    homeCity: 'Los Angeles',
     name: 'Cal State LA Golden Eagles',
     scscTeamId: 'calstate-la-eagles',
-    compositeUrl: 'https://calstatelaeagles.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://lagoldeneagles.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'calstate-la-athletics',
-    ticketUrl: 'https://calstatelaeagles.com/tickets',
+    ticketUrl: 'https://lagoldeneagles.com/tickets',
     price: 'free',
   },
   {
     id: 'csudh',
+    homeCity: 'Carson',
     name: 'Cal State Dominguez Hills Toros',
     scscTeamId: 'csudh-toros',
-    compositeUrl: 'https://csudhtoros.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://gotoros.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'csudh-athletics',
@@ -142,10 +137,10 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'pomona-pitzer',
+    homeCity: 'Claremont',
     name: 'Pomona-Pitzer Sagehens',
     scscTeamId: 'pomona-pitzer-sagehens',
-    compositeUrl: 'https://sagehens.com/composite-schedule',
-    espnTeamId: null,
+    site: 'https://sagehens.com',
     platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'pomona-pitzer-athletics',
@@ -154,11 +149,11 @@ const COLLEGE_SCHOOLS = [
   },
   {
     id: 'occidental',
+    homeCity: 'Los Angeles',
     name: 'Occidental College Tigers',
     scscTeamId: 'occidental-tigers',
-    compositeUrl: 'https://www.occidentaltigers.com/composite-schedule',
-    espnTeamId: null,
-    platform: 'presto',
+    site: 'https://oxyathletics.com',
+    platform: 'sidearm',
     level: 'college',
     defaultVenueId: 'occidental-athletics',
     ticketUrl: null,
@@ -166,311 +161,190 @@ const COLLEGE_SCHOOLS = [
   },
 ];
 
-/**
- * Parse a Sidearm Sports composite schedule page.
- * Sidearm renders schedule data in a <script id="__NEXT_DATA__"> JSON block
- * or in structured <li class="sidearm-schedule-game"> elements.
- *
- * We try the JSON approach first (more reliable), fall back to HTML parsing.
- */
-async function parseSidearm(html, school, startDate, endDate) {
-  const events = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-  const $ = cheerio.load(html);
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
+const TZ = 'America/Los_Angeles';
 
-  // Attempt 1: Extract JSON from __NEXT_DATA__ (newer Sidearm sites)
-  const nextDataText = $('script#__NEXT_DATA__').html();
-  if (nextDataText) {
-    try {
-      const json = JSON.parse(nextDataText);
-      // Navigate the Next.js page props structure to find schedule items
-      const props = json?.props?.pageProps;
-      const scheduleItems = props?.schedule || props?.events || props?.games || [];
-      for (const item of scheduleItems) {
-        const ev = parseSidearmItem(item, school, start, end);
-        if (ev) events.push(ev);
-      }
-      if (events.length > 0) return events;
-    } catch {
-      // fall through to HTML parsing
-    }
+async function get(url) {
+  const res = await fetch(url, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(30_000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
+  return res.text();
+}
+
+function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl }) {
+  // Poll rankings ("#15 Penn State") stay in the name, which every refresh
+  // rewrites, but not in the ID: a new ranking must not create a new event.
+  const unranked = opponent.replace(/^(#|No\.\s*)\d+\s+/i, '');
+  const verification = verifyVenue({ scrapedVenueName: venueName, defaultVenueId: school.defaultVenueId });
+  if (verification.excluded) {
+    console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+    return null;
   }
-
-  // Attempt 2: Parse HTML <li> game elements (classic Sidearm)
-  $('li.sidearm-schedule-game').each((_, el) => {
-    const ev = parseSidearmBlock($(el), school, start, end);
-    if (ev) events.push(ev);
+  return normalizeEvent({
+    homeTeamId: school.scscTeamId,
+    idSuffix: eventIdSuffix(sportRaw, unranked),
+    awayTeamId: null,
+    sport: sportRaw,
+    level: school.level,
+    dateTime,
+    endTime: null,
+    venueId: verification.venueId,
+    venueSourceName: verification.venueSourceName,
+    venueConfidence: verification.venueConfidence,
+    isNeutralSite: false,
+    eventName: `${opponent} at ${school.name}`,
+    ticketUrl: ticketUrl || school.ticketUrl || null,
+    price: school.price,
+    conference: null,
+    league: null,
+    source: `university-scraper:${school.id}`,
   });
-
-  return events;
-}
-
-function parseSidearmItem(item, school, start, end) {
-  try {
-    const rawDate = item.date || item.gameDate || item.startDate;
-    if (!rawDate) return null;
-    const gameDate = new Date(rawDate);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
-
-    const sportRaw = item.sport?.name || item.sportName || item.sport || 'other';
-    const opponent = item.opponent?.name || item.opponentName || item.awayTeam || 'Opponent';
-    const isHome = item.homeAway === 'home' || item.location === 'home' || !item.isAway;
-    if (!isHome) return null;
-
-    // Extract the actual venue name from source data (don't just default)
-    const scrapedVenueName = item.venue?.name || item.venueName || item.location?.name || null;
-    const isNeutralSiteFlag = item.neutralSite === true || item.isNeutral === true;
-
-    // Extract location details if available
-    const venueCity = item.venue?.city || item.location?.city || null;
-    const venueState = item.venue?.state || item.location?.state || null;
-    const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
-
-    // Run venue verification
-    const verification = verifyVenue({
-      scrapedVenueName: fullVenueName || scrapedVenueName,
-      defaultVenueId: school.defaultVenueId,
-      isNeutralSiteFlag,
-    });
-
-    // Skip events that are confirmed out of LA County
-    if (verification.excluded) {
-      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-      return null;
-    }
-
-    return normalizeEvent({
-      homeTeamId: school.scscTeamId,
-      awayTeamId: null,
-      sport: sportRaw,
-      level: school.level,
-      gender: inferGender(sportRaw, item.gender),
-      dateTime: gameDate.toISOString(),
-      endTime: null,
-      venueId: verification.venueId,
-      venueSourceName: verification.venueSourceName,
-      venueConfidence: verification.venueConfidence,
-      isNeutralSite: verification.isNeutralSite,
-      eventName: `${opponent} at ${school.name}`,
-      ticketUrl: item.ticketUrl || school.ticketUrl || null,
-      price: school.price,
-      conference: item.conference || null,
-      league: null,
-      source: `university-scraper:${school.id}`,
-    });
-  } catch {
-    return null;
-  }
-}
-
-function parseSidearmBlock($block, school, start, end) {
-  try {
-    // Extract date from data attributes or datetime elements
-    const rawDate = $block.attr('data-date') || $block.find('time[datetime]').first().attr('datetime');
-    if (!rawDate) return null;
-    const gameDate = new Date(rawDate);
-    if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
-
-    // Check home/away
-    const isAway =
-      $block.hasClass('sidearm-schedule-game-away') || $block.attr('data-home-away') === 'away';
-    if (isAway) return null;
-
-    // Extract opponent
-    const opponentText = $block.find('[class*="opponent"]').first().text().trim();
-    const opponent = opponentText || 'Opponent';
-
-    // Extract sport
-    const sportRaw = $block.attr('data-sport') || 'other';
-
-    // Try to extract venue from HTML block
-    const scrapedVenueName =
-      $block.find('[class*="venue"], [class*="location"], [class*="facility"]').first().text().trim() || null;
-
-    // Run venue verification
-    const verification = verifyVenue({
-      scrapedVenueName,
-      defaultVenueId: school.defaultVenueId,
-    });
-
-    if (verification.excluded) {
-      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-      return null;
-    }
-
-    return normalizeEvent({
-      homeTeamId: school.scscTeamId,
-      awayTeamId: null,
-      sport: sportRaw,
-      level: school.level,
-      gender: inferGender(sportRaw, null),
-      dateTime: gameDate.toISOString(),
-      endTime: null,
-      venueId: verification.venueId,
-      venueSourceName: verification.venueSourceName,
-      venueConfidence: verification.venueConfidence,
-      isNeutralSite: verification.isNeutralSite,
-      eventName: `${opponent} at ${school.name}`,
-      ticketUrl: school.ticketUrl || null,
-      price: school.price,
-      conference: null,
-      league: null,
-      source: `university-scraper:${school.id}`,
-    });
-  } catch {
-    return null;
-  }
 }
 
 /**
- * Parse a PrestoSports composite schedule page.
- * PrestoSports embeds schedule data as JSON in a <script type="application/ld+json"> block
- * or in a structured table.
+ * One month of SIDEARM's responsive-calendar.ashx: a list of days, each with
+ * its events. Keeps home games ("H") that have a clock time; "All Day" and
+ * TBA entries are mostly multi-day tournaments.
  */
-async function parsePresto(html, school, startDate, endDate) {
+function parseSidearmCalendarJson(days, school, start, end) {
   const events = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-  const $ = cheerio.load(html);
+  for (const day of days) {
+    for (const g of day.events || []) {
+      if (g.location_indicator !== 'H' || g.noplay_text || !/\d/.test(g.time || '')) continue;
+      const dateTime = fromZonedTime(g.date, TZ);
+      if (isNaN(dateTime) || dateTime < start || dateTime > end) continue;
+      const opponent = [g.opponent?.prefix, g.opponent?.title].filter(Boolean).join(' ') || 'Opponent';
+      const ev = collegeEvent(school, {
+        sportRaw: g.sport?.title || 'other',
+        opponent,
+        dateTime: dateTime.toISOString(),
+        venueName: g.facility?.title || g.location || null,
+        ticketUrl: g.media?.tickets?.url,
+      });
+      if (ev) events.push({ ...ev, sourceGameId: g.id });
+    }
+  }
+  return events;
+}
 
-  // Try JSON-LD structured data
-  const ldScripts = $('script[type="application/ld+json"]')
-    .map((_, el) => $(el).html())
-    .get();
-  for (const json of ldScripts) {
+async function fetchSidearmCalendarJson(host, school, start, end) {
+  const byGame = new Map();
+  const month = new Date(start.getFullYear(), start.getMonth(), 1);
+  for (; month <= end; month.setMonth(month.getMonth() + 1)) {
+    const date = `${month.getMonth() + 1}/1/${month.getFullYear()} 12:00:00 AM`;
+    const url = `${host}/services/responsive-calendar.ashx?type=month&sport=0&location=all&date=${encodeURIComponent(date)}`;
+    const days = JSON.parse(await get(url));
+    if (!Array.isArray(days)) throw new Error(`unexpected calendar response — ${url}`);
+    for (const ev of parseSidearmCalendarJson(days, school, start, end)) byGame.set(ev.sourceGameId, ev);
+  }
+  return [...byGame.values()].map(({ sourceGameId, ...ev }) => ev);
+}
+
+function unescapeIcs(v) {
+  return v.replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1');
+}
+
+/**
+ * SIDEARM's all-sports iCal feed. It has no home/away flag, so a home game
+ * is a "vs" game whose LOCATION names the school's home city. SUMMARY looks
+ * like "[W] Cal Poly Pomona Women's Soccer vs Cal State LA - CCAA Opener"
+ * (result prefix and school name optional).
+ */
+function parseSidearmIcs(text, school, start, end) {
+  const events = [];
+  const lines = text.replace(/\r?\n[ \t]/g, '').split(/\r?\n/);
+  let cur = null;
+  for (const line of lines) {
+    if (line === 'BEGIN:VEVENT') cur = {};
+    else if (line === 'END:VEVENT' && cur) {
+      const ev = icsEvent(cur, school, start, end);
+      if (ev) events.push(ev);
+      cur = null;
+    } else if (cur) {
+      const m = line.match(/^([A-Z-]+)(;[^:]*)?:(.*)$/);
+      if (m) cur[m[1]] = { params: m[2] || '', value: unescapeIcs(m[3]) };
+    }
+  }
+  return events;
+}
+
+function icsEvent(v, school, start, end) {
+  const dt = v.DTSTART;
+  if (!dt || /VALUE=DATE(?!-)/.test(dt.params)) return null; // all-day
+  const m = dt.value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/);
+  if (!m) return null;
+  const iso = `${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:${m[6]}`;
+  const dateTime = m[7] ? new Date(`${iso}Z`) : fromZonedTime(iso, TZ);
+  if (isNaN(dateTime) || dateTime < start || dateTime > end) return null;
+
+  const summary = (v.SUMMARY?.value || '').replace(/^\[[^\]]*\]\s*/, '');
+  // Away games read "... at Opponent"; school names can contain " at " too.
+  const parts = summary.match(/^(.*?)\s+vs\.?\s+(.*)$/i);
+  if (!parts) return null;
+  const location = v.LOCATION?.value || '';
+  if (!school.homeCity || !location.toLowerCase().includes(school.homeCity.toLowerCase())) return null;
+
+  // The left side is "[school name] Sport"; take the longest tail that is a sport.
+  const words = parts[1].split(/\s+/);
+  let sportRaw = 'other';
+  for (let i = 0; i < words.length; i++) {
+    const cand = words.slice(i).join(' ');
+    if (normalizeSport(cand) !== 'other') { sportRaw = cand; break; }
+  }
+  const opponent = parts[2].split(/\s+-\s+/)[0].trim() || 'Opponent';
+  const ticket = (v.DESCRIPTION?.value || '').match(/Tickets:\s*(\S+)/);
+  return collegeEvent(school, {
+    sportRaw,
+    opponent,
+    dateTime: dateTime.toISOString(),
+    venueName: location || null,
+    ticketUrl: ticket?.[1],
+  });
+}
+
+async function scrapeCollege(school, start, end) {
+  const hosts = [school.site, school.site.replace('://', '://admin.')];
+  for (const host of hosts) {
     try {
-      const data = JSON.parse(json);
-      const items = Array.isArray(data) ? data : [data];
-      for (const item of items) {
-        if (item['@type'] !== 'SportsEvent') continue;
-        const gameDate = new Date(item.startDate);
-        if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
-
-        const awayOrg = item.awayTeam?.name || item.competitor?.name || 'Opponent';
-        const sportRaw = item.sport || 'other';
-
-        // Extract venue details from structured data
-        const scrapedVenueName = item.location?.name || null;
-        const venueCity = item.location?.address?.addressLocality || null;
-        const venueState = item.location?.address?.addressRegion || null;
-        const fullVenueName = [scrapedVenueName, venueCity, venueState].filter(Boolean).join(', ');
-
-        const verification = verifyVenue({
-          scrapedVenueName: fullVenueName || scrapedVenueName,
-          defaultVenueId: school.defaultVenueId,
-        });
-
-        if (verification.excluded) {
-          console.log(`[${school.id}] Excluding event: ${awayOrg} — ${verification.excludeReason}`);
-          continue;
-        }
-
-        events.push(normalizeEvent({
-          homeTeamId: school.scscTeamId,
-          awayTeamId: null,
-          sport: sportRaw,
-          level: school.level,
-          gender: inferGender(sportRaw, null),
-          dateTime: gameDate.toISOString(),
-          endTime: item.endDate ? new Date(item.endDate).toISOString() : null,
-          venueId: verification.venueId,
-          venueSourceName: verification.venueSourceName,
-          venueConfidence: verification.venueConfidence,
-          isNeutralSite: verification.isNeutralSite,
-          eventName: `${awayOrg} at ${school.name}`,
-          ticketUrl: item.url || school.ticketUrl || null,
-          price: school.price,
-          conference: null,
-          league: null,
-          source: `university-scraper:${school.id}`,
-        }));
-      }
-    } catch {
-      continue;
+      const events = await fetchSidearmCalendarJson(host, school, start, end);
+      console.log(`[${school.id}] calendar JSON from ${host}`);
+      return events;
+    } catch (err) {
+      console.warn(`[${school.id}] calendar JSON failed: ${err.message}`);
     }
   }
-
-  return events;
+  try {
+    const events = parseSidearmIcs(await get(`${school.site}/calendar.ashx/calendar.ics?sport_id=0`), school, start, end);
+    console.log(`[${school.id}] iCal feed`);
+    return events;
+  } catch (err) {
+    console.warn(`[${school.id}] iCal feed failed: ${err.message}`);
+    return [];
+  }
 }
 
-/**
- * Generic HTML parser — fallback for schools not on Sidearm/PrestoSports.
- * Looks for common schedule table patterns.
- */
-async function parseGeneric(html, school, startDate, endDate) {
-  const events = [];
+async function scrapeAllColleges(startDate, endDate) {
   const start = new Date(startDate);
   const end = new Date(endDate);
+  const schools = COLLEGE_SCHOOLS.filter(s => s.platform === 'sidearm');
+  const results = await Promise.all(schools.map(s => scrapeCollege(s, start, end)));
+  results.forEach((events, i) => console.log(`[${schools[i].id}] fetched ${events.length} events`));
+  return results.flat();
+}
 
-  // Generic platform is not yet implemented — no events will be produced.
-  // Schools using platform: 'generic' require a custom parser.
-  console.warn(`[${school.id}] platform 'generic' has no parser — 0 events returned. Add a custom parser for ${school.compositeUrl}`);
-
+function combineCollegeSources(composite, espn) {
+  // ESPN and the school's own site give the same game different IDs. Match on
+  // team + sport + gender + day: the school's data wins, but it takes over the
+  // ESPN row's ID so that row is updated in place instead of duplicated.
+  const key = e => `${e.homeTeam}|${e.sport}|${e.gender}|${e.dateTime.slice(0, 10)}`;
+  const espnByKey = new Map(espn.map(e => [key(e), e]));
+  const events = composite.map(e => {
+    const match = espnByKey.get(key(e));
+    if (!match) return e;
+    espnByKey.delete(key(e));
+    return { ...e, id: match.id, ticketUrl: e.ticketUrl || match.ticketUrl };
+  });
+  events.push(...espnByKey.values());
   return events;
 }
 
-function slugify(str) {
-  if (!str) return '';
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-/**
- * Fetch and parse a school's composite schedule page.
- */
-async function scrapeComposite(school, startDate, endDate) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 15_000);
-  try {
-    const res = await fetch(school.compositeUrl, {
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; SCSC-Bot/1.0; +https://github.com/SCSC)',
-        'Accept': 'text/html,application/xhtml+xml',
-      },
-    });
-
-    if (!res.ok) {
-      console.warn(`[${school.id}] HTTP ${res.status} for ${school.compositeUrl}`);
-      return [];
-    }
-
-    const html = await res.text();
-
-    switch (school.platform) {
-      case 'sidearm': return parseSidearm(html, school, startDate, endDate);
-      case 'presto':  return parsePresto(html, school, startDate, endDate);
-      default:        return parseGeneric(html, school, startDate, endDate);
-    }
-  } catch (err) {
-    const msg = err.name === 'AbortError' ? 'timed out after 15s' : err.message;
-    console.warn(`[${school.id}] Scrape failed: ${msg}`);
-    return [];
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-/**
- * Scrape all college schools.
- */
-async function scrapeAllColleges(startDate, endDate) {
-  const results = await Promise.allSettled(
-    COLLEGE_SCHOOLS.map(school => scrapeComposite(school, startDate, endDate))
-  );
-
-  const events = [];
-  for (let i = 0; i < results.length; i++) {
-    const result = results[i];
-    const school = COLLEGE_SCHOOLS[i];
-    if (result.status === 'fulfilled') {
-      console.log(`[${school.id}] fetched ${result.value.length} events`);
-      events.push(...result.value);
-    } else {
-      console.warn(`[${school.id}] failed: ${result.reason?.message}`);
-    }
-  }
-  return events;
-}
-
-module.exports = { scrapeAllColleges, scrapeComposite, COLLEGE_SCHOOLS };
+module.exports = { scrapeAllColleges, combineCollegeSources, parseSidearmCalendarJson, parseSidearmIcs, COLLEGE_SCHOOLS };
