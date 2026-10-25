@@ -16,27 +16,51 @@ const cheerio = require('cheerio');
 const OUT_PATH = path.join(__dirname, '../src/data/rankings.json');
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36';
 
-// CCAA schools are Division II, SCIAC schools Division III, the rest Division I.
-const DIVISION_BY_CONFERENCE = { CCAA: 'd2', SCIAC: 'd3' };
-
-// NCAA.com sport slug → our sport + gender. Football's top division is "fbs".
-const SPORTS = [
-  { slug: 'football', sport: 'football', gender: 'mens', divisions: ['fbs', 'fcs', 'd2', 'd3'] },
-  { slug: 'basketball-men', sport: 'basketball', gender: 'mens' },
-  { slug: 'basketball-women', sport: 'basketball', gender: 'womens' },
-  { slug: 'volleyball-women', sport: 'volleyball', gender: 'womens' },
-  { slug: 'volleyball-men', sport: 'volleyball', gender: 'mens', divisions: ['nc', 'd3'] },
-  { slug: 'soccer-men', sport: 'soccer', gender: 'mens' },
-  { slug: 'soccer-women', sport: 'soccer', gender: 'womens' },
-  { slug: 'baseball', sport: 'baseball', gender: 'mens' },
-  { slug: 'softball', sport: 'softball', gender: 'womens' },
-  { slug: 'waterpolo-men', sport: 'water-polo', gender: 'mens', divisions: ['nc'] },
-  { slug: 'waterpolo-women', sport: 'water-polo', gender: 'womens', divisions: ['nc'] },
+// One national poll per sport and division, by its NCAA.com path. Human polls
+// where NCAA.com carries one; otherwise the NCAA's own RPI, which is what the
+// selection committees use. Regional rankings are left out on purpose: their
+// numbers restart in every region, so "#3" there doesn't mean 3rd nationally.
+// Sport/division pairs NCAA.com has no national ranking for are simply absent.
+const POLLS = [
+  { path: 'football/fbs/associated-press', sport: 'football', gender: 'mens', division: 'd1' },
+  { path: 'football/d3/afca-coaches', sport: 'football', gender: 'mens', division: 'd3' },
+  { path: 'basketball-men/d1/di-mens-basketball-associated-press', sport: 'basketball', gender: 'mens', division: 'd1' },
+  { path: 'basketball-men/d2/nabc-coaches', sport: 'basketball', gender: 'mens', division: 'd2' },
+  { path: 'basketball-women/d1/di-womens-basketball-associated-press', sport: 'basketball', gender: 'womens', division: 'd1' },
+  { path: 'volleyball-women/d1/avca-rankings', sport: 'volleyball', gender: 'womens', division: 'd1' },
+  { path: 'volleyball-men/nc/nc-mens-volleyball-rpi', sport: 'volleyball', gender: 'mens', division: 'all' },
+  { path: 'soccer-men/d1/united-soccer-coaches', sport: 'soccer', gender: 'mens', division: 'd1' },
+  { path: 'soccer-women/d1/iwsoc-coaches-poll', sport: 'soccer', gender: 'womens', division: 'd1' },
+  { path: 'baseball/d1/d1baseballcom-top-25', sport: 'baseball', gender: 'mens', division: 'd1' },
+  { path: 'softball/d1/espncom/usa-softball', sport: 'softball', gender: 'womens', division: 'd1' },
+  { path: 'waterpolo-men/nc/rpi', sport: 'water-polo', gender: 'mens', division: 'all' },
+  { path: 'waterpolo-women/nc/rpi', sport: 'water-polo', gender: 'womens', division: 'all' },
 ];
+
+// Only a top 25 reads as "ranked"; RPI lists go much deeper.
+const MAX_RANK = 25;
+// Polls stop for the off-season; an old one would show last season's rank.
+const MAX_AGE_DAYS = 21;
+
+// How NCAA.com writes our schools' names, when it isn't the team's own name.
+const NAME_ALIASES = {
+  'usc-trojans': ['USC', 'Southern California', 'Southern Cal'],
+  'ucla-bruins': ['UCLA'],
+  'lmu-lions': ['LMU', 'LMU (CA)', 'Loyola Marymount'],
+  'pepperdine-waves': ['Pepperdine'],
+  'long-beach-state-49ers': ['Long Beach St.', 'Long Beach State', 'LBSU'],
+  'csun-matadors': ['CSUN', 'Cal St. Northridge', 'Cal State Northridge', 'CSU Northridge'],
+  'csuf-titans': ['Cal St. Fullerton', 'Cal State Fullerton', 'CSUF', 'CSU Fullerton'],
+  'cal-poly-pomona-broncos': ['Cal Poly Pomona', 'Cal Poly-Pomona'],
+  'calstate-la-eagles': ['Cal State LA', 'Cal St. LA', 'Cal State Los Angeles', 'Cal St. Los Angeles'],
+  'csudh-toros': ['CSU Dominguez Hills', 'Cal St. Dominguez Hills', 'Cal State Dominguez Hills', 'CSUDH'],
+  'pomona-pitzer-sagehens': ['Pomona-Pitzer', 'Pomona Pitzer'],
+  'occidental-tigers': ['Occidental'],
+};
 
 /** "Southern California (12)" → "southern california" (drops first-place votes). */
 function normalizeName(name) {
-  return (name || '').replace(/\(\d+\)/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  return (name || '').replace(/\(\d+\)$/, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
 /**
@@ -58,10 +82,18 @@ function parseNcaaRankings(html) {
   return { title, dateText, teams };
 }
 
-/** Which of our teams a poll row names, if any (school name or aliases). */
-function matchTeam(school, teams) {
+/** Which of our teams a poll row names, if any. */
+function matchTeam(school, teamIds) {
   const norm = normalizeName(school);
-  return teams.find(t => (t.rankingNames || [t.school, t.shortName, t.name]).some(n => normalizeName(n) === norm)) || null;
+  return teamIds.find(id => (NAME_ALIASES[id] || []).some(n => normalizeName(n) === norm)) || null;
+}
+
+/** "Through Games OCT. 17, 2026" / "Through Games Apr. 25 2026" → Date, or null. */
+function parsePollDate(text) {
+  const m = (text || '').match(/([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/);
+  if (!m) return null;
+  const d = new Date(`${m[1]} ${m[2]} ${m[3]} 12:00 UTC`);
+  return isNaN(d) ? null : d;
 }
 
 async function fetchPage(url) {
@@ -71,57 +103,47 @@ async function fetchPage(url) {
 
 async function main() {
   const dryRun = process.argv.includes('--dry-run');
-  const allTeams = require('../src/data/teams.json');
-  const teams = (Array.isArray(allTeams) ? allTeams : allTeams.teams).filter(t => t.level === 'college');
-  const divisionOf = t => DIVISION_BY_CONFERENCE[t.conference] || 'd1';
+  const now = new Date();
+  const teamIds = Object.keys(NAME_ALIASES);
 
   const polls = [];
-  for (const s of SPORTS) {
-    for (const division of s.divisions || ['d1', 'd2', 'd3']) {
-      const url = `https://www.ncaa.com/rankings/${s.slug}/${division}`;
-      let page;
-      try {
-        page = await fetchPage(url);
-      } catch (err) {
-        console.warn(`[rankings] ${url}: ${err.message}`);
-        continue;
-      }
-      if (!page.html) {
-        console.warn(`[rankings] ${url}: HTTP ${page.status}`);
-        continue;
-      }
-      const { title, dateText, teams: rows } = parseNcaaRankings(page.html);
-      const ranked = rows
-        .map(r => ({ ...r, team: matchTeam(r.school, teams) }))
-        .filter(r => r.team)
-        .map(r => ({ teamId: r.team.id, rank: r.rank }));
-      console.log(`[rankings] ${s.slug}/${division}: "${title}" ${dateText || ''} — ${rows.length} rows, LA: ${ranked.map(r => `${r.teamId} #${r.rank}`).join(', ') || 'none'} (${page.url})`);
-      {
-        const $ = cheerio.load(page.html);
-        const options = new Set($(`a[href*="/rankings/${s.slug}/${division}/"], option[value*="/rankings/${s.slug}/${division}/"]`)
-          .map((_, el) => ($(el).attr('href') || $(el).attr('value')).replace(/^.*\/rankings\//, '')).get());
-        console.log(`[rankings]   polls offered: ${[...options].join(' ')}`);
-      }
-      if (rows.length) console.log(`[rankings]   top: ${rows.slice(0, 5).map(r => `${r.rank} ${r.school}`).join(' | ')}`);
-      if (!rows.length) {
-        const $ = cheerio.load(page.html);
-        console.warn(`[rankings]   no table rows; tables: ${$('table').length}, h1/h2: ${$('h1, h2').map((_, el) => $(el).text().trim()).get().slice(0, 4).join(' / ')}`);
-        continue;
-      }
-      polls.push({ sport: s.sport, gender: s.gender, division, poll: title, date: dateText, source: page.url, ranked });
+  for (const p of POLLS) {
+    const url = `https://www.ncaa.com/rankings/${p.path}`;
+    let page;
+    try {
+      page = await fetchPage(url);
+    } catch (err) {
+      console.warn(`[rankings] ${p.path}: ${err.message}`);
+      continue;
     }
+    if (!page.html) {
+      console.warn(`[rankings] ${p.path}: HTTP ${page.status}`);
+      continue;
+    }
+    const { title, dateText, teams: rows } = parseNcaaRankings(page.html);
+    const date = parsePollDate(dateText);
+    const ranked = rows
+      .filter(r => r.rank <= MAX_RANK)
+      .map(r => ({ teamId: matchTeam(r.school, teamIds), rank: r.rank }))
+      .filter(r => r.teamId);
+    const stale = !date || (now - date) / 86_400_000 > MAX_AGE_DAYS;
+    console.log(`[rankings] ${p.path}: ${rows.length} rows, ${dateText || 'no date'}${stale ? ' (out of season, skipped)' : ''} — LA: ${ranked.map(r => `${r.teamId} #${r.rank}`).join(', ') || 'none'}`);
+    if (rows.length === 0) console.warn(`[rankings]   no rows parsed from "${title}"`);
+    if (stale || rows.length === 0) continue;
+    polls.push({
+      sport: p.sport,
+      gender: p.gender,
+      division: p.division,
+      poll: title.replace(/\s*\|\s*NCAA\.com$/, ''),
+      through: date.toISOString().slice(0, 10),
+      source: url,
+      ranked,
+    });
   }
 
-  const unmatched = teams.filter(t => !polls.some(p => p.ranked.some(r => r.teamId === t.id)));
-  console.log(`[rankings] LA teams in no poll: ${unmatched.map(t => `${t.id} (${divisionOf(t)})`).join(', ')}`);
-
-  if (polls.length === 0) {
-    console.error('[rankings] no polls parsed — keeping the existing rankings.json');
-    process.exitCode = 1;
-    return;
-  }
-  const out = { updatedAt: new Date().toISOString(), polls };
+  const out = { updatedAt: now.toISOString(), polls };
   if (dryRun) {
+    console.log(JSON.stringify(out, null, 2));
     console.log('[dry-run] Skipping write to rankings.json');
   } else {
     fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2) + '\n');
@@ -131,4 +153,4 @@ async function main() {
 
 if (require.main === module) main();
 
-module.exports = { parseNcaaRankings, matchTeam, normalizeName };
+module.exports = { parseNcaaRankings, matchTeam, normalizeName, parsePollDate, NAME_ALIASES };
