@@ -35,7 +35,31 @@ const POLLS = [
   { path: 'softball/d1/espncom/usa-softball', label: 'ESPN.com/USA Softball Poll', sport: 'softball', gender: 'womens', division: 'd1' },
   { path: 'waterpolo-men/nc/rpi', label: 'NCAA RPI', sport: 'water-polo', gender: 'mens', division: 'all' },
   { path: 'waterpolo-women/nc/rpi', label: 'NCAA RPI', sport: 'water-polo', gender: 'womens', division: 'all' },
+  // DII's own national computer ranking, where NCAA.com has no DII poll.
+  { path: 'football/d2/npi-rankings', label: 'NCAA NPI', sport: 'football', gender: 'mens', division: 'd2' },
+  { path: 'volleyball-women/d2/npi-rankings', label: 'NCAA NPI', sport: 'volleyball', gender: 'womens', division: 'd2' },
+  { path: 'soccer-men/d2/npi-rankings', label: 'NCAA NPI', sport: 'soccer', gender: 'mens', division: 'd2' },
+  { path: 'soccer-women/d2/npi-rankings', label: 'NCAA NPI', sport: 'soccer', gender: 'womens', division: 'd2' },
 ];
+
+// The selection committees' regional rankings for DII and DIII. Each page is
+// one table split into regions, and a team's rank counts within its region
+// only, so it's shown as "#3 West" rather than "#3". Listed after POLLS so a
+// national rank wins when a team has both.
+const REGIONAL_POLLS = [
+  { path: 'football/d3/regional-rankings', sport: 'football', gender: 'mens', division: 'd3' },
+  { path: 'basketball-men/d2/regional-ranking', sport: 'basketball', gender: 'mens', division: 'd2' },
+  { path: 'basketball-men/d3/regional-rankings-0', sport: 'basketball', gender: 'mens', division: 'd3' },
+  { path: 'basketball-women/d2/regional-ranking', sport: 'basketball', gender: 'womens', division: 'd2' },
+  { path: 'basketball-women/d3/regional-rankings-0', sport: 'basketball', gender: 'womens', division: 'd3' },
+  { path: 'volleyball-women/d3/regional-rankings', sport: 'volleyball', gender: 'womens', division: 'd3' },
+  { path: 'soccer-men/d3/regional-rankings', sport: 'soccer', gender: 'mens', division: 'd3' },
+  { path: 'soccer-women/d3/regional-rankings', sport: 'soccer', gender: 'womens', division: 'd3' },
+  { path: 'baseball/d2/regional-rankings', sport: 'baseball', gender: 'mens', division: 'd2' },
+  { path: 'baseball/d3/regional-rankings', sport: 'baseball', gender: 'mens', division: 'd3' },
+  { path: 'softball/d2/regional-rankings', sport: 'softball', gender: 'womens', division: 'd2' },
+  { path: 'softball/d3/regional-rankings', sport: 'softball', gender: 'womens', division: 'd3' },
+].map(p => ({ ...p, label: 'NCAA regional rankings', regional: true }));
 
 // Only a top 25 reads as "ranked"; RPI lists go much deeper.
 const MAX_RANK = 25;
@@ -82,6 +106,41 @@ function parseNcaaRankings(html) {
   return { title, dateText, teams };
 }
 
+/** "REGION I" → "Region I", "WEST" → "West". */
+function regionName(text) {
+  return text.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase()).replace(/\b(Ii|Iii|Iv|Vi|Vii|Viii|Ix|Xi)\b/g, m => m.toUpperCase());
+}
+
+/**
+ * Parse an NCAA.com regional rankings page. Region names sit in their own
+ * rows ("WEST", "Region I"), each followed by that region's teams. Some pages
+ * leave the rank cell blank, in which case rows are already in rank order.
+ */
+function parseRegionalRankings(html) {
+  const { title, dateText } = parseNcaaRankings(html);
+  const $ = cheerio.load(html);
+  const teams = [];
+  let region = null;
+  let pos = 0;
+  $('table').first().find('tr').each((_, tr) => {
+    const cells = $(tr).find('td').map((__, td) => $(td).text().trim()).get();
+    if (cells.length === 0 || cells.every(c => !c)) return;
+    const first = cells[0] || cells[1] || '';
+    const isHeading = !/^\d/.test(first) && (cells.slice(1).every(c => !c) || /^school$/i.test(cells[1]) || /^region/i.test(first));
+    if (isHeading) {
+      region = regionName(first);
+      pos = 0;
+      return;
+    }
+    if (!region) return;
+    pos++;
+    const school = (cells[1] || '').replace(/\(\d+\)/g, '').trim();
+    const rank = parseInt(cells[0], 10) || pos;
+    if (school) teams.push({ rank, school, region });
+  });
+  return { title, dateText, teams };
+}
+
 /** Which of our teams a poll row names, if any. */
 function matchTeam(school, teamIds) {
   const norm = normalizeName(school);
@@ -107,7 +166,7 @@ async function main() {
   const teamIds = Object.keys(NAME_ALIASES);
 
   const polls = [];
-  for (const p of POLLS) {
+  for (const p of [...POLLS, ...REGIONAL_POLLS]) {
     const url = `https://www.ncaa.com/rankings/${p.path}`;
     let page;
     try {
@@ -120,14 +179,14 @@ async function main() {
       console.warn(`[rankings] ${p.path}: HTTP ${page.status}`);
       continue;
     }
-    const { title, dateText, teams: rows } = parseNcaaRankings(page.html);
+    const { title, dateText, teams: rows } = p.regional ? parseRegionalRankings(page.html) : parseNcaaRankings(page.html);
     const date = parsePollDate(dateText);
     const ranked = rows
-      .filter(r => r.rank <= MAX_RANK)
-      .map(r => ({ teamId: matchTeam(r.school, teamIds), rank: r.rank }))
+      .filter(r => p.regional || r.rank <= MAX_RANK)
+      .map(r => ({ teamId: matchTeam(r.school, teamIds), rank: r.rank, ...(r.region ? { region: r.region } : {}) }))
       .filter(r => r.teamId);
     const stale = !date || (now - date) / 86_400_000 > MAX_AGE_DAYS;
-    console.log(`[rankings] ${p.path}: ${rows.length} rows, ${dateText || 'no date'}${stale ? ' (out of season, skipped)' : ''} — LA: ${ranked.map(r => `${r.teamId} #${r.rank}`).join(', ') || 'none'}`);
+    console.log(`[rankings] ${p.path}: ${rows.length} rows, ${dateText || 'no date'}${stale ? ' (out of season, skipped)' : ''} — LA: ${ranked.map(r => `${r.teamId} #${r.rank}`).join(', ') || 'none'}${p.regional ? ` [regions: ${[...new Set(rows.map(r => r.region))].join(', ')}]` : ''}`);
     if (rows.length === 0) console.warn(`[rankings]   no rows parsed from "${title}"`);
     if (stale || rows.length === 0) continue;
     polls.push({
@@ -153,4 +212,4 @@ async function main() {
 
 if (require.main === module) main();
 
-module.exports = { parseNcaaRankings, matchTeam, normalizeName, parsePollDate, NAME_ALIASES };
+module.exports = { parseNcaaRankings, parseRegionalRankings, matchTeam, normalizeName, parsePollDate, NAME_ALIASES };

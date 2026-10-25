@@ -76,7 +76,10 @@ export default async function RankingsPage() {
             <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {rankedPolls.map(p => (
                 <div key={p.source} className="rounded-lg border border-border bg-surface p-4">
-                  <div className="text-sm font-semibold text-ink">{labelFor(p.sport, p.gender)}</div>
+                  <div className="text-sm font-semibold text-ink">
+                    {labelFor(p.sport, p.gender)}
+                    {p.division !== 'all' && <span className="ml-1.5 text-xs font-normal text-ink-muted">{p.division.toUpperCase()}</span>}
+                  </div>
                   <a href={p.source} target="_blank" rel="noopener noreferrer" className="text-xs text-burnt-orange hover:underline">
                     {p.poll} · through {formatThrough(p.through)}
                   </a>
@@ -85,6 +88,7 @@ export default async function RankingsPage() {
                       <li key={r.teamId} className="flex items-center gap-2 text-sm text-ink">
                         <span className="w-8 shrink-0 rounded bg-gold/20 text-center text-xs font-bold text-gold">#{r.rank}</span>
                         {teamName(r.teamId)}
+                        {r.region && <span className="text-xs text-ink-muted">{r.region} region</span>}
                       </li>
                     ))}
                   </ul>

@@ -46,3 +46,39 @@ describe('parsePollDate', () => {
     expect(parsePollDate('Final')).toBeNull();
   });
 });
+
+const { parseRegionalRankings } = require('./fetch-rankings.js');
+
+describe('parseRegionalRankings', () => {
+  it('assigns each team its region and rank', () => {
+    const html = `<figcaption>Through Games Oct. 19, 2026</figcaption><table>
+      <thead><tr><th>REGION/RANK</th><th>SCHOOL</th></tr></thead><tbody>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td>ATLANTIC</td><td></td><td></td></tr>
+      <tr><td>1</td><td>Gannon University</td><td>26-2</td></tr>
+      <tr><td>WEST</td><td></td><td></td></tr>
+      <tr><td>1</td><td>Cal State LA</td><td>20-5</td></tr>
+      <tr><td>2</td><td>Cal Poly Pomona (3)</td><td>19-6</td></tr>
+      </tbody></table>`;
+    expect(parseRegionalRankings(html).teams).toEqual([
+      { rank: 1, school: 'Gannon University', region: 'Atlantic' },
+      { rank: 1, school: 'Cal State LA', region: 'West' },
+      { rank: 2, school: 'Cal Poly Pomona', region: 'West' },
+    ]);
+  });
+
+  it('handles region rows with a header repeat, a shifted region cell and blank ranks', () => {
+    const html = `<table><tbody>
+      <tr><td>REGION X</td><td>School</td><td>In-Division Record</td></tr>
+      <tr><td></td><td>Pomona-Pitzer</td><td>9-1</td></tr>
+      <tr><td></td><td>Occidental</td><td>7-3</td></tr>
+      <tr><td></td><td>Region IX</td><td>NPI</td></tr>
+      <tr><td>1</td><td>Trinity (TX)</td><td>60.1</td></tr>
+      </tbody></table>`;
+    expect(parseRegionalRankings(html).teams).toEqual([
+      { rank: 1, school: 'Pomona-Pitzer', region: 'Region X' },
+      { rank: 2, school: 'Occidental', region: 'Region X' },
+      { rank: 1, school: 'Trinity (TX)', region: 'Region IX' },
+    ]);
+  });
+});

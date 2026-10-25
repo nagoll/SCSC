@@ -23,6 +23,12 @@
         "kind": "computer"
       },
       {
+        "level": "NCAA DII",
+        "name": "AFCA Coaches Poll",
+        "url": "https://www.afca.com/polls/",
+        "kind": "national"
+      },
+      {
         "level": "NCAA DIII",
         "name": "AFCA Coaches Poll",
         "url": "https://www.ncaa.com/rankings/football/d3/afca-coaches",
@@ -33,6 +39,12 @@
         "name": "Regional rankings",
         "url": "https://www.ncaa.com/rankings/football/d3/regional-rankings",
         "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "D3football.com Top 25",
+        "url": "https://d3football.com/top25/",
+        "kind": "national"
       },
       {
         "level": "NAIA",
@@ -115,6 +127,12 @@
         "kind": "regional"
       },
       {
+        "level": "NCAA DII",
+        "name": "WBCA Coaches Poll",
+        "url": "https://wbca.org/list-of-polls/polls-ncaa-division-ii-coaches/",
+        "kind": "national"
+      },
+      {
         "level": "NCAA DIII",
         "name": "D3hoops.com Top 25",
         "url": "https://www.d3hoops.com/top25/women/",
@@ -125,6 +143,12 @@
         "name": "Regional rankings",
         "url": "https://www.ncaa.com/rankings/basketball-women/d3/regional-rankings-0",
         "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "WBCA Coaches Poll",
+        "url": "https://wbca.org/recognize/polls/ncaa-division-iii-coaches",
+        "kind": "national"
       },
       {
         "level": "NAIA",
@@ -154,7 +178,7 @@
       {
         "level": "NCAA DII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls-awards/polls/",
+        "url": "https://www.avca.org/polls/dii-women/index.html",
         "kind": "national"
       },
       {
@@ -166,7 +190,7 @@
       {
         "level": "NCAA DIII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls-awards/polls/",
+        "url": "https://www.avca.org/polls/diii-women/index.html",
         "kind": "national"
       },
       {
@@ -238,9 +262,9 @@
         "kind": "computer"
       },
       {
-        "level": "NCAA DII and DIII",
-        "name": "United Soccer Coaches Polls",
-        "url": "https://unitedsoccercoaches.org/rankings/",
+        "level": "NCAA DII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-dii-men/",
         "kind": "national"
       },
       {
@@ -248,6 +272,12 @@
         "name": "Regional rankings",
         "url": "https://www.ncaa.com/rankings/soccer-men/d3/regional-rankings",
         "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-diii-men/",
+        "kind": "national"
       },
       {
         "level": "NAIA",
@@ -281,9 +311,9 @@
         "kind": "computer"
       },
       {
-        "level": "NCAA DII and DIII",
-        "name": "United Soccer Coaches Polls",
-        "url": "https://unitedsoccercoaches.org/rankings/",
+        "level": "NCAA DII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-dii-women/",
         "kind": "national"
       },
       {
@@ -291,6 +321,12 @@
         "name": "Regional rankings",
         "url": "https://www.ncaa.com/rankings/soccer-women/d3/regional-rankings",
         "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-diii-women/",
+        "kind": "national"
       },
       {
         "level": "NAIA",
