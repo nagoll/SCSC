@@ -18,15 +18,18 @@ async function check(url) {
     const html = res.ok ? await res.text() : '';
     const $ = cheerio.load(html || '');
     const title = $('title').first().text().trim().slice(0, 80);
-    // How regional pages split their regions, for parsing them later.
+    // Table layout of NCAA.com ranking pages whose format the fetcher handles
+    // specially, to debug a page that parses to zero rows.
     let regions = '';
-    if (/regional/.test(url)) {
+    if (/ncaa\.com\/rankings\/.*(regional|npi|afca)/.test(url)) {
       const table = $('table').first();
       const head = table.find('th').map((_, el) => $(el).text().trim()).get().join(' | ');
       const rows = table.find('tbody tr').slice(0, 3).map((_, tr) => $(tr).find('td').map((__, td) => $(td).text().trim()).get().join(' | ')).get().join(' // ');
       const picks = $('select option, a[href*="regional"]').map((_, el) => `${$(el).text().trim()}=${$(el).attr('value') || $(el).attr('href')}`).get().slice(0, 15).join(' ; ');
       const near = table.prevAll().slice(0, 3).map((_, el) => $(el).text().trim().slice(0, 60)).get().join(' / ');
-      regions = `head: ${head}\n           rows: ${rows}\n           picks: ${picks}\n           before table: ${near}`;
+      const tables = $('table').length;
+      const text = tables ? '' : `\n           text: ${$('main, article, .rankings-content, body').first().text().replace(/\s+/g, ' ').trim().slice(0, 400)}`;
+      regions = `[${tables} tables] head: ${head}\n           rows: ${rows}\n           picks: ${picks}\n           before table: ${near}${text}`;
     }
     return { status: res.status, finalUrl: res.url, title, regions };
   } catch (err) {
@@ -43,7 +46,7 @@ async function main() {
     if (bad) broken++;
     const moved = r.finalUrl !== url ? ` → ${r.finalUrl}` : '';
     console.log(`${bad ? 'BROKEN' : r.status === 200 ? 'ok    ' : 'warn  '} ${r.status} ${url}${moved} | ${r.title}`);
-    if (r.regions) console.log(`         regions: ${r.regions}`);
+    if (r.regions) console.log(`         layout: ${r.regions}`);
   }
   console.log(`\n${urls.length} links, ${broken} broken`);
   if (broken) process.exit(1);

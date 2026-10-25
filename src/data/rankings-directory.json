@@ -129,7 +129,7 @@
       {
         "level": "NCAA DII",
         "name": "WBCA Coaches Poll",
-        "url": "https://wbca.org/list-of-polls/polls-ncaa-division-ii-coaches/",
+        "url": "https://wbca.org/polls-ncaa-division-ii-coaches/",
         "kind": "national"
       },
       {
@@ -147,7 +147,7 @@
       {
         "level": "NCAA DIII",
         "name": "WBCA Coaches Poll",
-        "url": "https://wbca.org/recognize/polls/ncaa-division-iii-coaches",
+        "url": "https://wbca.org/polls-ncaa-division-iii-coaches/",
         "kind": "national"
       },
       {
@@ -178,7 +178,7 @@
       {
         "level": "NCAA DII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls/dii-women/index.html",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
@@ -190,7 +190,7 @@
       {
         "level": "NCAA DIII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls/diii-women/index.html",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
