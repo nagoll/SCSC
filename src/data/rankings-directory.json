@@ -1,0 +1,457 @@
+[
+  {
+    "sport": "football",
+    "gender": "mens",
+    "label": "Football",
+    "polls": [
+      {
+        "level": "NCAA DI FBS",
+        "name": "AP Top 25",
+        "url": "https://www.ncaa.com/rankings/football/fbs/associated-press",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DI FCS",
+        "name": "FCS rankings",
+        "url": "https://www.ncaa.com/rankings/football/fcs",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "NPI rankings",
+        "url": "https://www.ncaa.com/rankings/football/d2/npi-rankings",
+        "kind": "computer"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "AFCA Coaches Poll",
+        "url": "https://www.afca.com/polls/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "AFCA Coaches Poll",
+        "url": "https://www.ncaa.com/rankings/football/d3/afca-coaches",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/football/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "D3football.com Top 25",
+        "url": "https://d3football.com/top25/",
+        "kind": "national"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/football/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "JC Athletic Bureau state poll",
+        "url": "https://www.cccaasports.org/sports/fball/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "basketball",
+    "gender": "mens",
+    "label": "Men's Basketball",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "AP Top 25",
+        "url": "https://www.ncaa.com/rankings/basketball-men/d1/di-mens-basketball-associated-press",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "NABC Coaches Poll",
+        "url": "https://www.ncaa.com/rankings/basketball-men/d2/nabc-coaches",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/basketball-men/d2/regional-ranking",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "D3hoops.com Top 25",
+        "url": "https://www.d3hoops.com/top25/men/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/basketball-men/d3/regional-rankings-0",
+        "kind": "regional"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/mens-basketball/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/mbkb/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "basketball",
+    "gender": "womens",
+    "label": "Women's Basketball",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "AP Top 25",
+        "url": "https://www.ncaa.com/rankings/basketball-women/d1/di-womens-basketball-associated-press",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/basketball-women/d2/regional-ranking",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "WBCA Coaches Poll",
+        "url": "https://wbca.org/polls-ncaa-division-ii-coaches/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "D3hoops.com Top 25",
+        "url": "https://www.d3hoops.com/top25/women/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/basketball-women/d3/regional-rankings-0",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "WBCA Coaches Poll",
+        "url": "https://wbca.org/polls-ncaa-division-iii-coaches/",
+        "kind": "national"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/womens-basketball/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/wbkb/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "volleyball",
+    "gender": "womens",
+    "label": "Women's Volleyball",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "AVCA Coaches Poll",
+        "url": "https://www.ncaa.com/rankings/volleyball-women/d1/avca-rankings",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "AVCA Coaches Poll",
+        "url": "https://www.avca.org/polls-awards/polls/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "NPI rankings",
+        "url": "https://www.ncaa.com/rankings/volleyball-women/d2/npi-rankings",
+        "kind": "computer"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "AVCA Coaches Poll",
+        "url": "https://www.avca.org/polls-awards/polls/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/volleyball-women/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NAIA",
+        "name": "AVCA Coaches Poll",
+        "url": "https://www.avca.org/polls-awards/polls/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/wvball/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "volleyball",
+    "gender": "mens",
+    "label": "Men's Volleyball",
+    "polls": [
+      {
+        "level": "NCAA DI/DII",
+        "name": "NCAA RPI",
+        "url": "https://www.ncaa.com/rankings/volleyball-men/nc/nc-mens-volleyball-rpi",
+        "kind": "computer"
+      },
+      {
+        "level": "NCAA DI/DII",
+        "name": "AVCA Coaches Poll",
+        "url": "https://www.avca.org/polls-awards/polls/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/volleyball-men/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/mens-volleyball/",
+        "kind": "national"
+      }
+    ]
+  },
+  {
+    "sport": "soccer",
+    "gender": "mens",
+    "label": "Men's Soccer",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://www.ncaa.com/rankings/soccer-men/d1/united-soccer-coaches",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "NPI rankings",
+        "url": "https://www.ncaa.com/rankings/soccer-men/d2/npi-rankings",
+        "kind": "computer"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-dii-men/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/soccer-men/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-diii-men/",
+        "kind": "national"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/mens-soccer/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/msoc/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "soccer",
+    "gender": "womens",
+    "label": "Women's Soccer",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "IWSOC Coaches Poll",
+        "url": "https://www.ncaa.com/rankings/soccer-women/d1/iwsoc-coaches-poll",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "NPI rankings",
+        "url": "https://www.ncaa.com/rankings/soccer-women/d2/npi-rankings",
+        "kind": "computer"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-dii-women/",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/soccer-women/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "United Soccer Coaches Poll",
+        "url": "https://unitedsoccercoaches.org/rankings/college-rankings/ncaa-diii-women/",
+        "kind": "national"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/womens-soccer/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/wsoc/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "baseball",
+    "gender": "mens",
+    "label": "Baseball",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "D1Baseball Top 25",
+        "url": "https://www.ncaa.com/rankings/baseball/d1/d1baseballcom-top-25",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/baseball/d2/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/baseball/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/baseball/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/bsb/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "softball",
+    "gender": "womens",
+    "label": "Softball",
+    "polls": [
+      {
+        "level": "NCAA DI",
+        "name": "ESPN.com/USA Softball Poll",
+        "url": "https://www.ncaa.com/rankings/softball/d1/espncom/usa-softball",
+        "kind": "national"
+      },
+      {
+        "level": "NCAA DII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/softball/d2/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NCAA DIII",
+        "name": "Regional rankings",
+        "url": "https://www.ncaa.com/rankings/softball/d3/regional-rankings",
+        "kind": "regional"
+      },
+      {
+        "level": "NAIA",
+        "name": "Coaches' Top 25",
+        "url": "https://www.naia.org/sports/softball/",
+        "kind": "national"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/sball/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "water-polo",
+    "gender": "mens",
+    "label": "Men's Water Polo",
+    "polls": [
+      {
+        "level": "NCAA (all divisions)",
+        "name": "NCAA RPI",
+        "url": "https://www.ncaa.com/rankings/waterpolo-men/nc/rpi",
+        "kind": "computer"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/mwpolo/index",
+        "kind": "state"
+      }
+    ]
+  },
+  {
+    "sport": "water-polo",
+    "gender": "womens",
+    "label": "Women's Water Polo",
+    "polls": [
+      {
+        "level": "NCAA (all divisions)",
+        "name": "NCAA RPI",
+        "url": "https://www.ncaa.com/rankings/waterpolo-women/nc/rpi",
+        "kind": "computer"
+      },
+      {
+        "level": "JuCo (CCCAA)",
+        "name": "State news and polls",
+        "url": "https://www.cccaasports.org/sports/wwpolo/index",
+        "kind": "state"
+      }
+    ]
+  }
+]

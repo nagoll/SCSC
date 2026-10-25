@@ -13,16 +13,18 @@ const sizeStyles = {
   md: 'px-1.5 py-0.5 text-xs',
 };
 
-/** "#5" next to a team that's in its sport's national poll this week. */
+/** "#5" (or "#2 West" for a regional ranking) next to a team that's in its sport's national poll this week. */
 export default function RankBadge({ teamId, sport, gender, size = 'md' }: RankBadgeProps) {
   const r = getTeamRank(teamId, sport, gender);
   if (!r) return null;
   return (
     <span
       className={`inline-block shrink-0 rounded bg-gold/20 font-bold text-gold ${sizeStyles[size]}`}
-      title={`#${r.rank} in the ${r.poll} (through ${r.through})`}
+      title={r.region
+        ? `#${r.rank} in the ${r.region} region, ${r.poll} (through ${r.through})`
+        : `#${r.rank} in the ${r.poll} (through ${r.through})`}
     >
-      #{r.rank}
+      #{r.rank}{r.region && ` ${r.region}`}
     </span>
   );
 }

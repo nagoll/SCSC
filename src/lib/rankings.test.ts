@@ -14,7 +14,7 @@ const data: Rankings = {
 describe('getTeamRank', () => {
   it('finds a ranked team in its sport and gender', () => {
     expect(getTeamRank('usc-trojans', 'volleyball', 'womens', data)).toEqual({
-      rank: 5, poll: 'AVCA Coaches Poll', through: '2026-10-19',
+      rank: 5, region: undefined, poll: 'AVCA Coaches Poll', through: '2026-10-19',
     });
   });
   it('is null for another gender, sport or team', () => {

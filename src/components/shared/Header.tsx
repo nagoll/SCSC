@@ -60,6 +60,9 @@ export default function Header() {
           <Link href="/featured" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
             Featured
           </Link>
+          <Link href="/rankings" className="text-sm font-medium text-ink-light transition-colors hover:text-burnt-orange">
+            Rankings
+          </Link>
           <button
             onClick={toggleTheme}
             className="rounded-md p-2 text-ink-muted transition-colors hover:bg-cream-dark hover:text-ink"
@@ -110,6 +113,9 @@ export default function Header() {
             </Link>
             <Link href="/featured" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
               Featured
+            </Link>
+            <Link href="/rankings" onClick={() => setMobileMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-ink-light hover:bg-cream-dark">
+              Rankings
             </Link>
           </nav>
         </div>
