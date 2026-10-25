@@ -1,4 +1,130 @@
 {
-  "updatedAt": null,
-  "polls": []
+  "updatedAt": "2026-10-25T15:40:40.850Z",
+  "polls": [
+    {
+      "sport": "football",
+      "gender": "mens",
+      "division": "d1",
+      "poll": "AP Top 25",
+      "through": "2026-10-17",
+      "source": "https://www.ncaa.com/rankings/football/fbs/associated-press",
+      "ranked": [
+        {
+          "teamId": "ucla-bruins",
+          "rank": 9
+        },
+        {
+          "teamId": "usc-trojans",
+          "rank": 16
+        }
+      ]
+    },
+    {
+      "sport": "basketball",
+      "gender": "mens",
+      "division": "d1",
+      "poll": "AP Top 25",
+      "through": "2026-10-19",
+      "source": "https://www.ncaa.com/rankings/basketball-men/d1/di-mens-basketball-associated-press",
+      "ranked": [
+        {
+          "teamId": "usc-trojans",
+          "rank": 21
+        },
+        {
+          "teamId": "ucla-bruins",
+          "rank": 22
+        }
+      ]
+    },
+    {
+      "sport": "basketball",
+      "gender": "womens",
+      "division": "d1",
+      "poll": "AP Top 25",
+      "through": "2026-10-20",
+      "source": "https://www.ncaa.com/rankings/basketball-women/d1/di-womens-basketball-associated-press",
+      "ranked": [
+        {
+          "teamId": "usc-trojans",
+          "rank": 3
+        },
+        {
+          "teamId": "ucla-bruins",
+          "rank": 11
+        }
+      ]
+    },
+    {
+      "sport": "volleyball",
+      "gender": "womens",
+      "division": "d1",
+      "poll": "AVCA Coaches Poll",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/volleyball-women/d1/avca-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "soccer",
+      "gender": "mens",
+      "division": "d1",
+      "poll": "United Soccer Coaches Poll",
+      "through": "2026-10-19",
+      "source": "https://www.ncaa.com/rankings/soccer-men/d1/united-soccer-coaches",
+      "ranked": [
+        {
+          "teamId": "ucla-bruins",
+          "rank": 19
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "gender": "womens",
+      "division": "d1",
+      "poll": "United Soccer Coaches Poll",
+      "through": "2026-10-19",
+      "source": "https://www.ncaa.com/rankings/soccer-women/d1/iwsoc-coaches-poll",
+      "ranked": [
+        {
+          "teamId": "ucla-bruins",
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "sport": "water-polo",
+      "gender": "mens",
+      "division": "all",
+      "poll": "NCAA RPI",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/waterpolo-men/nc/rpi",
+      "ranked": [
+        {
+          "teamId": "ucla-bruins",
+          "rank": 1
+        },
+        {
+          "teamId": "usc-trojans",
+          "rank": 3
+        },
+        {
+          "teamId": "lmu-lions",
+          "rank": 8
+        },
+        {
+          "teamId": "long-beach-state-49ers",
+          "rank": 11
+        },
+        {
+          "teamId": "pepperdine-waves",
+          "rank": 15
+        },
+        {
+          "teamId": "csuf-titans",
+          "rank": 22
+        }
+      ]
+    }
+  ]
 }
