@@ -96,6 +96,12 @@ async function main() {
         .filter(r => r.team)
         .map(r => ({ teamId: r.team.id, rank: r.rank }));
       console.log(`[rankings] ${s.slug}/${division}: "${title}" ${dateText || ''} — ${rows.length} rows, LA: ${ranked.map(r => `${r.teamId} #${r.rank}`).join(', ') || 'none'} (${page.url})`);
+      {
+        const $ = cheerio.load(page.html);
+        const options = new Set($(`a[href*="/rankings/${s.slug}/${division}/"], option[value*="/rankings/${s.slug}/${division}/"]`)
+          .map((_, el) => ($(el).attr('href') || $(el).attr('value')).replace(/^.*\/rankings\//, '')).get());
+        console.log(`[rankings]   polls offered: ${[...options].join(' ')}`);
+      }
       if (rows.length) console.log(`[rankings]   top: ${rows.slice(0, 5).map(r => `${r.rank} ${r.school}`).join(' | ')}`);
       if (!rows.length) {
         const $ = cheerio.load(page.html);
