@@ -6,6 +6,7 @@ import { SPORT_LABELS } from '@/lib/constants';
 import SportIcon from '@/components/shared/SportIcon';
 import LevelBadge from '@/components/shared/LevelBadge';
 import TimeBadge from '@/components/shared/TimeBadge';
+import RankBadge from '@/components/shared/RankBadge';
 
 interface EventCardProps {
   event: SportEvent;
@@ -35,6 +36,7 @@ export default function EventCard({
           <span className="truncate text-xs font-semibold text-ink">
             {homeTeam.shortName}
           </span>
+          <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} size="sm" />
         </div>
         {awayTeam && (
           <div className="mt-0.5 truncate text-[10px] text-ink-muted">
@@ -80,13 +82,18 @@ export default function EventCard({
             {awayTeam ? (
               <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                 <span className="font-semibold text-ink">{homeTeam.name}</span>
+                <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} />
                 <span className="text-xs text-ink-muted">vs</span>
                 <span className="font-semibold text-ink">{awayTeam.name}</span>
+                <RankBadge teamId={awayTeam.id} sport={event.sport} gender={event.gender} />
               </div>
             ) : (
-              <span className="font-semibold text-ink">
-                {event.eventName || homeTeam.name}
-              </span>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                <span className="font-semibold text-ink">
+                  {event.eventName || homeTeam.name}
+                </span>
+                <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} />
+              </div>
             )}
           </div>
 

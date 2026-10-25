@@ -1,0 +1,57 @@
+name: Refresh Rankings
+
+on:
+  # Wednesdays at 7am PT (15:00 UTC). Most polls come out Sunday–Tuesday.
+  schedule:
+    - cron: '0 15 * * 3'
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (fetch but do not commit)'
+        required: false
+        default: false
+        type: boolean
+
+  # Dry-run changes to the rankings fetcher before they merge.
+  pull_request:
+    paths:
+      - 'scripts/fetch-rankings.js'
+      - '.github/workflows/refresh-rankings.yml'
+
+jobs:
+  rankings:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit updated rankings.json back to repo
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch rankings
+        run: |
+          node scripts/fetch-rankings.js \
+            ${{ (github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
+
+      - name: Commit and push updated rankings
+        if: ${{ github.event_name != 'pull_request' && github.event.inputs.dry_run != 'true' }}
+        run: |
+          if [[ -n $(git status --porcelain src/data/rankings.json) ]]; then
+            git config user.name  "scsc-bot"
+            git config user.email "bot@scsc.com"
+            git add src/data/rankings.json
+            git commit -m "chore: refresh rankings $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "Rankings unchanged."
+          fi
