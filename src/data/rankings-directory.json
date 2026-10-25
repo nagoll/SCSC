@@ -37,7 +37,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/fball/index",
+        "url": "https://www.naia.org/sports/football/",
         "kind": "national"
       },
       {
@@ -86,7 +86,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/mbkb/index",
+        "url": "https://www.naia.org/sports/mens-basketball/",
         "kind": "national"
       },
       {
@@ -129,7 +129,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/wbkb/index",
+        "url": "https://www.naia.org/sports/womens-basketball/",
         "kind": "national"
       },
       {
@@ -154,7 +154,7 @@
       {
         "level": "NCAA DII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls_awards/polls/",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
@@ -166,7 +166,7 @@
       {
         "level": "NCAA DIII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls_awards/polls/",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
@@ -178,7 +178,7 @@
       {
         "level": "NAIA",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls_awards/polls/",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
@@ -203,7 +203,7 @@
       {
         "level": "NCAA DI/DII",
         "name": "AVCA Coaches Poll",
-        "url": "https://www.avca.org/polls_awards/polls/",
+        "url": "https://www.avca.org/polls-awards/polls/",
         "kind": "national"
       },
       {
@@ -215,7 +215,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/mvball/index",
+        "url": "https://www.naia.org/sports/mens-volleyball/",
         "kind": "national"
       }
     ]
@@ -252,7 +252,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/msoc/index",
+        "url": "https://www.naia.org/sports/mens-soccer/",
         "kind": "national"
       },
       {
@@ -295,7 +295,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/wsoc/index",
+        "url": "https://www.naia.org/sports/womens-soccer/",
         "kind": "national"
       },
       {
@@ -332,7 +332,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/bsb/index",
+        "url": "https://www.naia.org/sports/baseball/",
         "kind": "national"
       },
       {
@@ -369,7 +369,7 @@
       {
         "level": "NAIA",
         "name": "Coaches' Top 25",
-        "url": "https://www.naia.org/sports/sball/index",
+        "url": "https://www.naia.org/sports/softball/",
         "kind": "national"
       },
       {

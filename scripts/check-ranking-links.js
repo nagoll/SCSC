@@ -18,11 +18,16 @@ async function check(url) {
     const html = res.ok ? await res.text() : '';
     const $ = cheerio.load(html || '');
     const title = $('title').first().text().trim().slice(0, 80);
-    // How regional pages split their tables, for parsing regions later.
-    const regions = /regional/.test(url)
-      ? $('h2, h3, h4, caption').map((_, el) => $(el).text().trim()).get().filter(Boolean).slice(0, 20).join(' / ') +
-        ` [${$('table').length} tables]`
-      : '';
+    // How regional pages split their regions, for parsing them later.
+    let regions = '';
+    if (/regional/.test(url)) {
+      const table = $('table').first();
+      const head = table.find('th').map((_, el) => $(el).text().trim()).get().join(' | ');
+      const rows = table.find('tbody tr').slice(0, 3).map((_, tr) => $(tr).find('td').map((__, td) => $(td).text().trim()).get().join(' | ')).get().join(' // ');
+      const picks = $('select option, a[href*="regional"]').map((_, el) => `${$(el).text().trim()}=${$(el).attr('value') || $(el).attr('href')}`).get().slice(0, 15).join(' ; ');
+      const near = table.prevAll().slice(0, 3).map((_, el) => $(el).text().trim().slice(0, 60)).get().join(' / ');
+      regions = `head: ${head}\n           rows: ${rows}\n           picks: ${picks}\n           before table: ${near}`;
+    }
     return { status: res.status, finalUrl: res.url, title, regions };
   } catch (err) {
     return { status: 0, finalUrl: url, title: err.message };
