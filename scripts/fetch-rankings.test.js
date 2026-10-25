@@ -82,3 +82,16 @@ describe('parseRegionalRankings', () => {
     ]);
   });
 });
+
+describe('parseNcaaRankings on NPI tables', () => {
+  it('finds the team and NPI rank columns by header', () => {
+    const html = `<table><thead><tr><th>TEAM</th><th>CONFERENCE</th><th>REGION</th><th>NPI RANK</th><th>NPI</th></tr></thead><tbody>
+      <tr><td>Gannon</td><td>PSAC</td><td>ATLANTIC REGION</td><td>26</td><td>60.793</td></tr>
+      <tr><td>Cal Poly Pomona</td><td>CCAA</td><td>WEST REGION</td><td>4</td><td>63.1</td></tr>
+      </tbody></table>`;
+    expect(parseNcaaRankings(html).teams).toEqual([
+      { rank: 26, school: 'Gannon' },
+      { rank: 4, school: 'Cal Poly Pomona' },
+    ]);
+  });
+});

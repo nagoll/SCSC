@@ -97,10 +97,17 @@ function parseNcaaRankings(html) {
     || $('title').text().trim();
   const dateText = $('.rankings-last-updated, .rankings-date, figcaption').first().text().trim() || null;
   const teams = [];
-  $('table').first().find('tbody tr').each((_, tr) => {
+  const table = $('table').first();
+  // Polls lead with RANK, SCHOOL; the DII NPI tables lead with TEAM and put
+  // NPI RANK fourth, so find both columns by their headers.
+  const head = table.find('thead th').map((_, th) => $(th).text().trim().toUpperCase()).get();
+  const rankCol = Math.max(0, head.findIndex(h => /RANK$/.test(h)));
+  const schoolCol = head.findIndex(h => h === 'SCHOOL' || h === 'TEAM');
+  const nameCol = schoolCol >= 0 ? schoolCol : 1;
+  table.find('tbody tr').each((_, tr) => {
     const cells = $(tr).find('td').map((__, td) => $(td).text().trim()).get();
-    const rank = parseInt((cells[0] || '').replace(/^T-?/i, ''), 10);
-    const school = (cells[1] || '').replace(/\(\d+\)/g, '').trim();
+    const rank = parseInt((cells[rankCol] || '').replace(/^T-?/i, ''), 10);
+    const school = (cells[nameCol] || '').replace(/\(\d+\)/g, '').trim();
     if (rank && school) teams.push({ rank, school });
   });
   return { title, dateText, teams };
