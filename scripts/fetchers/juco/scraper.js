@@ -686,6 +686,22 @@ function parseProxyList(raw) {
     });
 }
 
+// The parsers only read the schedule text, so nothing visual needs to load.
+// Every byte here goes through the metered proxy (1 GB plan): skip images,
+// fonts, media and stylesheets, plus ad, analytics and consent scripts.
+// SIDEARM's own scripts and data calls still load, since they build the page.
+const SKIPPED_RESOURCE_TYPES = new Set(['image', 'font', 'media', 'stylesheet']);
+const SKIPPED_HOSTS = /(^|\.)(doubleclick\.net|googlesyndication\.com|googletagmanager\.com|google-analytics\.com|googletagservices\.com|adtrafficquality\.google|adservice\.google\.com|amazon-adsystem\.com|criteo\.com|criteo\.net|ad\.gt|transcend-cdn\.com|facebook\.net|facebook\.com|twitter\.com|tiktok\.com|scorecardresearch\.com|quantserve\.com|taboola\.com|outbrain\.com|chartbeat\.com|chartbeat\.net|youtube\.com|vimeo\.com)$/;
+
+function shouldSkipRequest(request) {
+  if (SKIPPED_RESOURCE_TYPES.has(request.resourceType())) return true;
+  try {
+    return SKIPPED_HOSTS.test(new URL(request.url()).hostname);
+  } catch {
+    return false;
+  }
+}
+
 function logZeroParseHints(school, html, jsonCalls) {
   const classCounts = {};
   for (const [, cls] of html.matchAll(/class="([^"]*(?:event|game|schedule)[^"]*)"/gi)) {
@@ -705,6 +721,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
     ...(proxy ? { proxy } : {}),
   });
+  await context.route('**/*', route => (shouldSkipRequest(route.request()) ? route.abort() : route.continue()));
   const page = await context.newPage();
   // Remember the JSON calls the page makes; when parsing finds nothing, they
   // point at the data API (and the markup to target) without guessing.
@@ -817,4 +834,4 @@ async function scrapeAllJuco(startDate, endDate) {
   return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
 }
 
-module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix };
+module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest };

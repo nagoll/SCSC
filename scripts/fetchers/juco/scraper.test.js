@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const { pickOpponent, eventIdSuffix, JUCO_SCHOOLS } = require('./scraper.js');
+const { pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest } = require('./scraper.js');
 
 const school = id => JUCO_SCHOOLS.find(s => s.id === id);
 
@@ -22,5 +22,22 @@ describe('eventIdSuffix', () => {
   it('differs for same-day events by sport and opponent', () => {
     expect(eventIdSuffix('Women\'s Water Polo', 'San Diego Mesa'))
       .not.toBe(eventIdSuffix('Women\'s Water Polo', 'Grossmont'));
+  });
+});
+
+describe('shouldSkipRequest', () => {
+  const req = (url, type) => ({ url: () => url, resourceType: () => type });
+
+  it('skips images, fonts and ad or analytics hosts', () => {
+    expect(shouldSkipRequest(req('https://www.cerritosfalcons.com/images/logo.png', 'image'))).toBe(true);
+    expect(shouldSkipRequest(req('https://www.cerritosfalcons.com/fonts/a.woff2', 'font'))).toBe(true);
+    expect(shouldSkipRequest(req('https://securepubads.g.doubleclick.net/tag/js/gpt.js', 'script'))).toBe(true);
+    expect(shouldSkipRequest(req('https://id.hadron.ad.gt/api/v1/pbhid', 'xhr'))).toBe(true);
+  });
+
+  it('keeps the page and SIDEARM data calls', () => {
+    expect(shouldSkipRequest(req('https://www.cerritosfalcons.com/composite', 'document'))).toBe(false);
+    expect(shouldSkipRequest(req('https://www.cerritosfalcons.com/services/responsive-calendar.ashx?type=month', 'xhr'))).toBe(false);
+    expect(shouldSkipRequest(req('https://www.cerritosfalcons.com/js/app.js', 'script'))).toBe(false);
   });
 });
