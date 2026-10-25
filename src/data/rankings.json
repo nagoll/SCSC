@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:40:40.850Z",
+  "updatedAt": "2026-10-25T16:32:14.090Z",
   "polls": [
     {
       "sport": "football",
@@ -82,7 +82,7 @@
       "sport": "soccer",
       "gender": "womens",
       "division": "d1",
-      "poll": "United Soccer Coaches Poll",
+      "poll": "IWSOC Coaches Poll",
       "through": "2026-10-19",
       "source": "https://www.ncaa.com/rankings/soccer-women/d1/iwsoc-coaches-poll",
       "ranked": [
@@ -123,6 +123,94 @@
         {
           "teamId": "csuf-titans",
           "rank": 22
+        }
+      ]
+    },
+    {
+      "sport": "football",
+      "gender": "mens",
+      "division": "d2",
+      "poll": "NCAA NPI",
+      "through": "2026-10-17",
+      "source": "https://www.ncaa.com/rankings/football/d2/npi-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "volleyball",
+      "gender": "womens",
+      "division": "d2",
+      "poll": "NCAA NPI",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/volleyball-women/d2/npi-rankings",
+      "ranked": [
+        {
+          "teamId": "cal-poly-pomona-broncos",
+          "rank": 25
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "gender": "mens",
+      "division": "d2",
+      "poll": "NCAA NPI",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/soccer-men/d2/npi-rankings",
+      "ranked": [
+        {
+          "teamId": "calstate-la-eagles",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "gender": "womens",
+      "division": "d2",
+      "poll": "NCAA NPI",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/soccer-women/d2/npi-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "football",
+      "gender": "mens",
+      "division": "d3",
+      "poll": "NCAA regional rankings",
+      "through": "2026-10-17",
+      "source": "https://www.ncaa.com/rankings/football/d3/regional-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "volleyball",
+      "gender": "womens",
+      "division": "d3",
+      "poll": "NCAA regional rankings",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/volleyball-women/d3/regional-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "soccer",
+      "gender": "mens",
+      "division": "d3",
+      "poll": "NCAA regional rankings",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/soccer-men/d3/regional-rankings",
+      "ranked": []
+    },
+    {
+      "sport": "soccer",
+      "gender": "womens",
+      "division": "d3",
+      "poll": "NCAA regional rankings",
+      "through": "2026-10-18",
+      "source": "https://www.ncaa.com/rankings/soccer-women/d3/regional-rankings",
+      "ranked": [
+        {
+          "teamId": "pomona-pitzer-sagehens",
+          "rank": 3,
+          "region": "Region X"
         }
       ]
     }
