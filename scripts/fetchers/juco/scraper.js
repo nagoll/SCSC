@@ -686,6 +686,22 @@ function parseProxyList(raw) {
     });
 }
 
+// The parsers only read the schedule text, so nothing visual needs to load.
+// Every byte here goes through the metered proxy (1 GB plan): skip images,
+// fonts, media and stylesheets, plus ad, analytics and consent scripts.
+// SIDEARM's own scripts and data calls still load, since they build the page.
+const SKIPPED_RESOURCE_TYPES = new Set(['image', 'font', 'media', 'stylesheet']);
+const SKIPPED_HOSTS = /(^|\.)(doubleclick\.net|googlesyndication\.com|googletagmanager\.com|google-analytics\.com|googletagservices\.com|adtrafficquality\.google|adservice\.google\.com|amazon-adsystem\.com|criteo\.com|criteo\.net|ad\.gt|transcend-cdn\.com|facebook\.net|facebook\.com|twitter\.com|tiktok\.com|scorecardresearch\.com|quantserve\.com|taboola\.com|outbrain\.com|chartbeat\.com|chartbeat\.net|youtube\.com|vimeo\.com)$/;
+
+function shouldSkipRequest(request) {
+  if (SKIPPED_RESOURCE_TYPES.has(request.resourceType())) return true;
+  try {
+    return SKIPPED_HOSTS.test(new URL(request.url()).hostname);
+  } catch {
+    return false;
+  }
+}
+
 function logZeroParseHints(school, html, jsonCalls) {
   const classCounts = {};
   for (const [, cls] of html.matchAll(/class="([^"]*(?:event|game|schedule)[^"]*)"/gi)) {
@@ -700,12 +716,21 @@ function logZeroParseHints(school, html, jsonCalls) {
   }
 }
 
+// Bytes received per school, so the log shows what each run costs the proxy plan.
+const transferBytes = new Map();
+
 async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
     ...(proxy ? { proxy } : {}),
   });
+  await context.route('**/*', route => (shouldSkipRequest(route.request()) ? route.abort() : route.continue()));
   const page = await context.newPage();
+  transferBytes.set(school.id, 0);
+  page.on('requestfinished', async req => {
+    const sizes = await req.sizes().catch(() => null);
+    if (sizes) transferBytes.set(school.id, transferBytes.get(school.id) + sizes.responseBodySize + sizes.responseHeadersSize);
+  });
   // Remember the JSON calls the page makes; when parsing finds nothing, they
   // point at the data API (and the markup to target) without guessing.
   const jsonCalls = [];
@@ -794,13 +819,16 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
     const school = schools[i];
+    const kb = Math.round((transferBytes.get(school.id) || 0) / 1024);
     if (result.status === 'fulfilled') {
-      console.log(`[${school.id}] fetched ${result.value.length} events`);
+      console.log(`[${school.id}] fetched ${result.value.length} events (${kb} KB transferred)`);
       events.push(...result.value);
     } else {
       console.warn(`[${school.id}] failed: ${result.reason?.message}`);
     }
   }
+  const totalBytes = schools.reduce((sum, s) => sum + (transferBytes.get(s.id) || 0), 0);
+  console.log(`[sidearm] ${(totalBytes / 1024 / 1024).toFixed(1)} MB transferred${proxies.length > 0 ? ' through the proxy' : ''}`);
   return events;
 }
 
@@ -817,4 +845,4 @@ async function scrapeAllJuco(startDate, endDate) {
   return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
 }
 
-module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix };
+module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest };
