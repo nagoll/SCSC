@@ -30,7 +30,7 @@ const POLLS = [
   { path: 'volleyball-women/d1/avca-rankings', label: 'AVCA Coaches Poll', sport: 'volleyball', gender: 'womens', division: 'd1' },
   { path: 'volleyball-men/nc/nc-mens-volleyball-rpi', label: 'NCAA RPI', sport: 'volleyball', gender: 'mens', division: 'all' },
   { path: 'soccer-men/d1/united-soccer-coaches', label: 'United Soccer Coaches Poll', sport: 'soccer', gender: 'mens', division: 'd1' },
-  { path: 'soccer-women/d1/iwsoc-coaches-poll', label: 'United Soccer Coaches Poll', sport: 'soccer', gender: 'womens', division: 'd1' },
+  { path: 'soccer-women/d1/iwsoc-coaches-poll', label: 'IWSOC Coaches Poll', sport: 'soccer', gender: 'womens', division: 'd1' },
   { path: 'baseball/d1/d1baseballcom-top-25', label: 'D1Baseball Top 25', sport: 'baseball', gender: 'mens', division: 'd1' },
   { path: 'softball/d1/espncom/usa-softball', label: 'ESPN.com/USA Softball Poll', sport: 'softball', gender: 'womens', division: 'd1' },
   { path: 'waterpolo-men/nc/rpi', label: 'NCAA RPI', sport: 'water-polo', gender: 'mens', division: 'all' },

@@ -25,6 +25,10 @@ export interface TeamRank {
 // Written weekly by scripts/fetch-rankings.js.
 const rankings = rankingsData as Rankings;
 
+export function getRankings(): Rankings {
+  return rankings;
+}
+
 /** A team's current national poll rank in one sport, or null if unranked. */
 export function getTeamRank(
   teamId: string,

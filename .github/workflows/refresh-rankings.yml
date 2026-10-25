@@ -17,6 +17,8 @@ on:
   pull_request:
     paths:
       - 'scripts/fetch-rankings.js'
+      - 'scripts/check-ranking-links.js'
+      - 'src/data/rankings-directory.json'
       - '.github/workflows/refresh-rankings.yml'
 
 jobs:
@@ -42,6 +44,10 @@ jobs:
         run: |
           node scripts/fetch-rankings.js \
             ${{ (github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
+
+      - name: Check rankings directory links
+        if: ${{ github.event_name == 'pull_request' }}
+        run: node scripts/check-ranking-links.js
 
       - name: Commit and push updated rankings
         if: ${{ github.event_name != 'pull_request' && github.event.inputs.dry_run != 'true' }}
