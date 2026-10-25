@@ -716,6 +716,9 @@ function logZeroParseHints(school, html, jsonCalls) {
   }
 }
 
+// Bytes received per school, so the log shows what each run costs the proxy plan.
+const transferBytes = new Map();
+
 async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
@@ -723,6 +726,11 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
   });
   await context.route('**/*', route => (shouldSkipRequest(route.request()) ? route.abort() : route.continue()));
   const page = await context.newPage();
+  transferBytes.set(school.id, 0);
+  page.on('requestfinished', async req => {
+    const sizes = await req.sizes().catch(() => null);
+    if (sizes) transferBytes.set(school.id, transferBytes.get(school.id) + sizes.responseBodySize + sizes.responseHeadersSize);
+  });
   // Remember the JSON calls the page makes; when parsing finds nothing, they
   // point at the data API (and the markup to target) without guessing.
   const jsonCalls = [];
@@ -811,13 +819,16 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
     const school = schools[i];
+    const kb = Math.round((transferBytes.get(school.id) || 0) / 1024);
     if (result.status === 'fulfilled') {
-      console.log(`[${school.id}] fetched ${result.value.length} events`);
+      console.log(`[${school.id}] fetched ${result.value.length} events (${kb} KB transferred)`);
       events.push(...result.value);
     } else {
       console.warn(`[${school.id}] failed: ${result.reason?.message}`);
     }
   }
+  const totalBytes = schools.reduce((sum, s) => sum + (transferBytes.get(s.id) || 0), 0);
+  console.log(`[sidearm] ${(totalBytes / 1024 / 1024).toFixed(1)} MB transferred${proxies.length > 0 ? ' through the proxy' : ''}`);
   return events;
 }
 
