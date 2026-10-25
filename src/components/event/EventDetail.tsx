@@ -6,6 +6,7 @@ import { SPORT_LABELS, AREA_LABELS } from '@/lib/constants';
 import SportIcon from '@/components/shared/SportIcon';
 import LevelBadge from '@/components/shared/LevelBadge';
 import TimeBadge from '@/components/shared/TimeBadge';
+import RankBadge from '@/components/shared/RankBadge';
 import AddToCalendar from './AddToCalendar';
 import { buildTicketUrl, TICKETS_ENABLED } from '@/lib/referral';
 
@@ -80,20 +81,20 @@ export default function EventDetail({
                 <div>
                   <div className="flex items-center gap-3">
                     <div className="flex-1 text-right">
-                      <div className="text-xl font-bold text-ink">{awayTeam.name}</div>
+                      <div className="text-xl font-bold text-ink"><RankBadge teamId={awayTeam.id} sport={event.sport} gender={event.gender} /> {awayTeam.name}</div>
                       <div className="text-xs text-ink-muted">{awayTeam.conference}</div>
                     </div>
                     <span className="rounded bg-navy px-3 py-1 font-display text-sm text-white">
                       @
                     </span>
                     <div className="flex-1">
-                      <div className="text-xl font-bold text-ink">{homeTeam.name}</div>
+                      <div className="text-xl font-bold text-ink">{homeTeam.name} <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} /></div>
                       <div className="text-xs text-ink-muted">{homeTeam.conference}</div>
                     </div>
                   </div>
                 </div>
               ) : (
-                <h3 className="text-xl font-bold text-ink">{title}</h3>
+                <h3 className="text-xl font-bold text-ink">{title} <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} /></h3>
               )}
             </div>
 

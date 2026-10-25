@@ -7,6 +7,7 @@ import { SPORT_LABELS, AREA_LABELS } from '@/lib/constants';
 import SportIcon from '@/components/shared/SportIcon';
 import LevelBadge from '@/components/shared/LevelBadge';
 import TimeBadge from '@/components/shared/TimeBadge';
+import RankBadge from '@/components/shared/RankBadge';
 import AddToCalendar from '@/components/event/AddToCalendar';
 import { buildTicketUrl, TICKETS_ENABLED } from '@/lib/referral';
 
@@ -53,21 +54,22 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
 
         {/* Title */}
         <h1 className="mt-4 font-display text-3xl tracking-wide text-navy dark:text-gold uppercase sm:text-4xl">
-          {title}
+          {title}{' '}
+          {!awayTeam && <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} />}
         </h1>
 
         {/* Matchup */}
         {awayTeam && (
           <div className="mt-6 flex items-center gap-4 rounded-lg border border-border bg-surface p-6">
             <div className="flex-1 text-right">
-              <div className="text-2xl font-bold text-ink">{awayTeam.name}</div>
+              <div className="text-2xl font-bold text-ink"><RankBadge teamId={awayTeam.id} sport={event.sport} gender={event.gender} /> {awayTeam.name}</div>
               <div className="text-sm text-ink-muted">{awayTeam.conference}</div>
             </div>
             <span className="rounded-lg bg-navy px-4 py-2 font-display text-lg text-white">
               @
             </span>
             <div className="flex-1">
-              <div className="text-2xl font-bold text-ink">{homeTeam.name}</div>
+              <div className="text-2xl font-bold text-ink">{homeTeam.name} <RankBadge teamId={homeTeam.id} sport={event.sport} gender={event.gender} /></div>
               <div className="text-sm text-ink-muted">{homeTeam.conference}</div>
             </div>
           </div>
