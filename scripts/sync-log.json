@@ -1,6 +1,261 @@
 {
-  "lastRun": "2026-10-24T17:03:43.951Z",
+  "lastRun": "2026-10-25T17:18:24.908Z",
   "discrepancies": [
+    {
+      "eventId": "usc-trojans-20261031-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-10-31T02:00:00+00:00\" → \"2026-10-31T02:00:00.000Z\"",
+        "eventName: \"Wisconsin Badgers at USC Trojans\" → \"Wisconsin at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261031-college-football",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-10-31T23:30:00+00:00\" → \"2026-10-31T23:30:00.000Z\"",
+        "eventName: \"Ohio State Buckeyes at USC Trojans\" → \"Ohio State at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261101-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-01T22:00:00+00:00\" → \"2026-11-01T21:00:00.000Z\"",
+        "eventName: \"Minnesota Golden Gophers at USC Trojans\" → \"Minnesota at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261109-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-09T01:00:00+00:00\" → \"2026-11-09T01:00:00.000Z\"",
+        "eventName: \"Utah State Aggies at USC Trojans\" → \"Utah State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261111-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-11T03:30:00+00:00\" → \"2026-11-11T03:30:00.000Z\"",
+        "eventName: \"Charleston Cougars at USC Trojans\" → \"College of Charleston at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261113-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-13T02:00:00+00:00\" → \"2026-11-13T02:00:00.000Z\"",
+        "eventName: \"Oregon Ducks at USC Trojans\" → \"Oregon at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261115-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-15T03:00:00+00:00\" → \"2026-11-15T03:00:00.000Z\"",
+        "eventName: \"Washington Huskies at USC Trojans\" → \"Washington at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261124-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-24T03:00:00+00:00\" → \"2026-11-24T03:00:00.000Z\"",
+        "eventName: \"Northern Arizona Lumberjacks at USC Trojans\" → \"Northern Arizona at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261209-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-12-09T03:00:00+00:00\" → \"2026-12-09T03:00:00.000Z\"",
+        "eventName: \"Grambling Lady Tigers at USC Trojans\" → \"Grambling State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20261213-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-12-13T22:00:00+00:00\" → \"2026-12-13T22:00:00.000Z\"",
+        "eventName: \"Youngstown State Penguins at USC Trojans\" → \"Youngstown State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270102-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-01-02T22:00:00+00:00\" → \"2027-01-02T22:00:00.000Z\"",
+        "eventName: \"Northwestern Wildcats at USC Trojans\" → \"Northwestern at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270106-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-01-06T03:00:00+00:00\" → \"2027-01-06T03:00:00.000Z\"",
+        "eventName: \"Nebraska Cornhuskers at USC Trojans\" → \"Nebraska at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270116-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-01-16T03:00:00+00:00\" → \"2027-01-16T03:00:00.000Z\"",
+        "eventName: \"Minnesota Golden Gophers at USC Trojans\" → \"Minnesota at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270118-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-01-18T21:00:00+00:00\" → \"2027-01-18T21:00:00.000Z\"",
+        "eventName: \"Penn State Lady Lions at USC Trojans\" → \"Penn State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270130-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-01-30T22:30:00+00:00\" → \"2027-01-30T22:30:00.000Z\"",
+        "eventName: \"Michigan Wolverines at USC Trojans\" → \"Michigan at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270203-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-02-03T03:00:00+00:00\" → \"2027-02-03T03:00:00.000Z\"",
+        "eventName: \"Illinois Fighting Illini at USC Trojans\" → \"Illinois at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270219-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-02-19T03:00:00+00:00\" → \"2027-02-19T03:00:00.000Z\"",
+        "eventName: \"Michigan State Spartans at USC Trojans\" → \"Michigan State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270221-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-02-21T21:00:00+00:00\" → \"2027-02-21T21:00:00.000Z\"",
+        "eventName: \"Ohio State Buckeyes at USC Trojans\" → \"Ohio State at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "usc-trojans-20270226-womens-college-basketball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2027-02-26T02:30:00+00:00\" → \"2027-02-26T02:30:00.000Z\"",
+        "eventName: \"UCLA Bruins at USC Trojans\" → \"UCLA at USC Trojans\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "long-beach-state-49ers-20261031-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:lbsu",
+      "diffs": [
+        "dateTime: \"2026-10-31T22:00:00+00:00\" → \"2026-10-31T02:00:00.000Z\"",
+        "venue: \"walter-pyramid\" → \"matadome\"",
+        "eventName: \"Cal State Northridge Matadors at Long Beach State 49ers\" → \"Cal State Bakersfield at Long Beach State 49ers\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "long-beach-state-49ers-20261114-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:lbsu",
+      "diffs": [
+        "dateTime: \"2026-11-14T03:00:00+00:00\" → \"2026-11-14T03:00:00.000Z\"",
+        "venue: \"walter-pyramid\" → \"matadome\"",
+        "eventName: \"UC Riverside Highlanders at Long Beach State 49ers\" → \"UC Riverside at Long Beach State 49ers\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.619Z"
+    },
+    {
+      "eventId": "long-beach-state-49ers-20261115-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:lbsu",
+      "diffs": [
+        "dateTime: \"2026-11-15T02:00:00+00:00\" → \"2026-11-15T02:00:00.000Z\"",
+        "venue: \"walter-pyramid\" → \"matadome\"",
+        "eventName: \"California Baptist Lancers at Long Beach State 49ers\" → \"California Baptist   at Long Beach State 49ers\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.620Z"
+    },
+    {
+      "eventId": "long-beach-state-49ers-20261121-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:lbsu",
+      "diffs": [
+        "dateTime: \"2026-11-21T03:00:00+00:00\" → \"2026-11-21T03:00:00.000Z\"",
+        "venue: \"walter-pyramid\" → \"matadome\"",
+        "eventName: \"UC San Diego Tritons at Long Beach State 49ers\" → \"UC San Diego at Long Beach State 49ers\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.620Z"
+    },
+    {
+      "eventId": "long-beach-state-49ers-20261122-womens-college-volleyball",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:lbsu",
+      "diffs": [
+        "dateTime: \"2026-11-22T02:00:00+00:00\" → \"2026-11-22T02:00:00.000Z\"",
+        "venue: \"walter-pyramid\" → \"matadome\"",
+        "eventName: \"UC Irvine Anteaters at Long Beach State 49ers\" → \"UC Irvine at Long Beach State 49ers\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-10-25T17:18:24.620Z"
+    },
     {
       "eventId": "la-dodgers-20270325",
       "existingSource": "mlb-api",
