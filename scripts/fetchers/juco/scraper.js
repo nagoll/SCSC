@@ -686,6 +686,36 @@ function parseProxyList(raw) {
     });
 }
 
+// Errors that mean the proxy (not the school's site) refused the connection.
+// Webshare residential entries map to individual home IPs, some of which are
+// offline at any moment, so these are worth retrying on another entry.
+const PROXY_CONNECTION_ERROR = /ERR_TUNNEL_CONNECTION_FAILED|ERR_PROXY_CONNECTION_FAILED|ERR_SSL_PROTOCOL_ERROR/;
+const PROXY_ATTEMPTS = 3;
+
+function isProxyConnectionError(err) {
+  return PROXY_CONNECTION_ERROR.test(err?.message || '');
+}
+
+// School `idx` of `count` tries proxies idx, idx + count, idx + 2*count, ... so
+// no two schools share an entry until the list runs out.
+function proxyForAttempt(proxies, idx, count, attempt) {
+  return proxies[(idx + attempt * count) % proxies.length];
+}
+
+async function scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, idx, count) {
+  if (proxies.length === 0) return scrapeJucoSchool(school, startDate, endDate, browser, undefined);
+  const attempts = Math.min(PROXY_ATTEMPTS, proxies.length);
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      return await scrapeJucoSchool(school, startDate, endDate, browser, proxyForAttempt(proxies, idx, count, attempt));
+    } catch (err) {
+      const last = attempt === attempts - 1;
+      console.warn(`[${school.id}] Proxy error (attempt ${attempt + 1}/${attempts})${last ? '' : ', retrying on another proxy'}: ${err.message.split('\n')[0]}`);
+      if (last) return [];
+    }
+  }
+}
+
 // The parsers only read the schedule text, so nothing visual needs to load.
 // Every byte here goes through the metered proxy (1 GB plan): skip images,
 // fonts, media and stylesheets, plus ad, analytics and consent scripts.
@@ -772,6 +802,9 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
     return events;
   } catch (err) {
+    // A dead residential IP fails the tunnel in about a second; let the caller
+    // retry the school on a different proxy instead of giving up on it.
+    if (proxy && isProxyConnectionError(err)) throw err;
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
     console.warn(`[${school.id}] Scrape error: ${msg}`);
     return [];
@@ -804,9 +837,7 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
       const batch = schools.slice(i, i + BATCH_SIZE);
       const batchResults = await Promise.allSettled(
         batch.map((school, j) => {
-          const idx = i + j;
-          const proxy = proxies.length > 0 ? proxies[idx % proxies.length] : undefined;
-          return scrapeJucoSchool(school, startDate, endDate, browser, proxy);
+          return scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, i + j, schools.length);
         })
       );
       results.push(...batchResults);
@@ -845,4 +876,4 @@ async function scrapeAllJuco(startDate, endDate) {
   return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
 }
 
-module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest };
+module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest, isProxyConnectionError, proxyForAttempt };
