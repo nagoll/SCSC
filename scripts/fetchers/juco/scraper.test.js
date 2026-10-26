@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const {
   pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest, isProxyConnectionError, proxyForAttempt,
-  wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths,
+  wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths, parseSidearmIcsJuco,
 } = require('./scraper.js');
 
 const school = id => JUCO_SCHOOLS.find(s => s.id === id);
@@ -144,5 +144,34 @@ describe('parseSidearmCalendarDays', () => {
 
   it('skips games outside the date range', () => {
     expect(parseSidearmCalendarDays([{ events: [game({ date: '2027-03-01T18:00:00' })] }], juco('lavc'), start, end)).toEqual([]);
+  });
+});
+
+describe('parseSidearmIcsJuco', () => {
+  const start = new Date('2026-10-01T00:00:00Z');
+  const end = new Date('2027-01-01T00:00:00Z');
+  const vevent = (summary, dtstart = 'DTSTART:20261104T180000', uid = '1') =>
+    ['BEGIN:VEVENT', `UID:${uid}`, dtstart, `SUMMARY:${summary}`, 'LOCATION:Van Nuys\\, Calif.', 'END:VEVENT'].join('\r\n');
+  const ics = (...events) => ['BEGIN:VCALENDAR', ...events, 'END:VCALENDAR'].join('\r\n');
+
+  it('keeps "vs" games as home games in Pacific time', () => {
+    const [ev] = parseSidearmIcsJuco(ics(vevent("LAVC Men's Basketball vs East Los Angeles")), juco('lavc'), start, end);
+    expect(ev).toMatchObject({
+      homeTeam: 'lavc-monarchs',
+      sport: 'basketball',
+      gender: 'mens',
+      dateTime: '2026-11-05T02:00:00.000Z',
+      eventName: 'East Los Angeles at LA Valley College Monarchs',
+    });
+  });
+
+  it('skips away, all-day, cancelled and out-of-range games', () => {
+    const events = parseSidearmIcsJuco(ics(
+      vevent("LAVC Men's Basketball at Citrus", undefined, '2'),
+      vevent("LAVC Women's Volleyball vs Citrus", 'DTSTART;VALUE=DATE:20261104', '3'),
+      vevent("LAVC Football vs Citrus - Cancelled", undefined, '4'),
+      vevent("LAVC Football vs Citrus", 'DTSTART:20270304T180000', '5'),
+    ), juco('lavc'), start, end);
+    expect(events).toEqual([]);
   });
 });
