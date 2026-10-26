@@ -697,14 +697,16 @@ function isProxyConnectionError(err) {
 }
 
 // School `idx` of `count` tries proxies idx, idx + count, idx + 2*count, ... so
-// no two schools share an entry until the list runs out.
+// no two schools share an entry until the list runs out (then it wraps).
 function proxyForAttempt(proxies, idx, count, attempt) {
   return proxies[(idx + attempt * count) % proxies.length];
 }
 
 async function scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, idx, count) {
   if (proxies.length === 0) return scrapeJucoSchool(school, startDate, endDate, browser, undefined);
-  const attempts = Math.min(PROXY_ATTEMPTS, proxies.length);
+  // A single rotating endpoint hands out a new IP per connection, so retrying
+  // the same entry is still worth it; the modulo just wraps a short list.
+  const attempts = PROXY_ATTEMPTS;
   for (let attempt = 0; attempt < attempts; attempt++) {
     try {
       return await scrapeJucoSchool(school, startDate, endDate, browser, proxyForAttempt(proxies, idx, count, attempt));
