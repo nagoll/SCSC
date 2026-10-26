@@ -472,6 +472,124 @@ function parseSidearmScheduleGrid(html, school, start, end) {
   return events;
 }
 
+const bareHost = url => new URL(url).hostname.replace(/^www\./, '');
+
+/** The words a school's own site uses for it: its key ("cerritos") and mascot ("falcons"). */
+function schoolNames(school) {
+  return school.pageNames || [schoolKey(school), normalizeTeamName(school.name).split(' ').pop()];
+}
+
+/**
+ * Confirms the browser ended up on this school's own composite schedule, not
+ * a redirect to the college's main site, a parked domain or another school.
+ * Returns a reason string when it did not, or null when the page checks out.
+ */
+function wrongPageReason(school, finalUrl, html) {
+  const expected = [].concat(school.scheduleUrl).map(bareHost);
+  const host = bareHost(finalUrl);
+  if (!expected.includes(host)) return `landed on ${host}, expected ${expected[0]}`;
+  if (!/composite|calendar/i.test(new URL(finalUrl).pathname)) return `landed on ${new URL(finalUrl).pathname}, not the composite schedule`;
+  const $ = cheerio.load(html);
+  const identity = normalizeTeamName([
+    $('title').first().text(),
+    $('meta[property="og:site_name"]').attr('content'),
+    $('meta[property="og:title"]').attr('content'),
+  ].filter(Boolean).join(' '));
+  if (!schoolNames(school).some(n => n && identity.includes(n))) return `page title "${$('title').first().text().trim()}" doesn't name the school`;
+  return null;
+}
+
+/**
+ * Turns days from SIDEARM's responsive-calendar.ashx (the data the composite
+ * page renders from) into home-game events. The page itself only shows a
+ * short window around today; the JSON covers every sport for a whole month.
+ * Skips away and neutral games, cancellations, and "All Day"/TBA entries
+ * (mostly multi-day tournaments).
+ */
+function parseSidearmCalendarDays(days, school, start, end) {
+  const events = [];
+  for (const day of days) {
+    for (const g of day.events || []) {
+      if (g.location_indicator !== 'H' || g.noplay_text || !/\d/.test(g.time || '')) continue;
+      const gameDate = fromZonedTime(g.date, 'America/Los_Angeles');
+      if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
+      const sportRaw = g.sport?.title || 'other';
+      const opponent = [g.opponent?.prefix, g.opponent?.title].filter(Boolean).join(' ') || 'Opponent';
+      const verification = verifyVenue({
+        scrapedVenueName: g.facility?.title || null,
+        defaultVenueId: school.defaultVenueId,
+      });
+      if (verification.excluded) {
+        console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+        continue;
+      }
+      events.push({
+        sourceGameId: g.id,
+        ...normalizeEvent({
+          homeTeamId: school.scscTeamId,
+          idSuffix: eventIdSuffix(sportRaw, opponent),
+          awayTeamId: null,
+          sport: sportRaw,
+          level: school.level,
+          gender: inferGender(sportRaw, null),
+          dateTime: gameDate.toISOString(),
+          endTime: null,
+          venueId: verification.venueId,
+          venueSourceName: verification.venueSourceName,
+          venueConfidence: verification.venueConfidence,
+          isNeutralSite: verification.isNeutralSite,
+          eventName: `${opponent} at ${school.name}`,
+          ticketUrl: g.media?.tickets?.url || school.ticketUrl || null,
+          price: school.price,
+          conference: null,
+          league: null,
+          source: `juco-scraper:${school.id}`,
+        }),
+      });
+    }
+  }
+  return events;
+}
+
+/** The calendar JSON URLs (one per month, site-relative) covering start..end. */
+function calendarMonthPaths(start, end) {
+  const paths = [];
+  for (const month = new Date(start.getFullYear(), start.getMonth(), 1); month <= end; month.setMonth(month.getMonth() + 1)) {
+    const date = `${month.getMonth() + 1}/1/${month.getFullYear()} 12:00:00 AM`;
+    paths.push(`/services/responsive-calendar.ashx?type=month&sport=0&location=all&date=${encodeURIComponent(date)}`);
+  }
+  return paths;
+}
+
+/**
+ * Reads the calendar JSON from inside the already-loaded page, so the request
+ * carries the cookies that got the page past the site's bot check. Returns
+ * null when the site has no calendar JSON, so the caller can fall back to the
+ * page markup.
+ */
+async function fetchCalendarInPage(page, school, start, end) {
+  const bodies = [];
+  for (const path of calendarMonthPaths(start, end)) {
+    const body = await page.evaluate(async url => {
+      const res = await fetch(url, { headers: { accept: 'application/json' } });
+      return res.ok ? res.text() : null;
+    }, path);
+    let days;
+    try { days = JSON.parse(body); } catch { days = null; }
+    if (!Array.isArray(days)) {
+      if (bodies.length === 0) return null;
+      console.warn(`[${school.id}] calendar JSON stopped at ${decodeURIComponent(path.split('date=')[1])}`);
+      break;
+    }
+    bodies.push(days);
+  }
+  const byGame = new Map();
+  for (const days of bodies) {
+    for (const ev of parseSidearmCalendarDays(days, school, start, end)) byGame.set(ev.sourceGameId ?? ev.id, ev);
+  }
+  return [...byGame.values()].map(({ sourceGameId, ...ev }) => ev);
+}
+
 /**
  * Extract games from a Sidearm Sports page (same logic as college scraper).
  */
@@ -791,11 +909,29 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       console.warn(`[${school.id}] HTTP ${res ? res.status() : '(no response)'} — ${url}`);
     }
     if (!res?.ok()) return [];
-    console.log(`[${school.id}] schedule page: ${page.url()}`);
 
     const html = await page.content();
+    const wrongPage = wrongPageReason(school, page.url(), html);
+    if (wrongPage) {
+      console.warn(`[${school.id}] Wrong page, skipping: ${wrongPage}`);
+      return [];
+    }
+    console.log(`[${school.id}] schedule page: ${page.url()}`);
+
     const start = new Date(startDate);
     const end = new Date(endDate);
+
+    if (school.platform === 'sidearm') {
+      const calendar = await fetchCalendarInPage(page, school, start, end).catch(err => {
+        console.warn(`[${school.id}] calendar JSON failed: ${err.message}`);
+        return null;
+      });
+      if (calendar) {
+        console.log(`[${school.id}] read ${calendar.length} home games from the calendar JSON`);
+        return calendar;
+      }
+      console.warn(`[${school.id}] no calendar JSON, parsing the page markup`);
+    }
 
     const events = school.platform === 'sidearm'
       ? await parseSidearmJuco(html, school, start, end)
@@ -878,4 +1014,7 @@ async function scrapeAllJuco(startDate, endDate) {
   return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
 }
 
-module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest, isProxyConnectionError, proxyForAttempt };
+module.exports = {
+  scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest,
+  isProxyConnectionError, proxyForAttempt, wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths,
+};

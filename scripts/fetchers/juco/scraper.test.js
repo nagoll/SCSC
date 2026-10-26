@@ -1,7 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const { pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest, isProxyConnectionError, proxyForAttempt } = require('./scraper.js');
+const {
+  pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest, isProxyConnectionError, proxyForAttempt,
+  wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths,
+} = require('./scraper.js');
 
 const school = id => JUCO_SCHOOLS.find(s => s.id === id);
 
@@ -65,5 +68,76 @@ describe('proxyForAttempt', () => {
 
   it('wraps around a short list', () => {
     expect(proxyForAttempt(['a', 'b'], 1, 17, 1)).toBe('a');
+  });
+});
+
+const juco = id => JUCO_SCHOOLS.find(s => s.id === id);
+const page = title => `<html><head><title>${title}</title></head><body></body></html>`;
+
+describe('wrongPageReason', () => {
+  it('accepts the school composite page with or without www', () => {
+    expect(wrongPageReason(juco('cerritos'), 'https://cerritosfalcons.com/composite', page('Composite Schedule - Cerritos College Athletics'))).toBeNull();
+    expect(wrongPageReason(juco('mt-sac'), 'https://www.mtsacathletics.com/composite?id=1', page('Mt. SAC Mounties Composite Calendar'))).toBeNull();
+  });
+
+  it('accepts a title that names only the mascot', () => {
+    expect(wrongPageReason(juco('elac'), 'https://www.elacathletics.com/composite', page('Huskies Athletics - Composite'))).toBeNull();
+  });
+
+  it('rejects a redirect to another site', () => {
+    expect(wrongPageReason(juco('cerritos'), 'https://www.cerritos.edu/athletics', page('Cerritos College'))).toMatch(/landed on cerritos\.edu/);
+  });
+
+  it('rejects the right site but not the composite page', () => {
+    expect(wrongPageReason(juco('cerritos'), 'https://www.cerritosfalcons.com/', page('Cerritos College Athletics'))).toMatch(/not the composite/);
+  });
+
+  it("rejects a page that doesn't name the school", () => {
+    expect(wrongPageReason(juco('cerritos'), 'https://www.cerritosfalcons.com/composite', page('Domain for sale'))).toMatch(/doesn't name the school/);
+  });
+});
+
+describe('calendarMonthPaths', () => {
+  it('asks for every month from start through end', () => {
+    const paths = calendarMonthPaths(new Date(2026, 9, 26), new Date(2027, 1, 3));
+    expect(paths).toHaveLength(5);
+    expect(decodeURIComponent(paths[0])).toContain('date=10/1/2026 12:00:00 AM');
+    expect(decodeURIComponent(paths[4])).toContain('date=2/1/2027 12:00:00 AM');
+  });
+});
+
+describe('parseSidearmCalendarDays', () => {
+  const start = new Date('2026-10-01T00:00:00Z');
+  const end = new Date('2027-01-01T00:00:00Z');
+  const game = overrides => ({
+    id: 501, date: '2026-11-04T18:00:00', time: '6:00 PM', location_indicator: 'H', noplay_text: null,
+    sport: { title: "Men's Basketball" }, opponent: { prefix: null, title: 'East Los Angeles' },
+    facility: null, media: { tickets: null }, ...overrides,
+  });
+
+  it('turns a home game into an event in Pacific time', () => {
+    const [ev] = parseSidearmCalendarDays([{ events: [game()] }], juco('lavc'), start, end);
+    expect(ev).toMatchObject({
+      homeTeam: 'lavc-monarchs',
+      sport: 'basketball',
+      gender: 'mens',
+      dateTime: '2026-11-05T02:00:00.000Z',
+      eventName: 'East Los Angeles at LA Valley College Monarchs',
+      source: 'juco-scraper:lavc',
+    });
+  });
+
+  it('skips away, neutral, cancelled and all-day games', () => {
+    const days = [{ events: [
+      game({ location_indicator: 'A' }),
+      game({ location_indicator: 'N' }),
+      game({ noplay_text: 'Canceled' }),
+      game({ time: 'All Day' }),
+    ] }];
+    expect(parseSidearmCalendarDays(days, juco('lavc'), start, end)).toEqual([]);
+  });
+
+  it('skips games outside the date range', () => {
+    expect(parseSidearmCalendarDays([{ events: [game({ date: '2027-03-01T18:00:00' })] }], juco('lavc'), start, end)).toEqual([]);
   });
 });
