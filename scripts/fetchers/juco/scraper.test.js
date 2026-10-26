@@ -84,6 +84,11 @@ describe('wrongPageReason', () => {
     expect(wrongPageReason(juco('elac'), 'https://www.elacathletics.com/composite', page('Huskies Athletics - Composite'))).toBeNull();
   });
 
+  it('reads "Los Angeles" in a title as LA', () => {
+    expect(wrongPageReason(juco('lacc'), 'https://laccathletics.com/composite', page('Composite Schedule - October 27 2026 -  Los Angeles City College'))).toBeNull();
+    expect(wrongPageReason(juco('elac'), 'https://www.elacathletics.com/composite', page('East Los Angeles College'))).toBeNull();
+  });
+
   it('rejects a redirect to another site', () => {
     expect(wrongPageReason(juco('cerritos'), 'https://www.cerritos.edu/athletics', page('Cerritos College'))).toMatch(/landed on cerritos\.edu/);
   });

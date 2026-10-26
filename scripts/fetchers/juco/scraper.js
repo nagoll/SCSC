@@ -490,11 +490,12 @@ function wrongPageReason(school, finalUrl, html) {
   if (!expected.includes(host)) return `landed on ${host}, expected ${expected[0]}`;
   if (!/composite|calendar/i.test(new URL(finalUrl).pathname)) return `landed on ${new URL(finalUrl).pathname}, not the composite schedule`;
   const $ = cheerio.load(html);
+  // Sites spell out "Los Angeles" where our names say "LA".
   const identity = normalizeTeamName([
     $('title').first().text(),
     $('meta[property="og:site_name"]').attr('content'),
     $('meta[property="og:title"]').attr('content'),
-  ].filter(Boolean).join(' '));
+  ].filter(Boolean).join(' ')).replace(/\blos angeles\b/g, 'la');
   if (!schoolNames(school).some(n => n && identity.includes(n))) return `page title "${$('title').first().text().trim()}" doesn't name the school`;
   return null;
 }
@@ -570,14 +571,17 @@ function calendarMonthPaths(start, end) {
 async function fetchCalendarInPage(page, school, start, end) {
   const bodies = [];
   for (const path of calendarMonthPaths(start, end)) {
-    const body = await page.evaluate(async url => {
-      const res = await fetch(url, { headers: { accept: 'application/json' } });
-      return res.ok ? res.text() : null;
+    const res = await page.evaluate(async url => {
+      const r = await fetch(url, { headers: { accept: 'application/json' } });
+      return { status: r.status, type: r.headers.get('content-type'), body: await r.text() };
     }, path);
     let days;
-    try { days = JSON.parse(body); } catch { days = null; }
+    try { days = JSON.parse(res.body); } catch { days = null; }
     if (!Array.isArray(days)) {
-      if (bodies.length === 0) return null;
+      if (bodies.length === 0) {
+        console.warn(`[${school.id}] calendar JSON: HTTP ${res.status} ${res.type || ''} ${res.body.slice(0, 200).replace(/\s+/g, ' ')}`);
+        return null;
+      }
       console.warn(`[${school.id}] calendar JSON stopped at ${decodeURIComponent(path.split('date=')[1])}`);
       break;
     }
