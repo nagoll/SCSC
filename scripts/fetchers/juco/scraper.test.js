@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const {
   pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest, isProxyConnectionError, proxyForAttempt,
-  wrongPageReason, lastCompositeDate, compositePageUrl,
+  wrongPageReason, parsePrestoIcs,
 } = require('./scraper.js');
 
 const school = id => JUCO_SCHOOLS.find(s => s.id === id);
@@ -102,23 +102,32 @@ describe('wrongPageReason', () => {
   });
 });
 
-describe('composite paging', () => {
-  const page = dates => `<div class="composite">${dates.map(d =>
-    `<div class="section-event-date"><h3 class="date-title">${d}</h3></div>`).join('')}</div>`;
+describe('parsePrestoIcs', () => {
+  const start = new Date('2026-10-01T00:00:00Z');
+  const end = new Date('2027-01-01T00:00:00Z');
+  const vevent = (summary, { dtstart = 'DTSTART:20261105T020000Z', status = 'CONFIRMED', location = '' } = {}) =>
+    ['BEGIN:VEVENT', dtstart, `SUMMARY:${summary}`, `STATUS:${status}`, `LOCATION:${location}`, 'END:VEVENT'].join('\r\n');
+  const ics = (...events) => ['BEGIN:VCALENDAR', ...events, 'END:VCALENDAR'].join('\r\n');
 
-  it('finds the last date heading on the page', () => {
-    expect(lastCompositeDate(page(['Nov 1, 2026', 'Nov 14, 2026', 'Nov 7, 2026'])).toISOString())
-      .toBe('2026-11-14T20:00:00.000Z');
+  it('keeps games played at the school, from either side of the summary', () => {
+    const events = parsePrestoIcs(ics(
+      vevent("(Men's Basketball) East Los Angeles at Los Angeles Valley"),
+      vevent("(Women's Volleyball) Los Angeles Valley vs. Citrus", { dtstart: 'DTSTART:20261106T020000Z' }),
+      vevent("(Men's Soccer) Los Angeles Valley at Mt. San Antonio (3-0)"),
+    ), juco('lavc'), start, end);
+    expect(events.map(e => [e.sport, e.gender, e.dateTime, e.eventName])).toEqual([
+      ['basketball', 'mens', '2026-11-05T02:00:00.000Z', 'East Los Angeles at LA Valley College Monarchs'],
+      ['volleyball', 'womens', '2026-11-06T02:00:00.000Z', 'Citrus at LA Valley College Monarchs'],
+    ]);
   });
 
-  it('returns null for a page with no dates', () => {
-    expect(lastCompositeDate('<div class="no-events-msg">No events</div>')).toBeNull();
-  });
-
-  it('builds the composite URL for a date, replacing any query', () => {
-    expect(compositePageUrl('https://laccathletics.com/composite', new Date('2026-12-01T20:00:00Z')))
-      .toBe('/composite?date=12/1/2026');
-    expect(compositePageUrl('https://www.mtsacathletics.com/composite?id=1', new Date('2027-01-15T20:00:00Z')))
-      .toBe('/composite?date=1/15/2027');
+  it('skips cancelled, all-day and out-of-range games', () => {
+    const events = parsePrestoIcs(ics(
+      vevent("(Football) Citrus at Los Angeles Valley", { status: 'CANCELLED' }),
+      vevent("(Football) Glendale at Los Angeles Valley", { dtstart: 'DTSTART;VALUE=DATE:20261105' }),
+      vevent("(Football) Pierce at Los Angeles Valley", { dtstart: 'DTSTART:20250905T020000Z' }),
+      vevent("(Football) Los Angeles Valley at Compton"),
+    ), juco('lavc'), start, end);
+    expect(events).toEqual([]);
   });
 });

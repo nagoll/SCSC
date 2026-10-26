@@ -422,6 +422,9 @@ function parseSidearmScheduleGrid(html, school, start, end) {
       const $box = $(box);
       const classes = ($box.attr('class') || '').split(/\s+/);
       if (classes.includes('event-box-away')) return;
+      // Newer markup marks away games only with "at" before the host's name.
+      const $host = $box.find('.team-name').filter((___, el) => $(el).find('.va').text().trim().toLowerCase() === 'at').first();
+      if ($host.length && pickOpponent([$host.attr('title') || ''], school) !== 'Opponent') return;
 
       const timeText = $box.find('.status').first().text().trim();
       const dateTime = parsePacificDateTime(dateText, timeText);
@@ -508,114 +511,90 @@ function fetchInPage(page, path) {
   }, path);
 }
 
-// The composite page lists only a few weeks from the date in its ?date=
-// parameter, so the scraper pages forward through it. The horizon keeps
-// proxy use in check; JuCo schedules rarely go out further than this.
-const COMPOSITE_HORIZON_DAYS = 180;
-const MAX_COMPOSITE_PAGES = 20;
-const EMPTY_PAGES_BEFORE_STOP = 4;
-const DAY_MS = 24 * 60 * 60 * 1000;
-
-/** The latest date heading on a composite page, or null when it shows none. */
-function lastCompositeDate(html) {
-  const $ = cheerio.load(html);
-  let last = null;
-  const headings = [
-    ...$('.section-event-date .date-title, .date-panel .month-title').map((_, el) => $(el).text().trim()).get(),
-    ...$('.cal-day .cal-show-more a[aria-label]').map((_, el) => {
-      const m = ($(el).attr('aria-label') || '').match(/([A-Za-z]{3})\s+(\d{1,2})\s+[\d:]+\s+\S+\s+(\d{4})/);
-      return m ? `${m[1]} ${m[2]}, ${m[3]}` : null;
-    }).get().filter(Boolean),
-  ];
-  for (const text of headings) {
-    const iso = parsePacificDateTime(text, '12:00 PM');
-    if (iso && (!last || iso > last)) last = iso;
-  }
-  return last ? new Date(last) : null;
-}
-
-// Temporary: what each composite page holds, to fit the parser to the
-// markup these sites use now.
-function describeCompositePage(school, pageNo, html, last, added) {
-  const $ = cheerio.load(html);
-  const headings = $('[class*="date"]').filter((_, el) => $(el).children().length === 0)
-    .map((_, el) => `${$(el).attr('class').split(/\s+/)[0]}="${$(el).text().trim().replace(/\s+/g, ' ').slice(0, 40)}"`).get()
-    .filter(t => !t.endsWith('=""'));
-  console.log(`[${school.id}] page ${pageNo}: last date ${last ? last.toISOString().slice(0, 10) : 'none'}, ${$('.event-box').length} cards, +${added} games; date texts: ${[...new Set(headings)].slice(0, 12).join(' | ')}`);
-  if (pageNo > 1) return;
-  const links = [...new Set($('a[href]').map((_, el) => $(el).attr('href')).get()
-    .filter(h => /composite|calendar|ical|\.ics|rss|print=|view=/i.test(h)))].slice(0, 30);
-  console.log(`[${school.id}]   links: ${links.join(' ')}`);
-  $('.event-box').slice(0, 6).each((_, el) => {
-    const $el = $(el);
-    const text = $el.text().replace(/\s+/g, ' ').trim().slice(0, 220);
-    console.log(`[${school.id}]   card [${($el.attr('class') || '').replace(/\s+/g, ' ')}] ${text}`);
-  });
-  const first = $('.event-box').first();
-  if (first.length) {
-    const group = first.parents().filter((_, el) => /date|group|day/i.test($(el).attr('class') || '')).first();
-    console.log(`[${school.id}]   card group: ${(group.length ? $.html(group) : $.html(first)).replace(/\s+/g, ' ').slice(0, 3500)}`);
-  }
-}
-
-// Temporary: which query or feed URL gets a later window from these sites.
-async function probeCompositeParams(page, school) {
-  const path = new URL(page.url()).pathname;
-  for (const q of ['?d=2026-12-01', '?date=2026-12-01', '?date=12-01-2026', '?start=2026-12-01', '?view=list', '?view=month&date=2026-12-01', '?print=rss', '?print=ical']) {
-    const res = await fetchInPage(page, path + q).catch(err => ({ status: 'error', type: '', body: err.message }));
-    const $ = cheerio.load(res.body);
-    const dates = $('.date-title, .month-title').map((_, el) => $(el).text().trim()).get();
-    const items = (res.body.match(/<item>|BEGIN:VEVENT/g) || []).length;
-    console.log(`[${school.id}]   probe ${q}: HTTP ${res.status} ${res.type.split(';')[0]} ${res.body.length}B, ${items} feed items, dates: ${dates.slice(0, 3).join(' | ')}${dates.length > 3 ? ` ... ${dates[dates.length - 1]} (${dates.length})` : ''}${items ? ` sample: ${res.body.slice(0, 600).replace(/\s+/g, ' ')}` : ''}`);
-  }
-}
-
-/** The composite URL showing the weeks from `date`, e.g. /composite?date=12/1/2026. */
-function compositePageUrl(pageUrl, date) {
-  const url = new URL(pageUrl);
-  url.search = `?date=${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`;
-  return url.pathname + url.search;
-}
-
 /**
- * Reads every home game from today to the horizon: parses the page already
- * loaded, then fetches the composite page for the day after the last date it
- * showed, until the horizon. Stops early when the site ignores ?date= (the
- * same last date comes back) or several pages in a row show nothing.
+ * These JuCo sites run PrestoSports, whose composite page shows only the
+ * next day with games. Its iCal feed (/composite?print=ical) lists every
+ * game the site has, back to its first season, so this is one request per
+ * school. SUMMARY reads "(Men's Soccer) Cerritos at Rio Hondo (3-0)" or
+ * "(Women's Volleyball) Cerritos vs. Citrus".
  */
-async function walkComposite(page, school, firstHtml, start, end) {
-  const horizon = new Date(Math.min(end, start.getTime() + COMPOSITE_HORIZON_DAYS * DAY_MS));
-  const byId = new Map();
-  let html = firstHtml;
-  let pages = 1;
-  let cursor = start;
-  let previousLast = null;
-  let emptyPages = 0;
-  for (;;) {
-    const before = byId.size;
-    for (const ev of await parseSidearmJuco(html, school, start, horizon)) byId.set(ev.id, ev);
-    const last = lastCompositeDate(html);
-    describeCompositePage(school, pages, html, last, byId.size - before);
-    if (last && previousLast && last.getTime() === previousLast.getTime()) {
-      console.warn(`[${school.id}] composite page ignores ?date=, keeping the first window only`);
-      break;
+function parsePrestoIcs(text, school, start, end) {
+  const vevents = [];
+  let cur = null;
+  for (const line of text.replace(/\r?\n[ \t]/g, '').split(/\r?\n/)) {
+    if (line === 'BEGIN:VEVENT') cur = {};
+    else if (line === 'END:VEVENT' && cur) { vevents.push(cur); cur = null; }
+    else if (cur) {
+      const m = line.match(/^([A-Z-]+)(;[^:]*)?:(.*)$/);
+      if (m) cur[m[1]] = { params: m[2] || '', value: m[3].replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1') };
     }
-    emptyPages = last ? 0 : emptyPages + 1;
-    if (emptyPages >= EMPTY_PAGES_BEFORE_STOP) break;
-    previousLast = last;
-    cursor = last && last > cursor ? new Date(last.getTime() + DAY_MS) : new Date(cursor.getTime() + 14 * DAY_MS);
-    if (cursor > horizon || pages >= MAX_COMPOSITE_PAGES) break;
-    if (pages === 1) await probeCompositeParams(page, school);
-    const res = await fetchInPage(page, compositePageUrl(page.url(), cursor));
-    if (res.status !== 200) {
-      console.warn(`[${school.id}] composite page for ${cursor.toISOString().slice(0, 10)}: HTTP ${res.status}`);
-      break;
-    }
-    html = res.body;
-    pages++;
   }
-  console.log(`[${school.id}] read ${pages} composite pages up to ${cursor.toISOString().slice(0, 10)}`);
-  return [...byId.values()];
+
+  const games = vevents.map(v => {
+    const m = (v.SUMMARY?.value || '').match(/^\(([^)]+)\)\s+(.+?)\s+(at|vs\.?)\s+(.+?)(?:\s+\([^)]*\))?$/i);
+    return m && { v, sportRaw: m[1], first: m[2].trim(), sep: m[3].toLowerCase(), second: m[4].trim() };
+  }).filter(Boolean);
+
+  // The school is in every game, so its feed name ("Los Angeles City",
+  // "Mt. San Antonio") is the most frequent team name.
+  const counts = new Map();
+  for (const g of games) for (const n of [g.first, g.second]) counts.set(n, (counts.get(n) || 0) + 1);
+  const self = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+
+  const events = [];
+  for (const { v, sportRaw, first, sep, second } of games) {
+    if (/CANCEL/i.test(v.STATUS?.value || '') || /\b(cancel+ed|postponed)\b/i.test(v.DESCRIPTION?.value || '')) continue;
+    // "A at B" is played at B; "A vs. B" at A.
+    const host = sep === 'at' ? second : first;
+    if (host !== self) continue;
+    const opponent = sep === 'at' ? first : second;
+    const dt = v.DTSTART;
+    if (!dt || /VALUE=DATE(?!-)/.test(dt.params)) continue;
+    const t = dt.value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/);
+    if (!t) continue;
+    const iso = `${t[1]}-${t[2]}-${t[3]}T${t[4]}:${t[5]}:${t[6]}`;
+    const gameDate = t[7] ? new Date(`${iso}Z`) : fromZonedTime(iso, 'America/Los_Angeles');
+    if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
+
+    const verification = verifyVenue({ scrapedVenueName: v.LOCATION?.value || null, defaultVenueId: school.defaultVenueId });
+    if (verification.excluded) {
+      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+      continue;
+    }
+    events.push(normalizeEvent({
+      homeTeamId: school.scscTeamId,
+      idSuffix: eventIdSuffix(sportRaw, opponent),
+      awayTeamId: null,
+      sport: sportRaw,
+      level: school.level,
+      gender: inferGender(sportRaw, null),
+      dateTime: gameDate.toISOString(),
+      endTime: null,
+      venueId: verification.venueId,
+      venueSourceName: verification.venueSourceName,
+      venueConfidence: verification.venueConfidence,
+      isNeutralSite: verification.isNeutralSite,
+      eventName: `${opponent} at ${school.name}`,
+      ticketUrl: school.ticketUrl || null,
+      price: school.price,
+      conference: null,
+      league: null,
+      source: `juco-scraper:${school.id}`,
+    }));
+  }
+  return events;
+}
+
+/** Reads the composite iCal feed from inside the loaded page; null when the site doesn't serve one. */
+async function fetchPrestoIcs(page, school, start, end) {
+  const url = new URL(page.url());
+  url.search = '?print=ical';
+  const res = await fetchInPage(page, url.pathname + url.search);
+  if (!res.body.includes('BEGIN:VCALENDAR')) {
+    console.warn(`[${school.id}] iCal feed: HTTP ${res.status} ${res.type.split(';')[0]} ${res.body.slice(0, 200).replace(/\s+/g, ' ')}`);
+    return null;
+  }
+  return parsePrestoIcs(res.body, school, start, end);
 }
 
 /**
@@ -951,8 +930,20 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
+    if (school.platform === 'sidearm') {
+      const feed = await fetchPrestoIcs(page, school, start, end).catch(err => {
+        console.warn(`[${school.id}] iCal feed failed: ${err.message}`);
+        return null;
+      });
+      if (feed) {
+        console.log(`[${school.id}] read ${feed.length} home games from the iCal feed`);
+        return feed;
+      }
+      console.warn(`[${school.id}] no iCal feed, parsing the page markup`);
+    }
+
     const events = school.platform === 'sidearm'
-      ? await walkComposite(page, school, html, start, end)
+      ? await parseSidearmJuco(html, school, start, end)
       : await parseGenericJuco(html, school, start, end);
 
     if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
@@ -1034,5 +1025,5 @@ async function scrapeAllJuco(startDate, endDate) {
 
 module.exports = {
   scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest,
-  isProxyConnectionError, proxyForAttempt, wrongPageReason, lastCompositeDate, compositePageUrl,
+  isProxyConnectionError, proxyForAttempt, wrongPageReason, parsePrestoIcs,
 };
