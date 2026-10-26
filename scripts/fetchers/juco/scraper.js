@@ -520,11 +520,39 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 function lastCompositeDate(html) {
   const $ = cheerio.load(html);
   let last = null;
-  $('.section-event-date .date-title').each((_, el) => {
-    const iso = parsePacificDateTime($(el).text().trim(), '12:00 PM');
+  const headings = [
+    ...$('.section-event-date .date-title, .date-panel .month-title').map((_, el) => $(el).text().trim()).get(),
+    ...$('.cal-day .cal-show-more a[aria-label]').map((_, el) => {
+      const m = ($(el).attr('aria-label') || '').match(/([A-Za-z]{3})\s+(\d{1,2})\s+[\d:]+\s+\S+\s+(\d{4})/);
+      return m ? `${m[1]} ${m[2]}, ${m[3]}` : null;
+    }).get().filter(Boolean),
+  ];
+  for (const text of headings) {
+    const iso = parsePacificDateTime(text, '12:00 PM');
     if (iso && (!last || iso > last)) last = iso;
-  });
+  }
   return last ? new Date(last) : null;
+}
+
+// Temporary: what each composite page holds, to fit the parser to the
+// markup these sites use now.
+function describeCompositePage(school, pageNo, html, last, added) {
+  const $ = cheerio.load(html);
+  const headings = $('[class*="date"]').filter((_, el) => $(el).children().length === 0)
+    .map((_, el) => `${$(el).attr('class').split(/\s+/)[0]}="${$(el).text().trim().replace(/\s+/g, ' ').slice(0, 40)}"`).get()
+    .filter(t => !t.endsWith('=""'));
+  console.log(`[${school.id}] page ${pageNo}: last date ${last ? last.toISOString().slice(0, 10) : 'none'}, ${$('.event-box').length} cards, +${added} games; date texts: ${[...new Set(headings)].slice(0, 12).join(' | ')}`);
+  if (pageNo > 1) return;
+  $('.event-box').slice(0, 6).each((_, el) => {
+    const $el = $(el);
+    const text = $el.text().replace(/\s+/g, ' ').trim().slice(0, 220);
+    console.log(`[${school.id}]   card [${($el.attr('class') || '').replace(/\s+/g, ' ')}] ${text}`);
+  });
+  const first = $('.event-box').first();
+  if (first.length) {
+    const group = first.parents().filter((_, el) => /date|group|day/i.test($(el).attr('class') || '')).first();
+    console.log(`[${school.id}]   card group: ${(group.length ? $.html(group) : $.html(first)).replace(/\s+/g, ' ').slice(0, 3500)}`);
+  }
 }
 
 /** The composite URL showing the weeks from `date`, e.g. /composite?date=12/1/2026. */
@@ -549,8 +577,10 @@ async function walkComposite(page, school, firstHtml, start, end) {
   let previousLast = null;
   let emptyPages = 0;
   for (;;) {
+    const before = byId.size;
     for (const ev of await parseSidearmJuco(html, school, start, horizon)) byId.set(ev.id, ev);
     const last = lastCompositeDate(html);
+    describeCompositePage(school, pages, html, last, byId.size - before);
     if (last && previousLast && last.getTime() === previousLast.getTime()) {
       console.warn(`[${school.id}] composite page ignores ?date=, keeping the first window only`);
       break;
