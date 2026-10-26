@@ -543,6 +543,9 @@ function describeCompositePage(school, pageNo, html, last, added) {
     .filter(t => !t.endsWith('=""'));
   console.log(`[${school.id}] page ${pageNo}: last date ${last ? last.toISOString().slice(0, 10) : 'none'}, ${$('.event-box').length} cards, +${added} games; date texts: ${[...new Set(headings)].slice(0, 12).join(' | ')}`);
   if (pageNo > 1) return;
+  const links = [...new Set($('a[href]').map((_, el) => $(el).attr('href')).get()
+    .filter(h => /composite|calendar|ical|\.ics|rss|print=|view=/i.test(h)))].slice(0, 30);
+  console.log(`[${school.id}]   links: ${links.join(' ')}`);
   $('.event-box').slice(0, 6).each((_, el) => {
     const $el = $(el);
     const text = $el.text().replace(/\s+/g, ' ').trim().slice(0, 220);
@@ -552,6 +555,18 @@ function describeCompositePage(school, pageNo, html, last, added) {
   if (first.length) {
     const group = first.parents().filter((_, el) => /date|group|day/i.test($(el).attr('class') || '')).first();
     console.log(`[${school.id}]   card group: ${(group.length ? $.html(group) : $.html(first)).replace(/\s+/g, ' ').slice(0, 3500)}`);
+  }
+}
+
+// Temporary: which query or feed URL gets a later window from these sites.
+async function probeCompositeParams(page, school) {
+  const path = new URL(page.url()).pathname;
+  for (const q of ['?d=2026-12-01', '?date=2026-12-01', '?date=12-01-2026', '?start=2026-12-01', '?view=list', '?view=month&date=2026-12-01', '?print=rss', '?print=ical']) {
+    const res = await fetchInPage(page, path + q).catch(err => ({ status: 'error', type: '', body: err.message }));
+    const $ = cheerio.load(res.body);
+    const dates = $('.date-title, .month-title').map((_, el) => $(el).text().trim()).get();
+    const items = (res.body.match(/<item>|BEGIN:VEVENT/g) || []).length;
+    console.log(`[${school.id}]   probe ${q}: HTTP ${res.status} ${res.type.split(';')[0]} ${res.body.length}B, ${items} feed items, dates: ${dates.slice(0, 3).join(' | ')}${dates.length > 3 ? ` ... ${dates[dates.length - 1]} (${dates.length})` : ''}${items ? ` sample: ${res.body.slice(0, 600).replace(/\s+/g, ' ')}` : ''}`);
   }
 }
 
@@ -590,6 +605,7 @@ async function walkComposite(page, school, firstHtml, start, end) {
     previousLast = last;
     cursor = last && last > cursor ? new Date(last.getTime() + DAY_MS) : new Date(cursor.getTime() + 14 * DAY_MS);
     if (cursor > horizon || pages >= MAX_COMPOSITE_PAGES) break;
+    if (pages === 1) await probeCompositeParams(page, school);
     const res = await fetchInPage(page, compositePageUrl(page.url(), cursor));
     if (res.status !== 200) {
       console.warn(`[${school.id}] composite page for ${cursor.toISOString().slice(0, 10)}: HTTP ${res.status}`);
