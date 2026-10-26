@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const {
   pickOpponent, eventIdSuffix, JUCO_SCHOOLS, shouldSkipRequest, isProxyConnectionError, proxyForAttempt,
-  wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths, parseSidearmIcsJuco,
+  wrongPageReason, lastCompositeDate, compositePageUrl,
 } = require('./scraper.js');
 
 const school = id => JUCO_SCHOOLS.find(s => s.id === id);
@@ -102,76 +102,23 @@ describe('wrongPageReason', () => {
   });
 });
 
-describe('calendarMonthPaths', () => {
-  it('asks for every month from start through end', () => {
-    const paths = calendarMonthPaths(new Date(2026, 9, 26), new Date(2027, 1, 3));
-    expect(paths).toHaveLength(5);
-    expect(decodeURIComponent(paths[0])).toContain('date=10/1/2026 12:00:00 AM');
-    expect(decodeURIComponent(paths[4])).toContain('date=2/1/2027 12:00:00 AM');
-  });
-});
+describe('composite paging', () => {
+  const page = dates => `<div class="composite">${dates.map(d =>
+    `<div class="section-event-date"><h3 class="date-title">${d}</h3></div>`).join('')}</div>`;
 
-describe('parseSidearmCalendarDays', () => {
-  const start = new Date('2026-10-01T00:00:00Z');
-  const end = new Date('2027-01-01T00:00:00Z');
-  const game = overrides => ({
-    id: 501, date: '2026-11-04T18:00:00', time: '6:00 PM', location_indicator: 'H', noplay_text: null,
-    sport: { title: "Men's Basketball" }, opponent: { prefix: null, title: 'East Los Angeles' },
-    facility: null, media: { tickets: null }, ...overrides,
+  it('finds the last date heading on the page', () => {
+    expect(lastCompositeDate(page(['Nov 1, 2026', 'Nov 14, 2026', 'Nov 7, 2026'])).toISOString())
+      .toBe('2026-11-14T20:00:00.000Z');
   });
 
-  it('turns a home game into an event in Pacific time', () => {
-    const [ev] = parseSidearmCalendarDays([{ events: [game()] }], juco('lavc'), start, end);
-    expect(ev).toMatchObject({
-      homeTeam: 'lavc-monarchs',
-      sport: 'basketball',
-      gender: 'mens',
-      dateTime: '2026-11-05T02:00:00.000Z',
-      eventName: 'East Los Angeles at LA Valley College Monarchs',
-      source: 'juco-scraper:lavc',
-    });
+  it('returns null for a page with no dates', () => {
+    expect(lastCompositeDate('<div class="no-events-msg">No events</div>')).toBeNull();
   });
 
-  it('skips away, neutral, cancelled and all-day games', () => {
-    const days = [{ events: [
-      game({ location_indicator: 'A' }),
-      game({ location_indicator: 'N' }),
-      game({ noplay_text: 'Canceled' }),
-      game({ time: 'All Day' }),
-    ] }];
-    expect(parseSidearmCalendarDays(days, juco('lavc'), start, end)).toEqual([]);
-  });
-
-  it('skips games outside the date range', () => {
-    expect(parseSidearmCalendarDays([{ events: [game({ date: '2027-03-01T18:00:00' })] }], juco('lavc'), start, end)).toEqual([]);
-  });
-});
-
-describe('parseSidearmIcsJuco', () => {
-  const start = new Date('2026-10-01T00:00:00Z');
-  const end = new Date('2027-01-01T00:00:00Z');
-  const vevent = (summary, dtstart = 'DTSTART:20261104T180000', uid = '1') =>
-    ['BEGIN:VEVENT', `UID:${uid}`, dtstart, `SUMMARY:${summary}`, 'LOCATION:Van Nuys\\, Calif.', 'END:VEVENT'].join('\r\n');
-  const ics = (...events) => ['BEGIN:VCALENDAR', ...events, 'END:VCALENDAR'].join('\r\n');
-
-  it('keeps "vs" games as home games in Pacific time', () => {
-    const [ev] = parseSidearmIcsJuco(ics(vevent("LAVC Men's Basketball vs East Los Angeles")), juco('lavc'), start, end);
-    expect(ev).toMatchObject({
-      homeTeam: 'lavc-monarchs',
-      sport: 'basketball',
-      gender: 'mens',
-      dateTime: '2026-11-05T02:00:00.000Z',
-      eventName: 'East Los Angeles at LA Valley College Monarchs',
-    });
-  });
-
-  it('skips away, all-day, cancelled and out-of-range games', () => {
-    const events = parseSidearmIcsJuco(ics(
-      vevent("LAVC Men's Basketball at Citrus", undefined, '2'),
-      vevent("LAVC Women's Volleyball vs Citrus", 'DTSTART;VALUE=DATE:20261104', '3'),
-      vevent("LAVC Football vs Citrus - Cancelled", undefined, '4'),
-      vevent("LAVC Football vs Citrus", 'DTSTART:20270304T180000', '5'),
-    ), juco('lavc'), start, end);
-    expect(events).toEqual([]);
+  it('builds the composite URL for a date, replacing any query', () => {
+    expect(compositePageUrl('https://laccathletics.com/composite', new Date('2026-12-01T20:00:00Z')))
+      .toBe('/composite?date=12/1/2026');
+    expect(compositePageUrl('https://www.mtsacathletics.com/composite?id=1', new Date('2027-01-15T20:00:00Z')))
+      .toBe('/composite?date=1/15/2027');
   });
 });

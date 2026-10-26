@@ -13,7 +13,7 @@
 const cheerio = require('cheerio');
 const { chromium } = require('playwright');
 const { fromZonedTime } = require('date-fns-tz');
-const { normalizeEvent, normalizeSport, inferGender } = require('../../normalize');
+const { normalizeEvent, inferGender } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
 // Every LA County CCCAA school runs its athletics site on SIDEARM Sports, on
@@ -500,162 +500,6 @@ function wrongPageReason(school, finalUrl, html) {
   return null;
 }
 
-/**
- * Turns days from SIDEARM's responsive-calendar.ashx (the data the composite
- * page renders from) into home-game events. The page itself only shows a
- * short window around today; the JSON covers every sport for a whole month.
- * Skips away and neutral games, cancellations, and "All Day"/TBA entries
- * (mostly multi-day tournaments).
- */
-function parseSidearmCalendarDays(days, school, start, end) {
-  const events = [];
-  for (const day of days) {
-    for (const g of day.events || []) {
-      if (g.location_indicator !== 'H' || g.noplay_text || !/\d/.test(g.time || '')) continue;
-      const gameDate = fromZonedTime(g.date, 'America/Los_Angeles');
-      if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
-      const ev = homeGameEvent(school, {
-        sourceGameId: g.id,
-        sportRaw: g.sport?.title || 'other',
-        opponent: [g.opponent?.prefix, g.opponent?.title].filter(Boolean).join(' ') || 'Opponent',
-        gameDate,
-        venueName: g.facility?.title || null,
-        ticketUrl: g.media?.tickets?.url,
-      });
-      if (ev) events.push(ev);
-    }
-  }
-  return events;
-}
-
-/** One home game as an event (with its feed id kept as sourceGameId), or null when the venue check excludes it. */
-function homeGameEvent(school, { sourceGameId, sportRaw, opponent, gameDate, venueName, ticketUrl }) {
-  const verification = verifyVenue({ scrapedVenueName: venueName, defaultVenueId: school.defaultVenueId });
-  if (verification.excluded) {
-    console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
-    return null;
-  }
-  return {
-    sourceGameId,
-    ...normalizeEvent({
-      homeTeamId: school.scscTeamId,
-      idSuffix: eventIdSuffix(sportRaw, opponent),
-      awayTeamId: null,
-      sport: sportRaw,
-      level: school.level,
-      gender: inferGender(sportRaw, null),
-      dateTime: gameDate.toISOString(),
-      endTime: null,
-      venueId: verification.venueId,
-      venueSourceName: verification.venueSourceName,
-      venueConfidence: verification.venueConfidence,
-      isNeutralSite: verification.isNeutralSite,
-      eventName: `${opponent} at ${school.name}`,
-      ticketUrl: ticketUrl || school.ticketUrl || null,
-      price: school.price,
-      conference: null,
-      league: null,
-      source: `juco-scraper:${school.id}`,
-    }),
-  };
-}
-
-/**
- * SIDEARM's all-sports iCal feed, for sites without the calendar JSON. It has
- * no home/away flag: SUMMARY reads "[W] LAVC Men's Basketball vs Opponent"
- * for home games and "... at Opponent" for away ones, so only "vs" games are
- * kept. All-day entries (mostly tournaments) are skipped.
- */
-function parseSidearmIcsJuco(text, school, start, end) {
-  const events = [];
-  const lines = text.replace(/\r?\n[ \t]/g, '').split(/\r?\n/);
-  let cur = null;
-  for (const line of lines) {
-    if (line === 'BEGIN:VEVENT') cur = {};
-    else if (line === 'END:VEVENT' && cur) {
-      const ev = icsHomeGame(cur, school, start, end);
-      if (ev) events.push(ev);
-      cur = null;
-    } else if (cur) {
-      const m = line.match(/^([A-Z-]+)(;[^:]*)?:(.*)$/);
-      if (m) cur[m[1]] = { params: m[2] || '', value: m[3].replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1') };
-    }
-  }
-  return events;
-}
-
-function icsHomeGame(v, school, start, end) {
-  const dt = v.DTSTART;
-  if (!dt || /VALUE=DATE(?!-)/.test(dt.params)) return null;
-  const m = dt.value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/);
-  if (!m) return null;
-  const iso = `${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:${m[6]}`;
-  const gameDate = m[7] ? new Date(`${iso}Z`) : fromZonedTime(iso, 'America/Los_Angeles');
-  if (isNaN(gameDate) || gameDate < start || gameDate > end) return null;
-  if (/\b(cancel+ed|postponed)\b/i.test(v.SUMMARY?.value || '')) return null;
-
-  const summary = (v.SUMMARY?.value || '').replace(/^\[[^\]]*\]\s*/, '');
-  const parts = summary.match(/^(.*?)\s+vs\.?\s+(.*)$/i);
-  if (!parts) return null;
-  // The left side is "[school name] Sport"; take the longest tail that is a sport.
-  const words = parts[1].split(/\s+/);
-  let sportRaw = 'other';
-  for (let i = 0; i < words.length; i++) {
-    const cand = words.slice(i).join(' ');
-    if (normalizeSport(cand) !== 'other') { sportRaw = cand; break; }
-  }
-  return homeGameEvent(school, {
-    sourceGameId: v.UID?.value || null,
-    sportRaw,
-    opponent: parts[2].split(/\s+-\s+/)[0].trim() || 'Opponent',
-    gameDate,
-    venueName: v.LOCATION?.value || null,
-    ticketUrl: (v.DESCRIPTION?.value || '').match(/Tickets:\s*(\S+)/)?.[1],
-  });
-}
-
-/** The calendar JSON URLs (one per month, site-relative) covering start..end. */
-function calendarMonthPaths(start, end) {
-  const paths = [];
-  for (const month = new Date(start.getFullYear(), start.getMonth(), 1); month <= end; month.setMonth(month.getMonth() + 1)) {
-    const date = `${month.getMonth() + 1}/1/${month.getFullYear()} 12:00:00 AM`;
-    paths.push(`/services/responsive-calendar.ashx?type=month&sport=0&location=all&date=${encodeURIComponent(date)}`);
-  }
-  return paths;
-}
-
-/**
- * Reads the calendar JSON from inside the already-loaded page, so the request
- * carries the cookies that got the page past the site's bot check. Returns
- * null when the site has no calendar JSON, so the caller can fall back to the
- * page markup.
- */
-async function fetchCalendarInPage(page, school, start, end) {
-  const bodies = [];
-  for (const path of calendarMonthPaths(start, end)) {
-    const res = await page.evaluate(async url => {
-      const r = await fetch(url, { headers: { accept: 'application/json' } });
-      return { status: r.status, type: r.headers.get('content-type'), body: await r.text() };
-    }, path);
-    let days;
-    try { days = JSON.parse(res.body); } catch { days = null; }
-    if (!Array.isArray(days)) {
-      if (bodies.length === 0) {
-        console.warn(`[${school.id}] calendar JSON: HTTP ${res.status} ${res.type || ''} ${res.body.slice(0, 200).replace(/\s+/g, ' ')}`);
-        return null;
-      }
-      console.warn(`[${school.id}] calendar JSON stopped at ${decodeURIComponent(path.split('date=')[1])}`);
-      break;
-    }
-    bodies.push(days);
-  }
-  const byGame = new Map();
-  for (const days of bodies) {
-    for (const ev of parseSidearmCalendarDays(days, school, start, end)) byGame.set(ev.sourceGameId ?? ev.id, ev);
-  }
-  return [...byGame.values()].map(({ sourceGameId, ...ev }) => ev);
-}
-
 /** Fetches a site-relative URL from inside the loaded page (with its cookies). */
 function fetchInPage(page, path) {
   return page.evaluate(async url => {
@@ -664,36 +508,68 @@ function fetchInPage(page, path) {
   }, path);
 }
 
-const ICS_PATH = '/calendar.ashx/calendar.ics?sport_id=0';
+// The composite page lists only a few weeks from the date in its ?date=
+// parameter, so the scraper pages forward through it. The horizon keeps
+// proxy use in check; JuCo schedules rarely go out further than this.
+const COMPOSITE_HORIZON_DAYS = 180;
+const MAX_COMPOSITE_PAGES = 20;
+const EMPTY_PAGES_BEFORE_STOP = 4;
+const DAY_MS = 24 * 60 * 60 * 1000;
 
-/** Reads the iCal feed from inside the page; null when the site doesn't serve one. */
-async function fetchIcsInPage(page, school, start, end) {
-  const res = await fetchInPage(page, ICS_PATH);
-  if (!res.body.includes('BEGIN:VCALENDAR')) {
-    console.warn(`[${school.id}] iCal feed: HTTP ${res.status} ${res.type} ${res.body.slice(0, 200).replace(/\s+/g, ' ')}`);
-    return null;
-  }
-  const byGame = new Map();
-  for (const ev of parseSidearmIcsJuco(res.body, school, start, end)) byGame.set(ev.sourceGameId ?? ev.id, ev);
-  return [...byGame.values()].map(({ sourceGameId, ...ev }) => ev);
+/** The latest date heading on a composite page, or null when it shows none. */
+function lastCompositeDate(html) {
+  const $ = cheerio.load(html);
+  let last = null;
+  $('.section-event-date .date-title').each((_, el) => {
+    const iso = parsePacificDateTime($(el).text().trim(), '12:00 PM');
+    if (iso && (!last || iso > last)) last = iso;
+  });
+  return last ? new Date(last) : null;
 }
 
-// Other places SIDEARM sites keep the full schedule. Logged when neither
-// feed works, so the next fix targets the one that answers.
-const PROBE_PATHS = [
-  '/calendar.ashx/calendar.ics',
-  '/calendar',
-  '/composite?date=12/1/2026',
-  '/api/v2/Calendar?type=month&sport=0&date=12/1/2026',
-  '/services/composite_calendar.ashx?date=12/1/2026',
-];
+/** The composite URL showing the weeks from `date`, e.g. /composite?date=12/1/2026. */
+function compositePageUrl(pageUrl, date) {
+  const url = new URL(pageUrl);
+  url.search = `?date=${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`;
+  return url.pathname + url.search;
+}
 
-async function logScheduleProbes(page, school) {
-  for (const path of PROBE_PATHS) {
-    const res = await fetchInPage(page, path).catch(err => ({ status: 'error', type: '', body: err.message }));
-    const decDates = (res.body.match(/\b(Dec(ember)?\.? \d{1,2}|12\/\d{1,2}\/2026|2026-12-\d\d)/g) || []).length;
-    console.warn(`[${school.id}] probe ${path}: HTTP ${res.status} ${res.type.split(';')[0]} ${res.body.length}B, ${decDates} December dates`);
+/**
+ * Reads every home game from today to the horizon: parses the page already
+ * loaded, then fetches the composite page for the day after the last date it
+ * showed, until the horizon. Stops early when the site ignores ?date= (the
+ * same last date comes back) or several pages in a row show nothing.
+ */
+async function walkComposite(page, school, firstHtml, start, end) {
+  const horizon = new Date(Math.min(end, start.getTime() + COMPOSITE_HORIZON_DAYS * DAY_MS));
+  const byId = new Map();
+  let html = firstHtml;
+  let pages = 1;
+  let cursor = start;
+  let previousLast = null;
+  let emptyPages = 0;
+  for (;;) {
+    for (const ev of await parseSidearmJuco(html, school, start, horizon)) byId.set(ev.id, ev);
+    const last = lastCompositeDate(html);
+    if (last && previousLast && last.getTime() === previousLast.getTime()) {
+      console.warn(`[${school.id}] composite page ignores ?date=, keeping the first window only`);
+      break;
+    }
+    emptyPages = last ? 0 : emptyPages + 1;
+    if (emptyPages >= EMPTY_PAGES_BEFORE_STOP) break;
+    previousLast = last;
+    cursor = last && last > cursor ? new Date(last.getTime() + DAY_MS) : new Date(cursor.getTime() + 14 * DAY_MS);
+    if (cursor > horizon || pages >= MAX_COMPOSITE_PAGES) break;
+    const res = await fetchInPage(page, compositePageUrl(page.url(), cursor));
+    if (res.status !== 200) {
+      console.warn(`[${school.id}] composite page for ${cursor.toISOString().slice(0, 10)}: HTTP ${res.status}`);
+      break;
+    }
+    html = res.body;
+    pages++;
   }
+  console.log(`[${school.id}] read ${pages} composite pages up to ${cursor.toISOString().slice(0, 10)}`);
+  return [...byId.values()];
 }
 
 /**
@@ -966,6 +842,8 @@ function logZeroParseHints(school, html, jsonCalls) {
   const topClasses = Object.entries(classCounts).sort((a, b) => b[1] - a[1]).slice(0, 12)
     .map(([c, n]) => `${c}×${n}`).join(' ');
   console.warn(`[${school.id}] parsed 0 events from ${html.length}B page. classes: ${topClasses || '(none)'}`);
+  const sample = cheerio.load(html)('.event-card, .cal-events-card, .event-box, .event-row').first();
+  if (sample.length) console.warn(`[${school.id}]   first event markup: ${cheerio.load('')(sample).toString().replace(/\s+/g, ' ').slice(0, 1500)}`);
   for (const { url, body } of jsonCalls.slice(0, 8)) {
     console.warn(`[${school.id}]   json: ${url}`);
     if (body) console.warn(`[${school.id}]     body: ${body}`);
@@ -1027,29 +905,8 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     const start = new Date(startDate);
     const end = new Date(endDate);
 
-    if (school.platform === 'sidearm') {
-      const calendar = await fetchCalendarInPage(page, school, start, end).catch(err => {
-        console.warn(`[${school.id}] calendar JSON failed: ${err.message}`);
-        return null;
-      });
-      if (calendar) {
-        console.log(`[${school.id}] read ${calendar.length} home games from the calendar JSON`);
-        return calendar;
-      }
-      const ics = await fetchIcsInPage(page, school, start, end).catch(err => {
-        console.warn(`[${school.id}] iCal feed failed: ${err.message}`);
-        return null;
-      });
-      if (ics) {
-        console.log(`[${school.id}] read ${ics.length} home games from the iCal feed`);
-        return ics;
-      }
-      await logScheduleProbes(page, school);
-      console.warn(`[${school.id}] no calendar JSON or iCal feed, parsing the page markup`);
-    }
-
     const events = school.platform === 'sidearm'
-      ? await parseSidearmJuco(html, school, start, end)
+      ? await walkComposite(page, school, html, start, end)
       : await parseGenericJuco(html, school, start, end);
 
     if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
@@ -1131,5 +988,5 @@ async function scrapeAllJuco(startDate, endDate) {
 
 module.exports = {
   scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest,
-  isProxyConnectionError, proxyForAttempt, wrongPageReason, parseSidearmCalendarDays, calendarMonthPaths, parseSidearmIcsJuco,
+  isProxyConnectionError, proxyForAttempt, wrongPageReason, lastCompositeDate, compositePageUrl,
 };
