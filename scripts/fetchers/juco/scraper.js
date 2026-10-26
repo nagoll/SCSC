@@ -539,7 +539,12 @@ function parsePrestoIcs(text, school, start, end) {
   // "Mt. San Antonio") is the most frequent team name.
   const counts = new Map();
   for (const g of games) for (const n of [g.first, g.second]) counts.set(n, (counts.get(n) || 0) + 1);
-  const self = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+  const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+  const self = ranked[0]?.[0];
+  // Temporary: how upcoming games read in this school's feed.
+  const upcoming = vevents.filter(v => (v.DTSTART?.value || '') >= start.toISOString().slice(0, 10).replace(/-/g, ''));
+  console.log(`[${school.id}] iCal: ${vevents.length} entries, ${games.length} parsed, ${upcoming.length} upcoming; top names: ${ranked.slice(0, 3).map(([n, c]) => `${n}×${c}`).join(', ')}`);
+  for (const v of upcoming.slice(0, 8)) console.log(`[${school.id}]   ${v.DTSTART.params}${v.DTSTART.value} | ${v.SUMMARY?.value} | ${v.LOCATION?.value || ''} | ${(v.DESCRIPTION?.value || '').replace(/\s+/g, ' ').slice(0, 120)}`);
 
   const events = [];
   for (const { v, sportRaw, first, sep, second } of games) {
