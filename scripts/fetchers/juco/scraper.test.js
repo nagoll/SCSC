@@ -109,15 +109,18 @@ describe('parsePrestoIcs', () => {
     ['BEGIN:VEVENT', dtstart, `SUMMARY:${summary}`, `STATUS:${status}`, `LOCATION:${location}`, 'END:VEVENT'].join('\r\n');
   const ics = (...events) => ['BEGIN:VCALENDAR', ...events, 'END:VCALENDAR'].join('\r\n');
 
-  it('keeps games played at the school, from either side of the summary', () => {
+  it('keeps games where the school is listed second (home), not first', () => {
     const events = parsePrestoIcs(ics(
       vevent("(Men's Basketball) East Los Angeles at Los Angeles Valley"),
-      vevent("(Women's Volleyball) Los Angeles Valley vs. Citrus", { dtstart: 'DTSTART:20261106T020000Z' }),
+      vevent("(Women's Volleyball) Citrus vs. Los Angeles Valley", { dtstart: 'DTSTART:20261106T020000Z' }),
       vevent("(Men's Soccer) Los Angeles Valley at Mt. San Antonio (3-0)"),
+      vevent("(Men's Basketball) Los Angeles Valley vs. Oxnard", { location: 'College of the Canyons' }),
+      vevent('(Softball) Citrus vs. Los Angeles Valley', { dtstart: 'DTSTART:20261107T020000Z' }),
     ), juco('lavc'), start, end);
     expect(events.map(e => [e.sport, e.gender, e.dateTime, e.eventName])).toEqual([
       ['basketball', 'mens', '2026-11-05T02:00:00.000Z', 'East Los Angeles at LA Valley College Monarchs'],
       ['volleyball', 'womens', '2026-11-06T02:00:00.000Z', 'Citrus at LA Valley College Monarchs'],
+      ['softball', 'womens', '2026-11-07T02:00:00.000Z', 'Citrus at LA Valley College Monarchs'],
     ]);
   });
 

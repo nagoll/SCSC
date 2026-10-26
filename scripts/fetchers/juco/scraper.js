@@ -516,7 +516,7 @@ function fetchInPage(page, path) {
  * next day with games. Its iCal feed (/composite?print=ical) lists every
  * game the site has, back to its first season, so this is one request per
  * school. SUMMARY reads "(Men's Soccer) Cerritos at Rio Hondo (3-0)" or
- * "(Women's Volleyball) Cerritos vs. Citrus".
+ * "(Women's Volleyball) Citrus vs. Cerritos".
  */
 function parsePrestoIcs(text, school, start, end) {
   const vevents = [];
@@ -532,27 +532,23 @@ function parsePrestoIcs(text, school, start, end) {
 
   const games = vevents.map(v => {
     const m = (v.SUMMARY?.value || '').match(/^\(([^)]+)\)\s+(.+?)\s+(at|vs\.?)\s+(.+?)(?:\s+\([^)]*\))?$/i);
-    return m && { v, sportRaw: m[1], first: m[2].trim(), sep: m[3].toLowerCase(), second: m[4].trim() };
+    return m && { v, sportRaw: m[1], first: m[2].trim(), second: m[4].trim() };
   }).filter(Boolean);
 
   // The school is in every game, so its feed name ("Los Angeles City",
   // "Mt. San Antonio") is the most frequent team name.
   const counts = new Map();
   for (const g of games) for (const n of [g.first, g.second]) counts.set(n, (counts.get(n) || 0) + 1);
-  const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1]);
-  const self = ranked[0]?.[0];
-  // Temporary: how upcoming games read in this school's feed.
-  const upcoming = vevents.filter(v => (v.DTSTART?.value || '') >= start.toISOString().slice(0, 10).replace(/-/g, ''));
-  console.log(`[${school.id}] iCal: ${vevents.length} entries, ${games.length} parsed, ${upcoming.length} upcoming; top names: ${ranked.slice(0, 3).map(([n, c]) => `${n}×${c}`).join(', ')}`);
-  for (const v of upcoming.slice(0, 8)) console.log(`[${school.id}]   ${v.DTSTART.params}${v.DTSTART.value} | ${v.SUMMARY?.value} | ${v.LOCATION?.value || ''} | ${(v.DESCRIPTION?.value || '').replace(/\s+/g, ' ').slice(0, 120)}`);
+  const self = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
 
   const events = [];
-  for (const { v, sportRaw, first, sep, second } of games) {
+  for (const { v, sportRaw, first, second } of games) {
     if (/CANCEL/i.test(v.STATUS?.value || '') || /\b(cancel+ed|postponed)\b/i.test(v.DESCRIPTION?.value || '')) continue;
-    // "A at B" is played at B; "A vs. B" at A.
-    const host = sep === 'at' ? second : first;
-    if (host !== self) continue;
-    const opponent = sep === 'at' ? first : second;
+    // Presto lists the home team second either way ("Visitor at Home",
+    // "Visitor vs. Home"); a tournament game the school plays elsewhere
+    // lists it first.
+    if (second !== self) continue;
+    const opponent = first;
     const dt = v.DTSTART;
     if (!dt || /VALUE=DATE(?!-)/.test(dt.params)) continue;
     const t = dt.value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/);
