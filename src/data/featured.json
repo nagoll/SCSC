@@ -1,12 +1,21 @@
 [
   {
+    "id": "gem-mt-sac-mounties-20261027-women-s-soccer-los-angeles-city",
+    "type": "hidden-gem",
+    "title": "Soccer at Mt. SAC: Mt. SAC vs. Los Angeles City",
+    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Los Angeles City for soccer. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "mt-sac-mounties-20261027-women-s-soccer-los-angeles-city",
+    "imageUrl": null,
+    "publishDate": "2026-10-27T00:00:00+00:00"
+  },
+  {
     "id": "gem-occidental-tigers-20261107-men-s-water-polo-university-of-la-verne",
     "type": "hidden-gem",
     "title": "Water polo at Occidental: Occidental vs. University of La Verne",
     "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts University of La Verne for water polo. The setting alone makes this worth the trip — and admission is free.",
     "eventId": "occidental-tigers-20261107-men-s-water-polo-university-of-la-verne",
     "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
+    "publishDate": "2026-10-27T00:00:00+00:00"
   },
   {
     "id": "gem-occidental-tigers-20261107-women-s-swimming-and-diving-claremont-m-s-redlands",
@@ -15,16 +24,7 @@
     "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Claremont-M-S/Redlands for swimming & diving. The setting alone makes this worth the trip — and admission is free.",
     "eventId": "occidental-tigers-20261107-women-s-swimming-and-diving-claremont-m-s-redlands",
     "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
-  },
-  {
-    "id": "gem-rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
-    "type": "hidden-gem",
-    "title": "Free JuCo Water polo: Rio Hondo vs. East Los Angeles",
-    "description": "Want competitive water polo without spending a dime? Rio Hondo takes on East Los Angeles at Rio Hondo College Athletic Complex. Free admission — just show up.",
-    "eventId": "rio-hondo-roadrunners-20261028-women-s-water-polo-east-los-angeles",
-    "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
+    "publishDate": "2026-10-27T00:00:00+00:00"
   },
   {
     "id": "gotw-la-clippers-20261029",
@@ -33,7 +33,7 @@
     "description": "One of the best rivalries in basketball is back. The Los Angeles Lakers visit Intuit Dome with bragging rights on the line.",
     "eventId": "la-clippers-20261029",
     "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
+    "publishDate": "2026-10-27T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20261105",
@@ -42,7 +42,7 @@
     "description": "California Cup — need we say more? Crypto.com Arena will be rocking when the Sharks roll in. Don't miss this one.",
     "eventId": "la-kings-20261105",
     "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
+    "publishDate": "2026-10-27T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261101",
@@ -51,6 +51,6 @@
     "description": "One of the best rivalries in football is back. The Los Angeles Chargers visit SoFi Stadium with bragging rights on the line.",
     "eventId": "la-rams-20261101",
     "imageUrl": null,
-    "publishDate": "2026-10-26T00:00:00+00:00"
+    "publishDate": "2026-10-27T00:00:00+00:00"
   }
 ]
