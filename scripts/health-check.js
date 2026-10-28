@@ -11,6 +11,11 @@
 const QUIET_OK = new Set([
   'la-sparks',        // WNBA schedule is released in spring
   'la-knight-riders', // MLC (summer); no fetcher covers it yet
+  'lafc',             // MLS offseason (season runs late Feb to fall)
+  'la-galaxy',        // MLS offseason
+  'angel-city-fc',    // NWSL offseason (season runs March to fall)
+  'elac-huskies',     // its schedule feed lists no upcoming games yet
+  'lasw-cougars',     // its schedule feed lists no upcoming games yet
 ]);
 
 // A team whose fetched count falls below this share of its previous upcoming

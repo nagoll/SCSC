@@ -62,6 +62,7 @@ function inferGender(raw, explicitGender) {
   const lower = (raw || '').toLowerCase();
   if (lower.startsWith('womens-') || lower.startsWith('women-') || lower.includes("women's")) return 'womens';
   if (lower.startsWith('mens-') || lower.startsWith('men-') || lower.includes("men's")) return 'mens';
+  if (lower.includes('softball')) return 'womens'; // only played by women's teams
   return 'mens'; // default
 }
 

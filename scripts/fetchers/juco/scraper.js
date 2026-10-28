@@ -422,6 +422,9 @@ function parseSidearmScheduleGrid(html, school, start, end) {
       const $box = $(box);
       const classes = ($box.attr('class') || '').split(/\s+/);
       if (classes.includes('event-box-away')) return;
+      // Newer markup marks away games only with "at" before the host's name.
+      const $host = $box.find('.team-name').filter((___, el) => $(el).find('.va').text().trim().toLowerCase() === 'at').first();
+      if ($host.length && pickOpponent([$host.attr('title') || ''], school) !== 'Opponent') return;
 
       const timeText = $box.find('.status').first().text().trim();
       const dateTime = parsePacificDateTime(dateText, timeText);
@@ -470,6 +473,129 @@ function parseSidearmScheduleGrid(html, school, start, end) {
   });
 
   return events;
+}
+
+const bareHost = url => new URL(url).hostname.replace(/^www\./, '');
+
+/** The words a school's own site uses for it: its key ("cerritos") and mascot ("falcons"). */
+function schoolNames(school) {
+  return school.pageNames || [schoolKey(school), normalizeTeamName(school.name).split(' ').pop()];
+}
+
+/**
+ * Confirms the browser ended up on this school's own composite schedule, not
+ * a redirect to the college's main site, a parked domain or another school.
+ * Returns a reason string when it did not, or null when the page checks out.
+ */
+function wrongPageReason(school, finalUrl, html) {
+  const expected = [].concat(school.scheduleUrl).map(bareHost);
+  const host = bareHost(finalUrl);
+  if (!expected.includes(host)) return `landed on ${host}, expected ${expected[0]}`;
+  if (!/composite|calendar/i.test(new URL(finalUrl).pathname)) return `landed on ${new URL(finalUrl).pathname}, not the composite schedule`;
+  const $ = cheerio.load(html);
+  // Sites spell out "Los Angeles" where our names say "LA".
+  const identity = normalizeTeamName([
+    $('title').first().text(),
+    $('meta[property="og:site_name"]').attr('content'),
+    $('meta[property="og:title"]').attr('content'),
+  ].filter(Boolean).join(' ')).replace(/\blos angeles\b/g, 'la');
+  if (!schoolNames(school).some(n => n && identity.includes(n))) return `page title "${$('title').first().text().trim()}" doesn't name the school`;
+  return null;
+}
+
+/** Fetches a site-relative URL from inside the loaded page (with its cookies). */
+function fetchInPage(page, path) {
+  return page.evaluate(async url => {
+    const r = await fetch(url);
+    return { status: r.status, type: r.headers.get('content-type') || '', body: await r.text() };
+  }, path);
+}
+
+/**
+ * These JuCo sites run PrestoSports, whose composite page shows only the
+ * next day with games. Its iCal feed (/composite?print=ical) lists every
+ * game the site has, back to its first season, so this is one request per
+ * school. SUMMARY reads "(Men's Soccer) Cerritos at Rio Hondo (3-0)" or
+ * "(Women's Volleyball) Citrus vs. Cerritos".
+ */
+function parsePrestoIcs(text, school, start, end) {
+  const vevents = [];
+  let cur = null;
+  for (const line of text.replace(/\r?\n[ \t]/g, '').split(/\r?\n/)) {
+    if (line === 'BEGIN:VEVENT') cur = {};
+    else if (line === 'END:VEVENT' && cur) { vevents.push(cur); cur = null; }
+    else if (cur) {
+      const m = line.match(/^([A-Z-]+)(;[^:]*)?:(.*)$/);
+      if (m) cur[m[1]] = { params: m[2] || '', value: m[3].replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1') };
+    }
+  }
+
+  const games = vevents.map(v => {
+    const m = (v.SUMMARY?.value || '').match(/^\(([^)]+)\)\s+(.+?)\s+(at|vs\.?)\s+(.+?)(?:\s+\([^)]*\))?$/i);
+    return m && { v, sportRaw: m[1], first: m[2].trim(), second: m[4].trim() };
+  }).filter(Boolean);
+
+  // The school is in every game, so its feed name ("Los Angeles City",
+  // "Mt. San Antonio") is the most frequent team name.
+  const counts = new Map();
+  for (const g of games) for (const n of [g.first, g.second]) counts.set(n, (counts.get(n) || 0) + 1);
+  const self = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+
+  const events = [];
+  for (const { v, sportRaw, first, second } of games) {
+    if (/CANCEL/i.test(v.STATUS?.value || '') || /\b(cancel+ed|postponed)\b/i.test(v.DESCRIPTION?.value || '')) continue;
+    // Presto lists the home team second either way ("Visitor at Home",
+    // "Visitor vs. Home"); a tournament game the school plays elsewhere
+    // lists it first.
+    if (second !== self) continue;
+    const opponent = first;
+    const dt = v.DTSTART;
+    if (!dt || /VALUE=DATE(?!-)/.test(dt.params)) continue;
+    const t = dt.value.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z?)$/);
+    if (!t) continue;
+    const iso = `${t[1]}-${t[2]}-${t[3]}T${t[4]}:${t[5]}:${t[6]}`;
+    const gameDate = t[7] ? new Date(`${iso}Z`) : fromZonedTime(iso, 'America/Los_Angeles');
+    if (isNaN(gameDate) || gameDate < start || gameDate > end) continue;
+
+    const verification = verifyVenue({ scrapedVenueName: v.LOCATION?.value || null, defaultVenueId: school.defaultVenueId });
+    if (verification.excluded) {
+      console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);
+      continue;
+    }
+    events.push(normalizeEvent({
+      homeTeamId: school.scscTeamId,
+      idSuffix: eventIdSuffix(sportRaw, opponent),
+      awayTeamId: null,
+      sport: sportRaw,
+      level: school.level,
+      gender: inferGender(sportRaw, null),
+      dateTime: gameDate.toISOString(),
+      endTime: null,
+      venueId: verification.venueId,
+      venueSourceName: verification.venueSourceName,
+      venueConfidence: verification.venueConfidence,
+      isNeutralSite: verification.isNeutralSite,
+      eventName: `${opponent} at ${school.name}`,
+      ticketUrl: school.ticketUrl || null,
+      price: school.price,
+      conference: null,
+      league: null,
+      source: `juco-scraper:${school.id}`,
+    }));
+  }
+  return events;
+}
+
+/** Reads the composite iCal feed from inside the loaded page; null when the site doesn't serve one. */
+async function fetchPrestoIcs(page, school, start, end) {
+  const url = new URL(page.url());
+  url.search = '?print=ical';
+  const res = await fetchInPage(page, url.pathname + url.search);
+  if (!res.body.includes('BEGIN:VCALENDAR')) {
+    console.warn(`[${school.id}] iCal feed: HTTP ${res.status} ${res.type.split(';')[0]} ${res.body.slice(0, 200).replace(/\s+/g, ' ')}`);
+    return null;
+  }
+  return parsePrestoIcs(res.body, school, start, end);
 }
 
 /**
@@ -686,6 +812,38 @@ function parseProxyList(raw) {
     });
 }
 
+// Errors that mean the proxy (not the school's site) refused the connection.
+// Webshare residential entries map to individual home IPs, some of which are
+// offline at any moment, so these are worth retrying on another entry.
+const PROXY_CONNECTION_ERROR = /ERR_TUNNEL_CONNECTION_FAILED|ERR_PROXY_CONNECTION_FAILED|ERR_SSL_PROTOCOL_ERROR/;
+const PROXY_ATTEMPTS = 3;
+
+function isProxyConnectionError(err) {
+  return PROXY_CONNECTION_ERROR.test(err?.message || '');
+}
+
+// School `idx` of `count` tries proxies idx, idx + count, idx + 2*count, ... so
+// no two schools share an entry until the list runs out (then it wraps).
+function proxyForAttempt(proxies, idx, count, attempt) {
+  return proxies[(idx + attempt * count) % proxies.length];
+}
+
+async function scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, idx, count) {
+  if (proxies.length === 0) return scrapeJucoSchool(school, startDate, endDate, browser, undefined);
+  // A single rotating endpoint hands out a new IP per connection, so retrying
+  // the same entry is still worth it; the modulo just wraps a short list.
+  const attempts = PROXY_ATTEMPTS;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      return await scrapeJucoSchool(school, startDate, endDate, browser, proxyForAttempt(proxies, idx, count, attempt));
+    } catch (err) {
+      const last = attempt === attempts - 1;
+      console.warn(`[${school.id}] Proxy error (attempt ${attempt + 1}/${attempts})${last ? '' : ', retrying on another proxy'}: ${err.message.split('\n')[0]}`);
+      if (last) return [];
+    }
+  }
+}
+
 // The parsers only read the schedule text, so nothing visual needs to load.
 // Every byte here goes through the metered proxy (1 GB plan): skip images,
 // fonts, media and stylesheets, plus ad, analytics and consent scripts.
@@ -710,6 +868,8 @@ function logZeroParseHints(school, html, jsonCalls) {
   const topClasses = Object.entries(classCounts).sort((a, b) => b[1] - a[1]).slice(0, 12)
     .map(([c, n]) => `${c}×${n}`).join(' ');
   console.warn(`[${school.id}] parsed 0 events from ${html.length}B page. classes: ${topClasses || '(none)'}`);
+  const sample = cheerio.load(html)('.event-card, .cal-events-card, .event-box, .event-row').first();
+  if (sample.length) console.warn(`[${school.id}]   first event markup: ${cheerio.load('')(sample).toString().replace(/\s+/g, ' ').slice(0, 1500)}`);
   for (const { url, body } of jsonCalls.slice(0, 8)) {
     console.warn(`[${school.id}]   json: ${url}`);
     if (body) console.warn(`[${school.id}]     body: ${body}`);
@@ -759,11 +919,29 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       console.warn(`[${school.id}] HTTP ${res ? res.status() : '(no response)'} — ${url}`);
     }
     if (!res?.ok()) return [];
-    console.log(`[${school.id}] schedule page: ${page.url()}`);
 
     const html = await page.content();
+    const wrongPage = wrongPageReason(school, page.url(), html);
+    if (wrongPage) {
+      console.warn(`[${school.id}] Wrong page, skipping: ${wrongPage}`);
+      return [];
+    }
+    console.log(`[${school.id}] schedule page: ${page.url()}`);
+
     const start = new Date(startDate);
     const end = new Date(endDate);
+
+    if (school.platform === 'sidearm') {
+      const feed = await fetchPrestoIcs(page, school, start, end).catch(err => {
+        console.warn(`[${school.id}] iCal feed failed: ${err.message}`);
+        return null;
+      });
+      if (feed) {
+        console.log(`[${school.id}] read ${feed.length} home games from the iCal feed`);
+        return feed;
+      }
+      console.warn(`[${school.id}] no iCal feed, parsing the page markup`);
+    }
 
     const events = school.platform === 'sidearm'
       ? await parseSidearmJuco(html, school, start, end)
@@ -772,6 +950,9 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
     if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
     return events;
   } catch (err) {
+    // A dead residential IP fails the tunnel in about a second; let the caller
+    // retry the school on a different proxy instead of giving up on it.
+    if (proxy && isProxyConnectionError(err)) throw err;
     const msg = err.name === 'TimeoutError' ? 'timed out after 45s' : err.message;
     console.warn(`[${school.id}] Scrape error: ${msg}`);
     return [];
@@ -804,9 +985,7 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
       const batch = schools.slice(i, i + BATCH_SIZE);
       const batchResults = await Promise.allSettled(
         batch.map((school, j) => {
-          const idx = i + j;
-          const proxy = proxies.length > 0 ? proxies[idx % proxies.length] : undefined;
-          return scrapeJucoSchool(school, startDate, endDate, browser, proxy);
+          return scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, i + j, schools.length);
         })
       );
       results.push(...batchResults);
@@ -845,4 +1024,7 @@ async function scrapeAllJuco(startDate, endDate) {
   return scrapeSidearmSchools(JUCO_SCHOOLS, startDate, endDate, parseProxyList(process.env.WEBSHARE_PROXIES));
 }
 
-module.exports = { scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest };
+module.exports = {
+  scrapeAllJuco, scrapeSidearmSchools, JUCO_SCHOOLS, pickOpponent, eventIdSuffix, shouldSkipRequest,
+  isProxyConnectionError, proxyForAttempt, wrongPageReason, parsePrestoIcs,
+};
