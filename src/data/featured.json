@@ -1,12 +1,12 @@
 [
   {
-    "id": "gem-occidental-tigers-20261107-men-s-water-polo-university-of-la-verne",
+    "id": "gem-mt-sac-mounties-20261030-women-s-water-polo-golden-west",
     "type": "hidden-gem",
-    "title": "Water polo at Occidental: Occidental vs. University of La Verne",
-    "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts University of La Verne for water polo. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "occidental-tigers-20261107-men-s-water-polo-university-of-la-verne",
+    "title": "Water polo at Mt. SAC: Mt. SAC vs. Golden West",
+    "description": "At Mt. SAC's world-class Hilmer Lodge Stadium, Mt. SAC hosts Golden West for water polo. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "mt-sac-mounties-20261030-women-s-water-polo-golden-west",
     "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
+    "publishDate": "2026-10-30T00:00:00+00:00"
   },
   {
     "id": "gem-occidental-tigers-20261107-women-s-swimming-and-diving-claremont-m-s-redlands",
@@ -15,25 +15,16 @@
     "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Claremont-M-S/Redlands for swimming & diving. The setting alone makes this worth the trip — and admission is free.",
     "eventId": "occidental-tigers-20261107-women-s-swimming-and-diving-claremont-m-s-redlands",
     "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
+    "publishDate": "2026-10-30T00:00:00+00:00"
   },
   {
-    "id": "gem-pomona-pitzer-sagehens-20261104-women-s-soccer-sciac-tournament",
+    "id": "gem-pcc-lancers-20261031-women-s-volleyball-la-mission",
     "type": "hidden-gem",
-    "title": "Women's Soccer: Pomona-Pitzer vs. SCIAC Tournament",
-    "description": "Women's soccer is having a moment, and Pomona-Pitzer is part of it. Catch them hosting SCIAC Tournament at Pomona-Pitzer Athletics Complex — free admission.",
-    "eventId": "pomona-pitzer-sagehens-20261104-women-s-soccer-sciac-tournament",
+    "title": "Free JuCo Volleyball: PCC vs. LA Mission",
+    "description": "Want competitive volleyball without spending a dime? PCC takes on LA Mission at PCC Robinson Stadium & Hutto-Patterson Gymnasium. Free admission — just show up.",
+    "eventId": "pcc-lancers-20261031-women-s-volleyball-la-mission",
     "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
-  },
-  {
-    "id": "gotw-la-clippers-20261029",
-    "type": "game-of-week",
-    "title": "Battle of LA: Clippers vs. Los Angeles Lakers",
-    "description": "One of the best rivalries in basketball is back. The Los Angeles Lakers visit Intuit Dome with bragging rights on the line.",
-    "eventId": "la-clippers-20261029",
-    "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
+    "publishDate": "2026-10-30T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20261105",
@@ -42,7 +33,7 @@
     "description": "California Cup — need we say more? Crypto.com Arena will be rocking when the Sharks roll in. Don't miss this one.",
     "eventId": "la-kings-20261105",
     "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
+    "publishDate": "2026-10-30T00:00:00+00:00"
   },
   {
     "id": "gotw-la-rams-20261101",
@@ -51,6 +42,15 @@
     "description": "One of the best rivalries in football is back. The Los Angeles Chargers visit SoFi Stadium with bragging rights on the line.",
     "eventId": "la-rams-20261101",
     "imageUrl": null,
-    "publishDate": "2026-10-29T00:00:00+00:00"
+    "publishDate": "2026-10-30T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-usc-trojans-20261031-women-s-soccer-ucla",
+    "type": "game-of-week",
+    "title": "Crosstown Showdown: USC vs. #14 UCLA",
+    "description": "Crosstown Showdown — need we say more? Galen Center will be rocking when the #14 UCLA roll in. Don't miss this one.",
+    "eventId": "usc-trojans-20261031-women-s-soccer-ucla",
+    "imageUrl": null,
+    "publishDate": "2026-10-30T00:00:00+00:00"
   }
 ]
