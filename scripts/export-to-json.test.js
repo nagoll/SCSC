@@ -28,4 +28,18 @@ describe('exportAllToJson (against a fake Supabase client)', () => {
       writeSpy.mockRestore();
     }
   });
+
+  it('exports every event, not just the first page of 1000', async () => {
+    const events = Array.from({ length: 2500 }, (_, i) => ({ id: `e${i}` }));
+    const fake = makeFakeSupabase({ teams: [], venues: [], events, featured: [] });
+
+    const writeSpy = vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {});
+    try {
+      await exportAllToJson(fake);
+      const [, content] = writeSpy.mock.calls.find(([filePath]) => filePath.endsWith('events.json'));
+      expect(JSON.parse(content)).toHaveLength(2500);
+    } finally {
+      writeSpy.mockRestore();
+    }
+  });
 });

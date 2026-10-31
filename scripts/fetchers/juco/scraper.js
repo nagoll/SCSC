@@ -817,6 +817,10 @@ function parseProxyList(raw) {
 // offline at any moment, so these are worth retrying on another entry.
 const PROXY_CONNECTION_ERROR = /ERR_TUNNEL_CONNECTION_FAILED|ERR_PROXY_CONNECTION_FAILED|ERR_SSL_PROTOCOL_ERROR/;
 const PROXY_ATTEMPTS = 3;
+// Wait before each retry. A proxy outage can last close to a minute, and
+// retries 3s apart all landed inside one (9 schools lost on Oct 30, while a
+// school retried 9s later got through).
+const PROXY_RETRY_DELAYS_MS = [15000, 30000];
 
 function isProxyConnectionError(err) {
   return PROXY_CONNECTION_ERROR.test(err?.message || '');
@@ -840,6 +844,7 @@ async function scrapeWithProxyRetry(school, startDate, endDate, browser, proxies
       const last = attempt === attempts - 1;
       console.warn(`[${school.id}] Proxy error (attempt ${attempt + 1}/${attempts})${last ? '' : ', retrying on another proxy'}: ${err.message.split('\n')[0]}`);
       if (last) return [];
+      await new Promise(r => setTimeout(r, PROXY_RETRY_DELAYS_MS[attempt]));
     }
   }
 }
