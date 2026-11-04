@@ -1,17 +1,21 @@
 {
-  "updatedAt": "2026-10-28T20:10:11.759Z",
+  "updatedAt": "2026-11-04T21:11:13.884Z",
   "polls": [
     {
       "sport": "football",
       "gender": "mens",
       "division": "d1",
       "poll": "AP Top 25",
-      "through": "2026-10-24",
+      "through": "2026-10-31",
       "source": "https://www.ncaa.com/rankings/football/fbs/associated-press",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 7
+          "rank": 5
+        },
+        {
+          "teamId": "usc-trojans",
+          "rank": 18
         }
       ]
     },
@@ -65,7 +69,7 @@
       "gender": "womens",
       "division": "d1",
       "poll": "AVCA Coaches Poll",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d1/avca-rankings",
       "ranked": []
     },
@@ -74,12 +78,12 @@
       "gender": "mens",
       "division": "d1",
       "poll": "United Soccer Coaches Poll",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/soccer-men/d1/united-soccer-coaches",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 22
+          "rank": 25
         }
       ]
     },
@@ -88,12 +92,12 @@
       "gender": "womens",
       "division": "d1",
       "poll": "IWSOC Coaches Poll",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/soccer-women/d1/iwsoc-coaches-poll",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 14
+          "rank": 10
         }
       ]
     },
@@ -102,12 +106,12 @@
       "gender": "mens",
       "division": "all",
       "poll": "NCAA RPI",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/waterpolo-men/nc/rpi",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 1
+          "rank": 2
         },
         {
           "teamId": "usc-trojans",
@@ -119,15 +123,15 @@
         },
         {
           "teamId": "long-beach-state-49ers",
-          "rank": 10
+          "rank": 11
         },
         {
           "teamId": "pepperdine-waves",
-          "rank": 14
+          "rank": 16
         },
         {
           "teamId": "csuf-titans",
-          "rank": 22
+          "rank": 21
         },
         {
           "teamId": "pomona-pitzer-sagehens",
@@ -140,7 +144,7 @@
       "gender": "mens",
       "division": "d2",
       "poll": "NCAA NPI",
-      "through": "2026-10-24",
+      "through": "2026-10-31",
       "source": "https://www.ncaa.com/rankings/football/d2/npi-rankings",
       "ranked": []
     },
@@ -149,7 +153,7 @@
       "gender": "womens",
       "division": "d2",
       "poll": "NCAA NPI",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d2/npi-rankings",
       "ranked": [
         {
@@ -177,7 +181,7 @@
       "gender": "womens",
       "division": "d2",
       "poll": "NCAA NPI",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/soccer-women/d2/npi-rankings",
       "ranked": []
     },
@@ -186,7 +190,7 @@
       "gender": "mens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-10-24",
+      "through": "2026-10-31",
       "source": "https://www.ncaa.com/rankings/football/d3/regional-rankings",
       "ranked": []
     },
@@ -195,7 +199,7 @@
       "gender": "womens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-10-18",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d3/regional-rankings",
       "ranked": []
     },
@@ -204,7 +208,7 @@
       "gender": "mens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/soccer-men/d3/regional-rankings",
       "ranked": []
     },
@@ -213,12 +217,12 @@
       "gender": "womens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-10-25",
+      "through": "2026-11-01",
       "source": "https://www.ncaa.com/rankings/soccer-women/d3/regional-rankings",
       "ranked": [
         {
           "teamId": "pomona-pitzer-sagehens",
-          "rank": 3,
+          "rank": 4,
           "region": "Region X"
         }
       ]
