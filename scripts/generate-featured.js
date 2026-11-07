@@ -10,6 +10,7 @@
  */
 
 const { supabaseAdmin } = require('./supabase-admin');
+const { selectAll } = require('./select-all');
 
 const LOOKAHEAD_DAYS = 14;
 const GOTW_COUNT = 3;
@@ -280,9 +281,9 @@ function diversePicks(scored, count, minScore) {
 // `db` is injectable so tests can pass a fake client; defaults to the real one.
 async function generateFeatured(db = supabaseAdmin()) {
   const [eventsRes, teamsRes, venuesRes] = await Promise.all([
-    db.from('events').select('*'),
-    db.from('teams').select('*'),
-    db.from('venues').select('*'),
+    selectAll(() => db.from('events').select('*').order('id')),
+    selectAll(() => db.from('teams').select('*').order('id')),
+    selectAll(() => db.from('venues').select('*').order('id')),
   ]);
   for (const [name, res] of [['events', eventsRes], ['teams', teamsRes], ['venues', venuesRes]]) {
     if (res.error) throw new Error(`generateFeatured: failed to read ${name} — ${res.error.message}`);

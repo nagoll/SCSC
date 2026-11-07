@@ -817,6 +817,14 @@ function parseProxyList(raw) {
 // offline at any moment, so these are worth retrying on another entry.
 const PROXY_CONNECTION_ERROR = /ERR_TUNNEL_CONNECTION_FAILED|ERR_PROXY_CONNECTION_FAILED|ERR_SSL_PROTOCOL_ERROR/;
 const PROXY_ATTEMPTS = 3;
+// Wait before each retry. A proxy outage can last close to a minute, and
+// retries 3s apart all landed inside one (9 schools lost on Oct 30, while a
+// school retried 9s later got through).
+const PROXY_RETRY_DELAYS_MS = [15000, 30000];
+// Some outages outlast all three attempts (Nov 1: every school from El Camino
+// on failed for 70s+), so schools the proxy refused get one more pass after
+// the rest are done and a longer pause.
+const PROXY_SECOND_PASS_DELAY_MS = 120000;
 
 function isProxyConnectionError(err) {
   return PROXY_CONNECTION_ERROR.test(err?.message || '');
@@ -839,7 +847,8 @@ async function scrapeWithProxyRetry(school, startDate, endDate, browser, proxies
     } catch (err) {
       const last = attempt === attempts - 1;
       console.warn(`[${school.id}] Proxy error (attempt ${attempt + 1}/${attempts})${last ? '' : ', retrying on another proxy'}: ${err.message.split('\n')[0]}`);
-      if (last) return [];
+      if (last) throw err;
+      await new Promise(r => setTimeout(r, PROXY_RETRY_DELAYS_MS[attempt]));
     }
   }
 }
@@ -979,16 +988,25 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   // between them keep each connection healthy.
   const BATCH_SIZE = proxies.length > 0 ? 2 : 4;
   const results = [];
-  try {
-    for (let i = 0; i < schools.length; i += BATCH_SIZE) {
-      if (i > 0 && proxies.length > 0) await new Promise(r => setTimeout(r, 1500));
-      const batch = schools.slice(i, i + BATCH_SIZE);
+  const runBatches = async indices => {
+    for (let b = 0; b < indices.length; b += BATCH_SIZE) {
+      if (b > 0 && proxies.length > 0) await new Promise(r => setTimeout(r, 1500));
+      const batch = indices.slice(b, b + BATCH_SIZE);
       const batchResults = await Promise.allSettled(
-        batch.map((school, j) => {
-          return scrapeWithProxyRetry(school, startDate, endDate, browser, proxies, i + j, schools.length);
-        })
+        batch.map(i => scrapeWithProxyRetry(schools[i], startDate, endDate, browser, proxies, i, schools.length))
       );
-      results.push(...batchResults);
+      batch.forEach((i, j) => { results[i] = batchResults[j]; });
+    }
+  };
+  try {
+    await runBatches(schools.map((_, i) => i));
+    const refused = results
+      .map((r, i) => (r.status === 'rejected' && isProxyConnectionError(r.reason) ? i : -1))
+      .filter(i => i >= 0);
+    if (refused.length > 0) {
+      console.warn(`[sidearm] proxy refused ${refused.length} schools; trying them again in ${PROXY_SECOND_PASS_DELAY_MS / 1000}s`);
+      await new Promise(r => setTimeout(r, PROXY_SECOND_PASS_DELAY_MS));
+      await runBatches(refused);
     }
   } finally {
     await browser.close();
@@ -1003,7 +1021,7 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
       console.log(`[${school.id}] fetched ${result.value.length} events (${kb} KB transferred)`);
       events.push(...result.value);
     } else {
-      console.warn(`[${school.id}] failed: ${result.reason?.message}`);
+      console.warn(`[${school.id}] failed: ${result.reason?.message?.split('\n')[0]}`);
     }
   }
   const totalBytes = schools.reduce((sum, s) => sum + (transferBytes.get(s.id) || 0), 0);

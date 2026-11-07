@@ -9,6 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const { supabaseAdmin } = require('./supabase-admin');
+const { selectAll } = require('./select-all');
 
 const DATA_DIR = path.join(__dirname, '../src/data');
 
@@ -22,7 +23,7 @@ const TABLES = [
 // `db` is injectable so tests can pass a fake client; defaults to the real one.
 async function exportAllToJson(db = supabaseAdmin()) {
   for (const { table, file, orderBy } of TABLES) {
-    const { data, error } = await db.from(table).select('*').order(orderBy);
+    const { data, error } = await selectAll(() => db.from(table).select('*').order(orderBy).order('id'));
     if (error) throw new Error(`export ${table}: ${error.message}`);
     fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify(data, null, 2) + '\n');
   }

@@ -15,6 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const { supabaseAdmin } = require('./supabase-admin');
+const { selectAll } = require('./select-all');
 
 const SYNC_LOG_PATH = path.join(__dirname, '../scripts/sync-log.json');
 
@@ -84,7 +85,7 @@ function loadSyncLog() {
  * Returns stats: { added, updated, skipped, discrepancies }.
  */
 async function mergeEvents(newEvents, db = supabaseAdmin()) {
-  const { data: existing, error: readError } = await db.from('events').select('*');
+  const { data: existing, error: readError } = await selectAll(() => db.from('events').select('*').order('id'));
   if (readError) throw new Error(`mergeEvents: failed to read events — ${readError.message}`);
 
   const existingMap = new Map(existing.map(e => [e.id, e]));
@@ -228,7 +229,7 @@ async function removeLegacyJucoEvents(incoming, db = supabaseAdmin()) {
   );
   if (refreshed.size === 0) return 0;
 
-  const { data: rows, error } = await db.from('events').select('id, source');
+  const { data: rows, error } = await selectAll(() => db.from('events').select('id, source').order('id'));
   if (error) throw new Error(`removeLegacyJucoEvents: ${error.message}`);
   const legacyIds = rows
     .filter(r => refreshed.has(r.source) && /-\d{8}$/.test(r.id))
