@@ -1,6 +1,17 @@
 {
-  "lastRun": "2026-11-08T18:34:56.202Z",
+  "lastRun": "2026-11-09T23:13:28.407Z",
   "discrepancies": [
+    {
+      "eventId": "usc-trojans-20261121-college-football",
+      "existingSource": "espn-api:college",
+      "incomingSource": "university-scraper:usc",
+      "diffs": [
+        "dateTime: \"2026-11-21T05:00:00+00:00\" → \"2026-11-21T23:15:00.000Z\"",
+        "eventName: \"Maryland Terrapins at USC Trojans\" → \"Maryland at USC Trojans\"",
+        "venueConfidence: \"verified\" → \"likely\""
+      ],
+      "timestamp": "2026-11-09T23:13:28.030Z"
+    },
     {
       "eventId": "usc-trojans-20261031-womens-college-volleyball",
       "existingSource": "espn-api:college",

@@ -1,21 +1,21 @@
 [
   {
-    "id": "gem-occidental-tigers-20261108-women-s-volleyball-whittier-college",
+    "id": "gem-occidental-tigers-20261121-women-s-swimming-and-diving-oxy-invite",
     "type": "hidden-gem",
-    "title": "Volleyball at Occidental: Occidental vs. Whittier College",
-    "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Whittier College for volleyball. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "occidental-tigers-20261108-women-s-volleyball-whittier-college",
+    "title": "Swimming & diving at Occidental: Occidental vs. Oxy Invite",
+    "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Oxy Invite for swimming & diving. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "occidental-tigers-20261121-women-s-swimming-and-diving-oxy-invite",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   },
   {
-    "id": "gem-occidental-tigers-20261114-women-s-swimming-and-diving-chapman-university",
+    "id": "gem-occidental-tigers-20261122-women-s-basketball-university-of-dallas",
     "type": "hidden-gem",
-    "title": "Swimming & diving at Occidental: Occidental vs. Chapman University",
-    "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Chapman University for swimming & diving. The setting alone makes this worth the trip — and admission is free.",
-    "eventId": "occidental-tigers-20261114-women-s-swimming-and-diving-chapman-university",
+    "title": "Basketball at Occidental: Occidental vs. University of Dallas",
+    "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts University of Dallas for basketball. The setting alone makes this worth the trip — and admission is free.",
+    "eventId": "occidental-tigers-20261122-women-s-basketball-university-of-dallas",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   },
   {
     "id": "gem-pomona-pitzer-sagehens-20261114-women-s-swimming-and-diving-cit-la-verne",
@@ -24,33 +24,33 @@
     "description": "Pomona-Pitzer takes on CIT & La Verne in women's swimming & diving at Pomona-Pitzer Athletics Complex. Competitive, fast-paced, and completely free.",
     "eventId": "pomona-pitzer-sagehens-20261114-women-s-swimming-and-diving-cit-la-verne",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-chargers-20261108",
+    "id": "gotw-la-chargers-20261122",
     "type": "game-of-week",
-    "title": "Chargers vs. Houston Texans",
-    "description": "The Chargers host the Houston Texans at SoFi Stadium this Sunday. A marquee matchup you won't want to miss.",
-    "eventId": "la-chargers-20261108",
+    "title": "Chargers vs. New York Jets",
+    "description": "SoFi Stadium plays host as the Chargers take on the New York Jets this Sunday. Circle this one on the calendar.",
+    "eventId": "la-chargers-20261122",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   },
   {
-    "id": "gotw-ucla-bruins-20261115-womens-college-volleyball",
+    "id": "gotw-ucla-bruins-20261114-womens-college-volleyball",
     "type": "game-of-week",
     "title": "Big Ten Showdown: UCLA vs. Oregon Ducks",
     "description": "Big Ten Showdown — need we say more? Pauley Pavilion will be rocking when the Oregon Ducks roll in. Don't miss this one.",
-    "eventId": "ucla-bruins-20261115-womens-college-volleyball",
+    "eventId": "ucla-bruins-20261114-womens-college-volleyball",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   },
   {
     "id": "gotw-usc-trojans-20261121-college-football",
     "type": "game-of-week",
-    "title": "USC vs. Maryland Terrapins",
-    "description": "The Maryland Terrapins come to town for a Saturday clash at Los Angeles Memorial Coliseum. The USC are looking to put on a show for the home crowd.",
+    "title": "USC vs. Maryland",
+    "description": "The Maryland come to town for a Saturday clash at Los Angeles Memorial Coliseum. The USC are looking to put on a show for the home crowd.",
     "eventId": "usc-trojans-20261121-college-football",
     "imageUrl": null,
-    "publishDate": "2026-11-08T00:00:00+00:00"
+    "publishDate": "2026-11-09T00:00:00+00:00"
   }
 ]
