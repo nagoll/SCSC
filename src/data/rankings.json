@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-11-04T21:11:13.884Z",
+  "updatedAt": "2026-11-11T21:49:41.675Z",
   "polls": [
     {
       "sport": "football",
       "gender": "mens",
       "division": "d1",
       "poll": "AP Top 25",
-      "through": "2026-10-31",
+      "through": "2026-11-07",
       "source": "https://www.ncaa.com/rankings/football/fbs/associated-press",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 5
+          "rank": 4
         },
         {
           "teamId": "usc-trojans",
-          "rank": 18
+          "rank": 15
         }
       ]
     },
@@ -24,16 +24,16 @@
       "gender": "mens",
       "division": "d1",
       "poll": "AP Top 25",
-      "through": "2026-10-19",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/basketball-men/d1/di-mens-basketball-associated-press",
       "ranked": [
         {
-          "teamId": "usc-trojans",
-          "rank": 21
+          "teamId": "ucla-bruins",
+          "rank": 9
         },
         {
-          "teamId": "ucla-bruins",
-          "rank": 22
+          "teamId": "usc-trojans",
+          "rank": 21
         }
       ]
     },
@@ -51,7 +51,7 @@
       "gender": "womens",
       "division": "d1",
       "poll": "AP Top 25",
-      "through": "2026-10-20",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/basketball-women/d1/di-womens-basketball-associated-press",
       "ranked": [
         {
@@ -60,7 +60,7 @@
         },
         {
           "teamId": "ucla-bruins",
-          "rank": 11
+          "rank": 10
         }
       ]
     },
@@ -69,7 +69,7 @@
       "gender": "womens",
       "division": "d1",
       "poll": "AVCA Coaches Poll",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d1/avca-rankings",
       "ranked": []
     },
@@ -78,12 +78,12 @@
       "gender": "mens",
       "division": "d1",
       "poll": "United Soccer Coaches Poll",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/soccer-men/d1/united-soccer-coaches",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 25
+          "rank": 18
         }
       ]
     },
@@ -92,12 +92,12 @@
       "gender": "womens",
       "division": "d1",
       "poll": "IWSOC Coaches Poll",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/soccer-women/d1/iwsoc-coaches-poll",
       "ranked": [
         {
           "teamId": "ucla-bruins",
-          "rank": 10
+          "rank": 15
         }
       ]
     },
@@ -106,7 +106,7 @@
       "gender": "mens",
       "division": "all",
       "poll": "NCAA RPI",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/waterpolo-men/nc/rpi",
       "ranked": [
         {
@@ -127,11 +127,11 @@
         },
         {
           "teamId": "pepperdine-waves",
-          "rank": 16
+          "rank": 15
         },
         {
           "teamId": "csuf-titans",
-          "rank": 21
+          "rank": 22
         },
         {
           "teamId": "pomona-pitzer-sagehens",
@@ -144,7 +144,7 @@
       "gender": "mens",
       "division": "d2",
       "poll": "NCAA NPI",
-      "through": "2026-10-31",
+      "through": "2026-11-07",
       "source": "https://www.ncaa.com/rankings/football/d2/npi-rankings",
       "ranked": []
     },
@@ -153,26 +153,12 @@
       "gender": "womens",
       "division": "d2",
       "poll": "NCAA NPI",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d2/npi-rankings",
       "ranked": [
         {
           "teamId": "cal-poly-pomona-broncos",
-          "rank": 20
-        }
-      ]
-    },
-    {
-      "sport": "soccer",
-      "gender": "mens",
-      "division": "d2",
-      "poll": "NCAA NPI",
-      "through": "2026-10-26",
-      "source": "https://www.ncaa.com/rankings/soccer-men/d2/npi-rankings",
-      "ranked": [
-        {
-          "teamId": "calstate-la-eagles",
-          "rank": 1
+          "rank": 14
         }
       ]
     },
@@ -190,7 +176,7 @@
       "gender": "mens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-10-31",
+      "through": "2026-11-07",
       "source": "https://www.ncaa.com/rankings/football/d3/regional-rankings",
       "ranked": []
     },
@@ -199,7 +185,7 @@
       "gender": "womens",
       "division": "d3",
       "poll": "NCAA regional rankings",
-      "through": "2026-11-01",
+      "through": "2026-11-08",
       "source": "https://www.ncaa.com/rankings/volleyball-women/d3/regional-rankings",
       "ranked": []
     },
