@@ -137,13 +137,18 @@ export function parseDate(dateKey: string): Date {
   return new Date(year, month - 1, day);
 }
 
-function formatCalendarDate(dateStr: string): string {
+export function formatCalendarDate(dateStr: string): string {
   return new Date(dateStr).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 }
 
-function resolveEventWindow(event: { start: string; end: string | null }): { start: string; end: string } {
+export function resolveEventWindow(event: { start: string; end: string | null }): { start: string; end: string } {
   const end = event.end || new Date(new Date(event.start).getTime() + 2 * 60 * 60 * 1000).toISOString();
   return { start: event.start, end };
+}
+
+/** Escapes a value for an iCalendar TEXT property (RFC 5545 §3.3.11). */
+export function escapeICSText(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
 }
 
 export function generateICS(event: {
@@ -162,9 +167,9 @@ export function generateICS(event: {
     'BEGIN:VEVENT',
     `DTSTART:${formatCalendarDate(start)}`,
     `DTEND:${formatCalendarDate(end)}`,
-    `SUMMARY:${event.title}`,
-    `LOCATION:${event.location}`,
-    `DESCRIPTION:${event.description}`,
+    `SUMMARY:${escapeICSText(event.title)}`,
+    `LOCATION:${escapeICSText(event.location)}`,
+    `DESCRIPTION:${escapeICSText(event.description)}`,
     'END:VEVENT',
     'END:VCALENDAR',
   ].join('\r\n');

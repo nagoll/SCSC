@@ -11,6 +11,7 @@ import Link from 'next/link';
 import CalendarView from '@/components/calendar/CalendarView';
 import FilterSidebar from '@/components/filters/FilterSidebar';
 import FilterDrawer from '@/components/filters/FilterDrawer';
+import SubscribeCalendar from '@/components/calendar/SubscribeCalendar';
 import EventDetail from '@/components/event/EventDetail';
 import FeaturedSection from '@/components/featured/FeaturedSection';
 import SignupBanner from '@/components/newsletter/SignupBanner';
@@ -198,11 +199,11 @@ export default function HomePage({ teams, venues, events, featured }: HomePageCl
 
             {/* Calendar */}
             <div className="min-w-0 flex-1">
-              {/* Mobile Filter Button */}
-              <div className="mb-4 lg:hidden">
+              {/* Mobile Filter Button + calendar feed */}
+              <div className="mb-4 flex items-center gap-2">
                 <button
                   onClick={() => setFilterDrawerOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-4 py-2 text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
+                  className="inline-flex lg:hidden items-center gap-2 rounded-md border border-border bg-surface px-4 py-2 text-sm font-medium text-ink-light transition-colors hover:bg-cream-dark"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
@@ -214,6 +215,9 @@ export default function HomePage({ teams, venues, events, featured }: HomePageCl
                     </span>
                   )}
                 </button>
+                <div className="ml-auto">
+                  <SubscribeCalendar filters={filters} teams={teamsMap} nearMeActive={nearMe.active} />
+                </div>
               </div>
 
               {/* Results Summary */}
