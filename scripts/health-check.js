@@ -16,6 +16,8 @@ const QUIET_OK = new Set([
   'angel-city-fc',    // NWSL offseason (season runs March to fall)
   'elac-huskies',     // its schedule feed lists no upcoming games yet
   'lasw-cougars',     // its schedule feed lists no upcoming games yet
+  'rio-hondo-roadrunners', // its feed lists no upcoming home games (Nov 6)
+  'west-la-wildcats', // its feed lists no upcoming home games (Nov 6)
 ]);
 
 // A team whose fetched count falls below this share of its previous upcoming

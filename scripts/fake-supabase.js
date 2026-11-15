@@ -1,7 +1,7 @@
 /**
  * fake-supabase.js — an in-memory stand-in for the Supabase client, used only
  * in tests. Implements just the query-builder calls this codebase actually
- * issues (select/upsert/insert/delete + lt/not/order filters), not a general
+ * issues (select/upsert/insert/delete + lt/not/order/range filters), not a general
  * Postgres emulator.
  */
 
@@ -16,6 +16,7 @@ function makeFakeSupabase(initialTables = {}) {
     let op = null;
     let payload = null;
     const filters = [];
+    let window = null;
 
     const api = {
       select() {
@@ -51,11 +52,16 @@ function makeFakeSupabase(initialTables = {}) {
       order() {
         return api;
       },
+      range(from, to) {
+        window = [from, to + 1];
+        return api;
+      },
       then(resolve, reject) {
         try {
           const rows = tables[tableName];
           if (op === 'select') {
-            resolve({ data: rows.filter((r) => filters.every((f) => f(r))), error: null });
+            const matched = rows.filter((r) => filters.every((f) => f(r)));
+            resolve({ data: window ? matched.slice(...window) : matched, error: null });
           } else if (op === 'upsert') {
             for (const incoming of payload) {
               const idx = rows.findIndex((r) => r.id === incoming.id);
