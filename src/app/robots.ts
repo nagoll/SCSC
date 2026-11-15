@@ -13,8 +13,10 @@ const AI_AGENTS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: '*', allow: '/' },
-      { userAgent: AI_AGENTS, allow: '/' },
+      // Calendar feeds are for calendar apps; every filter combo is its own URL,
+      // so crawling them would only burn database reads.
+      { userAgent: '*', allow: '/', disallow: '/calendar.ics' },
+      { userAgent: AI_AGENTS, allow: '/', disallow: '/calendar.ics' },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
