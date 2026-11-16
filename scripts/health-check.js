@@ -47,7 +47,11 @@ function checkHealth({ teams, fetched, previous, level = 'all', now = new Date()
       const n = got.get(t.id) || 0;
       const prev = had.get(t.id) || 0;
       let problem = null;
-      if (n === 0 && !QUIET_OK.has(t.id)) problem = 'no events fetched';
+      // A JuCo feed that was already empty and is still empty is a season
+      // between schedules, not a broken scraper: there is nothing to lose.
+      // A JuCo team that drops to 0 from games it had is still flagged.
+      const quiet = QUIET_OK.has(t.id) || (t.level === 'juco' && prev === 0);
+      if (n === 0 && !quiet) problem = 'no events fetched';
       else if (prev >= DROP_MIN_PREVIOUS && n < prev * DROP_RATIO) problem = `dropped from ${prev}`;
       return { id: t.id, level: t.level, fetched: n, previous: prev, problem };
     })

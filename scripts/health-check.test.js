@@ -27,6 +27,16 @@ describe('checkHealth', () => {
     expect(failures).toEqual([]);
   });
 
+  it('lets a JuCo team stay at 0 only when it already had no upcoming games', () => {
+    const { failures } = checkHealth({
+      teams: [team('cerritos-falcons', 'juco'), team('citrus-owls', 'juco')],
+      fetched: [],
+      previous: many('citrus-owls', 5),
+      now,
+    });
+    expect(failures.map(f => f.id)).toEqual(['citrus-owls']);
+  });
+
   it('only checks teams at the requested level', () => {
     const { rows } = checkHealth({ teams: [team('lmu-lions'), team('cerritos-falcons', 'juco')], fetched: [], previous: [], level: 'juco', now });
     expect(rows.map(r => r.id)).toEqual(['cerritos-falcons']);
