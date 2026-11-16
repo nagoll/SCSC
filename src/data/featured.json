@@ -6,7 +6,7 @@
     "description": "Skip the $200 pro tickets and catch genuine basketball at Glendale Community College Athletic Complex. El Camino vs. Victor Valley is free and delivers real energy.",
     "eventId": "el-camino-warriors-20261121-women-s-basketball-victor-valley",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   },
   {
     "id": "gem-glendale-vaqueros-20261121-women-s-basketball-fullerton",
@@ -15,7 +15,7 @@
     "description": "Western State Conference basketball at its best. GCC hosts Fullerton — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
     "eventId": "glendale-vaqueros-20261121-women-s-basketball-fullerton",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   },
   {
     "id": "gem-occidental-tigers-20261121-women-s-swimming-and-diving-oxy-invite",
@@ -24,7 +24,7 @@
     "description": "At Occidental's gorgeous Eagle Rock campus, Occidental hosts Oxy Invite for swimming & diving. The setting alone makes this worth the trip — and admission is free.",
     "eventId": "occidental-tigers-20261121-women-s-swimming-and-diving-oxy-invite",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   },
   {
     "id": "gotw-la-chargers-20261122",
@@ -33,16 +33,16 @@
     "description": "SoFi Stadium plays host as the Chargers take on the New York Jets this Sunday. Circle this one on the calendar.",
     "eventId": "la-chargers-20261122",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   },
   {
-    "id": "gotw-ucla-bruins-20261115-womens-college-volleyball",
+    "id": "gotw-la-kings-20261129",
     "type": "game-of-week",
-    "title": "Big Ten Showdown: UCLA vs. Oregon Ducks",
-    "description": "Big Ten Showdown — need we say more? Pauley Pavilion will be rocking when the Oregon Ducks roll in. Don't miss this one.",
-    "eventId": "ucla-bruins-20261115-womens-college-volleyball",
+    "title": "Freeway Faceoff: Kings vs. Ducks",
+    "description": "Freeway Faceoff — need we say more? Crypto.com Arena will be rocking when the Ducks roll in. Don't miss this one.",
+    "eventId": "la-kings-20261129",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   },
   {
     "id": "gotw-ucla-bruins-20261128-college-football",
@@ -51,6 +51,6 @@
     "description": "One of the best rivalries in football is back. The USC Trojans visit Rose Bowl Stadium with bragging rights on the line.",
     "eventId": "ucla-bruins-20261128-college-football",
     "imageUrl": null,
-    "publishDate": "2026-11-15T00:00:00+00:00"
+    "publishDate": "2026-11-16T00:00:00+00:00"
   }
 ]
