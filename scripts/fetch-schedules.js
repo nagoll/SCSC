@@ -23,7 +23,7 @@ const { fetchAllESPN } = require('./fetchers/pro/espn');
 const { scrapeAllColleges, combineCollegeSources } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
-const { mergeEvents, prunePastEvents, removeLegacyJucoEvents } = require('./merge');
+const { mergeEvents, prunePastEvents, removeLegacyJucoEvents, removeDroppedJucoEvents } = require('./merge');
 const { validateEvents } = require('./schema');
 const { generateFeatured } = require('./generate-featured');
 const { exportAllToJson } = require('./export-to-json');
@@ -114,6 +114,7 @@ async function main() {
 
   const levelResults = await Promise.all(fetchers);
   const allEvents = levelResults.flat();
+  const completeSources = levelResults.flatMap(r => r.completeSources || []);
 
   console.log(`\nTotal fetched: ${allEvents.length} events`);
 
@@ -158,6 +159,9 @@ async function main() {
   // Drop JuCo rows written under the old ID format (self-opponent / collisions)
   const legacyRemoved = await removeLegacyJucoEvents(valid);
   console.log(`\nCleanup: removed ${legacyRemoved} legacy JuCo events`);
+
+  const dropped = await removeDroppedJucoEvents(valid, completeSources);
+  console.log(`Cleanup: removed ${dropped} JuCo games their school's feed no longer lists`);
 
   // Prune past events
   const pruned = await prunePastEvents();

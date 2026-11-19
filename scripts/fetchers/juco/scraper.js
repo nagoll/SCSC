@@ -947,6 +947,9 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       });
       if (feed) {
         console.log(`[${school.id}] read ${feed.length} home games from the iCal feed`);
+        // The feed is the school's whole schedule, so games it no longer
+        // lists can be dropped (see removeDroppedJucoEvents).
+        feed.complete = true;
         return feed;
       }
       console.warn(`[${school.id}] no iCal feed, parsing the page markup`);
@@ -1013,6 +1016,8 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
   }
 
   const events = [];
+  // Sources whose full iCal feed was read this run.
+  events.completeSources = [];
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
     const school = schools[i];
@@ -1020,6 +1025,7 @@ async function scrapeSidearmSchools(schools, startDate, endDate, proxies = []) {
     if (result.status === 'fulfilled') {
       console.log(`[${school.id}] fetched ${result.value.length} events (${kb} KB transferred)`);
       events.push(...result.value);
+      if (result.value.complete) events.completeSources.push(`juco-scraper:${school.id}`);
     } else {
       console.warn(`[${school.id}] failed: ${result.reason?.message?.split('\n')[0]}`);
     }
