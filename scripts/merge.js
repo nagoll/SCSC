@@ -245,4 +245,33 @@ async function removeLegacyJucoEvents(incoming, db = supabaseAdmin()) {
   return deleted.length;
 }
 
-module.exports = { mergeEvents, prunePastEvents, removeLegacyJucoEvents, getPrecedence, detectDiscrepancies };
+/**
+ * Remove upcoming JuCo games that a school's own iCal feed no longer lists.
+ * Only sources in `completeSources` are touched: those whose full feed was
+ * read this run, so a school whose scrape failed keeps its games. A game the
+ * feed dropped was canceled, or misread on an earlier run; either way the
+ * school's own schedule no longer has it.
+ * Returns the number of rows removed.
+ */
+async function removeDroppedJucoEvents(incoming, completeSources, db = supabaseAdmin(), now = new Date()) {
+  const sources = new Set(completeSources || []);
+  if (sources.size === 0) return 0;
+  const keep = new Set(incoming.map(e => e.id));
+
+  const { data: rows, error } = await selectAll(() => db.from('events').select('id, source, dateTime').order('id'));
+  if (error) throw new Error(`removeDroppedJucoEvents: ${error.message}`);
+  const dropped = rows
+    .filter(r => sources.has(r.source) && new Date(r.dateTime) >= now && !keep.has(r.id))
+    .map(r => r.id);
+  if (dropped.length === 0) return 0;
+
+  const { data: deleted, error: delError } = await db
+    .from('events')
+    .delete()
+    .in('id', dropped)
+    .select('id');
+  if (delError) throw new Error(`removeDroppedJucoEvents: ${delError.message}`);
+  return deleted.length;
+}
+
+module.exports = { mergeEvents, prunePastEvents, removeLegacyJucoEvents, removeDroppedJucoEvents, getPrecedence, detectDiscrepancies };

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makeFakeSupabase } from './fake-supabase.js';
-import { getPrecedence, detectDiscrepancies, mergeEvents, prunePastEvents, removeLegacyJucoEvents } from './merge.js';
+import { getPrecedence, detectDiscrepancies, mergeEvents, prunePastEvents, removeLegacyJucoEvents, removeDroppedJucoEvents } from './merge.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SYNC_LOG_PATH = path.join(__dirname, 'sync-log.json');
@@ -203,6 +203,32 @@ describe('removeLegacyJucoEvents', () => {
   it('does nothing when no JuCo events were refreshed', async () => {
     const db = makeFakeSupabase({ events: [row('cerritos-falcons-20261009', 'juco-scraper:cerritos')] });
     expect(await removeLegacyJucoEvents([], db)).toBe(0);
+    expect(db.tables.events).toHaveLength(1);
+  });
+});
+
+describe('removeDroppedJucoEvents', () => {
+  const now = new Date('2026-11-18T00:00:00Z');
+  const row = (id, source, dateTime = '2026-12-01T20:00:00.000Z') => baseEvent({ id, source, dateTime, level: 'juco' });
+
+  it("removes upcoming games a fully read feed no longer lists, and nothing else", async () => {
+    const db = makeFakeSupabase({
+      events: [
+        row('rh-kept', 'juco-scraper:rio-hondo'),
+        row('rh-dropped', 'juco-scraper:rio-hondo'),
+        row('rh-past', 'juco-scraper:rio-hondo', '2026-11-17T20:00:00.000Z'),
+        row('citrus-failed-scrape', 'juco-scraper:citrus'),
+        row('lakers-game', 'espn'),
+      ],
+    });
+    const removed = await removeDroppedJucoEvents([row('rh-kept', 'juco-scraper:rio-hondo')], ['juco-scraper:rio-hondo'], db, now);
+    expect(removed).toBe(1);
+    expect(db.tables.events.map(e => e.id).sort()).toEqual(['citrus-failed-scrape', 'lakers-game', 'rh-kept', 'rh-past']);
+  });
+
+  it('does nothing when no feed was fully read', async () => {
+    const db = makeFakeSupabase({ events: [row('rh-dropped', 'juco-scraper:rio-hondo')] });
+    expect(await removeDroppedJucoEvents([], [], db, now)).toBe(0);
     expect(db.tables.events).toHaveLength(1);
   });
 });
