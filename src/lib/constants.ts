@@ -36,7 +36,7 @@ export const PRICE_LABELS: Record<PriceRange, string> = {
   under_20: 'Under $20',
   under_50: 'Under $50',
   over_50: '$50+',
-  tbd: 'TBD',
+  tbd: 'Not confirmed',
 };
 
 export const TIME_LABELS: Record<TimeOfDay, string> = {

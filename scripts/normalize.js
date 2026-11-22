@@ -77,13 +77,20 @@ function normalizeSport(raw) {
   return SPORT_MAP[key] || SPORT_MAP[key.replace(/^(wo)?mens?-/, '')] || 'other';
 }
 
+const PRICE_RANGES = new Set(['free', 'under_20', 'under_50', 'over_50', 'tbd']);
+
 /**
  * Normalize a price string / number to PriceRange enum.
+ * Values that are already a PriceRange pass through unchanged (fetcher configs
+ * set them directly). A missing or unparseable price means we don't know it,
+ * so it becomes 'tbd', never 'free'.
  */
 function normalizePrice(raw) {
-  if (raw === null || raw === undefined || raw === '' || raw === 'free' || raw === 0) return 'free';
+  if (PRICE_RANGES.has(raw)) return raw;
+  if (raw === null || raw === undefined || raw === '') return 'tbd';
   const num = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(/[^0-9.]/g, ''));
-  if (isNaN(num) || num === 0) return 'free';
+  if (isNaN(num)) return /^\s*free\s*$/i.test(String(raw)) ? 'free' : 'tbd';
+  if (num === 0) return 'free';
   if (num < 20) return 'under_20';
   if (num < 50) return 'under_50';
   return 'over_50';
