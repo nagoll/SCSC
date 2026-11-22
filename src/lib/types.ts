@@ -82,6 +82,7 @@ export interface SportEvent {
   venueConfidence: VenueConfidence; // how confident we are in the venue assignment
   isNeutralSite: boolean; // true if event is at a neutral location (not home venue)
   ticketUrl: string | null;
+  scheduleUrl?: string | null; // the team's own schedule page this game was read from
   price: PriceRange;
   conference: string | null;
   league: string | null;

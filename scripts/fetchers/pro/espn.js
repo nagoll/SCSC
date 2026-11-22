@@ -9,7 +9,7 @@
 const { normalizeEvent } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
 
-// ESPN team configs: [espnSport, espnLeague, espnTeamId, scscTeamId, venueId, league, sport, gender, price, ticketUrl]
+// ESPN team configs: [espnSport, espnLeague, espnTeamId, scscTeamId, venueId, league, sport, gender, price, ticketUrl, scheduleUrl]
 const ESPN_TEAMS = [
   {
     espnSport: 'basketball',
@@ -22,6 +22,7 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'over_50',
     ticketUrl: 'https://www.nba.com/lakers/tickets',
+    scheduleUrl: 'https://www.nba.com/lakers/schedule',
   },
   {
     espnSport: 'basketball',
@@ -34,6 +35,7 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'over_50',
     ticketUrl: 'https://www.nba.com/clippers/tickets',
+    scheduleUrl: 'https://www.nba.com/clippers/schedule',
   },
   {
     espnSport: 'basketball',
@@ -46,6 +48,7 @@ const ESPN_TEAMS = [
     gender: 'womens',
     price: 'under_50',
     ticketUrl: 'https://www.wnba.com/sparks/tickets',
+    scheduleUrl: 'https://sparks.wnba.com/schedule',
   },
   {
     espnSport: 'soccer',
@@ -58,6 +61,7 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'under_50',
     ticketUrl: 'https://www.lafc.com/tickets',
+    scheduleUrl: 'https://www.lafc.com/schedule',
   },
   {
     espnSport: 'soccer',
@@ -70,6 +74,7 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'under_50',
     ticketUrl: 'https://www.lagalaxy.com/tickets',
+    scheduleUrl: 'https://www.lagalaxy.com/schedule',
   },
   {
     espnSport: 'soccer',
@@ -82,6 +87,7 @@ const ESPN_TEAMS = [
     gender: 'womens',
     price: 'under_50',
     ticketUrl: 'https://www.angelcityfc.com/tickets',
+    scheduleUrl: 'https://www.angelcity.com/schedule',
   },
   {
     espnSport: 'football',
@@ -94,6 +100,7 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'over_50',
     ticketUrl: 'https://www.therams.com/tickets',
+    scheduleUrl: 'https://www.therams.com/schedule',
   },
   {
     espnSport: 'football',
@@ -106,11 +113,12 @@ const ESPN_TEAMS = [
     gender: 'mens',
     price: 'over_50',
     ticketUrl: 'https://www.chargers.com/tickets',
+    scheduleUrl: 'https://www.chargers.com/schedule',
   },
 ];
 
 async function fetchESPNTeam(teamConfig, startDate, endDate) {
-  const { espnSport, espnLeague, espnTeamId, scscTeamId, venueId, league, sport, gender, price, ticketUrl } = teamConfig;
+  const { espnSport, espnLeague, espnTeamId, scscTeamId, venueId, league, sport, gender, price, ticketUrl, scheduleUrl } = teamConfig;
   const url =
     `https://site.api.espn.com/apis/site/v2/sports/${espnSport}/${espnLeague}/teams/${espnTeamId}/schedule`;
 
@@ -174,6 +182,7 @@ async function fetchESPNTeam(teamConfig, startDate, endDate) {
         isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at ${data.team?.displayName || scscTeamId}`,
         ticketUrl,
+        scheduleUrl,
         price,
         conference: null,
         league,

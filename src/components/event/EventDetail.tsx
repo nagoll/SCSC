@@ -9,6 +9,7 @@ import TimeBadge from '@/components/shared/TimeBadge';
 import RankBadge from '@/components/shared/RankBadge';
 import AddToCalendar from './AddToCalendar';
 import { buildTicketUrl, TICKETS_ENABLED } from '@/lib/referral';
+import ScheduleLink from './ScheduleLink';
 
 interface EventDetailProps {
   event: SportEvent;
@@ -207,6 +208,9 @@ export default function EventDetail({
                 </p>
               )}
             </div>
+
+            {/* Official schedule */}
+            <ScheduleLink url={event.scheduleUrl} className="mt-3" />
 
             {/* Add to Calendar */}
             <div className="mt-4">

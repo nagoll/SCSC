@@ -35,6 +35,8 @@ const SportEventSchema = z.object({
   venueConfidence: VenueConfidenceEnum,
   isNeutralSite: z.boolean(),
   ticketUrl: z.string().nullable(),
+  // Optional so rows written before the column existed still validate.
+  scheduleUrl: z.string().url().nullable().optional(),
   price: PriceEnum,
   conference: z.string().nullable(),
   league: z.string().nullable(),

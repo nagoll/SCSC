@@ -58,6 +58,7 @@ async function fetchNHL(startDate, endDate) {
         isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at Kings`,
         ticketUrl: 'https://www.nhl.com/kings/tickets',
+        scheduleUrl: 'https://www.nhl.com/kings/schedule',
         price: 'under_50',
         conference: null,
         league: 'NHL',

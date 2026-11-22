@@ -936,6 +936,14 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       return [];
     }
     console.log(`[${school.id}] schedule page: ${page.url()}`);
+    // Every game links back to the schedule page it was read from.
+    const loaded = new URL(page.url());
+    loaded.search = '';
+    loaded.hash = '';
+    const withScheduleUrl = evs => {
+      for (const ev of evs) ev.scheduleUrl = ev.scheduleUrl || loaded.href;
+      return evs;
+    };
 
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -950,7 +958,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
         // The feed is the school's whole schedule, so games it no longer
         // lists can be dropped (see removeDroppedJucoEvents).
         feed.complete = true;
-        return feed;
+        return withScheduleUrl(feed);
       }
       console.warn(`[${school.id}] no iCal feed, parsing the page markup`);
     }
@@ -960,7 +968,7 @@ async function scrapeJucoSchool(school, startDate, endDate, browser, proxy) {
       : await parseGenericJuco(html, school, start, end);
 
     if (events.length === 0) logZeroParseHints(school, html, jsonCalls);
-    return events;
+    return withScheduleUrl(events);
   } catch (err) {
     // A dead residential IP fails the tunnel in about a second; let the caller
     // retry the school on a different proxy instead of giving up on it.

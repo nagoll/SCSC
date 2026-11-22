@@ -114,6 +114,7 @@ function buildEventId(teamId, dateStr, suffix = '') {
  * @param {boolean} [raw.isNeutralSite] - whether this is a neutral site event
  * @param {string|null} [raw.eventName]
  * @param {string|null} [raw.ticketUrl]
+ * @param {string|null} [raw.scheduleUrl] - the team's schedule page the game appears on
  * @param {number|string|null} [raw.price]
  * @param {string|null} [raw.conference]
  * @param {string|null} [raw.league]
@@ -142,6 +143,7 @@ function normalizeEvent(raw) {
     venueConfidence: raw.venueConfidence || 'unverified',
     isNeutralSite: raw.isNeutralSite || false,
     ticketUrl: raw.ticketUrl || null,
+    scheduleUrl: raw.scheduleUrl || null,
     price: normalizePrice(raw.price),
     conference: raw.conference || null,
     league: raw.league || null,
