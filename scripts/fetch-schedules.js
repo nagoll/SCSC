@@ -23,6 +23,7 @@ const { fetchAllESPN } = require('./fetchers/pro/espn');
 const { scrapeAllColleges, combineCollegeSources } = require('./fetchers/college/scraper');
 const { fetchAllESPNCollege } = require('./fetchers/college/espn-college');
 const { scrapeAllJuco } = require('./fetchers/juco/scraper');
+const { dedupeEvents, removeDuplicateEvents } = require('./dedupe');
 const { mergeEvents, prunePastEvents, removeLegacyJucoEvents, removeDroppedJucoEvents } = require('./merge');
 const { validateEvents } = require('./schema');
 const { generateFeatured } = require('./generate-featured');
@@ -146,7 +147,12 @@ async function main() {
     return;
   }
 
-  const stats = await mergeEvents(valid);
+  // Collapse TBD/tournament stand-ins, renamed opponents and multi-team meets
+  // that list one game several times at the same start time.
+  const { events: deduped, removed: collapsed } = dedupeEvents(valid);
+  if (collapsed.length > 0) console.log(`\n[dedupe] Collapsed ${collapsed.length} duplicate listing(s) in this fetch`);
+
+  const stats = await mergeEvents(deduped);
   console.log(`\nMerge complete:`);
   console.log(`  Added:        ${stats.added}`);
   console.log(`  Updated:      ${stats.updated}`);
@@ -157,11 +163,15 @@ async function main() {
   }
 
   // Drop JuCo rows written under the old ID format (self-opponent / collisions)
-  const legacyRemoved = await removeLegacyJucoEvents(valid);
+  const legacyRemoved = await removeLegacyJucoEvents(deduped);
   console.log(`\nCleanup: removed ${legacyRemoved} legacy JuCo events`);
 
-  const dropped = await removeDroppedJucoEvents(valid, completeSources);
+  const dropped = await removeDroppedJucoEvents(deduped, completeSources);
   console.log(`Cleanup: removed ${dropped} JuCo games their school's feed no longer lists`);
+
+  // Rows left by earlier runs: a TBD since filled in, a game under an old ID
+  const duplicates = await removeDuplicateEvents();
+  console.log(`Cleanup: removed ${duplicates} duplicate listings of the same game`);
 
   // Prune past events
   const pruned = await prunePastEvents();
