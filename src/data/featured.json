@@ -1,39 +1,30 @@
 [
   {
-    "id": "gem-cerritos-falcons-20261122-women-s-volleyball-grossmont",
-    "type": "hidden-gem",
-    "title": "Free JuCo Volleyball: Cerritos vs. Grossmont",
-    "description": "South Coast Conference volleyball at its best. Cerritos hosts Grossmont — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
-    "eventId": "cerritos-falcons-20261122-women-s-volleyball-grossmont",
-    "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
-  },
-  {
     "id": "gem-cerritos-falcons-20261205-women-s-basketball-folsom-lake",
     "type": "hidden-gem",
     "title": "Free JuCo Basketball: Cerritos vs. Folsom Lake",
     "description": "Skip the $200 pro tickets and catch genuine basketball at Cerritos College Falcon Stadium. Cerritos vs. Folsom Lake is free and delivers real energy.",
     "eventId": "cerritos-falcons-20261205-women-s-basketball-folsom-lake",
     "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
+    "publishDate": "2026-11-24T00:00:00+00:00"
   },
   {
-    "id": "gem-glendale-vaqueros-20261122-women-s-basketball-victor-valley",
+    "id": "gem-glendale-vaqueros-20261125-women-s-basketball-sacramento-city",
     "type": "hidden-gem",
-    "title": "Free JuCo Basketball: GCC vs. Victor Valley",
-    "description": "Western State Conference basketball at its best. GCC hosts Victor Valley — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
-    "eventId": "glendale-vaqueros-20261122-women-s-basketball-victor-valley",
+    "title": "Free JuCo Basketball: GCC vs. Sacramento City",
+    "description": "Skip the $200 pro tickets and catch genuine basketball at Glendale Community College Athletic Complex. GCC vs. Sacramento City is free and delivers real energy.",
+    "eventId": "glendale-vaqueros-20261125-women-s-basketball-sacramento-city",
     "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
+    "publishDate": "2026-11-24T00:00:00+00:00"
   },
   {
-    "id": "gotw-la-chargers-20261122",
-    "type": "game-of-week",
-    "title": "Chargers vs. New York Jets",
-    "description": "SoFi Stadium plays host as the Chargers take on the New York Jets this Sunday. Circle this one on the calendar.",
-    "eventId": "la-chargers-20261122",
+    "id": "gem-lamc-eagles-20261125-women-s-volleyball-cerritos",
+    "type": "hidden-gem",
+    "title": "Free JuCo Volleyball: LA Mission vs. Cerritos",
+    "description": "Western State Conference volleyball at its best. LA Mission hosts Cerritos — completely free to attend. Real competition, great atmosphere, zero ticket cost.",
+    "eventId": "lamc-eagles-20261125-women-s-volleyball-cerritos",
     "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
+    "publishDate": "2026-11-24T00:00:00+00:00"
   },
   {
     "id": "gotw-la-kings-20261129",
@@ -42,7 +33,16 @@
     "description": "Freeway Faceoff — need we say more? Crypto.com Arena will be rocking when the Ducks roll in. Don't miss this one.",
     "eventId": "la-kings-20261129",
     "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
+    "publishDate": "2026-11-24T00:00:00+00:00"
+  },
+  {
+    "id": "gotw-la-rams-20261204",
+    "type": "game-of-week",
+    "title": "Rams vs. Kansas City Chiefs",
+    "description": "The Kansas City Chiefs come to town for a Friday clash at SoFi Stadium. The Rams are looking to put on a show for the home crowd.",
+    "eventId": "la-rams-20261204",
+    "imageUrl": null,
+    "publishDate": "2026-11-24T00:00:00+00:00"
   },
   {
     "id": "gotw-ucla-bruins-20261128-college-football",
@@ -51,6 +51,6 @@
     "description": "One of the best rivalries in football is back. The USC Trojans visit Rose Bowl Stadium with bragging rights on the line.",
     "eventId": "ucla-bruins-20261128-college-football",
     "imageUrl": null,
-    "publishDate": "2026-11-22T00:00:00+00:00"
+    "publishDate": "2026-11-24T00:00:00+00:00"
   }
 ]
