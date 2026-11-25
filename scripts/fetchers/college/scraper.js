@@ -171,9 +171,10 @@ async function get(url) {
 }
 
 function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl }) {
-  // Poll rankings ("#15 Penn State") stay in the name, which every refresh
-  // rewrites, but not in the ID: a new ranking must not create a new event.
-  const unranked = opponent.replace(/^(#|No\.\s*)\d+\s+/i, '');
+  // Poll rankings ("#15 Penn State", "RV Bates College" for receiving votes)
+  // stay in the name, which every refresh rewrites, but not in the ID: a new
+  // ranking must not create a new event.
+  const unranked = opponent.replace(/^((#|No\.\s*)\d+|RV)\s+/i, '');
   const verification = verifyVenue({ scrapedVenueName: venueName, defaultVenueId: school.defaultVenueId });
   if (verification.excluded) {
     console.log(`[${school.id}] Excluding event: ${opponent} — ${verification.excludeReason}`);

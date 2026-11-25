@@ -59,6 +59,12 @@ describe('parseSidearmCalendarJson', () => {
     expect(ev.id).toBe('cal-poly-pomona-broncos-20260927-women-s-soccer-penn-state');
   });
 
+  it('keeps "receiving votes" (RV) out of the ID too', () => {
+    const [ev] = parseSidearmCalendarJson([{ events: [game({ opponent: { prefix: 'RV', title: 'Bates College' } })] }], school('cal-poly-pomona'), start, end);
+    expect(ev.eventName).toBe('RV Bates College at Cal Poly Pomona Broncos');
+    expect(ev.id).toBe('cal-poly-pomona-broncos-20260927-women-s-soccer-bates-college');
+  });
+
   it('skips away, neutral, untimed and cancelled games', () => {
     const days = [{ date: '2026-09-27T00:00:00', events: [
       game({ id: 1, location_indicator: 'A' }),
