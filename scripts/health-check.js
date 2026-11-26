@@ -51,7 +51,9 @@ function checkHealth({ teams, fetched, previous, level = 'all', now = new Date()
       // between schedules, not a broken scraper: there is nothing to lose.
       // A JuCo team that drops to 0 from games it had is still flagged.
       const quiet = QUIET_OK.has(t.id) || (t.level === 'juco' && prev === 0);
-      if (n === 0 && !quiet) problem = 'no events fetched';
+      // A team allowed to be empty isn't failed for reaching 0 by way of a
+      // drop either: Rio Hondo's feed lists a batch of games, then none.
+      if (n === 0) { if (!quiet) problem = 'no events fetched'; }
       else if (prev >= DROP_MIN_PREVIOUS && n < prev * DROP_RATIO) problem = `dropped from ${prev}`;
       return { id: t.id, level: t.level, fetched: n, previous: prev, problem };
     })
