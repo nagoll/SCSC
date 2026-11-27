@@ -140,10 +140,10 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
                 {event.price === 'under_20' && 'Under $20'}
                 {event.price === 'under_50' && '$20–$50'}
                 {event.price === 'over_50' && '$50+'}
-                {event.price === 'tbd' && 'TBD'}
+                {event.price === 'tbd' && 'Check school site'}
               </div>
             </div>
-            {resolvedTicketUrl && (
+            {resolvedTicketUrl ? (
               <a
                 href={resolvedTicketUrl}
                 target="_blank"
@@ -152,11 +152,20 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
               >
                 Get Tickets →
               </a>
-            )}
+            ) : event.price === 'tbd' && homeTeam.websiteUrl ? (
+              <a
+                href={homeTeam.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-burnt-orange hover:underline"
+              >
+                School site →
+              </a>
+            ) : null}
           </div>
           {event.level === 'juco' && (
             <p className="mt-2 text-sm text-live-green">
-              Community college games are typically free or very low cost!
+              Community college admission is usually free or low cost.
             </p>
           )}
         </div>

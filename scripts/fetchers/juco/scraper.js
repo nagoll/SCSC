@@ -23,6 +23,9 @@ const { verifyVenue } = require('../../venue-verify');
 // instead of the athletics site, which is why they 403'd, 404'd, or timed
 // out outright. Confirmed via web search of each school's current athletics
 // site; verify with a workflow_dispatch dry run before relying on this list.
+// Admission isn't published in the schedule feeds and varies by school and
+// sport (e.g. Glendale men's basketball: $10, kids 12 and under free), so it
+// stays 'tbd' ("Check school site") until a price has been verified.
 const JUCO_SCHOOLS = [
   {
     id: 'elac',
@@ -32,7 +35,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'elac-stadium',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'lacc',
@@ -42,7 +45,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'lacc-athletic-field',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'lavc',
@@ -52,7 +55,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'lavc-athletic-complex',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'lapc',
@@ -62,7 +65,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'lapc-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'el-camino',
@@ -72,7 +75,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'el-camino-stadium',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'smc',
@@ -82,7 +85,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'smc-corsair-field',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'cerritos',
@@ -92,7 +95,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'cerritos-college-stadium',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'mt-sac',
@@ -102,7 +105,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'mt-sac-hilmer-lodge',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'pcc',
@@ -112,7 +115,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'pcc-robinson-stadium',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'glendale',
@@ -122,7 +125,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'glendale-cc-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'rio-hondo',
@@ -132,7 +135,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'rio-hondo-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'citrus',
@@ -142,7 +145,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'citrus-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'west-la',
@@ -152,7 +155,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'west-la-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'compton',
@@ -162,7 +165,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'compton-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'harbor',
@@ -172,7 +175,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'harbor-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'la-southwest',
@@ -182,7 +185,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'la-southwest-athletics',
-    price: 'free',
+    price: 'tbd',
   },
   {
     id: 'lamc',
@@ -192,7 +195,7 @@ const JUCO_SCHOOLS = [
     platform: 'sidearm',
     level: 'juco',
     defaultVenueId: 'lamc-athletics',
-    price: 'free',
+    price: 'tbd',
   },
 ];
 
