@@ -37,6 +37,14 @@ describe('checkHealth', () => {
     expect(failures.map(f => f.id)).toEqual(['citrus-owls']);
   });
 
+  it('lets a team allowed to be empty drop to 0, but still flags a partial drop', () => {
+    const rio = 'rio-hondo-roadrunners';
+    const empty = checkHealth({ teams: [team(rio, 'juco')], fetched: [], previous: many(rio, 16), now });
+    expect(empty.failures).toEqual([]);
+    const partial = checkHealth({ teams: [team(rio, 'juco')], fetched: many(rio, 2), previous: many(rio, 16), now });
+    expect(partial.failures[0].problem).toBe('dropped from 16');
+  });
+
   it('only checks teams at the requested level', () => {
     const { rows } = checkHealth({ teams: [team('lmu-lions'), team('cerritos-falcons', 'juco')], fetched: [], previous: [], level: 'juco', now });
     expect(rows.map(r => r.id)).toEqual(['cerritos-falcons']);
