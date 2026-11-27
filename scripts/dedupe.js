@@ -138,6 +138,8 @@ function dedupeEvents(events) {
       merged.eventName = `${opponents.join(OPPONENT_SEPARATOR)} at ${parsedWinner.host}`;
     }
     if (!merged.ticketUrl) merged.ticketUrl = sorted.find(e => e.ticketUrl)?.ticketUrl || null;
+    const scheduleUrl = sorted.find(e => e.scheduleUrl)?.scheduleUrl;
+    if (!merged.scheduleUrl && scheduleUrl) merged.scheduleUrl = scheduleUrl;
     out.push(merged);
     removed.push(...sorted.slice(1).map(e => e.id));
   }

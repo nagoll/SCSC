@@ -10,6 +10,26 @@
 
 const { normalizeEvent } = require('../../normalize');
 const { verifyVenue } = require('../../venue-verify');
+const { COLLEGE_SCHOOLS } = require('./scraper');
+
+// ESPN league → the sport's path on the school's athletics site
+// (<site>/sports/<slug>/schedule, shared by SIDEARM and WMT sites).
+const SCHEDULE_SLUGS = {
+  'college-football': 'football',
+  'college-baseball': 'baseball',
+  'mens-college-basketball': 'mens-basketball',
+  'womens-college-basketball': 'womens-basketball',
+  'mens-college-soccer': 'mens-soccer',
+  'womens-college-soccer': 'womens-soccer',
+  'womens-college-volleyball': 'womens-volleyball',
+};
+
+function espnCollegeScheduleUrl(config) {
+  const site = COLLEGE_SCHOOLS.find(s => s.id === config.schoolId)?.site;
+  if (!site) return null;
+  const slug = SCHEDULE_SLUGS[config.espnLeague];
+  return slug ? `${site}/sports/${slug}/schedule` : site;
+}
 
 const ESPN_COLLEGE_TEAMS = [
   // --- Football ---
@@ -308,6 +328,7 @@ async function fetchESPNCollegeTeam(config, startDate, endDate) {
         isNeutralSite: verification.isNeutralSite,
         eventName: `${awayName} at ${config.name}`,
         ticketUrl: event.links?.[0]?.href || null,
+        scheduleUrl: espnCollegeScheduleUrl(config),
         price: config.price,
         conference: null,
         league: null,
@@ -333,4 +354,4 @@ async function fetchAllESPNCollege(startDate, endDate) {
   return events;
 }
 
-module.exports = { fetchAllESPNCollege };
+module.exports = { fetchAllESPNCollege, espnCollegeScheduleUrl };

@@ -122,6 +122,29 @@ describe('mergeEvents (against a fake Supabase client)', () => {
     expect(fake.tables.events[0].eventName).toBe('New');
   });
 
+  it('keeps an existing schedule link when the winning source has none', async () => {
+    const link = 'https://usctrojans.com/schedule.aspx?path=mbball';
+    const fake = makeFakeSupabase({ events: [baseEvent({ id: 'e1', source: 'espn-api:college', scheduleUrl: link })] });
+    await mergeEvents([baseEvent({ id: 'e1', source: 'university-scraper:usc', scheduleUrl: null })], fake);
+    expect(fake.tables.events[0].scheduleUrl).toBe(link);
+  });
+
+  it('writes without schedule links when the database column is missing', async () => {
+    const fake = makeFakeSupabase({ events: [] });
+    const from = fake.from.bind(fake);
+    fake.from = table => {
+      const q = from(table);
+      const upsert = q.upsert.bind(q);
+      q.upsert = rows => (rows.some(r => 'scheduleUrl' in r)
+        ? Promise.resolve({ error: { message: "Could not find the 'scheduleUrl' column of 'events' in the schema cache" } })
+        : upsert(rows));
+      return q;
+    };
+    const stats = await mergeEvents([baseEvent({ id: 'new-1', scheduleUrl: 'https://x.example/calendar' })], fake);
+    expect(stats.added).toBe(1);
+    expect(fake.tables.events[0]).not.toHaveProperty('scheduleUrl');
+  });
+
   it('does not let a lower-precedence source overwrite a higher one', async () => {
     const fake = makeFakeSupabase({ events: [baseEvent({ id: 'e1', source: 'university-scraper:usc', eventName: 'Keep' })] });
     const stats = await mergeEvents([baseEvent({ id: 'e1', source: 'pro-api:mlb', eventName: 'Ignored' })], fake);

@@ -145,6 +145,8 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
       const mergedEvent = {
         ...incoming,
         isFeatured: current.isFeatured,
+        // A source without a schedule link (e.g. ESPN) must not erase one.
+        scheduleUrl: incoming.scheduleUrl || current.scheduleUrl || null,
       };
 
       // If the existing entry had higher venue confidence, preserve that venue data
@@ -178,7 +180,15 @@ async function mergeEvents(newEvents, db = supabaseAdmin()) {
   }
 
   if (toUpsert.size > 0) {
-    const { error: writeError } = await db.from('events').upsert(Array.from(toUpsert.values()));
+    let rows = Array.from(toUpsert.values());
+    let { error: writeError } = await db.from('events').upsert(rows);
+    // Until the scheduleUrl migration is applied, write without the column
+    // rather than failing the whole refresh.
+    if (writeError && /scheduleUrl/.test(writeError.message)) {
+      console.warn('mergeEvents: events.scheduleUrl column missing — apply supabase/migrations/20261122160000_event_schedule_url.sql; writing without schedule links');
+      rows = rows.map(row => { const rest = { ...row }; delete rest.scheduleUrl; return rest; });
+      ({ error: writeError } = await db.from('events').upsert(rows));
+    }
     if (writeError) throw new Error(`mergeEvents: failed to write events — ${writeError.message}`);
   }
 

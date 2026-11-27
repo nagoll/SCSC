@@ -53,6 +53,14 @@ describe('parseSidearmCalendarJson', () => {
     });
   });
 
+  it("links to the sport's schedule page, or the all-sports calendar without a sport shortname", () => {
+    const cpp = school('cal-poly-pomona');
+    const [withSport] = parseSidearmCalendarJson([{ events: [game({ sport: { title: "Women's Soccer", shortname: 'wsoc' } })] }], cpp, start, end);
+    expect(withSport.scheduleUrl).toBe(`${cpp.site}/schedule.aspx?path=wsoc`);
+    const [noSport] = parseSidearmCalendarJson([{ events: [game()] }], cpp, start, end);
+    expect(noSport.scheduleUrl).toBe(`${cpp.site}/calendar`);
+  });
+
   it('keeps the ranking in the name but not in the ID', () => {
     const [ev] = parseSidearmCalendarJson([{ events: [game({ opponent: { title: '#15 Penn State' } })] }], school('cal-poly-pomona'), start, end);
     expect(ev.eventName).toBe('#15 Penn State at Cal Poly Pomona Broncos');

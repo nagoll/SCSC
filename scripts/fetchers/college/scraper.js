@@ -170,7 +170,19 @@ async function get(url) {
   return res.text();
 }
 
-function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl }) {
+/**
+ * The school's own schedule page for a sport. SIDEARM's legacy
+ * schedule.aspx?path=<sport shortname> redirects to that sport's current
+ * /sports/<slug>/schedule page on every SIDEARM site; without a shortname,
+ * fall back to the all-sports /calendar page.
+ */
+function sidearmScheduleUrl(school, sportShortname) {
+  return sportShortname
+    ? `${school.site}/schedule.aspx?path=${encodeURIComponent(sportShortname)}`
+    : `${school.site}/calendar`;
+}
+
+function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketUrl, scheduleUrl }) {
   // Poll rankings ("#15 Penn State", "RV Bates College" for receiving votes)
   // stay in the name, which every refresh rewrites, but not in the ID: a new
   // ranking must not create a new event.
@@ -194,6 +206,7 @@ function collegeEvent(school, { sportRaw, opponent, dateTime, venueName, ticketU
     isNeutralSite: false,
     eventName: `${opponent} at ${school.name}`,
     ticketUrl: ticketUrl || school.ticketUrl || null,
+    scheduleUrl: scheduleUrl || sidearmScheduleUrl(school, null),
     price: school.price,
     conference: null,
     league: null,
@@ -220,6 +233,7 @@ function parseSidearmCalendarJson(days, school, start, end) {
         dateTime: dateTime.toISOString(),
         venueName: g.facility?.title || g.location || null,
         ticketUrl: g.media?.tickets?.url,
+        scheduleUrl: sidearmScheduleUrl(school, g.sport?.shortname),
       });
       if (ev) events.push({ ...ev, sourceGameId: g.id });
     }
@@ -342,7 +356,7 @@ function combineCollegeSources(composite, espn) {
     const match = espnByKey.get(key(e));
     if (!match) return e;
     espnByKey.delete(key(e));
-    return { ...e, id: match.id, ticketUrl: e.ticketUrl || match.ticketUrl };
+    return { ...e, id: match.id, ticketUrl: e.ticketUrl || match.ticketUrl, scheduleUrl: e.scheduleUrl || match.scheduleUrl };
   });
   events.push(...espnByKey.values());
   return events;

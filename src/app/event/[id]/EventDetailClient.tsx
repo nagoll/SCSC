@@ -9,6 +9,7 @@ import LevelBadge from '@/components/shared/LevelBadge';
 import TimeBadge from '@/components/shared/TimeBadge';
 import RankBadge from '@/components/shared/RankBadge';
 import AddToCalendar from '@/components/event/AddToCalendar';
+import ScheduleLink from '@/components/event/ScheduleLink';
 import { buildTicketUrl, TICKETS_ENABLED } from '@/lib/referral';
 
 interface Props {
@@ -160,6 +161,9 @@ export default function EventDetailClient({ event, homeTeam, awayTeam, venue }: 
             </p>
           )}
         </div>
+
+        {/* Official schedule */}
+        <ScheduleLink url={event.scheduleUrl} className="mt-3" />
 
         {/* Add to Calendar */}
         <div className="mt-6">

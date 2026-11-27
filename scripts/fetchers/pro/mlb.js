@@ -66,6 +66,7 @@ async function fetchMLB(startDate, endDate) {
           isNeutralSite: verification.isNeutralSite,
           eventName: `${awayTeamName} at Dodgers`,
           ticketUrl: 'https://www.mlb.com/dodgers/tickets',
+          scheduleUrl: 'https://www.mlb.com/dodgers/schedule',
           price: 'under_50',
           conference: null,
           league: 'MLB',
